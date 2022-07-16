@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -9,13 +10,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <a href="/color">color</a>
+        <Link href="/color">
+          <a>color</a>
+        </Link>
       </div>
       <div>
-        <a href="/ipad">iPad</a>
+        <Link href="/ipad">
+          <a>iPad</a>
+        </Link>
       </div>
       <div>
-        <a href="/buyipad">iPad Colors</a>
+        <Link href="/buyipad">
+          <a>iPad Colors</a>
+        </Link>
       </div>
     </>  
   )

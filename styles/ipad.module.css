@@ -38,7 +38,7 @@
 .box1 {
    width: 52px;
    height: 52px;
-   background: #c0c5ce;
+   background: #65737e;
    border: 1px solid black;
    border-radius: 10px;
    position: relative;
@@ -486,9 +486,9 @@
    font-size: 150px;
    font-weight: bold;
    background: black;
-   height: 500px;
-   width: 500px;
-   padding: 100px;
+   height: 100px;
+   width: 150px;
+   padding: 30px 30px 0px 5px;
    /* -webkit-box-reflect: below 0px; */
 }
 
@@ -496,21 +496,21 @@
    content: 'air';
    position: absolute;
    mix-blend-mode: difference;
-   filter: blur(4px);
+   filter: blur(1px);
 }
 
 .neon_wrapper {
    display: inline-flex;
-   filter: brightness(200%);
+   filter: brightness(300%);
 }
 
 .gradient{
-   background: linear-gradient(114deg, rgb(170, 0, 170) 4%,rgb(49, 3, 255) 97%);
+   background: linear-gradient(90deg, rgb(77, 0, 77) 4%,rgb(49, 3, 255) 97%);
    position: absolute;
-   width: 300px;
-   height: 200px;
+   width: 149px;
+   height: 90px;
    mix-blend-mode: multiply;
-   transform: translate(10px, 0px);
+   transform: translate(.5px, 1px);
 }
 
 .txt2 {
@@ -545,14 +545,6 @@
    mix-blend-mode: multiply;
    transform: translate(-10px, 0px);
 }
-
-
-
-
-
-
-
-
 
 /* <div style={{ transform: 'translate(0px, 800px)'}}>
    <div className={styles.container} />
@@ -591,3 +583,68 @@
    99% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
    100% { content: 'Stocks'; opacity: 0; font-size: 80px; }
 } */
+
+.dropdown {
+   animation-name: dropdown;
+   animation-duration: .8s;
+   animation-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0);
+}
+
+@keyframes dropdown {
+   0% { height: 0%; margin: -50%; top: -100%; }
+   100% { height: 118%; margin: -50%; }
+}
+
+.hovering:hover {
+   text-decoration: underline #424245;
+}
+
+.bluehovering:hover {
+   text-decoration: underline #0070c9;
+}
+
+.whitehovering:hover {
+   text-decoration: underline white;
+}
+
+.buttonHover:hover {
+   border: 2.5px solid #0070c9;
+   width: 197px;
+   height: 103px;
+   background: transparent;
+   border-radius: 8px;
+   margin: -12px 0px 0px -37.5px;
+   padding: 13px 5px 0px 35px;
+}
+
+.engraveHover:hover {
+   width: 410px;
+   height: 83px;
+   background: transparent;
+   border-radius: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 0 0 .5px black;
+}
+
+.gbHover:hover {
+   width: 197px;
+   height: 106px;
+   background: transparent;
+   border-radius: 10px;
+   margin: 0px 7px 0px 0px;
+   box-shadow: 0 0 0 .5px black;
+}
+
+.gbHover1:hover {
+   width: 197px;
+   height: 106px;
+   background: transparent;
+   border-radius: 10px;
+   box-shadow: 0 0 0 .5px black;
+}
+
+.pageJump:hover {
+   color: black;
+}

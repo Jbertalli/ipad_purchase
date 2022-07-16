@@ -1,4 +1,5 @@
 import Purple from '../../components/colors/purple';
+import Heading from '../../components/heading';
 import Head from 'next/head';
 
 function purpleipad () {
@@ -8,7 +9,10 @@ function purpleipad () {
                 <title>Purple iPad Air</title>
                 <meta name="description" content="purple" />
             </Head>
-            <Purple />
+            <Heading />
+            <div style={{ display: 'flex', justifyContent: 'center', marginRight: '1298px' }}>
+                <Purple />
+            </div>
         </>
     );
 }

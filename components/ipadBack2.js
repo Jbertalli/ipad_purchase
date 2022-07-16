@@ -6,33 +6,14 @@ export default function Back () {
 
     return (
         <>
-            {/*<Button 
-                content="Space Gray"
-                onClick={setGray}
-            />
-                <Button 
-                content="Pink"
-                onClick={setPink}
-            />
-            <Button 
-                content="Purple"
-                onClick={setPurple}
-            />
-            <Button 
-                content="Blue"
-                onClick={setBlue}
-            />
-            <Button 
-                content="Starlight"
-                onClick={setStarlight}
-            /> */}
             <div className={styles.main}> {/* style={{ transform: 'rotate(10deg)' }} */}
                 {/* <div className={styles.frame} /> */} 
                     <div>
                         <div>
                             <div className={styles.camera} style={{ margin: '-504px 0px 0px 15px' }} />
-                            <div className={styles.box1} style={{ transform: 'translate(0px, -.1px)' }} />
+                            <div className={styles.box1} style={{ transform: 'translate(.5px, -.5px)', position: 'static' }} />
                             <div className={styles.box2} />
+                            <div style={{ position: 'absolute', border: '.5px solid #000000', width: '52px', height: '52px', borderRadius: '10px', zIndex: '3', transform: 'translate(16.5px, -50.5px)' }} />
                         </div>
                         <div className={styles.cameras} style={{ transform: 'translate(23px, -146px)' }}>
                             <div>

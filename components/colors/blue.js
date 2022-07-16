@@ -2,20 +2,23 @@ import Back from '../../components/ipadBack2';
 import Front from '../ipadFront';
 import styles from '../../styles/ipad.module.css';
 import Sidebar from '../sidebar';
-import Heading from '../heading';
 import Footing from '../footing';
 import { Grid } from 'semantic-ui-react';
+import { useEffect } from 'react';
 
 export default function Blue () {
+
+    useEffect(() => {
+        document.body.style.overflowX = "hidden";
+    return () => {
+        document.body.style.overflowX = "visible";
+        }
+    }, []);
     
     return (
         <>
             <div>
-                <Heading />
-                <Grid>
-                    <Grid.Column>
-                        &nbsp;
-                    </Grid.Column>
+                <Grid style={{ display: 'flex', justifyContent: 'center', transform: 'translate(107px)', position: 'fixed' }}>
                     <Grid.Column style={{ width: '450px', transform: 'translateX(241px)' }}>
                         <div style={{ transform: 'translate(9em, 68px)', position: 'fixed' }}>
                             <div style={{ position: 'relative', zIndex: '1', transform: 'scaleX(0.98)' }}>
@@ -29,11 +32,12 @@ export default function Blue () {
                         </div>
                         <Footing />
                     </Grid.Column>
+                </Grid>
+            </div>
+            <div>
+                <Grid style={{ display: 'flex', justifyContent: 'center', transform: 'translate(560px)' }}>
                     <Grid.Column style={{ transform: 'translate(-24px)' }}>
                         <Sidebar />
-                    </Grid.Column>
-                    <Grid.Column>
-                        &nbsp;
                     </Grid.Column>
                 </Grid>
             </div>

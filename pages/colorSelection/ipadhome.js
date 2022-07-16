@@ -1,20 +1,20 @@
-import Gray from '../../components/colors/gray';
+import Home from '../../components/colors/home';
 import Heading from '../../components/heading';
 import Head from 'next/head';
- 
-function grayipad () {
+
+function home () {
     return (
         <>
             <Head>
-                <title>Space Gray iPad Air</title>
+                <title>iPad Air</title>
                 <meta name="description" content="gray" />
             </Head>
             <Heading />
             <div style={{ display: 'flex', justifyContent: 'center', marginRight: '1298px' }}>
-                <Gray />
+                <Home />
             </div>
         </>
     );
 }
 
-export default grayipad;
+export default home;
