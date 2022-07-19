@@ -1,0 +1,45 @@
+[
+    {
+      "id": "1a8b8863-a859-4d68-b63a-c466e554fd13",
+      "name": "Calorie Intake Calculator",
+      "description": "Calculate Your Recommended Daily Caloric Intake",
+      "mediaUrl": "/images/Calorie.png",
+      "link": "/CalorieIntakeCalculator"
+    }, 
+    {
+      "id": "1a8b8863-a859-4d68-b63a-c466e554fd13",
+      "name": "BMI Calculator",
+      "description": "Calculate Your Body Mass Index",
+      "mediaUrl": "/images/Calc.png",
+      "link": "/BMICalculator"
+    }, 
+    {
+      "id": "1a8b8863-a859-4d68-b63a-c466e554fd13",
+      "name": "Body Fat Calculator",
+      "description": "Calculate Your Body Fat Percentage",
+      "mediaUrl": "/images/BFpercent.png",
+      "link": "/BodyFatCalculator"
+    },
+    {
+      "id": "1a8b8863-a859-4d68-b63a-c466e554fd13",
+      "name": "Loan Calculator",
+      "description": "Calculate Monthly Payment",
+      "mediaUrl": "/images/Loan.png",
+      "link": "/LoanCalculator"
+    }, 
+    {
+      "id": "1a8b8863-a859-4d68-b63a-c466e554fd13",
+      "name": "Compound Interest Calculator",
+      "description": "Calculate Compound Interest",
+      "mediaUrl": "/images/Money.png",
+      "link": "/CompoundInterestCalculator"
+    }, 
+    {
+      "id": "1a8b8863-a859-4d68-b63a-c466e554fd13",
+      "name": "Set Goals",
+      "description": "Set and Track Your Goals",
+      "mediaUrl": "/images/Graph.png",
+      "link": "/goals"
+    }
+  ]
+  

@@ -12,3 +12,9 @@ module.exports = withBundleAnalyzer({
 })
 
 // module.exports = nextConfig
+
+module.exports = {
+  env: {
+    MONGO_SRV: "mongodb+srv://JulianBertalli9:Illatreb96@ipad-purchase.riojt7m.mongodb.net/?retryWrites=true&w=majority"
+  }
+};
