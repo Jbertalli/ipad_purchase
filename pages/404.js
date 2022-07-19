@@ -21,10 +21,10 @@ const NotFound = () => {
             <Container style={{ position: 'static' }}>
                 <div>
                     <div style={{ fontSize: '48px', display: 'flex', justifyContent: 'center', fontFamily: 'Helvetica', fontWeight: '500', lineHeight: '52px', marginTop: '92px' }}>
-                        The page you're looking
+                        The page you are looking
                     </div>
                     <div style={{ fontSize: '48px', display: 'flex', justifyContent: 'center', fontFamily: 'Helvetica', fontWeight: '500', lineHeight: '52px' }}>
-                        for can't be found.
+                        for cannot be found.
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(54px)' }}>
                         <div style={{ border: '1px solid #d6d6d6', padding: '17px 49px 1px 16px', width: '490px', height: '56px', lineHeight: '21px', fontSize: '17px', fontFamily: 'Helvetica', fontWeight: '400', marginBottom: '14px', borderRadius: '4px', color: '#d6d6d6', cursor: 'text' }}>
