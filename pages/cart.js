@@ -186,7 +186,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                             Pay 0% APR for 12 months:
                                         </span>
                                         <span style={{ transform: 'translate(-91px, -20px)', display: 'flex', justifyContent: 'flex-end' }}>
-                                            $6.58/mo.per month
+                                            $6.58/mo.
                                         </span>
                                     </div>
                                     <div style={{ transform: 'translate(79px, -51px)' }}>
@@ -217,7 +217,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                             <div style={{ transform: 'translate(80px, -448px)', fontSize: '17px', fontWeight: '600', lineHeight: '25px' }}>
                                                 <div>Add AppleCare+ for iPad Air (5th generation) for $79.00</div>
                                             </div>
-                                            <div style={{ transform: 'translate(718px, -519px)', position: 'absolute', color: 'rgb(0, 102, 204)', cursor: 'pointer', fontWeight: '400',  fontSize: '17px', lineHeight: '25px' }}>         
+                                            <div style={{ transform: 'translate(718px, -518px)', position: 'absolute', color: 'rgb(0, 102, 204)', cursor: 'pointer', fontWeight: '400',  fontSize: '17px', lineHeight: '25px' }}>         
                                                     <a onClick={() => {setAppleCare(79), setNoAppleCare(true)}} className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>
                                                         Add
                                                     </a>
@@ -237,13 +237,13 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                             </>)}
                                 <div style={{ transform: 'translate(0px, 0px)', fontSize: '17px', fontWeight: '600', lineHeight: '25px' }}>
                                     <div>
-                                        <div style={{ transform: 'translate(-25.5px, -475.9px) scale(0.55)', position: 'fixed' }}>
+                                        <div style={{ transform: 'translate(-25.5px, -475px) scale(0.55)', position: 'fixed' }}>
                                             <div style={{ transform: 'translate(80px, -500px)', border: '2px solid black', width: '30px', height: '30px', borderRadius: '50%' }}>
                                                 <div style={{ transform: 'translate(2.9px, -16px)', width: '20px', height: '1px', border: '1px solid black', borderRadius: '50px' }} />
                                                 <div style={{ transform: 'translate(5.5px, -36px)', width: '14.5px', height: '1px', border: '1px solid black', borderRadius: '50px' }} />
                                             </div>
                                         </div>
-                                        <div style={{ transform: 'translate(80px, -722.9px)' }}>Add free engraving</div>
+                                        <div style={{ transform: 'translate(80px, -722px)' }}>Add free engraving</div>
                                     </div>
                                     <div style={{ transform: 'translate(600.8px, -797.7px)', color: 'rgb(0, 102, 204)', cursor: 'pointer', fontWeight: '400' }}>
                                         <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Add</a>
@@ -254,9 +254,9 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                     <div>
                                         <Icon
                                             name="gift"
-                                            style={{ transform: 'translate(-94.5px, -876px) scale(1.1)', position: 'absolute' }}
+                                            style={{ transform: 'translate(-94.5px, -877px) scale(1.1)', position: 'absolute' }}
                                         />
-                                        <div style={{ transform: 'translate(80px, -900px)', position: 'absolute' }}>Add a gift message</div>
+                                        <div style={{ transform: 'translate(80px, -900.5px)', position: 'absolute' }}>Add a gift message</div>
                                     </div>
                                     <div style={{ transform: 'translate(600.5px, -950px)', color: 'rgb(0, 102, 204)', cursor: 'pointer', fontWeight: '400' }}>
                                         <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Add</a>
