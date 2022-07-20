@@ -339,14 +339,14 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                         Subtotal
                                     </div>
                                     <div style={{ transform: 'translate(723px, -1359px)' }}>
-                                        ${
+                                        {
                                             (
                                                 parseFloat(quantity)
                                                 * (parseFloat(value) 
                                                 + parseFloat(cellValue)
                                                 + parseFloat(appleCare))
-                                            )
-                                        }.00
+                                            ).toLocaleString('en', {style:"currency", currency:"USD"})
+                                        }
                                     </div>
                                 </div>
                                 <div style={{ transform: 'translateY(3px)', fontSize: '17px', fontWeight: '400' }}>
@@ -387,7 +387,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                         Total
                                     </div>
                                     <div style={{ transform: 'translate(692px, -2183px)' }}>
-                                            ${
+                                            {
                                                 (
                                                     parseFloat(quantity)
                                                     * (parseFloat(value)
@@ -395,7 +395,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                     + parseFloat(tax)
                                                     + parseFloat(appleCare)
                                                     + parseFloat(recycling))
-                                                ).toFixed(2)
+                                                ).toLocaleString('en', {style:"currency", currency:"USD"})
                                             }
                                     </div>
                                 </div>
@@ -431,7 +431,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                     <div>
                                         <div>Pay in Full</div>
                                         <div>
-                                            ${
+                                            {
                                                 (
                                                     parseFloat(quantity)
                                                     * (parseFloat(value)
@@ -439,7 +439,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                     + parseFloat(tax)
                                                     + parseFloat(appleCare)
                                                     + parseFloat(recycling))
-                                                ).toFixed(2)
+                                                ).toLocaleString('en', {style:"currency", currency:"USD"})
                                             }
                                         </div>
                                         <Button style={{ transform: 'translateY(41px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
