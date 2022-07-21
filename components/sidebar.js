@@ -153,8 +153,6 @@ export default function Sidebar () {
                                                 <Button
                                                     style={{ width: '197px', height: '103px', color: 'black', background: 'transparent', borderRadius: '8px', border: '.5px solid gray', fontWeight: 'normal', marginBottom: '15px' }}
                                                     onClick={() => {router.push('/colorSelection/grayipad'), setColor(true), setGray('Space Gray'), setColorName('Space Gray')}}
-                                                    // onClick={() => router.push('/colorSelection/grayipad')}
-                                                    // onMouseUp={() => {setColor(true), setGray('Space Gray')}}
                                                 >
                                                     <div className={styles.buttonHover} style={{ transform: 'translate(15px)' }}>
                                                         <pre style={{ height: '30px', width: '30px', borderRadius: '50%', background: 'linear-gradient(to bottom, #343d46, gray)', transform: 'translate(48px, -3px)' }} />

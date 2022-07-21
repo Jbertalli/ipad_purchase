@@ -191,30 +191,32 @@ const NotFound = () => {
                     </Grid.Column>
                 </Grid>
             </div>
-            <div style={{ transform: 'translate(259px, -513px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
-                More ways to shop:<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>&nbsp;Find an Apple Store</a>&nbsp;or<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>&nbsp;other retailer&nbsp;</a> near you. Or call 1-800-MY-APPLE.
-                <div style={{ cursor: 'pointer', width: '980px', transform: 'translate(-518px, 33.5px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
-                    <div>
-                        Copyright © 2022 Apple Inc. All rights reserved.
-                    </div>
-                    <div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Privacy Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                    </div>
-                    <div>
-                        Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                    </div>
-                    <div>
-                        Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                    </div>
-                    <div>
-                        Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                    </div>
-                    <div>
-                        Site Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
-                    <div>
-                        United States
+            <div style={{ transform: 'translate(-644px)', width: '3000px' }}>
+                <div style={{ transform: 'translate(259px, -513px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
+                    More ways to shop:&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>Find an Apple Store</a>&nbsp;or&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>other retailer</a>&nbsp;near you. Or call 1-800-MY-APPLE.
+                    <div style={{ cursor: 'pointer', width: '980px', transform: 'translate(-518px, 33.5px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
+                        <div>
+                            Copyright © 2022 Apple Inc. All rights reserved.
+                        </div>
+                        <div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Privacy Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div>
+                            Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div>
+                            Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div>
+                            Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div>
+                            Site Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div>
+                            United States
+                        </div>
                     </div>
                 </div>
             </div>

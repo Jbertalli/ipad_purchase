@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Container, Divider, Segment, Button, Icon, Item, Grid, Popup } from 'semantic-ui-react';
 import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
+import { useRouter } from 'next/router';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -10,6 +11,8 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
     const [noAppleCare, setNoAppleCare] = useState(false);
     const [quantity, setQuantity] = useState('1');
     const [open, setOpen] = useState(false);
+
+    const router = useRouter();
 
     console.log(quantity);
 
@@ -417,7 +420,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                             }/mo. at 0% APR
                                         </div>
                                     </center>
-                                    <Button style={{ transform: 'translateY(-9px)', width: '300px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', lineHeight: '10px', padding: '12.1px 31px 13.3px 31px' }}>
+                                    <Button onClick={() => router.push('/signin')} style={{ transform: 'translateY(-9px)', width: '300px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', lineHeight: '10px', padding: '12.1px 31px 13.3px 31px' }}>
                                         <div>Check Out with Apple Card</div>
                                         <div>Monthly Installments</div>
                                     </Button>
@@ -442,7 +445,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 ).toLocaleString('en', {style:"currency", currency:"USD"})
                                             }
                                         </div>
-                                        <Button style={{ transform: 'translateY(41px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
+                                        <Button onClick={() => router.push('/signin')} style={{ transform: 'translateY(41px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
                                             <div onClick={() => checkedOut()} style={{ transform: 'translateY(-17.5px)' }}>
                                                 Check Out
                                             </div>
@@ -461,7 +464,6 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                     <Divider style={{ transform: 'translateY(-22px)' }} />
                 </div>
             </Container>
-            
             <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '2570px' }} />       {/*  cover up */}
         </>
     );
