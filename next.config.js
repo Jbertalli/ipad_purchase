@@ -15,7 +15,7 @@ module.exports = withBundleAnalyzer({
 
 module.exports = {
   env: {
-    MONGO_SRV: "mongodb+srv://JulianBertalli9:Illatreb96@ipad-purchase.riojt7m.mongodb.net/?retryWrites=true&w=majority",
+    MONGO_SRV: "mongodb+srv://JulianBertalli:U6YMbB0733DwXmDw@ipad-purchase1.i9igquh.mongodb.net/?retryWrites=true&w=majority",
     JWT_SECRET: "Illatreb96"
   }
 };

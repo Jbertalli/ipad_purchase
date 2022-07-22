@@ -6,25 +6,18 @@ import FocusLock from 'react-focus-lock';
 import catchErrors from '../utils/catchErrors';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
-import handleLogin from '../utils/auth';
+import { handleLogin } from '../utils/auth';
+import Link from 'next/link';
 
 const INITIAL_USER = {
-    name: "", 
-    email: "", 
-    password: ""
-}
-
-const OLD_USER = {
     email: "",
     password: ""
-}
+};
 
-export default function Signin() {
+export default function login() {
     const [user, setUser] = useState(INITIAL_USER);
-    const [oldUser, setOldUser] = useState(OLD_USER);
     const [disabled, setDisabled] = useState(true);
     const [error, setError] = useState('');
-    const [signUpModal, setSignUpModal] = useState(false);
     const [signInModal, setSignInModal] = useState(false);
 
     useEffect(() => {
@@ -40,24 +33,11 @@ export default function Signin() {
     async function handleSubmit(event) {
         event.preventDefault();
         try {
-            const url = `${baseUrl}/api/signup`;
+            const url = `${baseUrl}/api/login`;
             const payload = { ...user };
             const response = await axios.post(url, payload);
             handleLogin(response.data);
-            console.log(user)
-        } catch(error) {
-            catchErrors(error, setError);
-        }
-    }
-
-    async function handleOldSubmit(event) {
-        event.preventDefault();
-        try {
-            const url = `${baseUrl}/api/login`;
-            const payload = { ...oldUser };
-            const response = await axios.post(url, payload);
-            handleLogin(response.data);
-            console.log(oldUser);
+            console.log(user);
         } catch(error) {
             catchErrors(error, setError);
         }
@@ -78,7 +58,7 @@ export default function Signin() {
                         Check out with your Apple ID
                     </div>
                     <div>
-                        <input onClick={() => setSignUpModal(true)} type="search" placeholder="Apple ID" style={{ transform: 'translate(114px, 159px)', width: '328px', fontSize: '17px', height: '44px', lineHeight: '22px', textAlign: 'left', border: '.5px solid #49494950', borderRadius: '6px', paddingLeft: '15px' }} />
+                        <input onClick={() => setSignInModal(true)} type="search" placeholder="Apple ID" style={{ transform: 'translate(114px, 159px)', width: '328px', fontSize: '17px', height: '44px', lineHeight: '22px', textAlign: 'left', border: '.5px solid #49494950', borderRadius: '6px', paddingLeft: '15px' }} />
                         <Icon
                             name="arrow alternate circle right outline"
                             size="big"
@@ -94,75 +74,13 @@ export default function Signin() {
                     <div style={{ transform: 'translate(152px, 1px)', fontSize: '17px', fontWeight: '400', lineHeight: '21px', marginBottom: '33px', textAlign: 'center', width: '284px' }}>
                         Proceed and create an Apple ID later.
                     </div>
-                    <button onClick={() => setSignUpModal(true)} style={{ transform: 'translate(150px, 1px)', fontSize: '17px', fontWeight: '300', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
+                    <button onClick={() => setSignInModal(true)} style={{ transform: 'translate(150px, 1px)', fontSize: '17px', fontWeight: '300', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
                         Continue as Guest
                     </button>
                 </div>
-                <Modal open={signUpModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-285px)', borderRadius: '20px', width: '816px', height: '570px', position: 'fixed' }}>
-                    <div
-                        style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
-                        onClick={() => {setSignUpModal(false), setSignInModal(false)}}
-                    >
-                        <h1 style={{ fontSize: '30px', fontWeight: 'lighter', color: 'gray', transform: 'translate(10px, -5px)' }}>x</h1>
-                    </div>
-                    <center style={{ fontSize: '40px', fontWeight: '600', lineHeight: '44px' }}>
-                        Sign Up
-                    </center>
-                    <div>
-                        <FocusLock>
-                            <Form error={Boolean(error)} onSubmit={handleSubmit}>
-                                <Message
-                                    error
-                                    header="Error"
-                                    content={error}
-                                />
-                                <center>
-                                    <div style={{ transform: 'translate(-220.1px)', fontSize: '17px', fontWeight: '500' }}>Name</div>
-                                    <Form.Input
-                                        placeholder="Name"
-                                        style={{ width: '60%' }}
-                                        name="name"
-                                        value={user.name}
-                                        onChange={handleChange}
-                                    /> 
-                                </center>
-                                <center>
-                                    <div style={{ transform: 'translate(-222px)', fontSize: '17px', fontWeight: '500' }}>Email</div>
-                                    <Form.Input
-                                        placeholder="Email"
-                                        type="email"
-                                        style={{ width: '60%' }}
-                                        name="email"
-                                        value={user.email}
-                                        onChange={handleChange}
-                                    /> 
-                                </center>
-                                <center>
-                                    <div style={{ transform: 'translate(-205.2px)', fontSize: '17px', fontWeight: '500' }}>Password</div>
-                                    <Form.Input
-                                        placeholder="Password"
-                                        type="password"
-                                        style={{ width: '60%' }}
-                                        name="password"
-                                        value={user.password}
-                                        onChange={handleChange}
-                                    /> 
-                                </center>
-                            </Form>
-                        </FocusLock>
-                        <Button disabled={disabled} type="submit" style={{ transform: 'translate(163px, 0px)', fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
-                                Sign Up
-                        </Button>
-                    </div>
-                    <div style={{ background: '#F5F5F7', width: '816px', height: '118px', transform: 'translateY(151.5px)', borderRadius: '0px 0px 19.5px 19.5px', paddingTop: '25px', fontSize: '12px' }}>
-                        <center style={{ transform: 'translateY(25px)', fontSize: '17px', fontWeight: '400', lineHeight: '21px', marginBottom: '33px' }}>
-                            Already have an account?&nbsp;<span style={{ color: '#0070c9', cursor: 'pointer' }}><a onClick={() => {setSignInModal(true), setSignUpModal(false)}} className={styles.bluehovering}>Sign in</a></span>
-                        </center>
-                    </div>
-                </Modal>
                 <Modal open={signInModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-285px)', borderRadius: '20px', width: '816px', height: '570px', position: 'fixed' }}>
                     <div style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
-                        onClick={() => {setSignInModal(false), setSignUpModal(false)}}
+                        onClick={() => setSignInModal(false)}
                     >
                         <h1 style={{ fontSize: '30px', fontWeight: 'lighter', color: 'gray', transform: 'translate(10px, -5px)' }}>x</h1>
                     </div>
@@ -199,15 +117,15 @@ export default function Signin() {
                                         onChange={handleChange}
                                     /> 
                                 </center>
+                                <Button disabled={disabled} type="submit" style={{ transform: 'translate(163px, 0px)', fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
+                                        Sign In
+                                </Button>
                             </Form>
                         </FocusLock>
-                        <Button disabled={disabled} type="submit" style={{ transform: 'translate(163px, 0px)', fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
-                                Sign In
-                        </Button>
                     </div>
                     <div style={{ background: '#F5F5F7', width: '816px', height: '118px', transform: 'translateY(206px)', borderRadius: '0px 0px 19.5px 19.5px', paddingTop: '25px', fontSize: '12px' }}>
                         <center style={{ transform: 'translateY(25px)', fontSize: '17px', fontWeight: '400', lineHeight: '21px', marginBottom: '33px' }}>
-                            Don't have an account?&nbsp;<span style={{ color: '#0070c9', cursor: 'pointer' }}><a onClick={() => {setSignUpModal(true), setSignInModal(false)}} className={styles.bluehovering}>Sign up</a></span>
+                            Don't have an account?&nbsp;<span style={{ color: '#0070c9', cursor: 'pointer' }}><a className={styles.bluehovering}><Link href="/signup">Sign up</Link></a></span>
                         </center>
                     </div>
                 </Modal>

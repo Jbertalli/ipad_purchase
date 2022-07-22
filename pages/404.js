@@ -1,15 +1,34 @@
 import Head from 'next/head';
 import { Container, Divider, Icon, Grid } from 'semantic-ui-react';
 import styles from '../styles/ipad.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const NotFound = () => {
+    const [isDesktop, setDesktop] = useState(false);
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
     return () => {
         document.body.style.overflow = "visible";
         }
+    }, []);
+
+    useEffect(() => {
+        if (window.innerWidth > 1500) {
+            setDesktop(true);
+        } else {
+            setDesktop(false);
+        }
+
+        const updateMedia = () => {
+        if (window.innerWidth > 1500) {
+            setDesktop(true);
+        } else {
+            setDesktop(false);
+        }
+        };
+        window.addEventListener('resize', updateMedia);
+        return () => window.removeEventListener('resize', updateMedia);
     }, []);
 
     return (
@@ -191,10 +210,10 @@ const NotFound = () => {
                     </Grid.Column>
                 </Grid>
             </div>
-            <div style={{ transform: 'translate(-644px)', width: '3000px' }}>
+            {isDesktop ? (<>
                 <div style={{ transform: 'translate(259px, -513px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
-                    More ways to shop:&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>Find an Apple Store</a>&nbsp;or&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>other retailer</a>&nbsp;near you. Or call 1-800-MY-APPLE.
-                    <div style={{ cursor: 'pointer', width: '980px', transform: 'translate(-518px, 33.5px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
+                    <span>More ways to shop:&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>Find an Apple Store</a>&nbsp;or&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>other retailer</a>&nbsp;near you. Or call 1-800-MY-APPLE.</span>
+                    <span style={{ cursor: 'pointer', width: '980px', transform: 'translate(-518px, 33.5px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
                         <div>
                             Copyright © 2022 Apple Inc. All rights reserved.
                         </div>
@@ -217,12 +236,19 @@ const NotFound = () => {
                         <div>
                             United States
                         </div>
-                    </div>
+                    </span>
                 </div>
-            </div>
-            <center>
-                <Divider style={{ width: '980px', transform: 'translate(0px, -520px)' }} />
-            </center>
+                <center>
+                    <Divider style={{ width: '980px', transform: 'translate(0px, -520px)' }} />
+                </center>
+            </>
+            ):(
+            <>
+                <div>
+                    Copyright © 2022 Apple Inc. All rights reserved.
+                </div>
+            </>
+            )}
         </>
     );
 }

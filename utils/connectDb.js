@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
-const connection = {}
+const connection  = {};
 
 async function connectDb() {
     if (connection.isConnected) {
-        console.log("Using existing connection");
+        console.log("Using existing connection", connection.isConnected);
         return;
     }
 
@@ -12,8 +12,9 @@ async function connectDb() {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
-    console.log("DB Connected");
+
     connection.isConnected = db.connections[0].readyState;
+    console.log("DB Connected", connection.isConnected);
 }
 
 export default connectDb;
