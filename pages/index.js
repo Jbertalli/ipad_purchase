@@ -1,3 +1,5 @@
+import React from 'react';
+import axios from 'axios';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -26,4 +28,12 @@ export default function Home() {
       </div>
     </>  
   )
+}
+
+//server-side rendering
+Home.getInitialProps = async () => {
+  const url = 'http://localhost:3010/api/hello';
+  const response = await axios.get(url);
+  return { examples: response.data };
+  //return { hello: 'world'}
 }
