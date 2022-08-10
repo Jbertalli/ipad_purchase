@@ -3,6 +3,9 @@
 # environment variables
 next.config.js
 
+# now.json
+now.json
+
 # dependencies
 /node_modules
 /.pnp
