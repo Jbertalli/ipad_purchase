@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Head from 'next/head';
-import Link from 'next/link';
+import Buy from '../components/buyipad';
 
 export default function Home() {
   return (
@@ -11,22 +11,8 @@ export default function Home() {
         <meta name="description" content="apple, ipad" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Link href="/color">
-          <a>color</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/ipad">
-          <a>iPad</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/buyipad">
-          <a>iPad Colors</a>
-        </Link>
-      </div>
-    </>  
+      <Buy />
+    </>
   )
 }
 
