@@ -21,5 +21,5 @@ Home.getInitialProps = async () => {
   const url = 'http://localhost:3010/api/hello';
   const response = await axios.get(url);
   return { examples: response.data };
-  //return { hello: 'world'}
+  //return { hello: 'world' }
 }
