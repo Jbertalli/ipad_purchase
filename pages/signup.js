@@ -8,6 +8,7 @@ import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
 import Link from 'next/link';
+//import { handleLogout } from '../utils/auth';
 
 const INITIAL_USER = {
     name: "", 
