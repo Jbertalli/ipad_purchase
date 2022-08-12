@@ -7,6 +7,7 @@ import catchErrors from '../utils/catchErrors';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
+import { handleLogout } from '../utils/auth';
 import Link from 'next/link';
 
 const INITIAL_USER = {
