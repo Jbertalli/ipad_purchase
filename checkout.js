@@ -2,6 +2,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 export async function checkout({lineItems}) {
     let stripePromise = null;
+    console.log('checkout');
 
     const getStripe = () => {
         if (!stripePromise) {
@@ -13,7 +14,7 @@ export async function checkout({lineItems}) {
     const stripe = await getStripe();
 
     //function to redirect to checkout
-    await stripe.redirectCheckout({
+    await stripe.redirectToCheckout({
         mode: "payment",
         lineItems,
         successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,

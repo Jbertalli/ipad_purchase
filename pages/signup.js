@@ -10,7 +10,6 @@ import { handleLogin } from '../utils/auth';
 import Link from 'next/link';
 import { handleLogout } from '../utils/auth';
 import { checkout } from '../checkout';
-import { checkout } from '../checkout';
 
 const INITIAL_USER = {
     name: "", 
@@ -59,7 +58,7 @@ export default function signup() {
                     checkout({
                         lineItems: [
                             {
-                                price: "",
+                                price: "price_1LXANZAd33GNgngt1Ni0igfE",
                                 quantity: 1
                             }
                         ]
@@ -67,25 +66,88 @@ export default function signup() {
                 })}>
                     iPad 64GB + WiFi
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXAOeAd33GNgngtTqx8R1sJ",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 64GB + WiFi + AppleCare+
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXARqAd33GNgngtfvoFSTY9",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 128GB + WiFi
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXATCAd33GNgngteXEfjDRa",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 128GB + WiFi + AppleCare+
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXAToAd33GNgngtUUujdBYY",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 64GB + Cellular
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXAUOAd33GNgngtnPPdI2UZ",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 64GB + Cellular + AppleCare+
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXAUzAd33GNgngtaIpf2dLP",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 128GB + Cellular
                 </Button>
-                <Button>
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "price_1LXAVsAd33GNgngtpdIbvYtF",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
                     iPad 128GB + Cellular + AppleCare+
                 </Button>
                 <Button color="red" onClick={handleLogout}>
