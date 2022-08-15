@@ -15,7 +15,7 @@ const INITIAL_USER = {
     password: ""
 };
 
-export default function login() {
+export default function Login() {
     const [user, setUser] = useState(INITIAL_USER);
     const [disabled, setDisabled] = useState(true);
     const [error, setError] = useState('');
@@ -126,7 +126,7 @@ export default function login() {
                     </div>
                     <div style={{ background: '#F5F5F7', width: '816px', height: '118px', transform: 'translateY(206px)', borderRadius: '0px 0px 19.5px 19.5px', paddingTop: '25px', fontSize: '12px' }}>
                         <center style={{ transform: 'translateY(25px)', fontSize: '17px', fontWeight: '400', lineHeight: '21px', marginBottom: '33px' }}>
-                            Don't have an account?&nbsp;<span style={{ color: '#0070c9', cursor: 'pointer' }}><a className={styles.bluehovering}><Link href="/signup">Sign up</Link></a></span>
+                            {`Don't have an account?`}&nbsp;<span style={{ color: '#0070c9', cursor: 'pointer' }}><a className={styles.bluehovering}><Link href="/signup">Sign up</Link></a></span>
                         </center>
                     </div>
                 </Modal>

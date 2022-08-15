@@ -17,7 +17,7 @@ const INITIAL_USER = {
     password: ""
 }
 
-export default function signup() {
+export default function Signup() {
     const [user, setUser] = useState(INITIAL_USER);
     const [disabled, setDisabled] = useState(true);
     const [error, setError] = useState('');
