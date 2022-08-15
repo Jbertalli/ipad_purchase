@@ -9,6 +9,8 @@ import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
 import Link from 'next/link';
 import { handleLogout } from '../utils/auth';
+import { checkout } from '../checkout';
+import { checkout } from '../checkout';
 
 const INITIAL_USER = {
     name: "", 
@@ -53,10 +55,40 @@ export default function signup() {
             </Head>
             { user ? (
             <>
-                <Button>
-                    Pay with Stripe
+                <Button onClick={(() => {
+                    checkout({
+                        lineItems: [
+                            {
+                                price: "",
+                                quantity: 1
+                            }
+                        ]
+                    })
+                })}>
+                    iPad 64GB + WiFi
                 </Button>
-                <Button onClick={handleLogout}>
+                <Button>
+                    iPad 64GB + WiFi + AppleCare+
+                </Button>
+                <Button>
+                    iPad 128GB + WiFi
+                </Button>
+                <Button>
+                    iPad 128GB + WiFi + AppleCare+
+                </Button>
+                <Button>
+                    iPad 64GB + Cellular
+                </Button>
+                <Button>
+                    iPad 64GB + Cellular + AppleCare+
+                </Button>
+                <Button>
+                    iPad 128GB + Cellular
+                </Button>
+                <Button>
+                    iPad 128GB + Cellular + AppleCare+
+                </Button>
+                <Button color="red" onClick={handleLogout}>
                     Logout
                 </Button>
             </>

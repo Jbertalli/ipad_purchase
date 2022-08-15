@@ -18,7 +18,7 @@ export default async (req, res) => {
         if (user) {
             res.status(200).json(user);
         } else {
-            res.status(404).send("No user found")
+            res.status(404).send("No user found");
         }
     } catch(error) {
         res.status(403).send("Invalid token");
