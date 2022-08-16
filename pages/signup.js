@@ -11,6 +11,7 @@ import { handleLogin } from '../utils/auth';
 import Link from 'next/link';
 import { handleLogout } from '../utils/auth';
 import { checkout } from '../checkout';
+import SixWifiAppleCare from '../components/64WifiAppleCare';
 
 const INITIAL_USER = {
     name: "", 
@@ -92,18 +93,7 @@ export default function Signup() {
                         </span>
                     </Button>
                 </Card>
-                <Button onClick={(() => {
-                    checkout({
-                        lineItems: [
-                            {
-                                price: "price_1LXAOeAd33GNgngtTqx8R1sJ",
-                                quantity: 1
-                            }
-                        ]
-                    })
-                })}>
-                    iPad 64GB + WiFi + AppleCare+
-                </Button>
+                <SixWifiAppleCare />
                 <Button onClick={(() => {
                     checkout({
                         lineItems: [
