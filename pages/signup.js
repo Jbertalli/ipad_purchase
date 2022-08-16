@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Divider, Container, Button, Icon, Modal, Form, Message, Card, Icons } from 'semantic-ui-react';
 import styles from '../styles/ipad.module.css';
 import FocusLock from 'react-focus-lock';
@@ -8,14 +7,15 @@ import catchErrors from '../utils/catchErrors';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
-import Link from 'next/link';
 import { handleLogout } from '../utils/auth';
+import Link from 'next/link';
 import { checkout } from '../checkout';
 import SixWifi from '../components/paymentCards.js/64Wifi';
 import SixWifiAppleCare from '../components/paymentCards.js/64WifiAppleCare';
 import OneWifi from '../components/paymentCards.js/128Wifi';
 import OneWifiAppleCare from '../components/paymentCards.js/128WifiAppleCare';
 import SixCell from '../components/paymentCards.js/64Cell';
+import SixCellAppleCare from '../components/paymentCards.js/64CellAppleCare';
 
 const INITIAL_USER = {
     name: "", 
@@ -65,18 +65,7 @@ export default function Signup() {
                 <OneWifi />
                 <OneWifiAppleCare />
                 <SixCell />
-                <Button onClick={(() => {
-                    checkout({
-                        lineItems: [
-                            {
-                                price: "price_1LXAUOAd33GNgngtnPPdI2UZ",
-                                quantity: 1
-                            }
-                        ]
-                    })
-                })}>
-                    iPad 64GB + Cellular + AppleCare+
-                </Button>
+                <SixCellAppleCare />
                 <Button onClick={(() => {
                     checkout({
                         lineItems: [
