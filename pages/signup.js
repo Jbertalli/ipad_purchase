@@ -9,7 +9,6 @@ import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
 import { handleLogout } from '../utils/auth';
 import Link from 'next/link';
-import Payment from '../components/payment';
 
 const INITIAL_USER = {
     name: "", 
@@ -54,7 +53,6 @@ export default function Signup() {
             </Head>
             { user ? (
             <>
-                <Payment />
                 <Button color="red" onClick={handleLogout}>
                     Logout
                 </Button>

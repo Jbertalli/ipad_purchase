@@ -22,7 +22,7 @@ export default function SixCellAppleCare() {
                         checkout({
                             lineItems: [
                                 {
-                                    price: "price_1LXANZAd33GNgngt1Ni0igfE",
+                                    price: "price_1LXAUOAd33GNgngtnPPdI2UZ",
                                     quantity: 1
                                 }
                             ]

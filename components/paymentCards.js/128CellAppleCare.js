@@ -22,7 +22,7 @@ export default function OneCellAppleCare() {
                         checkout({
                             lineItems: [
                                 {
-                                    price: "price_1LXANZAd33GNgngt1Ni0igfE",
+                                    price: "price_1LXAVsAd33GNgngtpdIbvYtF",
                                     quantity: 1
                                 }
                             ]

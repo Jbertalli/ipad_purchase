@@ -22,7 +22,7 @@ export default function Sidebar () {
     const [starlight, setStarlight] = useState('');
     const [storage, setStorage] = useState(false);
     const [sixtyfour, setSixtyfour] = useState('');
-    const [onefiftysix, setOnefiftysix] = useState('');
+    const [onetwentyeight, setOnetwentyeight] = useState('');
     const [connectivity, setConnectivity] = useState(false);
     const [wifi, setWifi] = useState('');
     const [cellular, setCellular] = useState('');
@@ -242,11 +242,11 @@ export default function Sidebar () {
                         { storage ? (<>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <div style={{ fontSize: '24px', fontWeight: '600', paddingBottom: '5px', transform: 'translateY(8px)' }}>
-                                    {`${sixtyfour}`} {`${onefiftysix}`}
+                                    {`${sixtyfour}`} {`${onetwentyeight}`}
                                 </div>
                                 <div
                                     style={{ cursor: 'pointer', color: '#0070c9', transform: 'translate(-16px, 9px)', opacity: '0.8' }}
-                                    onClick={() => {setStorage(false), setSixtyfour(''), setOnefiftysix('')}}
+                                    onClick={() => {setStorage(false), setSixtyfour(''), setOnetwentyeight('')}}
                                 >
                                     <a className={styles.bluehovering}>
                                         Change
@@ -341,9 +341,9 @@ export default function Sidebar () {
                                     <button
                                         className={styles.gbHover1} 
                                         style={{ borderRadius: '10px', border: '.5px solid gray', width: '197px', height: '106px', background: 'transparent', margin: '0em 0em 0em .5em', padding: '15px', lineHeight: '16px' }}
-                                        onClick={() => {setStorage(true), setOnefiftysix('156GB'), setGbName('156GB'), setValue(749.00)}}
+                                        onClick={() => {setStorage(true), setOnetwentyeight('128GB'), setGbName('128GB'), setValue(749.00)}}
                                     >
-                                        <h2 style={{ margin: '0em', fontSize: '29px', color: 'black' }}>156GB</h2>
+                                        <h2 style={{ margin: '0em', fontSize: '29px', color: 'black' }}>128GB</h2>
                                         <div style={{ margin: '0em', transform: 'translate(47px, -32.5px)', fontSize: '12px' }}>1</div>
                                         <div style={{ transform: 'translateY(-14px)', fontSize: '12px' }}>
                                             <div style={{ margin: '0em' }}>
@@ -911,11 +911,12 @@ export default function Sidebar () {
             ):(
             <>
                 <Cart value={value} cellValue={cellValue} appleCare={appleCare} tax={tax} recycling={recycling} bag={bag} setBag={setBag} setValue={setValue} setColor={setColor} setStorage={setStorage} setConnectivity={setConnectivity} setCellValue={setCellValue} setEngraving={setEngraving} setAppleCare={setAppleCare} colorName={colorName} gbName={gbName} connectivityName={connectivityName} />
+                <Payment total={total} gbName={gbName} />
             </>
             )}
-            <div>
-                <Payment total={total} />
-            </div>
+            {/* <div>
+                <Payment total={total} gbName={gbName} />
+            </div> */}
         </>
     );
 }

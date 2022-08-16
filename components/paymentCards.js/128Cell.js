@@ -22,7 +22,7 @@ export default function OneCell() {
                         checkout({
                             lineItems: [
                                 {
-                                    price: "price_1LXANZAd33GNgngt1Ni0igfE",
+                                    price: "price_1LXAUzAd33GNgngtaIpf2dLP",
                                     quantity: 1
                                 }
                             ]

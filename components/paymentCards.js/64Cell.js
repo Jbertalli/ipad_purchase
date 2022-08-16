@@ -22,7 +22,7 @@ export default function SixCell() {
                         checkout({
                             lineItems: [
                                 {
-                                    price: "price_1LXANZAd33GNgngt1Ni0igfE",
+                                    price: "price_1LXAToAd33GNgngtUUujdBYY",
                                     quantity: 1
                                 }
                             ]

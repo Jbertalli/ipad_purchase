@@ -22,7 +22,7 @@ export default function OneWifi() {
                         checkout({
                             lineItems: [
                                 {
-                                    price: "price_1LXANZAd33GNgngt1Ni0igfE",
+                                    price: "price_1LXARqAd33GNgngtfvoFSTY9",
                                     quantity: 1
                                 }
                             ]

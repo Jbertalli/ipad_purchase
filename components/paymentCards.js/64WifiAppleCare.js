@@ -22,7 +22,7 @@ export default function SixWifiAppleCare() {
                         checkout({
                             lineItems: [
                                 {
-                                    price: "price_1LXANZAd33GNgngt1Ni0igfE",
+                                    price: "price_1LXAOeAd33GNgngtTqx8R1sJ",
                                     quantity: 1
                                 }
                             ]
