@@ -9,14 +9,7 @@ import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
 import { handleLogout } from '../utils/auth';
 import Link from 'next/link';
-import SixWifi from '../components/paymentCards.js/64Wifi';
-import SixWifiAppleCare from '../components/paymentCards.js/64WifiAppleCare';
-import OneWifi from '../components/paymentCards.js/128Wifi';
-import OneWifiAppleCare from '../components/paymentCards.js/128WifiAppleCare';
-import SixCell from '../components/paymentCards.js/64Cell';
-import SixCellAppleCare from '../components/paymentCards.js/64CellAppleCare';
-import OneCell from '../components/paymentCards.js/128Cell';
-import OneCellAppleCare from '../components/paymentCards.js/128CellAppleCare';
+import Payment from '../components/payment';
 
 const INITIAL_USER = {
     name: "", 
@@ -61,14 +54,7 @@ export default function Signup() {
             </Head>
             { user ? (
             <>
-                <SixWifi />
-                <SixWifiAppleCare />
-                <OneWifi />
-                <OneWifiAppleCare />
-                <SixCell />
-                <SixCellAppleCare />
-                <OneCell />
-                <OneCellAppleCare />
+                <Payment />
                 <Button color="red" onClick={handleLogout}>
                     Logout
                 </Button>
