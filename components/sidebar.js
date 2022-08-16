@@ -6,6 +6,7 @@ import styles from '../styles/ipad.module.css';
 import Cart from '../pages/cart';
 import geo2zip from 'geo2zip';
 import NamedColor from '../components/namedColor';
+import Payment from '../components/payment';
 
 let zipArray = [];
 
@@ -108,6 +109,13 @@ export default function Sidebar () {
     useEffect(() => {
         init();
     }, []);
+
+    let total = 
+    (parseFloat(value)
+    + parseFloat(cellValue)
+    + parseFloat(tax)
+    + parseFloat(appleCare)
+    + parseFloat(recycling)).toFixed(2)
 
     return (
         <>
@@ -905,6 +913,9 @@ export default function Sidebar () {
                 <Cart value={value} cellValue={cellValue} appleCare={appleCare} tax={tax} recycling={recycling} bag={bag} setBag={setBag} setValue={setValue} setColor={setColor} setStorage={setStorage} setConnectivity={setConnectivity} setCellValue={setCellValue} setEngraving={setEngraving} setAppleCare={setAppleCare} colorName={colorName} gbName={gbName} connectivityName={connectivityName} />
             </>
             )}
+            <div>
+                <Payment total={total} />
+            </div>
         </>
     );
 }

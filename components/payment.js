@@ -7,7 +7,7 @@ import SixCellAppleCare from '../components/paymentCards.js/64CellAppleCare';
 import OneCell from '../components/paymentCards.js/128Cell';
 import OneCellAppleCare from '../components/paymentCards.js/128CellAppleCare';
 
-export default function Payment () {
+export default function Payment ({ total }) {
     return (
         <>
             <SixWifi />
@@ -18,6 +18,9 @@ export default function Payment () {
             <SixCellAppleCare />
             <OneCell />
             <OneCellAppleCare />
+            <div>
+                { total }
+            </div>
         </>
     );
 }
