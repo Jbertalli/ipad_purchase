@@ -13,6 +13,7 @@ import { handleLogout } from '../utils/auth';
 import { checkout } from '../checkout';
 import SixWifi from '../components/paymentCards.js/64Wifi';
 import SixWifiAppleCare from '../components/paymentCards.js/64WifiAppleCare';
+import OneWifi from '../components/paymentCards.js/128Wifi';
 
 const INITIAL_USER = {
     name: "", 
@@ -59,18 +60,7 @@ export default function Signup() {
             <>
                 <SixWifi />
                 <SixWifiAppleCare />
-                <Button onClick={(() => {
-                    checkout({
-                        lineItems: [
-                            {
-                                price: "price_1LXARqAd33GNgngtfvoFSTY9",
-                                quantity: 1
-                            }
-                        ]
-                    })
-                })}>
-                    iPad 128GB + WiFi
-                </Button>
+                <OneWifi />
                 <Button onClick={(() => {
                     checkout({
                         lineItems: [
