@@ -9,7 +9,6 @@ import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
 import { handleLogout } from '../utils/auth';
 import Link from 'next/link';
-import { checkout } from '../checkout';
 import SixWifi from '../components/paymentCards.js/64Wifi';
 import SixWifiAppleCare from '../components/paymentCards.js/64WifiAppleCare';
 import OneWifi from '../components/paymentCards.js/128Wifi';

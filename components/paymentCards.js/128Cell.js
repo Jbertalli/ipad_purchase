@@ -1,4 +1,4 @@
-import checkout from '../../checkout';
+import { checkout } from '../../checkout';
 import { Card, Icon, Button } from 'semantic-ui-react';
 import Image from 'next/image';
 
