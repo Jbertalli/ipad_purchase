@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Container, Divider, Segment, Button, Icon, Item, Grid, Popup } from 'semantic-ui-react';
+import { Container, Divider, Segment, Button, Icon, Item, Grid, Popup, Modal } from 'semantic-ui-react';
 import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
 import { useRouter } from 'next/router';
+import Payment from '../components/payment';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function Cart ({ value, cellValue, appleCare, tax, recycling, setBag, setValue, setColor, setStorage, setConnectivity, setCellValue, setEngraving, setAppleCare, colorName, gbName, connectivityName }) {
+export default function Cart ({ value, cellValue, appleCare, tax, recycling, setBag, setValue, setColor, setStorage, setConnectivity, setCellValue, setEngraving, setAppleCare, colorName, gbName, connectivityName, total }) {
     const [noAppleCare, setNoAppleCare] = useState(false);
     const [quantity, setQuantity] = useState('1');
     const [open, setOpen] = useState(false);
+    const [paymentModal, setPaymentModal] = useState(false);
 
     const router = useRouter();
 
@@ -445,11 +447,23 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 ).toLocaleString('en', {style:"currency", currency:"USD"})
                                             }
                                         </div>
-                                        <Button onClick={() => router.push('/signup')} style={{ transform: 'translateY(41px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
+                                        {/* <Button onClick={() => router.push('/signup')} style={{ transform: 'translateY(41px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}> */}
+                                        <Button onClick={() => setPaymentModal(true)} style={{ transform: 'translateY(56px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
                                             <div onClick={() => checkedOut()} style={{ transform: 'translateY(-17.5px)' }}>
                                                 Check Out
                                             </div>
                                         </Button>
+                                        <Modal open={paymentModal} dimmer="blurring" style={{ transform: 'translate(42px, -450px)', borderRadius: '20px', width: '816px', height: '950px', position: 'fixed' }}>
+                                            <div
+                                                style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
+                                                onClick={() => setPaymentModal(false)}
+                                            >
+                                                <h1 style={{ fontSize: '30px', fontWeight: 'lighter', color: 'gray', transform: 'translate(10px, -5px)' }}>x</h1>
+                                            </div>
+                                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                                <Payment total={total} gbName={gbName} />
+                                            </div>
+                                        </Modal>
                                     </div>
                                 </Item>
                             </div>

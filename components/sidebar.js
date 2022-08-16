@@ -910,8 +910,8 @@ export default function Sidebar () {
                 </Item>
             ):(
             <>
-                <Cart value={value} cellValue={cellValue} appleCare={appleCare} tax={tax} recycling={recycling} bag={bag} setBag={setBag} setValue={setValue} setColor={setColor} setStorage={setStorage} setConnectivity={setConnectivity} setCellValue={setCellValue} setEngraving={setEngraving} setAppleCare={setAppleCare} colorName={colorName} gbName={gbName} connectivityName={connectivityName} />
-                <Payment total={total} gbName={gbName} />
+                <Cart value={value} cellValue={cellValue} appleCare={appleCare} tax={tax} recycling={recycling} bag={bag} setBag={setBag} setValue={setValue} setColor={setColor} setStorage={setStorage} setConnectivity={setConnectivity} setCellValue={setCellValue} setEngraving={setEngraving} setAppleCare={setAppleCare} colorName={colorName} gbName={gbName} connectivityName={connectivityName} total={total} />
+                {/* <Payment total={total} gbName={gbName} /> */}
             </>
             )}
             {/* <div>
