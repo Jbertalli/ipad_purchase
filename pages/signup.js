@@ -15,6 +15,7 @@ import SixWifi from '../components/paymentCards.js/64Wifi';
 import SixWifiAppleCare from '../components/paymentCards.js/64WifiAppleCare';
 import OneWifi from '../components/paymentCards.js/128Wifi';
 import OneWifiAppleCare from '../components/paymentCards.js/128WifiAppleCare';
+import SixCell from '../components/paymentCards.js/64Cell';
 
 const INITIAL_USER = {
     name: "", 
@@ -63,18 +64,7 @@ export default function Signup() {
                 <SixWifiAppleCare />
                 <OneWifi />
                 <OneWifiAppleCare />
-                <Button onClick={(() => {
-                    checkout({
-                        lineItems: [
-                            {
-                                price: "price_1LXAToAd33GNgngtUUujdBYY",
-                                quantity: 1
-                            }
-                        ]
-                    })
-                })}>
-                    iPad 64GB + Cellular
-                </Button>
+                <SixCell />
                 <Button onClick={(() => {
                     checkout({
                         lineItems: [
