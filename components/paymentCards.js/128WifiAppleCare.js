@@ -1,47 +1,59 @@
 import { checkout } from '../../checkout';
-import { Card, Icon, Button } from 'semantic-ui-react';
+import { Icon, Button, Divider } from 'semantic-ui-react';
 import Image from 'next/image';
 
 export default function OneWifiAppleCare() {
     return (
         <>
-            <Card style={{ padding: '15px', borderRadius: '10px', fontFamily: 'SF Pro' }}>
-                <Image src="/images/ipad 2.png" alt="ipad" width={300} height={195} />
-                <b style={{ margin: '10px 0px 10px 0px' }}>iPad 128GB + WiFi + AppleCare+</b>
-                <p style={{ lineHeight: '15px' }}>
-                    The new iPad Air has an all-screen design, 10.9″ display, M1 chip, Center Stage, works with Apple Pencil and Magic Keyboard, and comes in five colors.
-                </p>
-                <b>
-                    $903.41
-                </b>
-                <b style={{ fontWeight: '500', marginBottom: '10px' }}>
-                    <Icon name="check" /> In stock
-                </b>
-                <Button
-                    onClick={(() => {
-                        checkout({
-                            lineItems: [
-                                {
-                                    price: "price_1LXATCAd33GNgngteXEfjDRa",
-                                    quantity: 1
-                                }
-                            ]
-                        })
-                    })}
-                    style={{ 
-                        borderRadius: '50px 50px 50px 50px',
-                        background: 'black', 
-                        color: 'white', 
-                        fontWeight: '100', 
-                        fontSize: '17px',
-                        padding: '10px',
-                    }}
-                >
-                    <span>
-                        Buy with <Icon name="apple" />Pay
-                    </span>
-                </Button>
-            </Card>
+            <div style={{ padding: '15px', borderRadius: '10px', fontFamily: 'SF Pro' }}>
+                <div style={{ transform: 'translate(45px)' }}>
+                    <Image src="/images/ipad 2.png" alt="ipad" width={700} height={460} />
+                </div>
+                <div style={{ transform: 'translateY(70px)', position: 'relative', zIndex: '10' }}>
+                    <div style={{ fontSize: '40px', fontWeight: '500', paddingLeft: '56px' }}>iPad Air WiFi 128<span style={{ fontSize: '25px' }}>GB</span> with AppleCare+</div>
+                    <Divider />
+                    <p style={{ fontSize: '17px', padding: '0px 55px 0px 55px' }}>
+                        The new iPad Air has an all-screen design, 10.9″ display, M1 chip, Center Stage, works with Apple Pencil and Magic Keyboard, and comes in five colors.
+                    </p>
+                    <div>
+                        <b style={{ fontSize: '24px', padding: '0px 55px 58px 55px' }}>
+                        $903.41
+                        </b>
+                    </div>
+                    <div style={{ padding: '5px 55px 0px 51px' }}>
+                        <b style={{ fontSize: '17px', fontWeight: '500' }}>
+                            <Icon name="check" size="large" /> In stock
+                        </b>
+                    </div>
+                    <center>
+                        <Button
+                            onClick={(() => {
+                                checkout({
+                                    lineItems: [
+                                        {
+                                            price: "price_1LXATCAd33GNgngteXEfjDRa",
+                                            quantity: 1
+                                        }
+                                    ]
+                                })
+                            })}
+                            style={{ 
+                                borderRadius: '50px 50px 50px 50px',
+                                background: 'black', 
+                                color: 'white', 
+                                fontWeight: '100', 
+                                fontSize: '24px',
+                                padding: '15px 100px 15px 100px'
+                            }}
+                        >
+                            <span>
+                                Buy with <Icon name="apple" />Pay
+                            </span>
+                        </Button>
+                    </center>
+                </div>
+            </div>
+            <div style={{ background: '#F5F5F7', width: '816px', height: '310px', transform: 'translate(0px, 524px)', borderRadius: '0px 0px 19.5px 19.5px', position: 'absolute' }} />
         </>
     );
 }
