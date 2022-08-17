@@ -452,7 +452,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 Check Out
                                             </div>
                                         </Button>
-                                        <Modal open={paymentModal} dimmer="blurring" style={{ transform: 'translate(42px, -490px)', borderRadius: '20px', width: '816px', height: '870px', position: 'fixed' }}>
+                                        <Modal open={paymentModal} dimmer="blurring" style={{ transform: 'translate(42px, -490px)', borderRadius: '20px', width: '816px', height: '900px', position: 'fixed' }}>
                                             <div
                                                 style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
                                                 onClick={() => setPaymentModal(false)}

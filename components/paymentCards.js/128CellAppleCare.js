@@ -12,7 +12,7 @@ export default function OneCellAppleCare() {
                 <div style={{ transform: 'translateY(70px)', position: 'relative', zIndex: '10' }}>
                     <div style={{ fontSize: '40px', fontWeight: '500', paddingLeft: '56px' }}>iPad Air Cellular 128<span style={{ fontSize: '25px' }}>GB</span> with AppleCare+</div>
                     <Divider />
-                    <p style={{ fontSize: '17px', padding: '0px 55px 0px 55px' }}>
+                    <p style={{ fontSize: '17px', padding: '0px 55px 20px 55px' }}>
                         The new iPad Air has an all-screen design, 10.9″ display, M1 chip, Center Stage, works with Apple Pencil and Magic Keyboard, and comes in five colors.
                     </p>
                     <div>
@@ -20,7 +20,7 @@ export default function OneCellAppleCare() {
                         $1,066.35
                         </b>
                     </div>
-                    <div style={{ padding: '5px 55px 0px 51px' }}>
+                    <div style={{ padding: '5px 55px 20px 51px' }}>
                         <b style={{ fontSize: '17px', fontWeight: '500' }}>
                             <Icon name="check" size="large" /> In stock
                         </b>
@@ -53,7 +53,7 @@ export default function OneCellAppleCare() {
                     </center>
                 </div>
             </div>
-            <div style={{ background: '#F5F5F7', width: '816px', height: '310px', transform: 'translate(0px, 524px)', borderRadius: '0px 0px 19.5px 19.5px', position: 'absolute' }} />
+            <div style={{ background: '#F5F5F7', width: '816px', height: '340px', transform: 'translate(0px, 524px)', borderRadius: '0px 0px 19.5px 19.5px', position: 'absolute' }} />
         </>
     );
 }
