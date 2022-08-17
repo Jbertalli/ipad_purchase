@@ -422,8 +422,8 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                             }/mo. at 0% APR
                                         </div>
                                     </center>
-                                    <Button onClick={() => router.push('/signup')} style={{ transform: 'translateY(-9px)', width: '300px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', lineHeight: '10px', padding: '12.1px 31px 13.3px 31px' }}>
-                                        <div>Check Out with Apple Card</div>
+                                    <Button onClick={() => setPaymentModal(true)} style={{ transform: 'translateY(-9px)', width: '300px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', lineHeight: '10px', padding: '12.1px 31px 13.3px 31px' }}>
+                                        <div onClick={() => checkedOut()}>Check Out with Apple Card</div>
                                         <div>Monthly Installments</div>
                                     </Button>
                                     <center style={{ transform: 'translateY(-26px)', lineHeight: '10px' }}>
@@ -447,7 +447,6 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 ).toLocaleString('en', {style:"currency", currency:"USD"})
                                             }
                                         </div>
-                                        {/* <Button onClick={() => router.push('/signup')} style={{ transform: 'translateY(41px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}> */}
                                         <Button onClick={() => setPaymentModal(true)} style={{ transform: 'translateY(56px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
                                             <div onClick={() => checkedOut()} style={{ transform: 'translateY(-17.5px)' }}>
                                                 Check Out
