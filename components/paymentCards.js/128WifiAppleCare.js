@@ -17,7 +17,7 @@ export default function OneWifiAppleCare() {
                     </p>
                     <div>
                         <b style={{ fontSize: '24px', padding: '0px 55px 58px 55px' }}>
-                        $903.41
+                            $903.41
                         </b>
                     </div>
                     <div style={{ padding: '5px 55px 20px 51px' }}>

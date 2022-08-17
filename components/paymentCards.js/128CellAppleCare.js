@@ -17,7 +17,7 @@ export default function OneCellAppleCare() {
                     </p>
                     <div>
                         <b style={{ fontSize: '24px', padding: '0px 55px 58px 55px' }}>
-                        $1,066.35
+                            $1,066.35
                         </b>
                     </div>
                     <div style={{ padding: '5px 55px 20px 51px' }}>
