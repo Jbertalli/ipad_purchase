@@ -53,6 +53,7 @@ export default function SixCellAppleCare() {
                     </center>
                 </div>
             </div>
+            <div style={{ background: '#F5F5F7', width: '816px', height: '310px', transform: 'translate(0px, 524px)', borderRadius: '0px 0px 19.5px 19.5px', position: 'absolute' }} />
         </>
     );
 }
