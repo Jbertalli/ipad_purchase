@@ -51,7 +51,7 @@ export default function Signup() {
                 <title>Sign Up - Secure Checkout</title>
                 <meta name="description" content="apple, ipad" />
             </Head>
-            { user ? (
+            { !user ? (
             <>
                 <Button color="red" onClick={handleLogout}>
                     Logout
@@ -88,7 +88,7 @@ export default function Signup() {
                             Continue as Guest
                         </button>
                     </div>
-                    <Modal open={signUpModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-285px)', borderRadius: '20px', width: '816px', height: '570px', position: 'fixed' }}>
+                    <Modal open={signUpModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-285px)', borderRadius: '20px', width: '816px', height: '470px', position: 'fixed' }}>
                         <div
                             style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
                             onClick={() => setSignUpModal(false)}
@@ -107,7 +107,7 @@ export default function Signup() {
                                         content={error}
                                     />
                                     <center>
-                                        <div style={{ transform: 'translate(-220.1px)', fontSize: '17px', fontWeight: '500' }}>Name</div>
+                                        <div style={{ transform: 'translate(-220.1px)', fontSize: '17px', fontWeight: '500', paddingBottom: '5px' }}>Name</div>
                                         <Form.Input
                                             placeholder="Name"
                                             style={{ width: '60%' }}
@@ -117,7 +117,7 @@ export default function Signup() {
                                         /> 
                                     </center>
                                     <center>
-                                        <div style={{ transform: 'translate(-222px)', fontSize: '17px', fontWeight: '500' }}>Email</div>
+                                        <div style={{ transform: 'translate(-222px)', fontSize: '17px', fontWeight: '500', padding: '30px 0px 5px 0px' }}>Email</div>
                                         <Form.Input
                                             placeholder="Email"
                                             type="email"
@@ -128,7 +128,7 @@ export default function Signup() {
                                         /> 
                                     </center>
                                     <center>
-                                        <div style={{ transform: 'translate(-205.2px)', fontSize: '17px', fontWeight: '500' }}>Password</div>
+                                        <div style={{ transform: 'translate(-205.2px)', fontSize: '17px', fontWeight: '500', padding: '30px 0px 5px 0px' }}>Password</div>
                                         <Form.Input
                                             placeholder="Password"
                                             type="password"
@@ -138,13 +138,15 @@ export default function Signup() {
                                             onChange={handleChange}
                                         /> 
                                     </center>
-                                    <Button disabled={disabled} type="submit" style={{ transform: 'translate(163px, 0px)', fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
-                                        Sign Up
-                                    </Button>
+                                    <div style={{ paddingTop: '30px' }}>
+                                        <Button disabled={disabled} type="submit" style={{ transform: 'translate(163px, 0px)', fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
+                                            Sign Up
+                                        </Button>
+                                    </div>
                                 </Form>
                             </FocusLock>
                         </div>
-                        <div style={{ background: '#F5F5F7', width: '816px', height: '118px', transform: 'translateY(151.5px)', borderRadius: '0px 0px 19.5px 19.5px', paddingTop: '25px', fontSize: '12px' }}>
+                        <div style={{ background: '#F5F5F7', width: '816px', height: '118px', transform: 'translateY(46px)', borderRadius: '0px 0px 19.5px 19.5px', paddingTop: '25px', fontSize: '12px' }}>
                             <center style={{ transform: 'translateY(25px)', fontSize: '17px', fontWeight: '400', lineHeight: '21px', marginBottom: '33px' }}>
                                 Already have an account?&nbsp;<span style={{ color: '#0070c9', cursor: 'pointer' }}><a className={styles.bluehovering}><Link href="/login">Sign in</Link></a></span>
                             </center>
