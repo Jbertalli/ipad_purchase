@@ -5,10 +5,13 @@ import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
 import { useRouter } from 'next/router';
 import Payment from '../components/payment';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import baseUrl from '../utils/baseUrl';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function Cart ({ value, cellValue, appleCare, tax, recycling, setBag, setValue, setColor, setStorage, setConnectivity, setCellValue, setEngraving, setAppleCare, colorName, gbName, connectivityName, total }) {
+export default function Cart ({ value, cellValue, appleCare, tax, recycling, setBag, setValue, setColor, setStorage, setConnectivity, setCellValue, setEngraving, setAppleCare, colorName, gbName, connectivityName, total, products }) {
     const [noAppleCare, setNoAppleCare] = useState(false);
     const [quantity, setQuantity] = useState('1');
     const [open, setOpen] = useState(false);
@@ -17,6 +20,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
     const router = useRouter();
 
     console.log(quantity);
+    console.log(products);
 
     useEffect(() => {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut))
@@ -480,4 +484,15 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
             <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '2570px' }} />       {/*  cover up */}
         </>
     );
+}
+
+Cart.getInitialProps = async ctx => {
+    const { token } = parseCookies(ctx);
+    if (!token) {
+        return { products: [] };
+    }
+    const url = `${baseUrl}/api/cart`;
+    const payload = { headers: { Authorization: token } };
+    const response = await axios.get(url, payload);
+    return { products: response.data };
 }
