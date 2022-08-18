@@ -20,7 +20,6 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
     const router = useRouter();
 
     console.log(quantity);
-    console.log(products);
 
     useEffect(() => {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut))
