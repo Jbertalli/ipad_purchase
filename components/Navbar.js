@@ -5,9 +5,11 @@ import { Menu, Container, Icon, Sticky, Modal, Divider } from 'semantic-ui-react
 import Logo from '../components/apple_logo2';
 import styles from '../styles/ipad.module.css';
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
     const [isDesktop, setDesktop] = useState(false);
     const [menuModal, setMenuModal] = useState(false);
+
+    console.log(user);
 
     useEffect(() => {
         if (window.innerWidth > 832) {
