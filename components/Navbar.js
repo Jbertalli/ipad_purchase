@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Menu, Container, Icon, Sticky, Modal, Divider } from 'semantic-ui-react';
+import { Menu, Container, Icon, Sticky, Modal, Divider, Dropdown } from 'semantic-ui-react';
 import Logo from '../components/apple_logo2';
 import styles from '../styles/ipad.module.css';
+import { handleLogout } from '../utils/auth';
 
 const Navbar = ({ user }) => {
     const [isDesktop, setDesktop] = useState(false);
@@ -127,6 +128,17 @@ const Navbar = ({ user }) => {
                                         />
                                     </Menu.Item>
                                 </Link>
+                                <Menu.Item>
+                                    <Dropdown text='Authentication' simple style={{ color: 'white' }}>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item href='/signup'><strong>Signup</strong></Dropdown.Item>
+                                            <Dropdown.Divider />
+                                            <Dropdown.Item href='/login'><strong>Login</strong></Dropdown.Item>
+                                            <Dropdown.Divider />
+                                            <Dropdown.Item onClick={handleLogout} href='/'><strong>Logout</strong></Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </Menu.Item> 
                             </Container>
                         </Menu>
                     </Sticky>
