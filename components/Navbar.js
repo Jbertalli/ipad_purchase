@@ -133,6 +133,7 @@ const Navbar = ({ user }) => {
                                         <Dropdown.Menu>
                                             {user ? (
                                                 <>
+                                                    <Dropdown.Item><strong>{user.name}</strong></Dropdown.Item>
                                                     <Dropdown.Item onClick={handleLogout}><strong>Logout</strong></Dropdown.Item>
                                                 </>
                                             ) : (
