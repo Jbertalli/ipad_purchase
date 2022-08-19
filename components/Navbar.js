@@ -131,11 +131,17 @@ const Navbar = ({ user }) => {
                                 <Menu.Item>
                                     <Dropdown text='Authentication' simple style={{ color: 'white' }}>
                                         <Dropdown.Menu>
-                                            <Dropdown.Item href='/signup'><strong>Signup</strong></Dropdown.Item>
-                                            <Dropdown.Divider />
-                                            <Dropdown.Item href='/login'><strong>Login</strong></Dropdown.Item>
-                                            <Dropdown.Divider />
-                                            <Dropdown.Item onClick={handleLogout} href='/'><strong>Logout</strong></Dropdown.Item>
+                                            {user ? (
+                                                <>
+                                                    <Dropdown.Item onClick={handleLogout}><strong>Logout</strong></Dropdown.Item>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Dropdown.Item href='/signup'><strong>Signup</strong></Dropdown.Item>
+                                                    <Dropdown.Divider />
+                                                    <Dropdown.Item href='/login'><strong>Login</strong></Dropdown.Item>
+                                                </>
+                                            )}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </Menu.Item> 
