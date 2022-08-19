@@ -57,71 +57,71 @@ const Navbar = ({ user }) => {
                                 fontFamily: 'SF Pro Text'
                         }}>
                             <Container style={{ transform: 'translateX(40px)', opacity: '0.8' }}>
-                                <Link href="/">
-                                    <Menu.Item>
+                                <Link href="/" passHref>
+                                    <Menu.Item active={isActive("/")}>
                                         <div style={{ cursor: 'pointer' }}>
                                             <Logo />
                                         </div>
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         Store
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         Mac
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         iPad
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         iPhone
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         Watch
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         AirPods
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         TV & Home
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         Only on Apple
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         Accessories
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }} active={isActive("/")}>
                                         Support
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em', transform: 'scale(1.2)' }} active={isActive("/")}>
                                         <Icon
                                             name="search"
                                         />
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em', transform: 'scale(1.3)' }}>
                                         <Icon
                                             name="suitcase"
@@ -137,9 +137,9 @@ const Navbar = ({ user }) => {
                                                 </>
                                             ) : (
                                                 <>
-                                                    <Dropdown.Item href='/signup'><strong>Signup</strong></Dropdown.Item>
+                                                    <Dropdown.Item href='/signup' active={isActive("/signup")}><strong>Signup</strong></Dropdown.Item>
                                                     <Dropdown.Divider />
-                                                    <Dropdown.Item href='/login'><strong>Login</strong></Dropdown.Item>
+                                                    <Dropdown.Item href='/login' active={isActive("/login")}><strong>Login</strong></Dropdown.Item>
                                                 </>
                                             )}
                                         </Dropdown.Menu>
@@ -202,61 +202,61 @@ const Navbar = ({ user }) => {
                                         </div>
                                         <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
                                         <Container  style={{ color: '#f5f5f7', fontWeight: '100', lineHeight: '14.6px', fontSize: '17px', width: '584px', cursor: 'pointer', padding: '0px 23px 0px 23px' }}>
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     Store
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     Mac
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     iPad
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     iPhone
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     Watch
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     AirPods
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     TV & Home
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     Only on Apple
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     Accessories
                                                 </div>
                                             </Link>
                                             <Divider style={{ background: '#f5f5f7', opacity: '0.3' }} />
-                                            <Link href="/">
+                                            <Link href="/" passHref>
                                                 <div>
                                                     Support
                                                 </div>
@@ -264,14 +264,14 @@ const Navbar = ({ user }) => {
                                         </Container>
                                     </div>
                                 </Modal>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item>
                                         <div style={{ cursor: 'pointer', transform: 'scale(1.1) translateY(-3px)' }}>
                                             <Logo />
                                         </div>
                                     </Menu.Item>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/" passHref>
                                     <Menu.Item style={{ color: '#F5F5F7', transform: 'scale(1.1) translateY(-1.5px)' }}>
                                         <Icon
                                             name="suitcase"

@@ -18,8 +18,9 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
+    //protected route
     if (!token) {
-      const isProtectedRoute = ctx.pathname === '/account';
+      const isProtectedRoute = ctx.pathname === '/account' || ctx.pathname === '/cart';
       if (isProtectedRoute) {
         redirectUser(ctx, '/login');
       }
