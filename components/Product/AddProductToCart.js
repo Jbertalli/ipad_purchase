@@ -20,7 +20,7 @@ function AddProductToCart({ user, productId }) {
         }
     }, [success]);
 
-    async function handleAddProductTOCart() {
+    async function handleAddProductToCart() {
         try {
             const url = `${baseUrl}/api/cart`;
             const payload = { quantity, productId };
@@ -45,7 +45,7 @@ function AddProductToCart({ user, productId }) {
                 } :
                 user ? {
                     content: 'Add to Cart',
-                    onClick: handleAddProductTOCart
+                    onClick: handleAddProductToCart
                 } : {
                     content: 'Sign up to Purchase',
                     onClick: () => router.push('/signup')

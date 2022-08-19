@@ -5,7 +5,7 @@ import ProductSummary from '../components/Product/ProductSummary';
 function Product({ product, user }) {
     return (
         <>
-            {/* <ProductSummary user={user} {...product} /> */}
+            <ProductSummary user={user} {...product} />
         </>
     );
 }

@@ -10,7 +10,7 @@ import OneCellAppleCare from '../components/paymentCards.js/128CellAppleCare';
 export default function Payment ({ total, gbName }) {
 
     console.log(total);
-    console.log(gbName);
+    // console.log(gbName);
 
     let totaled;
 

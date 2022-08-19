@@ -2,7 +2,10 @@ import Home from '../../components/colors/home';
 import Heading from '../../components/heading';
 import Head from 'next/head';
 
-function home () {
+function home ({ user }) {
+
+    console.log(user);
+
     return (
         <>
             <Head>
