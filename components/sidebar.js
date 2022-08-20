@@ -849,22 +849,6 @@ export default function Sidebar () {
                                 </Grid.Column>
                             </Grid>
                         </div>
-                        {/* 0.08624374 = calculated tax rate according to Apple website */}
-                        {/* <div>
-                            { (value === 599) ? (<>
-                                <div>Subtotal ${value + cellValue + appleCare}.00</div>
-                            </>
-                            ):(
-                            <>
-                                <div>Subtotal ${value + cellValue + appleCare}.00</div>
-                            </>
-                            )}
-                            <div>Shipping        FREE</div>
-                            <div>Estimated Tax   ${tax}</div>         
-                            <div>Recycling Fee ${recycling}.00</div>
-                            <Divider />
-                            <div>
-                                Total $*/}
                                 {
                                     console.log("total:",
                                         (parseFloat(value)
@@ -874,49 +858,16 @@ export default function Sidebar () {
                                         + parseFloat(recycling)).toFixed(2)
                                     )
                                  }
-                            {/*</div>
-                        </div>  */}
-                        {/* dates */}
-                        {/* <h1 style={{ transform: 'translateY(150px)', color: 'blue' }}>
-                            <div>
-                                { (day < 31) ? (<>
-                                    { pickup }
-                                </>
-                                ):(
-                                <>
-                                    { nextMonthPickup }
-                                </>
-                                )} 
-                            </div>
-                            <div>
-                                { (day1 < 25) ? (<>
-                                    { pickup1 }
-                                </>
-                                ):(
-                                <>
-                                    { (day1 > 24 && day1 < 32) ? (<>
-                                        { unevenMonths}
-                                    </>
-                                    ):(
-                                    <>
-                                        { nextMonthPickup1 }
-                                    </>
-                                    )}
-                                </>
-                                )}
-                            </div>
-                        </h1> */}
                     </div>
                 </Item>
             ):(
             <>
-                <Cart value={value} cellValue={cellValue} appleCare={appleCare} tax={tax} recycling={recycling} bag={bag} setBag={setBag} setValue={setValue} setColor={setColor} setStorage={setStorage} setConnectivity={setConnectivity} setCellValue={setCellValue} setEngraving={setEngraving} setAppleCare={setAppleCare} colorName={colorName} gbName={gbName} connectivityName={connectivityName} total={total} />
+                <div>
+                    <Cart value={value} cellValue={cellValue} appleCare={appleCare} tax={tax} recycling={recycling} bag={bag} setBag={setBag} setValue={setValue} setColor={setColor} setStorage={setStorage} setConnectivity={setConnectivity} setCellValue={setCellValue} setEngraving={setEngraving} setAppleCare={setAppleCare} colorName={colorName} gbName={gbName} connectivityName={connectivityName} total={total} />
+                </div>
                 {/* <Payment total={total} gbName={gbName} /> */}
             </>
             )}
-            {/* <div>
-                <Payment total={total} gbName={gbName} />
-            </div> */}
         </>
     );
 }
