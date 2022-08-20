@@ -17,7 +17,7 @@ export default function OneWifiAppleCare() {
                         The new iPad Air has an all-screen design, 10.9″ display, M1 chip, Center Stage, works with Apple Pencil and Magic Keyboard, and comes in five colors.
                     </p>
                     <div style={{ padding: '5px 55px 20px 51px', transform: 'translateY(-10px)' }}>
-                        <div style={{ fontSize: '17px', fontWeight: '500' }}>
+                        <div style={{ fontSize: '17px', fontWeight: '500', cursor: 'default' }}>
                             <div style={{ transform: 'translate(17.5px, 1px)' }}>
                                 <Check />
                             </div>
@@ -63,7 +63,7 @@ export default function OneWifiAppleCare() {
                                 fontWeight: '100', 
                                 fontSize: '24px',
                                 padding: '15px 100px 15px 100px',
-                                transform: 'translateY(-100px)'
+                                transform: 'translateY(-105px)'
                             }}
                         >
                             <span>
