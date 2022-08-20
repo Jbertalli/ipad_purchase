@@ -480,7 +480,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                     <Divider style={{ transform: 'translateY(-22px)' }} />
                 </div>
             </Container>
-            <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '2570px' }} />       {/*  cover up */}
+            <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '3570px' }} />       {/*  cover up */}
         </>
     );
 }
