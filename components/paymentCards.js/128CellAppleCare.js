@@ -24,9 +24,9 @@ export default function OneCellAppleCare() {
                             <div style={{ color: '#0070c9', transform: 'translate(34px, -27.8px)' }}>
                                 In stock
                             </div>
-                            <div style={{ position: 'absolute', transform: 'translate(356px, -45.8px)', color: '#0070c9' }}>
+                            <div style={{ position: 'absolute', transform: 'translate(277px, -45.8px)', color: '#0070c9' }}>
                                 <Icon name="lock" />
-                                Secure Checkout
+                                Secure Checkout with Stripe
                             </div>
                         </div>
                     </div>
