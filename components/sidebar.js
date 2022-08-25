@@ -6,6 +6,7 @@ import styles from '../styles/ipad.module.css';
 import Cart from '../pages/cart';
 import NamedColor from '../components/namedColor';
 import Payment from '../components/payment';
+import Zip from '../components/zip';
 
 export default function Sidebar () {
     const [storageModal, setStorageModal] = useState(false);
@@ -729,7 +730,7 @@ export default function Sidebar () {
                                                 />
                                             </div>
                                             <div style={{ transform: 'translate(28px, -9px)', width: '220px' }}>Order today. Delivers to <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>
-                                                91351
+                                                <Zip />
                                             </a>
                                                 <b style={{ fontWeight: '600'}}>&nbsp;
                                                     {/* Jul 13 - Jul 20 */}
