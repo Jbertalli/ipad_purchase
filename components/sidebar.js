@@ -4,7 +4,6 @@ import { Divider, Icon, Modal, Grid, Button, Item } from 'semantic-ui-react';
 import Back from '../components/ipadBack';
 import styles from '../styles/ipad.module.css';
 import Cart from '../pages/cart';
-import geo2zip from 'geo2zip';
 import NamedColor from '../components/namedColor';
 import Payment from '../components/payment';
 
@@ -86,29 +85,6 @@ export default function Sidebar () {
     // console.log("pickup1", pickup1);
     // console.log("nextMonthPickup1", nextMonthPickup1);
     // console.log("unevenMonths", unevenMonths);
-
-    function init() {
-        navigator.geolocation.getCurrentPosition(placeMap);
-    }
-
-    let placeMap = async function(data) {
-        // console.dir(data.coords.latitude);
-        // console.dir(data.coords.longitude);
-        let location = {
-            latitude: data.coords.latitude,
-            longitude: data.coords.longitude
-        };
-        let closestZip = await geo2zip(location);
-        console.log(closestZip[0]);
-        // zipArray.unshift(closestZip);
-        // console.log(zipArray[0][0]);
-    }
-
-    // console.log(zipArray);
-
-    useEffect(() => {
-        init();
-    }, []);
 
     let total = 
     (parseFloat(value)
