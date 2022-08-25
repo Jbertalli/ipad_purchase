@@ -9,6 +9,9 @@ import { parseCookies } from 'nookies';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import Zip from '../components/zip'
+import State from '../components/state';
+import StateAbbr from '../components/state_abbr';
+import City from '../components/city';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -483,6 +486,9 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
             </Container>
             <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '3570px' }} />       {/*  cover up */}
             <Zip />
+            <State />
+            <StateAbbr />
+            <City />
         </>
     );
 }
