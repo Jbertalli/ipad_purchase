@@ -9,7 +9,6 @@ import { parseCookies } from 'nookies';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import Zip from '../components/zip'
-import State from '../components/state';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 
@@ -388,7 +387,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                     </div>
                                 </div>
                                 <div style={{ transform: 'translateY(1px)', fontSize: '17px', fontWeight: '400' }}>
-                                    <div style={{ transform: 'translate(54px, -1895px)' }}>CA recycling fee <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Learn more</a></div>
+                                    <div style={{ transform: 'translate(54px, -1895px)' }}><StateAbbr /> recycling fee <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Learn more</a></div>
                                     <div style={{ transform: 'translate(587px, -1955px)' }}>
                                         $4.00
                                     </div>
@@ -485,9 +484,6 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                 </div>
             </Container>
             <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '3570px' }} />       {/*  cover up */}
-            <Zip />
-            <State />
-            <StateAbbr />
             <City />
         </>
     );

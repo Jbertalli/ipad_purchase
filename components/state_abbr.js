@@ -28,9 +28,9 @@ function StateAbbr() {
     // console.log(zipCode.zipcode);
 
     return (
-        <div>
+        <span>
             {zipCode.state_abbr}
-        </div>
+        </span>
     );
 }
 
