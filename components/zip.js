@@ -28,9 +28,9 @@ function Zip() {
     // console.log(zipCode.zipcode);
 
     return (
-        <div>
+        <span>
             {zipCode.zipcode}
-        </div>
+        </span>
     );
 }
 

@@ -285,7 +285,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 style={{ transform: 'translate(36px, -2px) scale(3.2)', color: 'black' }}
                                             />
                                         </div>
-                                        <div style={{ transform: 'translate(409px, -1047px)', width: '220px' }}>Order today. Delivers to <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>91351</a>
+                                        <div style={{ transform: 'translate(409px, -1047px)', width: '220px' }}>Order today. Delivers to <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}><Zip /></a>
                                             <b style={{ fontWeight: '600'}}>&nbsp;
                                                 {/* Jul 13 - Jul 20 - Free */}
                                                 <span>
@@ -379,7 +379,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                     />} 
                                             style={{ background: '#e8e8ed', fontSize: '14px', fontWeight: '400', lineHeight: '18px', borderRadius: '10px' }}
                                         />
-                                        <div>Estimated tax for:&nbsp;<a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>91351</a></div>
+                                        <div>Estimated tax for:&nbsp;<a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}><Zip /></a></div>
                                     </div>
                                     <div style={{ transform: 'translate(681px, -105px)', lineHeight: '60px' }}>
                                         ${
