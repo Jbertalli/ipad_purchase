@@ -7,6 +7,7 @@ import Cart from '../pages/cart';
 import NamedColor from '../components/namedColor';
 import Payment from '../components/payment';
 import Zip from '../components/zip';
+import City from '../components/city';
 
 export default function Sidebar () {
     const [storageModal, setStorageModal] = useState(false);
@@ -784,7 +785,7 @@ export default function Sidebar () {
                                                         </>
                                                         )} 
                                                     </span>
-                                                </b> at <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Apple Valencia Town Center</a>
+                                                </b> at <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Apple <City /></a>
                                             </div>
                                         </div>
                                     </div>
