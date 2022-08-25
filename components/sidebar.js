@@ -7,8 +7,6 @@ import Cart from '../pages/cart';
 import NamedColor from '../components/namedColor';
 import Payment from '../components/payment';
 
-let zipArray = [];
-
 export default function Sidebar () {
     const [storageModal, setStorageModal] = useState(false);
     const [connectivityModal, setConnectivityModal] = useState(false);
