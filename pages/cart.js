@@ -8,6 +8,7 @@ import Payment from '../components/payment';
 import { parseCookies } from 'nookies';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
+import Zip from '../components/zip'
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -481,6 +482,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                 </div>
             </Container>
             <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '3570px' }} />       {/*  cover up */}
+            <Zip />
         </>
     );
 }

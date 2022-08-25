@@ -29,7 +29,7 @@ function Zip() {
 
     return (
         <div>
-            <h1>{zipCode.zipcode}</h1>
+            {zipCode.zipcode}
         </div>
     );
 }
