@@ -338,7 +338,7 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                     </>
                                                     )} 
                                                 </span>
-                                            </b> at <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Apple Valencia Town Center</a>
+                                            </b> at <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>Apple <City /></a>
                                         </div>
                                     </div>
                                 </div>
@@ -484,7 +484,6 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                 </div>
             </Container>
             <div style={{ transform: 'translate(-200px, -4500px)', zIndex: '10', background: 'white', width: '550px', height: '3570px' }} />       {/*  cover up */}
-            <City />
         </>
     );
 }
