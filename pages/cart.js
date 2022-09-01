@@ -284,7 +284,9 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 style={{ transform: 'translate(36px, -2px) scale(3.2)', color: 'black' }}
                                             />
                                         </div>
-                                        <div style={{ transform: 'translate(409px, -1047px)', width: '220px' }}>Order today. Delivers to <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}><Zip /></a>
+                                        <div style={{ transform: 'translate(409px, -1047px)', width: '220px' }}>Order today. Delivers to <a className={styles.bluehovering} style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}>
+                                            <Zip />
+                                        </a>
                                             <b style={{ fontWeight: '600'}}>&nbsp;
                                                 {/* Jul 13 - Jul 20 - Free */}
                                                 <span>
