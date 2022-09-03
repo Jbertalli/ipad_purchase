@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## GIF
+## Demo
 <img src="public/images/ipad_recording.gif" width="500">
 
 ## Technologies
