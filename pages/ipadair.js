@@ -3,7 +3,7 @@ import Back from '../components/ipadBack2';
 import styles from '../styles/ipad.module.css';
 import { Sticky } from 'semantic-ui-react';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Air () {
 
@@ -12,6 +12,24 @@ export default function Air () {
     return () => {
         document.body.style.overflow = "visible";
         }
+    }, []);
+
+    useEffect(() => {
+        if (window.innerWidth > 832) {
+            
+        } else {
+            
+        }
+
+        const updateMedia = () => {
+        if (window.innerWidth > 832) {
+            
+        } else {
+            
+        }
+        };
+        window.addEventListener('resize', updateMedia);
+        return () => window.removeEventListener('resize', updateMedia);
     }, []);
 
     return (
