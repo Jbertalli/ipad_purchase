@@ -7,6 +7,7 @@ const NotFound = () => {
     const [isDesktop, setDesktop] = useState(false);
     const [fontSize, setFontSize] = useState('48px');
     const [transY, setTransY] = useState('203px');
+    const [transform, setTransform] = useState('translate(-4px, -538px)');
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
@@ -20,10 +21,12 @@ const NotFound = () => {
             setDesktop(true);
             setFontSize('48px');
             setTransY('203px');
+            setTransform('translate(-4px, -538px)');
         } else {
             setDesktop(false);
             setFontSize('30px');
             setTransY('270px');
+            setTransform('translate(-150px, -468px)');
         }
 
         const updateMedia = () => {
@@ -31,10 +34,12 @@ const NotFound = () => {
             setDesktop(true);
             setFontSize('48px');
             setTransY('203px');
+            setTransform('translate(-4px, -538px)');
         } else {
             setDesktop(false);
             setFontSize('30px');
             setTransY('270px');
+            setTransform('translate(-150px, -468px)');
         }
         };
         window.addEventListener('resize', updateMedia);
@@ -72,21 +77,19 @@ const NotFound = () => {
                     </div>
                 </div>
             </Container>
-            
-                <div style={{ height: '795px', width: '100%', background: '#f5f5f7', position: 'static', zIndex: '-1', transform: `translateY(${transY})` }} />
-                {/* <div style={{ position: 'static', zIndex: '1', transform: 'translate(-4px, -538px)', cursor: 'pointer', fontSize: '12px', fontWeight: '400', textAlign: 'left', fontFamily: 'Helvetica', color: '#424245', display: 'flex', justifyContent: 'center', marginLeft: '-145px' }}> */}
-                <div style={{ position: 'static', zIndex: '1', transform: 'translate(-150px, -468px)', cursor: 'pointer', fontSize: '12px', fontWeight: '400', textAlign: 'left', fontFamily: 'Helvetica', color: '#424245', display: 'flex', justifyContent: 'center', marginLeft: '-145px' }}>
-                    <div style={{ transform: 'translate(128px, -34px)'}}>
-                        <Icon
-                            name="apple"
-                            style={{ transform: 'scale(1.3) translateY(-1px)' }}
-                        />
-                        <Icon
-                            name="angle right"
-                            style={{ transform: 'scale(1.4, 2) translate(2px, -1.7px)', opacity: '0.2'}}
-                        />
-                        <span style={{ fontWeight: '100', fontSize: '12px'}}>&nbsp;&nbsp;Page Not Found</span>  
-                    </div>
+            <div style={{ height: '795px', width: '100%', background: '#f5f5f7', position: 'static', zIndex: '-1', transform: `translateY(${transY})` }} />
+            <div style={{ position: 'static', zIndex: '1', transform: `${transform}`, cursor: 'pointer', fontSize: '12px', fontWeight: '400', textAlign: 'left', fontFamily: 'Helvetica', color: '#424245', display: 'flex', justifyContent: 'center', marginLeft: '-145px' }}>
+                <div style={{ transform: 'translate(128px, -34px)'}}>
+                    <Icon
+                        name="apple"
+                        style={{ transform: 'scale(1.3) translateY(-1px)' }}
+                    />
+                    <Icon
+                        name="angle right"
+                        style={{ transform: 'scale(1.4, 2) translate(2px, -1.7px)', opacity: '0.2'}}
+                    />
+                    <span style={{ fontWeight: '100', fontSize: '12px'}}>&nbsp;&nbsp;Page Not Found</span>  
+                </div>
                 {isDesktop ? (
                 <>
                     <Grid>
