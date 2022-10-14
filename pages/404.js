@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 const NotFound = () => {
     const [isDesktop, setDesktop] = useState(false);
     const [fontSize, setFontSize] = useState('48px');
+    const [transY, setTransY] = useState('203px');
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
@@ -18,18 +19,22 @@ const NotFound = () => {
         if (window.innerWidth > 1500) {
             setDesktop(true);
             setFontSize('48px');
+            setTransY('203px');
         } else {
             setDesktop(false);
             setFontSize('30px');
+            setTransY('270px');
         }
 
         const updateMedia = () => {
         if (window.innerWidth > 1500) {
             setDesktop(true);
             setFontSize('48px');
+            setTransY('203px');
         } else {
             setDesktop(false);
             setFontSize('30px');
+            setTransY('270px');
         }
         };
         window.addEventListener('resize', updateMedia);
@@ -68,8 +73,7 @@ const NotFound = () => {
                 </div>
             </Container>
             
-                {/* <div style={{ height: '795px', width: '100%', background: '#f5f5f7', position: 'static', zIndex: '-1', transform: 'translateY(203px)' }} /> */}
-                <div style={{ height: '795px', width: '100%', background: '#f5f5f7', position: 'static', zIndex: '-1', transform: 'translateY(270px)' }} />
+                <div style={{ height: '795px', width: '100%', background: '#f5f5f7', position: 'static', zIndex: '-1', transform: `translateY(${transY})` }} />
                 {/* <div style={{ position: 'static', zIndex: '1', transform: 'translate(-4px, -538px)', cursor: 'pointer', fontSize: '12px', fontWeight: '400', textAlign: 'left', fontFamily: 'Helvetica', color: '#424245', display: 'flex', justifyContent: 'center', marginLeft: '-145px' }}> */}
                 <div style={{ position: 'static', zIndex: '1', transform: 'translate(-150px, -468px)', cursor: 'pointer', fontSize: '12px', fontWeight: '400', textAlign: 'left', fontFamily: 'Helvetica', color: '#424245', display: 'flex', justifyContent: 'center', marginLeft: '-145px' }}>
                     <div style={{ transform: 'translate(128px, -34px)'}}>
