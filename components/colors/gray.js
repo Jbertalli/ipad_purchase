@@ -37,7 +37,7 @@ export default function Gray () {
             <div>
                 <Grid style={{ display: 'flex', justifyContent: 'center', transform: 'translate(560px)' }}>
                     <Grid.Column style={{ transform: 'translate(-24px)' }}>
-                        <Sidebar/>
+                        <Sidebar />
                     </Grid.Column>
                 </Grid>
             </div>
