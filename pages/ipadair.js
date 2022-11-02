@@ -14,23 +14,23 @@ export default function Air () {
         }
     }, []);
 
-    useEffect(() => {
-        if (window.innerWidth > 832) {
+    // useEffect(() => {
+    //     if (window.innerWidth > 832) {
             
-        } else {
+    //     } else {
             
-        }
+    //     }
 
-        const updateMedia = () => {
-        if (window.innerWidth > 832) {
+    //     const updateMedia = () => {
+    //     if (window.innerWidth > 832) {
             
-        } else {
+    //     } else {
             
-        }
-        };
-        window.addEventListener('resize', updateMedia);
-        return () => window.removeEventListener('resize', updateMedia);
-    }, []);
+    //     }
+    //     };
+    //     window.addEventListener('resize', updateMedia);
+    //     return () => window.removeEventListener('resize', updateMedia);
+    // }, []);
 
     return (
         <>
@@ -75,7 +75,6 @@ export default function Air () {
                 </div>
                 <div style={{ transform: 'translate(50px, 0px) scaleX(2)', display: 'flex', justifyContent: 'center' }}>
                     <div style={{ position: 'relative', zIndex: '2', transform: 'translate(219.5px, 2770px)'}}>
-                        {/* <div className={styles.frame} style={{ background: 'linear-gradient(to bottom, #a7adba, #343d46)', position: 'relative', zIndex: '1', transform: 'translate(-200px, -3075px) rotate(-90deg) perspective(500px) rotateY(80deg) scale(0.7)' }}> */}
                         <div className={styles.frame} style={{ background: 'linear-gradient(to bottom, #a7adba, #343d46)', position: 'relative', zIndex: '1', transform: 'translate(-200px, -3070.4px) rotate(-90deg) perspective(1000px) rotateY(80deg) scale(0.7, 0.822)' }}>
                             <div style={{ transform: 'translate(-301px, 419.7px)' }}>
                                 <Back />
@@ -85,12 +84,6 @@ export default function Air () {
                     </div>
                 </div>
             </div>
-            {/* <div style={{ transform: 'translateY(600px)', fontSize: '50px', fontWeight: 'lighter', marginBottom: '9px' }}>
-                { time }
-            </div>
-            <div style={{ transform: 'translateY(600px)', fontSize: '13px', fontWeight: 'normal' }}>
-                { today }
-            </div> */}
         </>
     );
 }
