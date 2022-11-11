@@ -675,10 +675,10 @@
 }
 
 .bagButton {
-   animation: ripple 1500ms infinite;
+   animation: ripple1 1500ms infinite;
 }
 
-@keyframes ripple {
+@keyframes ripple1 {
    0% {
        /* box-shadow: 0 0 0 0px #0066CC30, 0 0 0 0px #fff
        0 0 0 0px #0066CC30, 0 0 0 0px #fff,
@@ -690,5 +690,24 @@
        box-shadow: 0 0 0 5px #0066CC30, 0 0 0 15px rgba(255, 255, 255, 0),
        0 0 0 10px #0066CC30, 0 0 0 20px rgba(255, 255, 255, 0),
        0 0 0 12.5px #0066CC30, 0 0 0 22.5px rgba(255, 255, 255, 0);
+   }
+}
+
+.checkoutButton {
+   animation: ripple2 1500ms infinite;
+}
+
+@keyframes ripple2 {
+   0% {
+       /* box-shadow: 0 0 0 0px #0066CC30, 0 0 0 0px #fff
+       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
+       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
+       0 0 0 0px #0066CC30, 0 0 0 0px #fff; */
+   }
+
+   50% {
+       box-shadow: 0 0 0 5px #11111120, 0 0 0 15px rgba(255, 255, 255, 0),
+       0 0 0 10px #11111120, 0 0 0 20px rgba(255, 255, 255, 0),
+       0 0 0 12.5px #11111120, 0 0 0 22.5px rgba(255, 255, 255, 0);
    }
 }
