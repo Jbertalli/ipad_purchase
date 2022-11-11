@@ -430,10 +430,10 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                             }/mo. at 0% APR
                                         </div>
                                     </center>
-                                    <Button onClick={() => setPaymentModal(true)} style={{ transform: 'translateY(-9px)', width: '300px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', lineHeight: '10px', padding: '12.1px 31px 13.3px 31px' }}>
+                                    <button onClick={() => setPaymentModal(true)} className={styles.bagButton} style={{ transform: 'translateY(-9px)', width: '300px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', lineHeight: '10px', padding: '12.1px 31px 13.3px 31px', border: '0px solid transparent' }}>
                                         <div onClick={() => checkedOut()}>Check Out with Apple Card</div>
                                         <div>Monthly Installments</div>
-                                    </Button>
+                                    </button>
                                     <center style={{ transform: 'translateY(-26px)', lineHeight: '10px' }}>
                                         <div>$0.00 due today, which includes</div>
                                         <div>applicable full-price items, down</div>
@@ -455,11 +455,11 @@ export default function Cart ({ value, cellValue, appleCare, tax, recycling, set
                                                 ).toLocaleString('en', {style:"currency", currency:"USD"})
                                             }
                                         </div>
-                                        <Button onClick={() => setPaymentModal(true)} style={{ transform: 'translateY(56px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px' }}>
-                                            <div onClick={() => checkedOut()} style={{ transform: 'translateY(-17.5px)' }}>
+                                        <button onClick={() => setPaymentModal(true)} className={styles.bagButton} style={{ transform: 'translateY(56px)', width: '300px', height: '55px', background: 'rgb(0, 113, 227)', color: 'white', borderRadius: '12px', fontSize: '17px', fontWeight: '400', padding: '18px 31px 18px 31px', marginLeft: '8px', border: '0px solid transparent' }}>
+                                            <div onClick={() => checkedOut()} style={{ transform: 'translateY(-13.3px)' }}>
                                                 Check Out
                                             </div>
-                                        </Button>
+                                        </button>
                                         <Modal open={paymentModal} dimmer="blurring" style={{ transform: 'translate(42px, -490px)', borderRadius: '20px', width: '816px', height: '1000px', position: 'fixed' }}>
                                             <div
                                                 style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
