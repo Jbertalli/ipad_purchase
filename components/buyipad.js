@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Flower from '../components/ipad_flower';
-import styles from '../styles/ipad.module.css';
-import { Grid, Message } from 'semantic-ui-react';
 import Link from 'next/link';
+import Flower from '../components/ipad_flower';
+import { Grid } from 'semantic-ui-react';
 import { useEffect } from 'react';
+import styles from '../styles/ipad.module.css';
 
 export default function Buy () {
 
@@ -26,17 +26,6 @@ export default function Buy () {
                     <div style={{ background: 'black', width: '100%', height: '829px', position: 'relative', zIndex: '0', cursor: 'pointer' }} />
                 </Link>
             </div>
-            {/* <Message style={{ cursor: 'pointer', color: 'black', background: 'white', position: 'absolute', zIndex: '100', transform: 'translate(1vw, -62vh)', padding: '10px' }}>
-                <center>
-                    Click Buy Button
-                </center>
-                <center>
-                    or anywhere on background
-                </center>
-                <center>
-                    to Continue
-                </center>
-            </Message> */}
             <Grid style={{ display: 'flex', justifyContent: 'center', transform: 'translate(-757px)' }}>
                 <Grid.Column width={8} style={{ display: 'flex', justifyContent: 'center', marginLeft: '13px', position: 'fixed' }}>
                     <div style={{ background: 'black', width: '200px', height: '230px', transform: 'translate(380px, -540px)', color: 'white', fontFamily: 'Helvetica', position: 'relative', zIndex: '2' }}>
@@ -57,10 +46,12 @@ export default function Buy () {
                                 From $599
                             </div>
                             <Link href="/colorSelection/ipadhome">   
-                                <button style={{ borderRadius: '50px', border: 'transparent', padding: '8px 16px 8px 16px', background: '#0066CC', color: 'white', marginBottom: '9px', marginTop: '7px', fontWeight: '200px', fontSize: '17px', cursor: 'pointer' }}>
-                                    <a>Buy</a>
+                                <button className={styles.button} style={{ borderRadius: '50px', border: 'transparent', padding: '8px 16px 8px 16px', background: '#0066CC', color: 'white', marginBottom: '9px', marginTop: '7px', fontWeight: '200px', fontSize: '17px', cursor: 'pointer' }}>
+                                    <a>
+                                        Buy
+                                    </a>
                                 </button>    
-                            </Link>    
+                            </Link> 
                             <div className={styles.bluehovering} style={{ color: '#0066CC', fontSize: '17px', fontWeight: '500', lineHeight: '25px', cursor: 'pointer' }}>
                                 Learn more {'>'}
                             </div>
