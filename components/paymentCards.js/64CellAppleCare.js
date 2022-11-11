@@ -2,6 +2,7 @@ import { checkout } from '../../checkout';
 import { Icon, Button, Divider } from 'semantic-ui-react';
 import Image from 'next/image';
 import Check from '../check';
+import styles from '../../styles/ipad.module.css';
 
 export default function SixCellAppleCare() {
     return (
@@ -45,7 +46,7 @@ export default function SixCellAppleCare() {
                         <Divider />
                     </div>
                     <center>
-                        <Button
+                        <button
                             onClick={(() => {
                                 checkout({
                                     lineItems: [
@@ -56,11 +57,14 @@ export default function SixCellAppleCare() {
                                     ]
                                 })
                             })}
+                            className={styles.checkoutButton}
                             style={{ 
                                 borderRadius: '50px 50px 50px 50px',
+                                border: '0px solid transparent',
                                 background: 'black', 
                                 color: 'white', 
                                 fontWeight: '100', 
+                                fontFamily: 'Lato',
                                 fontSize: '24px',
                                 padding: '15px 100px 15px 100px',
                                 transform: 'translateY(-105px)'
@@ -69,7 +73,7 @@ export default function SixCellAppleCare() {
                             <span>
                                 Buy with <Icon name="apple" style={{ transform: 'scale(0.85) translateX(-6px)' }} /><div style={{ position: 'absolute', transform: 'translate(116px, -24.1px)' }}>Pay</div>
                             </span>
-                        </Button>
+                        </button>
                     </center>
                 </div>
             </div>
