@@ -55,7 +55,7 @@ export default function Air () {
                                 Tech Specs
                             </span>
                             <Link href="/colorSelection/ipadhome">
-                                <button href='/colorSelection/ipadhome' style={{ background: 'rgb(0, 113, 227)', padding: '2px 11px 2px 11px', border: '0px', borderRadius: '50px', transform: 'translateY(-2px)' }}>
+                                <button className={styles.button} href='/colorSelection/ipadhome' style={{ background: 'rgb(0, 113, 227)', padding: '2px 11px 2px 11px', border: '0px', borderRadius: '50px', transform: 'translateY(-2px)' }}>
                                     <a>Buy</a>
                                 </button>
                             </Link>
