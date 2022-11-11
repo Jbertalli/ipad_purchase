@@ -789,11 +789,23 @@ export default function Sidebar () {
                                             </div>
                                         </div>
                                     </div>
-                                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                        <button onClick={() => setBag(true)} style={{ transform: 'translate(0px, -91px)', margin: '3em 0em -3.7em 0em', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '80vw', height: '36px', fontSize: '17px' }}>
-                                            Add to Bag
-                                        </button>
-                                    </div>
+                                    {(color && storage && connectivity && engraving) ? (
+                                    <>
+                                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                            <button className={styles.bagButton} onClick={() => setBag(true)} style={{ transform: 'translate(0px, -91px)', margin: '3em 0em -3.7em 0em', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '80vw', height: '36px', fontSize: '17px' }}>
+                                                Add to Bag
+                                            </button>
+                                        </div>
+                                    </>
+                                    ):(
+                                    <>
+                                        <div className={styles.button} style={{ display: 'flex', justifyContent: 'center' }}>
+                                            <button onClick={() => setBag(true)} style={{ transform: 'translate(0px, -91px)', margin: '3em 0em -3.7em 0em', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '80vw', height: '36px', fontSize: '17px' }}>
+                                                Add to Bag
+                                            </button>
+                                        </div>
+                                    </>
+                                    )}
                                 </div>
                             </>
                             ):(
