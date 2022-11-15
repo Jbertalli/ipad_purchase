@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { Divider, Container, Button, Icon, Modal, Form, Message, Card, Icons } from 'semantic-ui-react';
+import { Divider, Container, Button, Icon, Modal, Form, Message, Checkbox, Card, Icons } from 'semantic-ui-react';
 import styles from '../styles/ipad.module.css';
 import FocusLock from 'react-focus-lock';
 import catchErrors from '../utils/catchErrors';
@@ -90,7 +90,7 @@ export default function Signup() {
                                 <Icon
                                     name="arrow alternate circle right outline"
                                     size="big"
-                                    style={{ color: '#49494960', transform: 'translate(-14px, 168px)'}}
+                                    style={{ color: '#49494960', transform: 'translate(-14px, 168px)' }}
                                 />
                             </div>
                         </div>
@@ -169,7 +169,7 @@ export default function Signup() {
                         </div>
                     </div>
                     <div style={{ transform: 'translateY(417px)', position: 'absolute', height: '132px', width: '100%', background: '#f5f5f7', zIndex: '-1' }} />
-                    <div style={{ display: 'flex', justifyContent: 'center'}}>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <div style={{ transform: 'translate(1010px, 432px)' }}>
                             <div style={{ fontSize: '12px', fontWeight: '400', color: '#6e6e73', width: '3000px' }}>
                                 The Apple Online Store uses industry-standard encryption to protect the confidentiality of the information you submit. Learn more about our Security Policy.
@@ -207,8 +207,8 @@ export default function Signup() {
                 </>
                 ):(
                 <>
-                    <Container style={{ position: 'relative', zIndex: '100' }}>
-                        <div style={{ transform: 'translateY(130px)', fontSize: '30px', fontWeight: '600', lineHeight: '44px', paddingTop: '34px', display: 'flex', justifyContent: 'center' }}>
+                    <Container style={{ position: 'relative', zIndex: '100', transform: 'translateY(-113px)' }}>
+                        <div style={{ transform: 'translateY(150px)', fontSize: '30px', fontWeight: '600', lineHeight: '44px', paddingTop: '34px', display: 'flex', justifyContent: 'center' }}>
                             Sign up for Apple Store
                         </div>
                         <div>
@@ -217,7 +217,7 @@ export default function Signup() {
                                 <Icon
                                     name="arrow alternate circle right outline"
                                     size="big"
-                                    style={{ color: '#49494960', transform: 'translate(-24px, 168px)'}}
+                                    style={{ color: '#49494960', transform: 'translate(-24px, 168px)' }}
                                 />
                             </div>
                         </div>
@@ -286,6 +286,39 @@ export default function Signup() {
                             </div>
                         </Modal>
                     </Container>
+                    <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(110px)' }}>
+                        <div style={{ position: 'absolute', transform: 'translate(-15px)', opacity: '0.8' }}>
+                            <span>
+                                <Checkbox />
+                                <div style={{ transform: 'translate(15px, -23px)', fontSize: '17px', fontWeight: '300' }}>
+                                   &nbsp;&nbsp;Remember me 
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(150px)' }}>
+                       <div style={{ color: 'black', background: 'black', width: '55vw', height: '1px', opacity: '0.3' }} /> 
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(-150px)' }}>
+                        <div style={{ transform: 'translateY(300px)', position: 'absolute' }}>
+                            <div style={{ color: '#0070c9', cursor: 'pointer', transform: 'translate(35px, 17px)' }}>
+                                Forgot Apple ID or password? 
+                                <div style={{ transform: 'rotate(-45deg) scale(1.1, 0.8) translate(137px, 150px)', position: 'absolute', color: '#0070c9', cursor: 'pointer', opacity: '0.7' }}>
+                                    <Icon
+                                        name='arrow right'
+                                    />
+                                </div>
+                            </div>
+                            <div style={{ transform: 'translate(-10px, 26px)' }}>
+                                Don't have an Apple ID? <span style={{ color: '#0070c9', cursor: 'pointer' }}>Create yours now.</span>
+                                <div style={{ transform: 'rotate(-45deg) scale(1.1, 0.8) translate(190px, 225px)', position: 'absolute', color: '#0070c9', cursor: 'pointer', opacity: '0.7' }}>
+                                    <Icon
+                                        name='arrow right'
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <center style={{ transform: 'translateY(54vh)', position: 'fixed' }}>
                         <div style={{ marginBottom: '7vh' }}>
                             <Divider /> 
