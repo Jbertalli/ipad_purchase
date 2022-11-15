@@ -139,6 +139,39 @@ export default function Login() {
                         </div>
                     </Modal>
                 </Container>
+                <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(219px)' }}>
+                    <div style={{ position: 'absolute', transform: 'translate(-15px)', opacity: '0.8' }}>
+                        <span>
+                            <Checkbox />
+                            <div style={{ transform: 'translate(15px, -23px)', fontSize: '17px', fontWeight: '300' }}>
+                                &nbsp;&nbsp;Remember me 
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(258px)' }}>
+                    <div style={{ color: 'black', background: 'black', width: '10vw', height: '1px', opacity: '0.3' }} /> 
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(-150px)' }}>
+                    <div style={{ transform: 'translateY(300px)', position: 'absolute' }}>
+                        <div style={{ color: '#0070c9', cursor: 'pointer', transform: 'translate(35px, 124px)' }}>
+                            Forgot Apple ID or password? 
+                            <div style={{ transform: 'rotate(-45deg) scale(1.1, 0.8) translate(137px, 150px)', position: 'absolute', color: '#0070c9', cursor: 'pointer', opacity: '0.7' }}>
+                                <Icon
+                                    name='arrow right'
+                                />
+                            </div>
+                        </div>
+                        <div style={{ transform: 'translate(-10px, 133px)' }}>
+                            Don't have an Apple ID? <span style={{ color: '#0070c9', cursor: 'pointer' }}>Create yours now.</span>
+                            <div style={{ transform: 'rotate(-45deg) scale(1.1, 0.8) translate(190px, 225px)', position: 'absolute', color: '#0070c9', cursor: 'pointer', opacity: '0.7' }}>
+                                <Icon
+                                    name='arrow right'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div style={{ transform: 'translateY(385px)' }}>
                     <Divider />
                     <div style={{ transform: 'translate(-288px, 8px)', fontSize: '17px', fontWeight: '400', display: 'flex', justifyContent: 'center' }}>
