@@ -234,7 +234,7 @@ export default function Login() {
                             />
                         </div>
                     </div>
-                    <Modal open={signInModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-285px)', borderRadius: '20px', width: '95%', height: '470px', position: 'fixed' }}>
+                    <Modal open={signInModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-235px)', borderRadius: '20px', width: '95%', height: '470px', position: 'fixed' }}>
                         <div style={{ background: 'lightgray', height: '36px', width: '36px', borderRadius: '50%', transform: 'translate(15px, 18px)', opacity: '0.8', cursor: 'pointer' }}
                             onClick={() => setSignInModal(false)}
                         >
@@ -274,7 +274,7 @@ export default function Login() {
                                         /> 
                                     </center>
                                     <div style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center' }}>
-                                        <Button disabled={disabled} type="submit" style={{  fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
+                                        <Button disabled={disabled} type="submit" style={{  fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '200px', height: '50px' }}>
                                             Sign In
                                         </Button>
                                     </div>

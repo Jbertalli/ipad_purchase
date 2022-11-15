@@ -305,7 +305,7 @@ export default function Signup() {
                                             /> 
                                         </center>
                                         <div style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center' }}>
-                                            <Button disabled={disabled} type="submit" style={{ fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
+                                            <Button disabled={disabled} type="submit" style={{ fontSize: '17px', fontWeight: '400', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '200px', height: '50px' }}>
                                                 Sign Up
                                             </Button>
                                         </div>
