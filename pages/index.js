@@ -20,9 +20,9 @@ export default function Home() {
             setDesktop(false);
         }
     };
-    window.addEventListener('resize', updateMedia);
-    return () => window.removeEventListener('resize', updateMedia);
-}, []);
+      window.addEventListener('resize', updateMedia);
+      return () => window.removeEventListener('resize', updateMedia);
+  }, []);
 
   return (
     <>
