@@ -60,8 +60,8 @@ export default function Signup() {
             ):(
             <>
                 <Container style={{ position: 'relative', zIndex: '100' }}>
-                    <div style={{ transform: 'translateY(130px)', fontSize: '34px', fontWeight: '600', lineHeight: '44px', paddingTop: '34px', display: 'flex', justifyContent: 'center' }}>
-                        Sign up for faster checkout.
+                    <div style={{ transform: 'translate(10px, 130px)', fontSize: '34px', fontWeight: '600', lineHeight: '44px', paddingTop: '34px', display: 'flex', justifyContent: 'center' }}>
+                        Sign up for Apple Store
                     </div>
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
