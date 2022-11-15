@@ -59,34 +59,19 @@ export default function Signup() {
             </>
             ):(
             <>
-                <Container style={{ position: 'relative', zIndex: '100', transform: 'translate(114px)' }}>
-                    <div style={{ transform: 'translate(-42px, 29px)', fontSize: '40px', fontWeight: '600', lineHeight: '44px', paddingTop: '34px', width: '900px' }}>
+                <Container style={{ position: 'relative', zIndex: '100' }}>
+                    <div style={{ transform: 'translateY(130px)', fontSize: '34px', fontWeight: '600', lineHeight: '44px', paddingTop: '34px', display: 'flex', justifyContent: 'center' }}>
                         Sign up for faster checkout.
                     </div>
                     <div>
-                        <div style={{ transform: 'translate(123px, 112px)', fontSize: '24px', fontWeight: '500', lineHeight: '28px', marginTop: '5px', textAlign: 'center', position: 'fixed' }}>
-                            Check out with your Apple ID
-                        </div>
-                        <div>
-                            <input onClick={() => setSignUpModal(true)} type="search" placeholder="Apple ID" style={{ transform: 'translate(114px, 159px)', width: '328px', fontSize: '17px', height: '44px', lineHeight: '22px', textAlign: 'left', border: '.5px solid #49494950', borderRadius: '6px', paddingLeft: '15px' }} />
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <input onClick={() => setSignUpModal(true)} type="search" placeholder="Apple ID" style={{ transform: 'translate(30px, 159px)', width: '328px', fontSize: '17px', height: '44px', lineHeight: '22px', textAlign: 'left', border: '.5px solid #49494950', borderRadius: '6px', paddingLeft: '15px' }} />
                             <Icon
                                 name="arrow alternate circle right outline"
                                 size="big"
-                                style={{ color: '#49494960', transform: 'translate(71px, 158px)'}}
+                                style={{ color: '#49494960', transform: 'translate(-14px, 168px)'}}
                             />
                         </div>
-                    </div>
-                    <div style={{ transform: 'translate(598px, 74px)', height: '239.5px', width: '1px', position: 'absolute', background: '#00000030' }} />
-                    <div style={{ transform: 'translate(490px, 73.2px)' }}>
-                        <div style={{ transform: 'translate(152px)', fontSize: '24px', fontWeight: '600', lineHeight: '28px', paddingBottom: '12px', textAlign: 'center', width: '284px' }}>
-                            Guest Checkout
-                        </div>
-                        <div style={{ transform: 'translate(152px, 1px)', fontSize: '17px', fontWeight: '400', lineHeight: '21px', marginBottom: '33px', textAlign: 'center', width: '284px' }}>
-                            Proceed and create an Apple ID later.
-                        </div>
-                        <button onClick={() => setSignUpModal(true)} style={{ transform: 'translate(150px, 1px)', fontSize: '17px', fontWeight: '300', color: 'white', background: '#0066CC', border: '0px', borderRadius: '10px', width: '284px', height: '56px' }}>
-                            Continue as Guest
-                        </button>
                     </div>
                     <Modal open={signUpModal} dimmer="blurring" size="small" style={{ transform: 'translateY(-285px)', borderRadius: '20px', width: '816px', height: '470px', position: 'fixed' }}>
                         <div
