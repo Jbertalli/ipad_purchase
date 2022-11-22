@@ -13,14 +13,14 @@ const Navbar = ({ user }) => {
     console.log(user);
 
     useEffect(() => {
-        if (window.innerWidth > 832) {
+        if (window.innerWidth > 440) {
             setDesktop(true);
         } else {
             setDesktop(false);
         }
 
         const updateMedia = () => {
-        if (window.innerWidth > 832) {
+        if (window.innerWidth > 440) {
             setDesktop(true);
         } else {
             setDesktop(false);
@@ -42,11 +42,8 @@ const Navbar = ({ user }) => {
                 <>
                     <Sticky>
                         <Menu
-                            // fixed="top" 
                             fluid
-                            // stackable
                             style={{
-                                // position: 'fixed',
                                 height: '44px', 
                                 position: 'relative', 
                                 zIndex: '9999', 
@@ -154,9 +151,6 @@ const Navbar = ({ user }) => {
                 <>
                     <Sticky>
                         <Menu
-                            // fixed="top" 
-                            fluid
-                            // stackable
                             style={{
                                 height: '48px', 
                                 position: 'relative', 

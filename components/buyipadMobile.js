@@ -26,7 +26,7 @@ export default function BuyMobile () {
             </div>
             {/* fixed is the key */}
             <div style={{ transform: 'scale(4.5)', position: 'fixed', zIndex: '100' }}>
-                <div style={{ transform: 'scale(0.1) translate(-70vw, 950px)', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ transform: 'scale(0.1) translate(-69vw, 950px)', display: 'flex', justifyContent: 'center' }}>
                     <Flower />
                 </div>
             </div>

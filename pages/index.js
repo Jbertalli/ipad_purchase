@@ -29,7 +29,6 @@ export default function Home() {
       <Head>
         <title>Apple Clone</title>
         <meta name="description" content="apple, ipad" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       {desktop ? (
       <>

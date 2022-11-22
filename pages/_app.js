@@ -1,5 +1,6 @@
 import App from 'next/app';
 import '../styles/globals.css'
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import { parseCookies, destroyCookie } from 'nookies';
 import { redirectUser } from '../utils/auth';
@@ -57,9 +58,17 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Layout {...pageProps}>
-        <Component {...pageProps} />
-      </Layout>
+      <>
+        <Head>
+            <link rel="shortcut icon" sizes="32x32" href="/images/apple1.png" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple1.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/images/apple1.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/images/apple1.png" />
+        </Head>
+        <Layout {...pageProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </>
     );
   }
 }
