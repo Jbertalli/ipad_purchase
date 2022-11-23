@@ -4,6 +4,7 @@ import styles from '../styles/ipad.module.css';
 import { Sticky } from 'semantic-ui-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Air () {
     const [desktop, setDesktop] = useState(false);
@@ -25,6 +26,8 @@ export default function Air () {
         window.addEventListener('resize', updateMedia);
         return () => window.removeEventListener('resize', updateMedia);
     }, []);
+
+    const router = useRouter();
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
@@ -66,8 +69,8 @@ export default function Air () {
                         </div> 
                     </div>
                 </Sticky>
-                <div style={{ width: '100vw', height: '100vh', background: 'black', position: 'fixed', zIndex: '-1' }} />
-                <div style={{ transform: 'translate(0vh, 43.2vh)' }}>
+                <div onClick={() => router.push("/colorSelection/ipadhome")} style={{ width: '100vw', height: '100vh', background: 'black', position: 'fixed', zIndex: '0', cursor: 'pointer' }} />
+                <div onClick={() => router.push("/colorSelection/ipadhome")} style={{ transform: 'translate(0vh, 43.2vh)', cursor: 'pointer' }}>
                     <div className={styles.wrapper} style={{ transform: 'scale(4)', position: 'relative', zIndex: '0' }}>
                         <center>
                             <div className={styles.neon_wrapper}>
@@ -106,8 +109,8 @@ export default function Air () {
                         </div> 
                     </div>
                 </Sticky>
-                <div style={{ width: '100vw', height: '100vh', background: 'black', position: 'fixed', zIndex: '-1' }} />
-                <div style={{ transform: 'translate(-12%, 40vh)', position: 'fixed' }}>
+                <div onClick={() => router.push("/colorSelection/ipadhome")} style={{ width: '100vw', height: '100vh', background: 'black', position: 'fixed', zIndex: '-1' }} />
+                <div onClick={() => router.push("/colorSelection/ipadhome")} style={{ transform: 'translate(-12%, 40vh)', position: 'fixed' }}>
                     <div className={styles.wrapper} style={{ transform: 'scale(2)', zIndex: '0' }}>
                         <center>
                             <div className={styles.neon_wrapper}>
