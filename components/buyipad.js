@@ -66,7 +66,7 @@ export default function Buy () {
                         </div>
                     </div>
                 </Grid.Column>
-                <Grid.Column width={8} style={{ display: 'flex', justifyContent: 'center', marginLeft: '400px', position: 'fixed' }}>
+                <Grid.Column width={8} style={{ display: 'flex', justifyContent: 'center', marginLeft: '400px', position: 'fixed', cursor: 'pointer' }}>
                     <Flower />
                 </Grid.Column>
             </Grid>

@@ -1,11 +1,15 @@
 import Front from '../components/ipadFront';
 import Back from '../components/ipadBack2';
 import styles from '../styles/ipad.module.css';
+import { useRouter } from 'next/router';
 
 export default function Flower () {
+
+    const router = useRouter();
+
     return (
         <>
-             <div style={{ transform: 'translate(400px, -2620px)', position: 'absolute' }}>
+             <div onClick={() => router.push("/ipadair")} style={{ transform: 'translate(400px, -2620px)', position: 'absolute' }}>
                 {/* <div style={{ border: '20px solid black', background: 'black', width: '1000px',  height: '800px', transform: 'translate(-350px, 1850px)', position: 'relative', zIndex: '-10' }} /> */}
                 <div style={{ transform: 'translate(500px, 2000px) scale(0.55)' }}>
                     <div style={{ transform: 'translate(-403px, 535px) rotate(16deg)', position: 'relative', zIndex: '6' }}>
