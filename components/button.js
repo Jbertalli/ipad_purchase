@@ -187,8 +187,7 @@ export default function ColorButton() {
                           height: '30px',
                           width: '30px',
                           borderRadius: '50%',
-                          background:
-                            'linear-gradient(to bottom, #E3C5AC, #F9F3EE)',
+                          background: 'linear-gradient(to bottom, #E3C5AC, #F9F3EE)',
                           transform: 'translate(48px, -3px)',
                         }}
                       />
@@ -229,8 +228,7 @@ export default function ColorButton() {
                           height: '30px',
                           width: '30px',
                           borderRadius: '50%',
-                          background:
-                            'linear-gradient(to bottom, #fAB19B, #FAE0D8)',
+                          background: 'linear-gradient(to bottom, #fAB19B, #FAE0D8)',
                           transform: 'translate(48px, -3px)',
                         }}
                       />
