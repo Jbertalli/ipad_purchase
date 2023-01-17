@@ -8,20 +8,20 @@ export default function Home() {
 
   useEffect(() => {
     if (window.innerWidth > 440) {
-        setDesktop(true);
+      setDesktop(true);
     } else {
-        setDesktop(false);
+      setDesktop(false);
     }
 
     const updateMedia = () => {
-        if (window.innerWidth > 440) {
-            setDesktop(true);
-        } else {
-            setDesktop(false);
-        }
+      if (window.innerWidth > 440) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
     };
-      window.addEventListener('resize', updateMedia);
-      return () => window.removeEventListener('resize', updateMedia);
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
   return (
@@ -31,16 +31,16 @@ export default function Home() {
         <meta name="description" content="apple, ipad" />
       </Head>
       {desktop ? (
-      <>
-        <Buy />
-      </>
-      ):(
-      <>
-        <BuyMobile />
-      </>
+        <>
+          <Buy />
+        </>
+      ) : (
+        <>
+          <BuyMobile />
+        </>
       )}
     </>
-  )
+  );
 }
 
 //server-side rendering
@@ -49,4 +49,4 @@ Home.getInitialProps = async () => {
   const response = await axios.get(url);
   return { examples: response.data };
   //return { hello: 'world' }
-}
+};

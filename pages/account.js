@@ -1,7 +1,3 @@
-export default function Account () {
-    return(
-        <>
-            Hello
-        </>
-    )
+export default function Account() {
+  return <>Hello</>;
 }
