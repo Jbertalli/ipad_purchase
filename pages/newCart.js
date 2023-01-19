@@ -15,13 +15,69 @@ import City from '../components/city';
 const LOCAL_STORAGE_KEY = 'user_cart';
 
 export default function Cart(values) {
+// export default function Cart(values) {
+
+  // const {
+  //   value,
+  //   cellValue,
+  //   appleCare,
+  //   tax,
+  //   recycling,
+  //   setBag,
+  //   setValue,
+  //   setColor,
+  //   setStorage,
+  //   setConnectivity,
+  //   setCellValue,
+  //   setEngraving,
+  //   setAppleCare,
+  //   colorName,
+  //   gbName,
+  //   connectivityName,
+  //   total,
+  //   products,
+  // } = values;
+
+  const [noAppleCare, setNoAppleCare] = useState(false);
+  const [quantity, setQuantity] = useState('1');
+  const [open, setOpen] = useState(false);
+  const [paymentModal, setPaymentModal] = useState(false);
+  const [checkingOut, setCheckingOut] = useState(false);
+
+  console.log(quantity);
+
+  const router = useRouter();
 
   const {
+    query: {
+      value,
+      cellValue,
+      appleCare,
+      tax,
+      recycling,
+      bag,
+      setBag,
+      setValue,
+      setColor,
+      setStorage,
+      setConnectivity,
+      setCellValue,
+      setEngraving,
+      setAppleCare,
+      colorName,
+      gbName,
+      connectivityName,
+      total
+    }
+  } = router;
+
+  const props = {
     value,
     cellValue,
     appleCare,
     tax,
     recycling,
+    bag,
     setBag,
     setValue,
     setColor,
@@ -33,22 +89,32 @@ export default function Cart(values) {
     colorName,
     gbName,
     connectivityName,
-    total,
-    products,
-  } = values;
+    total
+  }
 
-  const [noAppleCare, setNoAppleCare] = useState(false);
-  const [quantity, setQuantity] = useState('1');
-  const [open, setOpen] = useState(false);
-  const [paymentModal, setPaymentModal] = useState(false);
-
-  const router = useRouter();
-
-  console.log(quantity);
+  console.log(props.total);
+  console.log(props.cellValue);
+  console.log(props.appleCare);
+  console.log(props.tax);
+  console.log(props.recycling);
+  console.log(props.bag);
+  console.log(props.setBag);
+  console.log(props.setValue);
+  console.log(props.setColor);
+  console.log(props.setStorage);
+  console.log(props.setConnectivity);
+  console.log(props.setCellValue);
+  console.log(props.setEngraving);
+  console.log(props.setAppleCare);
+  console.log(props.colorName);
+  console.log(props.gbName);
+  console.log(props.gbName);
+  console.log(props.connectivityName);
+  console.log(props.total);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut));
-  }, [tax]);
+  }, [checkingOut]);
 
   let date = new Date();
   let day = date.getDate() + 5;
@@ -115,12 +181,12 @@ export default function Cart(values) {
   // console.log("unevenMonths", unevenMonths);
 
   let checkOut = (
-    parseFloat(quantity) *
-    (parseFloat(value) +
-      parseFloat(cellValue) +
-      parseFloat(tax) +
-      parseFloat(appleCare) +
-      parseFloat(recycling))
+    parseFloat(props.quantity) *
+    (parseFloat(props.value) +
+      parseFloat(props.cellValue) +
+      parseFloat(props.tax) +
+      parseFloat(props.appleCare) +
+      parseFloat(props.recycling))
   ).toFixed(2);
 
   let checkedOut = () =>
@@ -230,7 +296,7 @@ export default function Cart(values) {
               >
                 <div>
                   Pay $
-                  {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
+                  {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
                     2
                   )}
                   /mo. at 0% APR for eligible items in your order when you
@@ -286,7 +352,7 @@ export default function Cart(values) {
                     marginTop: '40px'
                   }}
                 >
-                  10.9-inch iPad Air {connectivityName} {gbName}
+                  10.9-inch iPad Air {props.connectivityName} {props.gbName}
                 </div>{' '}
                 {/*- {colorName} */}
                 <div style={{ paddingBottom: '66px' }}>
@@ -401,7 +467,7 @@ export default function Cart(values) {
                       transform: 'translate(164px)'
                     }}
                   >
-                    ${parseFloat(value) + parseFloat(cellValue)}.00
+                    ${parseFloat(props.value) + parseFloat(props.cellValue)}.00
                   </div>
                 </div>
               </Container> 
@@ -426,7 +492,7 @@ export default function Cart(values) {
                   }}
                 >
                   $
-                  {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
+                  {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
                     2
                   )}
                   /mo.
@@ -1036,10 +1102,10 @@ export default function Cart(values) {
                     }}
                   >
                     {(
-                      parseFloat(quantity) *
-                      (parseFloat(value) +
-                        parseFloat(cellValue) +
-                        parseFloat(appleCare))
+                      parseFloat(props.quantity) *
+                      (parseFloat(props.value) +
+                        parseFloat(props.cellValue) +
+                        parseFloat(props.appleCare))
                     ).toLocaleString('en', {
                       style: 'currency',
                       currency: 'USD',
@@ -1122,7 +1188,7 @@ export default function Cart(values) {
                       lineHeight: '60px',
                     }}
                   >
-                    ${(parseFloat(quantity) * tax).toFixed(2)}
+                    ${(parseFloat(props.quantity) * props.tax).toFixed(2)}
                   </div>
                 </div>
                 <div
@@ -1182,12 +1248,12 @@ export default function Cart(values) {
                     }}
                   >
                     {(
-                      parseFloat(quantity) *
-                      (parseFloat(value) +
-                        parseFloat(cellValue) +
-                        parseFloat(tax) +
-                        parseFloat(appleCare) +
-                        parseFloat(recycling))
+                      parseFloat(props.quantity) *
+                      (parseFloat(props.value) +
+                        parseFloat(props.cellValue) +
+                        parseFloat(props.tax) +
+                        parseFloat(props.appleCare) +
+                        parseFloat(props.recycling))
                     ).toLocaleString('en', {
                       style: 'currency',
                       currency: 'USD',
@@ -1294,7 +1360,7 @@ export default function Cart(values) {
                     }}
                   >
                     <div
-                      onClick={() => checkedOut()}
+                      onClick={() => {checkedOut(), setCheckingOut(true)}}
                       style={{
                         marginBottom: '10px'
                       }}
@@ -1362,12 +1428,12 @@ export default function Cart(values) {
                       }}
                     >
                       {(
-                        parseFloat(quantity) *
-                        (parseFloat(value) +
-                          parseFloat(cellValue) +
-                          parseFloat(tax) +
-                          parseFloat(appleCare) +
-                          parseFloat(recycling))
+                        parseFloat(props.quantity) *
+                        (parseFloat(props.value) +
+                          parseFloat(props.cellValue) +
+                          parseFloat(props.tax) +
+                          parseFloat(props.appleCare) +
+                          parseFloat(props.recycling))
                       ).toLocaleString('en', {
                         style: 'currency',
                         currency: 'USD',
@@ -1391,7 +1457,7 @@ export default function Cart(values) {
                       }}
                     >
                       <div
-                        onClick={() => checkedOut()}
+                        onClick={() => {checkedOut(), setCheckingOut(true)}}
                       >
                         Check Out
                       </div>
@@ -1436,7 +1502,7 @@ export default function Cart(values) {
                           justifyContent: 'center'
                         }}
                       >
-                        <Payment total={total} gbName={gbName} />
+                        <Payment total={props.total} gbName={props.gbName} />
                       </div>
                     </Modal>
                   </div>

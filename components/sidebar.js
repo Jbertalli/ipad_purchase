@@ -1,13 +1,14 @@
 import { useRouter } from 'next/router';
+import Router from 'next/router';
 import React, { useState, useEffect } from 'react';
 import { Divider, Icon, Modal, Grid, Button, Item } from 'semantic-ui-react';
-import Back from '../components/ipadBack';
 import styles from '../styles/ipad.module.css';
-import Cart from '../pages/cart';
 import NamedColor from '../components/namedColor';
-import Payment from '../components/payment';
 import Zip from '../components/zip';
 import City from '../components/city';
+// import Payment from '../components/payment';
+// import Cart from '../pages/cart';
+// import Back from '../components/ipadBack';
 
 export default function Sidebar() {
   const [storageModal, setStorageModal] = useState(false);
@@ -127,9 +128,35 @@ export default function Sidebar() {
     parseFloat(recycling)
   ).toFixed(2);
 
+  function sendData() {
+      Router.push({
+          pathname: '/newCart',
+          query: {
+            value,
+            cellValue,
+            appleCare,
+            tax,
+            recycling,
+            bag,
+            setBag,
+            setValue,
+            setColor,
+            setStorage,
+            setConnectivity,
+            setCellValue,
+            setEngraving,
+            setAppleCare,
+            colorName,
+            gbName,
+            connectivityName,
+            total
+          }
+      })
+  }
+
   return (
     <>
-      {!bag ? (
+      {/* {!bag ? ( */}
         <Item
           style={{
             width: '408px',
@@ -1763,7 +1790,8 @@ export default function Sidebar() {
                         >
                           <button
                             className={styles.bagButton}
-                            onClick={() => setBag(true)}
+                            // onClick={() => setBag(true)}
+                            onClick={() => sendData()}
                             style={{
                               transform: 'translate(0px, -91px)',
                               margin: '3em 0em -3.7em 0em',
@@ -1787,7 +1815,8 @@ export default function Sidebar() {
                           style={{ display: 'flex', justifyContent: 'center' }}
                         >
                           <button
-                            onClick={() => setBag(true)}
+                            // onClick={() => setBag(true)}
+                            onClick={() => sendData()}
                             style={{
                               transform: 'translate(0px, -91px)',
                               margin: '3em 0em -3.7em 0em',
@@ -1860,7 +1889,7 @@ export default function Sidebar() {
             )}
           </div>
         </Item>
-      ) : (
+      {/* ) : (
         <>
           <div>
             <Cart
@@ -1883,10 +1912,10 @@ export default function Sidebar() {
               connectivityName={connectivityName}
               total={total}
             />
-          </div>
+          </div> */}
           {/* <Payment total={total} gbName={gbName} /> */}
-        </>
-      )}
+        {/* </>
+      )} */}
     </>
   );
 }

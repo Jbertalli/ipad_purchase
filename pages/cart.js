@@ -232,7 +232,6 @@ export default function Cart(values) {
                                         
               </div>
               <div style={{ transform: 'translate(-152px, -13px)' }}>
-                {/* Pay $49.91/mo. at 0% APR for eligible items in your order when you choose Apple Card Monthly Installments at&nbsp; */}
                 <div>
                   Pay $
                   {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
@@ -283,7 +282,6 @@ export default function Cart(values) {
                 <div style={{ transform: 'translate(53px)' }}>
                   10.9-inch iPad Air {connectivityName} {gbName}
                 </div>{' '}
-                {/*- {colorName} */}
                 <div style={{ paddingBottom: '66px' }}>
                   {!open ? (
                     <>
@@ -383,7 +381,6 @@ export default function Cart(values) {
                 </div>
                                             
                 <div style={{ transform: 'translate(528px, -150px)' }}>
-                  {/* $599.00 */}
                   <div style={{ transform: 'translate(164px)' }}>
                     ${parseFloat(value) + parseFloat(cellValue)}.00
                   </div>
@@ -405,7 +402,6 @@ export default function Cart(values) {
                 </div>
                                             
                 <div style={{ transform: 'translate(715px, -243px)' }}>
-                  {/* $49.91/mo. */}$
                   {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
                     2
                   )}
@@ -853,7 +849,6 @@ export default function Cart(values) {
                       </a>
                       <b style={{ fontWeight: '600' }}>
                         &nbsp;
-                        {/* Jul 13 - Jul 20 - Free */}
                         <span>
                           {day1 < 25 ? (
                             <>{pickup1}</>
@@ -1002,7 +997,6 @@ export default function Cart(values) {
                     >
                       Order now. Pick up, in store:{' '}
                       <b style={{ fontWeight: '600' }}>
-                        {/* Thu, Jul 21 */}
                         <span>
                           {day < 31 ? <>{pickup}</> : <>{nextMonthPickup}</>}
                         </span>
@@ -1476,7 +1470,6 @@ export default function Cart(values) {
           height: '1730px',
         }}
       />{' '}
-      {/*  cover up */}
               
     </>
   );
