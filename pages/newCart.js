@@ -14,7 +14,7 @@ import City from '../components/city';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function Cart(values) {
+export default function NewCart(values) {
 
   const {
     value,
@@ -145,7 +145,7 @@ export default function Cart(values) {
         style={{
           position: 'relative',
           zIndex: '100',
-          transform: 'translate(114px)',
+          transform: 'translate(114px)'
         }}
       >
                     
@@ -253,8 +253,8 @@ export default function Cart(values) {
                             
           </Segment>
                           
-          <Grid
-            style={{ marginTop: '-84px', width: '974px', position: 'static' }}
+          {/* <Grid
+            style={{ marginTop: '-84px', width: '974px', position: 'static', height: '100px' }}
           >
                                 
             <Grid.Column style={{ width: '100px' }}>
@@ -283,7 +283,6 @@ export default function Cart(values) {
                 <div style={{ transform: 'translate(53px)' }}>
                   10.9-inch iPad Air {connectivityName} {gbName}
                 </div>{' '}
-                {/*- {colorName} */}
                 <div style={{ paddingBottom: '66px' }}>
                   {!open ? (
                     <>
@@ -309,7 +308,7 @@ export default function Cart(values) {
                           transform: 'translate(419px, -82px)',
                           position: 'absolute',
                           zIndex: '100',
-                        //   size: '20px',
+                          // size: '20px',
                           background: 'white',
                           border: '1px solid #0048e3',
                           fontSize: '24px',
@@ -383,7 +382,6 @@ export default function Cart(values) {
                 </div>
                                             
                 <div style={{ transform: 'translate(528px, -150px)' }}>
-                  {/* $599.00 */}
                   <div style={{ transform: 'translate(164px)' }}>
                     ${parseFloat(value) + parseFloat(cellValue)}.00
                   </div>
@@ -405,7 +403,7 @@ export default function Cart(values) {
                 </div>
                                             
                 <div style={{ transform: 'translate(715px, -243px)' }}>
-                  {/* $49.91/mo. */}$
+                  $
                   {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
                     2
                   )}
@@ -533,7 +531,7 @@ export default function Cart(values) {
                   <Divider
                     style={{
                       transform: 'translate(56px, -658.5px)',
-                      width: '731px',
+                      width: '731px'
                     }}
                   />
                 </>
@@ -853,7 +851,6 @@ export default function Cart(values) {
                       </a>
                       <b style={{ fontWeight: '600' }}>
                         &nbsp;
-                        {/* Jul 13 - Jul 20 - Free */}
                         <span>
                           {day1 < 25 ? (
                             <>{pickup1}</>
@@ -1002,7 +999,6 @@ export default function Cart(values) {
                     >
                       Order now. Pick up, in store:{' '}
                       <b style={{ fontWeight: '600' }}>
-                        {/* Thu, Jul 21 */}
                         <span>
                           {day < 31 ? <>{pickup}</> : <>{nextMonthPickup}</>}
                         </span>
@@ -1437,7 +1433,7 @@ export default function Cart(values) {
                                   
             </Grid.Column>
                             
-          </Grid>
+          </Grid> */}
                       
         </div>
         <div style={{ transform: 'translateY(-1872px)' }}>
@@ -1449,7 +1445,7 @@ export default function Cart(values) {
               transform: 'translateY(-11px)',
               fontSize: '17px',
               fontWeight: '400',
-              lineHeight: '25px',
+              lineHeight: '25px'
             }}
           >
                                     Need some help?&nbsp;
@@ -1467,22 +1463,22 @@ export default function Cart(values) {
         </div>
                     
       </Container>
-      <div
+      {/* <div
         style={{
           transform: 'translate(-200px, -3680px)',
           zIndex: '10',
-          background: 'white',
+          background: 'red',
           width: '550px',
           height: '1730px',
         }}
-      />{' '}
+      />{' '} */}
       {/*  cover up */}
               
     </>
   );
 }
 
-Cart.getInitialProps = async (ctx) => {
+NewCart.getInitialProps = async (ctx) => {
   const { token } = parseCookies(ctx);
   if (!token) {
     return { products: [] };
