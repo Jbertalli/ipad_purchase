@@ -11,6 +11,7 @@ import baseUrl from '../utils/baseUrl';
 import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
+import Heading from '../components/heading';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -203,11 +204,18 @@ export default function Cart(values) {
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
+      <div
+        style={{
+          marginTop: '-19px'
+        }}
+      >
+        <Heading />
+      </div>
       <Container
         style={{
           position: 'relative',
           zIndex: '100',
-          transform: 'translate(114px)',
+          transform: 'translate(114px, -50px)',
         }}
       >
         <div
