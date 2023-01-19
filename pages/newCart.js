@@ -14,7 +14,7 @@ import City from '../components/city';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function NewCart(values) {
+export default function Cart(values) {
 
   const {
     value,
@@ -132,8 +132,7 @@ export default function NewCart(values) {
   }, []);
 
   return (
-    <>
-      
+    <>     
       <Head>
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
@@ -142,64 +141,63 @@ export default function NewCart(values) {
         style={{
           position: 'relative',
           zIndex: '100',
-          // transform: 'translate(114px)',
-          display: 'flex',
-          justifyContent: 'center'
+          transform: 'translate(114px)',
         }}
       >
-        <div 
-          style={{ 
-            padding: '0px 13.5px 0px 13.5px' 
-          }}
+        <div
+            style={{
+                padding: '0px 13.5px 0px 13.5px',
+                marginTop: '40px'
+            }}
         >
           <div
             style={{
-              // transform: 'translate(-108px, -11px)',
+              transform: 'translate(-54px)',
               fontSize: '40px',
               fontWeight: '600',
               lineHeight: '44px',
-              paddingBottom: '2px',
+              marginTop: '79px'
             }}
           >
-            Review your bag. 
+            Review your bag.
           </div>
           <div
             style={{
               fontSize: '17px',
               fontWeight: '400',
               lineHeight: '25px',
-              marginTop: '-17px',
-              // transform: 'translate(-26px)',
+              marginTop: '15px',
+              transform: 'translate(-52px)',
             }}
           >
-            Free delivery and free returns. 
+            Free delivery and free returns.
           </div>
-          <div
+          <Segment
             style={{
               background: '#53687210',
               border: 'transparent',
               borderRadius: '12px',
-              marginTop: '35.5px',
+              marginTop: '56px',
               width: '974px',
-              // display: 'flex',
-              // justifyContent: 'center',
-              // transform: 'translate(63px)',
+              display: 'flex',
+              justifyContent: 'center',
+              transform: 'translate(-49px)',
             }}
           >
             <div
               style={{
                 fontSize: '14px',
                 fontWeight: '400',
-                padding: '0px 10px 0px 50px',
+                padding: '20px 10px 0px 50px',
                 lineHeight: '20px',
                 width: '770px',
                 height: '53px',
-                // transform: 'translate(135px)',
+                transform: 'translate(140px)',
               }}
             >
               <div
                 style={{
-                  transform: 'translate(-301px, -25.5px) scale(0.2)',
+                  transform: 'translate(-178px, -13px) scale(0.2)',
                   position: 'absolute',
                 }}
               >
@@ -221,16 +219,15 @@ export default function NewCart(values) {
                     position: 'absolute',
                     zIndex: '1',
                     color: 'white',
-                    // transform: 'translate(-193.5px, 39px)',
+                    transform: 'translate(16px, 22px)',
                   }}
                 />
               </div>
-              <div 
-                style={{ 
-                  // transform: 'translate(-152px, -13px)' 
+              <div
+                style={{
+                  transform: 'translate(-152px, -13px)'
                 }}
               >
-                {/* Pay $49.91/mo. at 0% APR for eligible items in your order when you choose Apple Card Monthly Installments at&nbsp; */}
                 <div>
                   Pay $
                   {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
@@ -240,62 +237,65 @@ export default function NewCart(values) {
                   choose Apple Card Monthly Installments at checkout. &nbsp;
                   <a
                     className={styles.bluehovering}
-                    style={{ color: 'rgb(0, 113, 227)', cursor: 'pointer' }}
+                    style={{
+                      color: 'rgb(0, 113, 227)', cursor: 'pointer'
+                    }}
                   >
                     Learn more
                   </a>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            style={{ marginTop: '-84px', width: '974px', position: 'static', height: '100px' }}
+          </Segment>
+          <Grid
+            style={{
+              marginTop: '-84px',
+              width: '974px',
+              position: 'static'
+            }}
           >
-            <div 
-              style={{ 
-                width: '100px' 
+            <Grid.Column
+              style={{
+                width: '100px'
               }}
             >
               <div
-                style={{ 
-                  transform: 'scale(0.385) translate(48px, -240px)',
-                  position: 'absolute' 
+                style={{
+                  transform: 'scale(0.385) translate(-46px, -84px)'
                 }}
               >
                 <Front />
               </div>
-            </div>
-            <div 
+            </Grid.Column>
+            <Grid.Column
               style={{
                 width: '300px'
               }}
             >
-              <div
+              <Container
                 style={{
                   fontSize: '24px',
                   fontWeight: '600',
                   lineHeight: '28px',
                   marginTop: '58px',
                 }}
-              >
+              >             
                 <div 
                   style={{ 
-                    // transform: 'translate(53px)' 
+                    transform: 'translate(92px)',
+                    marginTop: '40px'
                   }}
                 >
                   10.9-inch iPad Air {connectivityName} {gbName}
                 </div>{' '}
-                <div 
-                  style={{ 
-                    paddingBottom: '66px' 
-                  }}
-                >
+                {/*- {colorName} */}
+                <div style={{ paddingBottom: '66px' }}>
                   {!open ? (
                     <>
                       <button
                         onClick={() => setOpen(true)}
                         style={{
-                          // transform: 'translate(437px, -56.8px)',
+                          transform: 'translate(475px, -29px)',
                           background: 'transparent',
                           color: 'black',
                           border: 'transparent',
@@ -303,7 +303,12 @@ export default function NewCart(values) {
                         }}
                       >
                         {quantity}
-                        <Icon name="angle down" style={{ color: '#0048e3' }} />
+                        <Icon 
+                          name="angle down" 
+                          style={{ 
+                            color: '#0048e3' 
+                            }} 
+                          />
                       </button>
                     </>
                   ) : (
@@ -311,10 +316,9 @@ export default function NewCart(values) {
                       <button
                         onClick={() => setOpen(false)}
                         style={{
-                          // transform: 'translate(419px, -82px)',
+                          transform: 'translate(458px, -53px)',
                           position: 'absolute',
                           zIndex: '100',
-                          // size: '20px',
                           background: 'white',
                           border: '1px solid #0048e3',
                           fontSize: '24px',
@@ -323,63 +327,61 @@ export default function NewCart(values) {
                         }}
                       >
                         <ul
-                          style={{ 
-                            // transform: 'translate(-22.7px)' 
-                          }}
+                          style={{ transform: 'translate(-22.7px)' }}
                           onClick={() => setQuantity(1)}
                         >
                           1
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(2)}
                         >
                           2
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(3)}
                         >
                           3
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(4)}
                         >
                           4
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(5)}
                         >
                           5
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(6)}
                         >
                           6
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(7)}
                         >
                           7
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(8)}
                         >
                           8
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-23.5px)' }}
+                          style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(9)}
                         >
                           9
                         </ul>
                         <ul
-                          // style={{ transform: 'translate(-29.8px)' }}
+                          style={{ transform: 'translate(-29.8px)' }}
                           onClick={() => setQuantity(10)}
                         >
                           10
@@ -388,37 +390,39 @@ export default function NewCart(values) {
                     </>
                   )}
                 </div>
-                <div 
-                  style={{ 
-                    // transform: 'translate(528px, -150px)' 
+                <div
+                  style={{
+                    transform: 'translate(567px, -94px)'
                   }}
                 >
-                  <div 
-                    style={{ 
-                      // transform: 'translate(164px)' 
+                  {/* $599.00 */}
+                  <div
+                    style={{
+                      transform: 'translate(164px)'
                     }}
                   >
                     ${parseFloat(value) + parseFloat(cellValue)}.00
                   </div>
                 </div>
-              </div>
-              <div
+              </Container> 
+              <Grid.Row
                 style={{
                   fontSize: '14px',
                   fontWeight: '400',
                   lineHeight: '20px',
+                  marginTop: '70px'
                 }}
               >
-                <div 
-                  style={{ 
-                    // transform: 'translate(54px, -203px)' 
+                <div
+                  style={{
+                    transform: 'translate(92px, -141px)'
                   }}
                 >
                   Pay 0% APR for 12 months:
                 </div>
-                <div 
-                  style={{ 
-                    // transform: 'translate(715px, -243px)' 
+                <div
+                  style={{
+                    transform: 'translate(754px, -161px)'
                   }}
                 >
                   $
@@ -427,10 +431,10 @@ export default function NewCart(values) {
                   )}
                   /mo.
                 </div>
-              </div>
+              </Grid.Row>
               <div
                 style={{
-                  // transform: 'translate(604.5px, -264px)',
+                  transform: 'translate(765px, -142px)',
                   color: 'rgb(0, 102, 204)',
                   fontSize: '17px',
                   fontWeight: '400',
@@ -439,31 +443,31 @@ export default function NewCart(values) {
               >
                 <a
                   onClick={() => {
-                    setBag(false),
+                      setBag(false),
                       setValue(0),
                       setColor(false),
                       setStorage(0),
                       setConnectivity(false),
                       setCellValue(0),
                       setEngraving(false),
-                      setAppleCare(0);
+                      setAppleCare(0)
                   }}
                   className={styles.bluehovering}
                 >
                   Remove
                 </a>
-              </div>
+              </div>     
               <Divider
                 style={{
-                  // transform: 'translate(56px, -269.5px)',
-                  width: '731px',
+                  transform: 'translate(94.5px, -147px)',
+                  width: '731px'
                 }}
               />
               {noAppleCare ? (
                 <>
                   <div
                     style={{
-                      // transform: 'translateY(-260px)',
+                      transform: 'translateY(-20px)',
                       width: '800px',
                       paddingBottom: '342px',
                     }}
@@ -471,12 +475,15 @@ export default function NewCart(values) {
                     <Icon
                       name="apple"
                       color="red"
-                      // style={{ transform: 'translate(53px, -3px) scale(1.1)' }}
+                      style={{
+                        transform: 'translate(53px, -3px) scale(1.1)'
+                      }}
                     />
-                    <div 
-                      style={{ 
-                        // transform: 'translate(79px, -24px)' 
-                      }}>
+                    <div
+                      style={{
+                        transform: 'translate(79px, -24px)'
+                        }}
+                      >
                       <span
                         style={{
                           fontSize: '17px',
@@ -488,7 +495,7 @@ export default function NewCart(values) {
                       </span>
                       <span
                         style={{
-                          // transform: 'translate(-91px, -23px)',
+                          transform: 'translate(-91px, -23px)',
                           display: 'flex',
                           justifyContent: 'flex-end',
                           fontSize: '17px',
@@ -500,7 +507,7 @@ export default function NewCart(values) {
                     </div>
                     <div 
                       style={{ 
-                        // transform: 'translate(79px, -39px)' 
+                        transform: 'translate(79px, -39px)' 
                       }}
                     >
                       <span
@@ -514,7 +521,7 @@ export default function NewCart(values) {
                       </span>
                       <span
                         style={{
-                          // transform: 'translate(-91px, -20px)',
+                          transform: 'translate(-91px, -20px)',
                           display: 'flex',
                           justifyContent: 'flex-end',
                         }}
@@ -524,7 +531,7 @@ export default function NewCart(values) {
                     </div>
                     <div 
                       style={{ 
-                        // transform: 'translate(79px, -51px)' 
+                        transform: 'translate(79px, -51px)' 
                       }}
                     >
                       <span>
@@ -532,7 +539,7 @@ export default function NewCart(values) {
                       </span>
                       <span
                         style={{
-                          // transform: 'translate(-91px, -20px)',
+                          transform: 'translate(-91px, -20px)',
                           display: 'flex',
                           justifyContent: 'flex-end',
                         }}
@@ -554,46 +561,46 @@ export default function NewCart(values) {
                   </div>
                   <Divider
                     style={{
-                      // transform: 'translate(56px, -658.5px)',
-                      width: '731px'
+                      transform: 'translate(56px, -658.5px)',
+                      width: '731px',
                     }}
                   />
                 </>
               ) : (
                 <>
-                  <div>
-                    <div style={{ width: '30px' }}>
+                  <Grid.Row>
+                    <Grid.Column
+                      style={{
+                        transform: 'translate(40px, 182px)'
+                      }}
+                    >
                       <Icon
                         name="apple"
                         color="red"
                         style={{
-                          // transform: 'translate(53px, -323px) scale(1.1)',
+                          transform: 'translate(53px, -323px) scale(1.1)',
                         }}
                       />
-                    </div>
-                    <div
-                      style={{ 
-                        width: '701px', 
-                        marginBottom: '18px' 
+                    </Grid.Column>
+                    <Grid.Column
+                      style={{
+                        width: '701px'
                       }}
                     >
-                      <div>
+                      <Grid.Row>
                         <div
                           style={{
-                            // transform: 'translate(80px, -448px)',
+                            transform: 'translate(118px, -161px)',
                             fontSize: '17px',
                             fontWeight: '600',
                             lineHeight: '25px',
                           }}
                         >
-                          <div>
-                            Add AppleCare+ for iPad Air (5th generation) for
-                            $79.00
-                          </div>
+                          Add AppleCare+ for iPad Air (5th generation) for $79.00
                         </div>
                         <div
                           style={{
-                            // transform: 'translate(718px, -518px)',
+                            transform: 'translate(796px, -186px)',
                             position: 'absolute',
                             color: 'rgb(0, 102, 204)',
                             cursor: 'pointer',
@@ -615,11 +622,11 @@ export default function NewCart(values) {
                             Add
                           </a>
                         </div>
-                      </div>
-                      <div>
+                      </Grid.Row>
+                      <Grid.Row>
                         <div
                           style={{
-                            // transform: 'translate(79px, -530px)',
+                            transform: 'translate(118px, -159px)',
                             fontSize: '14px',
                             fontWeight: '400',
                             lineHeight: '20px',
@@ -629,10 +636,12 @@ export default function NewCart(values) {
                           keyboard from accidental drops and spills with
                           AppleCare+.
                         </div>
-                      </div>
-                      <div>
+                      </Grid.Row>
+                      <Grid.Row>
                         <div
-                          // style={{ transform: 'translate(-72.5px, -590px)' }}
+                          style={{
+                            transform: 'translate(118px, -159px)'
+                          }}
                         >
                           <a
                             className={styles.bluehovering}
@@ -644,35 +653,34 @@ export default function NewCart(values) {
                             Learn more {'>'}
                           </a>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                      </Grid.Row>
+                    </Grid.Column>
+                  </Grid.Row>
                   <Divider
                     style={{
-                      // transform: 'translate(42px, -658.5px)',
-                      width: '731px',
+                      transform: 'translate(80.5px, -148.5px)',
+                      width: '731px'
                     }}
                   />
                 </>
               )}
               <div
                 style={{
-                  // transform: 'translate(0px, 0px)',
                   fontSize: '17px',
                   fontWeight: '600',
-                  lineHeight: '25px',
+                  lineHeight: '25px'
                 }}
               >
                 <div>
                   <div
                     style={{
-                      // transform: 'translate(-25.5px, -475px) scale(0.55)',
+                      transform: 'translate(-25.5px, -475px) scale(0.55)',
                       position: 'fixed',
                     }}
                   >
                     <div
                       style={{
-                        // transform: 'translate(80px, -500px)',
+                        transform: 'translate(205px, 600px)',
                         border: '2px solid black',
                         width: '30px',
                         height: '30px',
@@ -681,7 +689,7 @@ export default function NewCart(values) {
                     >
                       <div
                         style={{
-                          // transform: 'translate(2.9px, -16px)',
+                          transform: 'translate(2.9px, 9px)',
                           width: '20px',
                           height: '1px',
                           border: '1px solid black',
@@ -690,7 +698,7 @@ export default function NewCart(values) {
                       />
                       <div
                         style={{
-                          // transform: 'translate(5.5px, -36px)',
+                          transform: 'translate(5.5px, 15px)',
                           width: '14.5px',
                           height: '1px',
                           border: '1px solid black',
@@ -699,9 +707,9 @@ export default function NewCart(values) {
                       />
                     </div>
                   </div>
-                  <div 
-                    style={{ 
-                      transform: 'translate(80px, -722px)' 
+                  <div
+                    style={{
+                      transform: 'translate(117px, -141.5px)'
                     }}
                   >
                     Add free engraving
@@ -709,7 +717,7 @@ export default function NewCart(values) {
                 </div>
                 <div
                   style={{
-                    // transform: 'translate(600.8px, -797.7px)',
+                    transform: 'translate(796px, -167.9px)',
                     color: 'rgb(0, 102, 204)',
                     cursor: 'pointer',
                     fontWeight: '400',
@@ -717,7 +725,10 @@ export default function NewCart(values) {
                 >
                   <a
                     className={styles.bluehovering}
-                    style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                    style={{
+                      color: 'rgb(0, 102, 204)',
+                      cursor: 'pointer'
+                    }}
                   >
                     Add
                   </a>
@@ -725,8 +736,8 @@ export default function NewCart(values) {
               </div>
               <Divider
                 style={{
-                  // transform: 'translate(56px, -836.5px)',
-                  width: '731px',
+                  transform: 'translate(95px, -161.1px)',
+                  width: '731px'
                 }}
               />
               <div
@@ -740,22 +751,22 @@ export default function NewCart(values) {
                   <Icon
                     name="gift"
                     style={{
-                      // transform: 'translate(-94.5px, -877px) scale(1.1)',
+                      transform: 'translate(92px, -157px) scale(1.1)',
                       position: 'absolute',
                     }}
                   />
                   <div
                     style={{
-                      // transform: 'translate(80px, -900.5px)',
+                      transform: 'translate(118px, -155px)',
                       position: 'absolute',
                     }}
                   >
                     Add a gift message
                   </div>
                 </div>
-                <div   
+                <div
                   style={{
-                    // transform: 'translate(600.5px, -950px)',
+                    transform: 'translate(796px, -155px)',
                     color: 'rgb(0, 102, 204)',
                     cursor: 'pointer',
                     fontWeight: '400',
@@ -763,19 +774,22 @@ export default function NewCart(values) {
                 >
                   <a
                     className={styles.bluehovering}
-                    style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
-                  > 
+                    style={{
+                      color: 'rgb(0, 102, 204)',
+                      cursor: 'pointer'
+                    }}
+                  >
                     Add
                   </a>
                 </div>
               </div>
               <Divider
                 style={{
-                  // transform: 'translate(56px, -987.5px)',
-                  width: '731px',
+                  transform: 'translate(94.5px, -147.7px)',
+                  width: '731px'
                 }}
               />
-              <div>
+              <Grid>
                 <div>
                   <div
                     style={{
@@ -786,7 +800,7 @@ export default function NewCart(values) {
                   >
                     <div
                       style={{
-                        transform: 'translate(14px, -1078.5px) scale(0.16)',
+                        transform: 'translate(52px, -158.5px) scale(0.16)',
                         position: 'absolute',
                         border: '5px solid black',
                         width: '100px',
@@ -796,7 +810,7 @@ export default function NewCart(values) {
                     >
                       <div
                         style={{
-                          // transform: 'translate(14.5px, -55px)',
+                          transform: 'translate(13.5px, -35px)',
                           position: 'absolute',
                           border: '5px solid black',
                           width: '60px',
@@ -807,26 +821,34 @@ export default function NewCart(values) {
                       <Icon
                         name="apple"
                         style={{
-                          transform: 'translate(36px, -2px) scale(3.2)',
+                          transform: 'translate(37px, 21px) scale(3.2)',
                           color: 'black',
                         }}
                       />
                     </div>
                     <div
                       style={{
-                        // transform: 'translate(409px, -1047px)',
+                        transform: 'translate(447px, -127px)',
                         width: '220px',
                       }}
                     >
                       Order today. Delivers to{' '}
                       <a
                         className={styles.bluehovering}
-                        style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                        style={{
+                          color: 'rgb(0, 102, 204)',
+                          cursor: 'pointer'
+                        }}
                       >
                         <Zip />
                       </a>
-                      <b style={{ fontWeight: '600' }}>
+                      <b
+                        style={{
+                          fontWeight: '600'
+                        }}
+                      >
                         &nbsp;
+                        {/* Jul 13 - Jul 20 - Free */}
                         <span>
                           {day1 < 25 ? (
                             <>{pickup1}</>
@@ -851,11 +873,12 @@ export default function NewCart(values) {
                       fontSize: '14px',
                       fontWeight: '400',
                       lineHeight: '20px',
+                      transform: 'translate(72px, 1161px)'
                     }}
                   >
                     <div
                       style={{
-                        // transform: 'translate(358.9px, -1292.8px) scale(0.55, 0.5)',
+                        transform: 'translate(358.9px, -1300px) scale(0.55, 0.5)',
                         position: 'absolute',
                       }}
                     >
@@ -864,7 +887,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(7px, 0px) rotate(60deg)',
+                          transform: 'translate(7px, -140px) rotate(60deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -873,7 +896,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(-7px, -38px) rotate(-60deg)',
+                          transform: 'translate(-7px, -140.1px) rotate(-60deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -882,7 +905,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(7px, -60px) rotate(60deg)',
+                          transform: 'translate(7px, -158px) rotate(60deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -891,7 +914,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(-7px, -98px) rotate(-60deg)',
+                          transform: 'translate(-7px, -194.7px) rotate(-60deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -900,7 +923,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(0px, -140px) rotate(0deg)',
+                          transform: 'translate(0px, -200px) rotate(0deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -909,7 +932,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(14px, -186px) rotate(0deg)',
+                          transform: 'translate(14px, -225px) rotate(0deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -918,7 +941,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(-14px, -224px) rotate(0deg)',
+                          transform: 'translate(-14px, -243.5px) rotate(0deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -927,7 +950,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(-7px, -274.8px) rotate(60deg)',
+                          transform: 'translate(-7px, -274.8px) rotate(60deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -936,7 +959,7 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          // transform: 'translate(7px, -312.7px) rotate(-59deg)',
+                          transform: 'translate(7px, -293px) rotate(-59deg)',
                           borderRadius: '10px',
                         }}
                       />
@@ -945,19 +968,24 @@ export default function NewCart(values) {
                           width: '2px',
                           height: '17px',
                           background: 'black',
-                          // transform: 'translate(0px, -346px) rotate(-59deg)',
+                          transform: 'translate(0px, -306.5px) rotate(-59deg)',
                           borderRadius: '10px',
                         }}
                       />
                     </div>
                     <div
                       style={{
-                        // transform: 'translate(79px, -1186.8px)',
+                        transform: 'translate(45px, -1328px)',
                         width: '200px',
                       }}
                     >
                       Order now. Pick up, in store:{' '}
-                      <b style={{ fontWeight: '600' }}>
+                      <b 
+                        style={{
+                          fontWeight: '600'
+                        }}
+                      >
+                        {/* Thu, Jul 21 */}
                         <span>
                           {day < 31 ? <>{pickup}</> : <>{nextMonthPickup}</>}
                         </span>
@@ -965,40 +993,46 @@ export default function NewCart(values) {
                       at{' '}
                       <a
                         className={styles.bluehovering}
-                        style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                        style={{
+                          color: 'rgb(0, 102, 204)',
+                          cursor: 'pointer'
+                        }}
                       >
                         Apple <City />
                       </a>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Grid>
               <Divider
                 style={{
-                  // transform: 'translate(-187px, -1185.5px)',
-                  width: '974px',
-                  marginBottom: '0px',
+                  transform: 'translate(-148px, -86px)',
+                  width: '974px'
                 }}
               />
-              <div style={{ lineHeight: '29.8px' }}>
+              <div
+                style={{
+                  lineHeight: '29.8px'
+                }}
+              >
                 <div
                   style={{
-                    // transform: 'translateY(3px)',
+                    transform: 'translateY(3px)',
                     fontSize: '17px',
                     fontWeight: '400',
                   }}
                 >
                   <div
                     style={{
-                      // transform: 'translate(-102px, -1241px)',
+                      transform: 'translate(94px, -76px)',
                       lineHeight: '50px',
                     }}
                   >
                     Subtotal
                   </div>
-                  <div 
-                    style={{ 
-                      // transform: 'translate(723px, -1359px)' 
+                  <div
+                    style={{
+                      transform: 'translate(782px, -114px)'
                     }}
                   >
                     {(
@@ -1014,24 +1048,22 @@ export default function NewCart(values) {
                 </div>
                 <div
                   style={{
-                    // transform: 'translateY(3px)',
+                    transform: 'translateY(3px)',
                     fontSize: '17px',
                     fontWeight: '400',
                   }}
                 >
                   <div
                     style={{
-                      // transform: 'translate(-102.5px, -1448.7px)',
+                      transform: 'translate(94px, -115.5px)',
                       lineHeight: '30px',
                     }}
                   >
                     Shipping
-                    
                   </div>
-                  
-                  <div 
-                    style={{ 
-                      // transform: 'translate(592px, -1538px)' 
+                  <div
+                    style={{
+                      transform: 'translate(786px, -144px)'
                     }}
                   >
                     FREE
@@ -1039,7 +1071,7 @@ export default function NewCart(values) {
                 </div>
                 <div
                   style={{
-                    // transform: 'translate(54px, -1687px)',
+                    transform: 'translate(54px, -1687px)',
                     fontSize: '17px',
                     fontWeight: '400',
                     lineHeight: '30px',
@@ -1052,7 +1084,7 @@ export default function NewCart(values) {
                         <Icon
                           name="question circle"
                           style={{
-                            // transform: 'translate(-186px, 29.09px)',
+                            transform: 'translate(8.5px, 1542px)',
                             position: 'absolute',
                             cursor: 'pointer',
                             color: 'gray',
@@ -1067,11 +1099,18 @@ export default function NewCart(values) {
                         borderRadius: '10px',
                       }}
                     />
-                    <div>
+                    <div
+                      style={{
+                        transform: 'translate(40.2px, 1543px)'
+                      }}
+                    >
                       Estimated tax for:&nbsp;
                       <a
                         className={styles.bluehovering}
-                        style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                        style={{
+                          color: 'rgb(0, 102, 204)',
+                          cursor: 'pointer'
+                        }}
                       >
                         <Zip />
                       </a>
@@ -1079,7 +1118,7 @@ export default function NewCart(values) {
                   </div>
                   <div
                     style={{
-                      // transform: 'translate(681px, -105px)',
+                      transform: 'translate(728px, 1498px)',
                       lineHeight: '60px',
                     }}
                   >
@@ -1088,38 +1127,41 @@ export default function NewCart(values) {
                 </div>
                 <div
                   style={{
-                    // transform: 'translateY(1px)',
+                    transform: 'translateY(1px)',
                     fontSize: '17px',
                     fontWeight: '400',
                   }}
                 >
-                  <div 
-                    style={{ 
-                      // transform: 'translate(54px, -1895px)' 
+                  <div
+                    style={{
+                      transform: 'translate(94.5px, -201.8px)'
                     }}
                   >
                     <StateAbbr /> recycling fee{' '}
                     <a
                       className={styles.bluehovering}
-                      style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                      style={{
+                        color: 'rgb(0, 102, 204)',
+                        cursor: 'pointer'
+                      }}
                     >
                       Learn more
                     </a>
                   </div>
                   <div
-                    style={{ 
-                      // transform: 'translate(587px, -1955px)' 
+                    style={{
+                      transform: 'translate(781px, -231px)'
                     }}
                   >
                     $4.00
                   </div>
                 </div>
-                {/* <Divider
+                <Divider
                   style={{
-                    transform: 'translate(56px, -2044.5px)',
-                    width: '731px',
+                    transform: 'translate(94px, -231px)',
+                    width: '731px'
                   }}
-                /> */}
+                />
                 <div
                   style={{
                     fontSize: '24px',
@@ -1127,16 +1169,16 @@ export default function NewCart(values) {
                     lineHeight: '28px',
                   }}
                 >
-                  <div 
-                    style={{ 
-                      // transform: 'translate(-132px, -2099px)' 
+                  <div
+                    style={{
+                      transform: 'translate(94px, -228px)'
                     }}
                   >
                     Total
                   </div>
-                  <div 
-                    style={{ 
-                      // transform: 'translate(692px, -2183px)' 
+                  <div
+                    style={{
+                      transform: 'translate(763.6px, -256px)'
                     }}
                   >
                     {(
@@ -1154,7 +1196,7 @@ export default function NewCart(values) {
                 </div>
                 <div
                   style={{
-                    // transform: 'translate(586px, -2271px)',
+                    transform: 'translate(624px, -287px)',
                     position: 'absolute',
                   }}
                 >
@@ -1172,7 +1214,7 @@ export default function NewCart(values) {
               </div>
               <div
                 style={{
-                  // transform: 'translate(53px, -2173px)',
+                  transform: 'translate(93.5px, -169px)',
                   fontSize: '24px',
                   fontWeight: '600',
                   lineHeight: '28px',
@@ -1183,7 +1225,7 @@ export default function NewCart(values) {
               </div>
               <div
                 style={{
-                  // transform: 'translate(54px, -2175px)',
+                  transform: 'translate(96px, -146px)',
                   display: 'inline-block',
                 }}
               >
@@ -1203,11 +1245,28 @@ export default function NewCart(values) {
                       fontSize: '24px',
                       fontWeight: '500',
                       lineHeight: '15.3px',
+                      marginTop: '36px'
                     }}
                   >
-                    <div>Pay Monthly</div>
-                    <div>with Apple Card</div>
-                    <div>
+                    <div
+                      style={{
+                        marginBottom: '15px'
+                      }}
+                    >
+                      Pay Monthly
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: '15px'
+                      }}
+                    >
+                      with Apple Card
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: '26px'
+                      }}
+                    >
                       $
                       {(
                         parseFloat(quantity) *
@@ -1223,7 +1282,6 @@ export default function NewCart(values) {
                     onClick={() => setPaymentModal(true)}
                     className={styles.bagButton}
                     style={{
-                      // transform: 'translateY(-9px)',
                       width: '300px',
                       background: 'rgb(0, 113, 227)',
                       color: 'white',
@@ -1231,29 +1289,50 @@ export default function NewCart(values) {
                       fontSize: '17px',
                       fontWeight: '400',
                       lineHeight: '10px',
-                      padding: '12.1px 31px 13.3px 31px',
+                      padding: '23px 31px 22.5px 31px',
                       border: '0px solid transparent',
                     }}
                   >
-                    <div onClick={() => checkedOut()}>
+                    <div
+                      onClick={() => checkedOut()}
+                      style={{
+                        marginBottom: '10px'
+                      }}
+                    >
                       Check Out with Apple Card
                     </div>
-                    <div>Monthly Installments</div>
+                    <div>
+                      Monthly Installments
+                    </div>
                   </button>
                   <center
                     style={{
-                      // transform: 'translateY(-26px)',
+                      transform: 'translateY(14.5px)',
                       lineHeight: '10px',
                     }}
                   >
-                    <div>$0.00 due today, which includes</div>
-                    <div>applicable full-price items, down</div>
-                    <div>payments, shipping, and taxes.</div>
+                    <div
+                      style={{
+                        marginBottom: '9.5px'
+                      }}
+                    >
+                      $0.00 due today, which includes
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: '9.5px'
+                      }}
+                    >
+                      applicable full-price items, down
+                    </div>
+                    <div>
+                      payments, shipping, and taxes.
+                    </div>
                   </center>
                 </Item>
                 <Item
                   style={{
-                    // transform: 'translate(370px)',
+                    transform: 'translate(370px)',
                     width: '361px',
                     minWidth: '200px',
                     height: '353px',
@@ -1270,8 +1349,18 @@ export default function NewCart(values) {
                   }}
                 >
                   <div>
-                    <div>Pay in Full</div>
-                    <div>
+                    <div
+                      style={{
+                        marginTop: '31px'
+                      }}
+                    >
+                      Pay in Full
+                    </div>
+                    <div
+                      style={{
+                        marginTop: '15.3px'
+                      }}
+                    >
                       {(
                         parseFloat(quantity) *
                         (parseFloat(value) +
@@ -1288,7 +1377,7 @@ export default function NewCart(values) {
                       onClick={() => setPaymentModal(true)}
                       className={styles.bagButton}
                       style={{
-                        // transform: 'translateY(56px)',
+                        transform: 'translateY(56px)',
                         width: '300px',
                         height: '55px',
                         background: 'rgb(0, 113, 227)',
@@ -1303,7 +1392,6 @@ export default function NewCart(values) {
                     >
                       <div
                         onClick={() => checkedOut()}
-                        // style={{ transform: 'translateY(-13.3px)' }}
                       >
                         Check Out
                       </div>
@@ -1312,7 +1400,7 @@ export default function NewCart(values) {
                       open={paymentModal}
                       dimmer="blurring"
                       style={{
-                        // transform: 'translate(42px, -490px)',
+                        transform: 'translate(42px, -490px)',
                         borderRadius: '20px',
                         width: '816px',
                         height: '1000px',
@@ -1325,7 +1413,7 @@ export default function NewCart(values) {
                           height: '36px',
                           width: '36px',
                           borderRadius: '50%',
-                          // transform: 'translate(15px, 18px)',
+                          transform: 'translate(15px, 18px)',
                           opacity: '0.8',
                           cursor: 'pointer',
                         }}
@@ -1336,14 +1424,17 @@ export default function NewCart(values) {
                             fontSize: '30px',
                             fontWeight: 'lighter',
                             color: 'gray',
-                            // transform: 'translate(10px, -5px)',
+                            transform: 'translate(10px, -5px)',
                           }}
                         >
                           x
                         </h1>
                       </div>
                       <div
-                        style={{ display: 'flex', justifyContent: 'center' }}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center'
+                        }}
                       >
                         <Payment total={total} gbName={gbName} />
                       </div>
@@ -1351,83 +1442,60 @@ export default function NewCart(values) {
                   </div>
                 </Item>
               </div>
-            </div>
-          </div>
+            </Grid.Column>
+          </Grid>
         </div>
-        {/* <div 
-          style={{ 
-            // transform: 'translateY(-1872px)' 
+        <div
+          style={{
+            transform: 'translateY(212px)'
           }}
         >
-          <Divider />
+          <Divider 
+            style={{
+              transform: 'translate(-110px)'
+            }}
+          />
           <center
             style={{
-              // transform: 'translateY(-11px)',
+              transform: 'translate(-106px, 9px)',
               fontSize: '17px',
-              fontWeight: '400',
-              lineHeight: '25px'
+              fontWeight: '400'
             }}
           >
-              Need some help?&nbsp;
+            Need some help?&nbsp;
             <a
               className={styles.bluehovering}
-              style={{ color: 'rgb(0, 113, 227)', cursor: 'pointer' }}
+              style={{
+                color: 'rgb(0, 113, 227)',
+                cursor: 'pointer'
+              }}
             >
               Chat now
             </a>
             &nbsp;or call 1-800-MY-APPLE.
           </center>
           <Divider 
-            style={{ 
-              // transform: 'translateY(-22px)' 
-            }} 
+            style={{
+              transform: 'translate(-110px, 18px)'
+            }}
           />
-        </div> */}
+        </div>
       </Container>
       {/* <div
         style={{
           transform: 'translate(-200px, -3680px)',
           zIndex: '10',
-          background: 'red',
+          background: 'white',
           width: '550px',
           height: '1730px',
         }}
       />{' '} */}
       {/*  cover up */}
-      <div 
-          style={{ 
-            // transform: 'translateY(-1872px)' 
-          }}
-        >
-          <Divider />
-          <center
-            style={{
-              // transform: 'translateY(-11px)',
-              fontSize: '17px',
-              fontWeight: '400',
-              lineHeight: '25px'
-            }}
-          >
-              Need some help?&nbsp;
-            <a
-              className={styles.bluehovering}
-              style={{ color: 'rgb(0, 113, 227)', cursor: 'pointer' }}
-            >
-              Chat now
-            </a>
-            &nbsp;or call 1-800-MY-APPLE.
-          </center>
-          <Divider 
-            style={{ 
-              // transform: 'translateY(-22px)' 
-            }} 
-          />
-        </div>
     </>
   );
 }
 
-NewCart.getInitialProps = async (ctx) => {
+Cart.getInitialProps = async (ctx) => {
   const { token } = parseCookies(ctx);
   if (!token) {
     return { products: [] };
