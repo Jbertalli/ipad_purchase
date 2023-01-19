@@ -133,61 +133,59 @@ export default function NewCart(values) {
 
   return (
     <>
-                  
+      
       <Head>
-                        <title>Bag - Apple</title>
-                        
+        <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
-                    
       </Head>
-                  
       <Container
         style={{
           position: 'relative',
           zIndex: '100',
-          transform: 'translate(114px)'
+          // transform: 'translate(114px)',
+          display: 'flex',
+          justifyContent: 'center'
         }}
       >
-                    
-        <div style={{ padding: '0px 13.5px 0px 13.5px' }}>
-                          
+        <div 
+          style={{ 
+            padding: '0px 13.5px 0px 13.5px' 
+          }}
+        >
           <div
             style={{
-              transform: 'translate(-108px, -11px)',
+              // transform: 'translate(-108px, -11px)',
               fontSize: '40px',
               fontWeight: '600',
               lineHeight: '44px',
               paddingBottom: '2px',
             }}
           >
-                                Review your bag.                 
+            Review your bag. 
           </div>
-                          
           <div
             style={{
               fontSize: '17px',
               fontWeight: '400',
               lineHeight: '25px',
               marginTop: '-17px',
-              transform: 'translate(-26px)',
+              // transform: 'translate(-26px)',
             }}
           >
-                                Free delivery and free returns.                 
+            Free delivery and free returns. 
           </div>
-                          
-          <Segment
+          <div
             style={{
               background: '#53687210',
               border: 'transparent',
               borderRadius: '12px',
               marginTop: '35.5px',
               width: '974px',
-              display: 'flex',
-              justifyContent: 'center',
-              transform: 'translate(63px)',
+              // display: 'flex',
+              // justifyContent: 'center',
+              // transform: 'translate(63px)',
             }}
           >
-                                
             <div
               style={{
                 fontSize: '14px',
@@ -196,17 +194,15 @@ export default function NewCart(values) {
                 lineHeight: '20px',
                 width: '770px',
                 height: '53px',
-                transform: 'translate(135px)',
+                // transform: 'translate(135px)',
               }}
             >
-                                      
               <div
                 style={{
                   transform: 'translate(-301px, -25.5px) scale(0.2)',
                   position: 'absolute',
                 }}
               >
-                                            
                 <div
                   style={{
                     width: '100px',
@@ -218,7 +214,6 @@ export default function NewCart(values) {
                     opacity: '0.8',
                   }}
                 />
-                                            
                 <Icon
                   name="apple"
                   size="huge"
@@ -226,12 +221,15 @@ export default function NewCart(values) {
                     position: 'absolute',
                     zIndex: '1',
                     color: 'white',
-                    transform: 'translate(-193.5px, 39px)',
+                    // transform: 'translate(-193.5px, 39px)',
                   }}
                 />
-                                        
               </div>
-              <div style={{ transform: 'translate(-152px, -13px)' }}>
+              <div 
+                style={{ 
+                  // transform: 'translate(-152px, -13px)' 
+                }}
+              >
                 {/* Pay $49.91/mo. at 0% APR for eligible items in your order when you choose Apple Card Monthly Installments at&nbsp; */}
                 <div>
                   Pay $
@@ -248,30 +246,31 @@ export default function NewCart(values) {
                   </a>
                 </div>
               </div>
-                                  
             </div>
-                            
-          </Segment>
-                          
-          {/* <Grid
+          </div>
+          <div
             style={{ marginTop: '-84px', width: '974px', position: 'static', height: '100px' }}
           >
-                                
-            <Grid.Column style={{ width: '100px' }}>
-                                      
+            <div 
+              style={{ 
+                width: '100px' 
+              }}
+            >
               <div
-                style={{ transform: 'scale(0.385) translate(48px, -240px)' }}
+                style={{ 
+                  transform: 'scale(0.385) translate(48px, -240px)',
+                  position: 'absolute' 
+                }}
               >
-                                            
                 <Front />
-                                        
               </div>
-                                  
-            </Grid.Column>
-                                
-            <Grid.Column style={{ width: '300px' }}>
-                                      
-              <Container
+            </div>
+            <div 
+              style={{
+                width: '300px'
+              }}
+            >
+              <div
                 style={{
                   fontSize: '24px',
                   fontWeight: '600',
@@ -279,17 +278,24 @@ export default function NewCart(values) {
                   marginTop: '58px',
                 }}
               >
-                                            
-                <div style={{ transform: 'translate(53px)' }}>
+                <div 
+                  style={{ 
+                    // transform: 'translate(53px)' 
+                  }}
+                >
                   10.9-inch iPad Air {connectivityName} {gbName}
                 </div>{' '}
-                <div style={{ paddingBottom: '66px' }}>
+                <div 
+                  style={{ 
+                    paddingBottom: '66px' 
+                  }}
+                >
                   {!open ? (
                     <>
                       <button
                         onClick={() => setOpen(true)}
                         style={{
-                          transform: 'translate(437px, -56.8px)',
+                          // transform: 'translate(437px, -56.8px)',
                           background: 'transparent',
                           color: 'black',
                           border: 'transparent',
@@ -305,7 +311,7 @@ export default function NewCart(values) {
                       <button
                         onClick={() => setOpen(false)}
                         style={{
-                          transform: 'translate(419px, -82px)',
+                          // transform: 'translate(419px, -82px)',
                           position: 'absolute',
                           zIndex: '100',
                           // size: '20px',
@@ -317,61 +323,63 @@ export default function NewCart(values) {
                         }}
                       >
                         <ul
-                          style={{ transform: 'translate(-22.7px)' }}
+                          style={{ 
+                            // transform: 'translate(-22.7px)' 
+                          }}
                           onClick={() => setQuantity(1)}
                         >
                           1
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(2)}
                         >
                           2
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(3)}
                         >
                           3
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(4)}
                         >
                           4
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(5)}
                         >
                           5
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(6)}
                         >
                           6
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(7)}
                         >
                           7
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(8)}
                         >
                           8
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-23.5px)' }}
+                          // style={{ transform: 'translate(-23.5px)' }}
                           onClick={() => setQuantity(9)}
                         >
                           9
                         </ul>
                         <ul
-                          style={{ transform: 'translate(-29.8px)' }}
+                          // style={{ transform: 'translate(-29.8px)' }}
                           onClick={() => setQuantity(10)}
                         >
                           10
@@ -380,48 +388,55 @@ export default function NewCart(values) {
                     </>
                   )}
                 </div>
-                                            
-                <div style={{ transform: 'translate(528px, -150px)' }}>
-                  <div style={{ transform: 'translate(164px)' }}>
+                <div 
+                  style={{ 
+                    // transform: 'translate(528px, -150px)' 
+                  }}
+                >
+                  <div 
+                    style={{ 
+                      // transform: 'translate(164px)' 
+                    }}
+                  >
                     ${parseFloat(value) + parseFloat(cellValue)}.00
                   </div>
-                                              
                 </div>
-                                        
-              </Container>
-                                      
-              <Grid.Row
+              </div>
+              <div
                 style={{
                   fontSize: '14px',
                   fontWeight: '400',
                   lineHeight: '20px',
                 }}
               >
-                                            
-                <div style={{ transform: 'translate(54px, -203px)' }}>
+                <div 
+                  style={{ 
+                    // transform: 'translate(54px, -203px)' 
+                  }}
+                >
                   Pay 0% APR for 12 months:
                 </div>
-                                            
-                <div style={{ transform: 'translate(715px, -243px)' }}>
+                <div 
+                  style={{ 
+                    // transform: 'translate(715px, -243px)' 
+                  }}
+                >
                   $
                   {((parseFloat(value) + parseFloat(cellValue)) / 12).toFixed(
                     2
                   )}
                   /mo.
                 </div>
-                                        
-              </Grid.Row>
-                                      
+              </div>
               <div
                 style={{
-                  transform: 'translate(604.5px, -264px)',
+                  // transform: 'translate(604.5px, -264px)',
                   color: 'rgb(0, 102, 204)',
                   fontSize: '17px',
                   fontWeight: '400',
                   cursor: 'pointer',
                 }}
               >
-                                            
                 <a
                   onClick={() => {
                     setBag(false),
@@ -437,12 +452,10 @@ export default function NewCart(values) {
                 >
                   Remove
                 </a>
-                                       
               </div>
-                                      
               <Divider
                 style={{
-                  transform: 'translate(56px, -269.5px)',
+                  // transform: 'translate(56px, -269.5px)',
                   width: '731px',
                 }}
               />
@@ -450,7 +463,7 @@ export default function NewCart(values) {
                 <>
                   <div
                     style={{
-                      transform: 'translateY(-260px)',
+                      // transform: 'translateY(-260px)',
                       width: '800px',
                       paddingBottom: '342px',
                     }}
@@ -458,9 +471,12 @@ export default function NewCart(values) {
                     <Icon
                       name="apple"
                       color="red"
-                      style={{ transform: 'translate(53px, -3px) scale(1.1)' }}
+                      // style={{ transform: 'translate(53px, -3px) scale(1.1)' }}
                     />
-                    <div style={{ transform: 'translate(79px, -24px)' }}>
+                    <div 
+                      style={{ 
+                        // transform: 'translate(79px, -24px)' 
+                      }}>
                       <span
                         style={{
                           fontSize: '17px',
@@ -472,7 +488,7 @@ export default function NewCart(values) {
                       </span>
                       <span
                         style={{
-                          transform: 'translate(-91px, -23px)',
+                          // transform: 'translate(-91px, -23px)',
                           display: 'flex',
                           justifyContent: 'flex-end',
                           fontSize: '17px',
@@ -482,7 +498,11 @@ export default function NewCart(values) {
                         $79.00
                       </span>
                     </div>
-                    <div style={{ transform: 'translate(79px, -39px)' }}>
+                    <div 
+                      style={{ 
+                        // transform: 'translate(79px, -39px)' 
+                      }}
+                    >
                       <span
                         style={{
                           fontSize: '14px',
@@ -494,7 +514,7 @@ export default function NewCart(values) {
                       </span>
                       <span
                         style={{
-                          transform: 'translate(-91px, -20px)',
+                          // transform: 'translate(-91px, -20px)',
                           display: 'flex',
                           justifyContent: 'flex-end',
                         }}
@@ -502,13 +522,17 @@ export default function NewCart(values) {
                         $6.58/mo.
                       </span>
                     </div>
-                    <div style={{ transform: 'translate(79px, -51px)' }}>
+                    <div 
+                      style={{ 
+                        // transform: 'translate(79px, -51px)' 
+                      }}
+                    >
                       <span>
                         Automatically registered with your Apple hardware.
                       </span>
                       <span
                         style={{
-                          transform: 'translate(-91px, -20px)',
+                          // transform: 'translate(-91px, -20px)',
                           display: 'flex',
                           justifyContent: 'flex-end',
                         }}
@@ -530,53 +554,46 @@ export default function NewCart(values) {
                   </div>
                   <Divider
                     style={{
-                      transform: 'translate(56px, -658.5px)',
+                      // transform: 'translate(56px, -658.5px)',
                       width: '731px'
                     }}
                   />
                 </>
               ) : (
                 <>
-                                          
-                  <Grid.Row>
-                                                
-                    <Grid.Column style={{ width: '30px' }}>
-                                                      
+                  <div>
+                    <div style={{ width: '30px' }}>
                       <Icon
                         name="apple"
                         color="red"
                         style={{
-                          transform: 'translate(53px, -323px) scale(1.1)',
+                          // transform: 'translate(53px, -323px) scale(1.1)',
                         }}
                       />
-                                                  
-                    </Grid.Column>
-                                                
-                    <Grid.Column
-                      style={{ width: '701px', marginBottom: '18px' }}
+                    </div>
+                    <div
+                      style={{ 
+                        width: '701px', 
+                        marginBottom: '18px' 
+                      }}
                     >
-                                                      
-                      <Grid.Row>
-                                                            
+                      <div>
                         <div
                           style={{
-                            transform: 'translate(80px, -448px)',
+                            // transform: 'translate(80px, -448px)',
                             fontSize: '17px',
                             fontWeight: '600',
                             lineHeight: '25px',
                           }}
                         >
-                                                                  
                           <div>
                             Add AppleCare+ for iPad Air (5th generation) for
                             $79.00
                           </div>
-                                                              
                         </div>
-                                                            
                         <div
                           style={{
-                            transform: 'translate(718px, -518px)',
+                            // transform: 'translate(718px, -518px)',
                             position: 'absolute',
                             color: 'rgb(0, 102, 204)',
                             cursor: 'pointer',
@@ -585,7 +602,6 @@ export default function NewCart(values) {
                             lineHeight: '25px',
                           }}
                         >
-                                   
                           <a
                             onClick={() => {
                               setAppleCare(79), setNoAppleCare(true);
@@ -598,16 +614,12 @@ export default function NewCart(values) {
                           >
                             Add
                           </a>
-                                                              
                         </div>
-                                                        
-                      </Grid.Row>
-                                                      
-                      <Grid.Row>
-                                                            
+                      </div>
+                      <div>
                         <div
                           style={{
-                            transform: 'translate(79px, -530px)',
+                            // transform: 'translate(79px, -530px)',
                             fontSize: '14px',
                             fontWeight: '400',
                             lineHeight: '20px',
@@ -617,15 +629,11 @@ export default function NewCart(values) {
                           keyboard from accidental drops and spills with
                           AppleCare+.
                         </div>
-                                                        
-                      </Grid.Row>
-                                                      
-                      <Grid.Row>
-                                                            
+                      </div>
+                      <div>
                         <div
-                          style={{ transform: 'translate(-72.5px, -590px)' }}
+                          // style={{ transform: 'translate(-72.5px, -590px)' }}
                         >
-                                                                  
                           <a
                             className={styles.bluehovering}
                             style={{
@@ -635,108 +643,92 @@ export default function NewCart(values) {
                           >
                             Learn more {'>'}
                           </a>
-                                                              
                         </div>
-                                                        
-                      </Grid.Row>
-                                                  
-                    </Grid.Column>
-                                            
-                  </Grid.Row>
+                      </div>
+                    </div>
+                  </div>
                   <Divider
                     style={{
-                      transform: 'translate(42px, -658.5px)',
+                      // transform: 'translate(42px, -658.5px)',
                       width: '731px',
                     }}
                   />
                 </>
               )}
-                                          
               <div
                 style={{
-                  transform: 'translate(0px, 0px)',
+                  // transform: 'translate(0px, 0px)',
                   fontSize: '17px',
                   fontWeight: '600',
                   lineHeight: '25px',
                 }}
               >
-                                                
                 <div>
-                                                      
                   <div
                     style={{
-                      transform: 'translate(-25.5px, -475px) scale(0.55)',
+                      // transform: 'translate(-25.5px, -475px) scale(0.55)',
                       position: 'fixed',
                     }}
                   >
-                                                            
                     <div
                       style={{
-                        transform: 'translate(80px, -500px)',
+                        // transform: 'translate(80px, -500px)',
                         border: '2px solid black',
                         width: '30px',
                         height: '30px',
                         borderRadius: '50%',
                       }}
                     >
-                                                                  
                       <div
                         style={{
-                          transform: 'translate(2.9px, -16px)',
+                          // transform: 'translate(2.9px, -16px)',
                           width: '20px',
                           height: '1px',
                           border: '1px solid black',
                           borderRadius: '50px',
                         }}
                       />
-                                                                  
                       <div
                         style={{
-                          transform: 'translate(5.5px, -36px)',
+                          // transform: 'translate(5.5px, -36px)',
                           width: '14.5px',
                           height: '1px',
                           border: '1px solid black',
                           borderRadius: '50px',
                         }}
                       />
-                                                              
                     </div>
-                                                        
                   </div>
-                                                      
-                  <div style={{ transform: 'translate(80px, -722px)' }}>
+                  <div 
+                    style={{ 
+                      transform: 'translate(80px, -722px)' 
+                    }}
+                  >
                     Add free engraving
                   </div>
-                                                  
                 </div>
-                                                
                 <div
                   style={{
-                    transform: 'translate(600.8px, -797.7px)',
+                    // transform: 'translate(600.8px, -797.7px)',
                     color: 'rgb(0, 102, 204)',
                     cursor: 'pointer',
                     fontWeight: '400',
                   }}
                 >
-                                                      
                   <a
                     className={styles.bluehovering}
                     style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
                   >
                     Add
                   </a>
-                                                  
                 </div>
-                                            
               </div>
-                                      
               <Divider
                 style={{
-                  transform: 'translate(56px, -836.5px)',
+                  // transform: 'translate(56px, -836.5px)',
                   width: '731px',
                 }}
               />
-                                          
               <div
                 style={{
                   fontSize: '17px',
@@ -744,58 +736,47 @@ export default function NewCart(values) {
                   lineHeight: '25px',
                 }}
               >
-                                                
                 <div>
-                                                      
                   <Icon
                     name="gift"
                     style={{
-                      transform: 'translate(-94.5px, -877px) scale(1.1)',
+                      // transform: 'translate(-94.5px, -877px) scale(1.1)',
                       position: 'absolute',
                     }}
                   />
                   <div
                     style={{
-                      transform: 'translate(80px, -900.5px)',
+                      // transform: 'translate(80px, -900.5px)',
                       position: 'absolute',
                     }}
                   >
                     Add a gift message
                   </div>
-                                                  
                 </div>
-                                                
-                <div
+                <div   
                   style={{
-                    transform: 'translate(600.5px, -950px)',
+                    // transform: 'translate(600.5px, -950px)',
                     color: 'rgb(0, 102, 204)',
                     cursor: 'pointer',
                     fontWeight: '400',
                   }}
                 >
-                                                      
                   <a
                     className={styles.bluehovering}
                     style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
-                  >
+                  > 
                     Add
                   </a>
-                                                  
                 </div>
-                                            
               </div>
-                                      
               <Divider
                 style={{
-                  transform: 'translate(56px, -987.5px)',
+                  // transform: 'translate(56px, -987.5px)',
                   width: '731px',
                 }}
               />
-                                      
-              <Grid>
-                                            
+              <div>
                 <div>
-                                                  
                   <div
                     style={{
                       fontSize: '14px',
@@ -803,7 +784,6 @@ export default function NewCart(values) {
                       lineHeight: '20px',
                     }}
                   >
-                                                        
                     <div
                       style={{
                         transform: 'translate(14px, -1078.5px) scale(0.16)',
@@ -814,10 +794,9 @@ export default function NewCart(values) {
                         borderRadius: '15px',
                       }}
                     >
-                                                              
                       <div
                         style={{
-                          transform: 'translate(14.5px, -55px)',
+                          // transform: 'translate(14.5px, -55px)',
                           position: 'absolute',
                           border: '5px solid black',
                           width: '60px',
@@ -825,7 +804,6 @@ export default function NewCart(values) {
                           borderRadius: '150px 150px 0 0',
                         }}
                       />
-                                                              
                       <Icon
                         name="apple"
                         style={{
@@ -833,12 +811,10 @@ export default function NewCart(values) {
                           color: 'black',
                         }}
                       />
-                                                          
                     </div>
-                                                        
                     <div
                       style={{
-                        transform: 'translate(409px, -1047px)',
+                        // transform: 'translate(409px, -1047px)',
                         width: '220px',
                       }}
                     >
@@ -867,13 +843,9 @@ export default function NewCart(values) {
                         <span>&nbsp;- Free</span>
                       </b>
                     </div>
-                                                    
                   </div>
-                                              
                 </div>
-                                            
                 <div>
-                                                  
                   <div
                     style={{
                       fontSize: '14px',
@@ -881,119 +853,106 @@ export default function NewCart(values) {
                       lineHeight: '20px',
                     }}
                   >
-                                                        
                     <div
                       style={{
-                        transform:
-                          'translate(358.9px, -1292.8px) scale(0.55, 0.5)',
+                        // transform: 'translate(358.9px, -1292.8px) scale(0.55, 0.5)',
                         position: 'absolute',
                       }}
                     >
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(7px, 0px) rotate(60deg)',
+                          // transform: 'translate(7px, 0px) rotate(60deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(-7px, -38px) rotate(-60deg)',
+                          // transform: 'translate(-7px, -38px) rotate(-60deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(7px, -60px) rotate(60deg)',
+                          // transform: 'translate(7px, -60px) rotate(60deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(-7px, -98px) rotate(-60deg)',
+                          // transform: 'translate(-7px, -98px) rotate(-60deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(0px, -140px) rotate(0deg)',
+                          // transform: 'translate(0px, -140px) rotate(0deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(14px, -186px) rotate(0deg)',
+                          // transform: 'translate(14px, -186px) rotate(0deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(-14px, -224px) rotate(0deg)',
+                          // transform: 'translate(-14px, -224px) rotate(0deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(-7px, -274.8px) rotate(60deg)',
+                          // transform: 'translate(-7px, -274.8px) rotate(60deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '18px',
                           background: 'black',
-                          transform: 'translate(7px, -312.7px) rotate(-59deg)',
+                          // transform: 'translate(7px, -312.7px) rotate(-59deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                              
                       <div
                         style={{
                           width: '2px',
                           height: '17px',
                           background: 'black',
-                          transform: 'translate(0px, -346px) rotate(-59deg)',
+                          // transform: 'translate(0px, -346px) rotate(-59deg)',
                           borderRadius: '10px',
                         }}
                       />
-                                                          
                     </div>
                     <div
                       style={{
-                        transform: 'translate(79px, -1186.8px)',
+                        // transform: 'translate(79px, -1186.8px)',
                         width: '200px',
                       }}
                     >
@@ -1011,42 +970,37 @@ export default function NewCart(values) {
                         Apple <City />
                       </a>
                     </div>
-                                                    
                   </div>
-                                              
                 </div>
-                                        
-              </Grid>
-                                      
+              </div>
               <Divider
                 style={{
-                  transform: 'translate(-187px, -1185.5px)',
+                  // transform: 'translate(-187px, -1185.5px)',
                   width: '974px',
                   marginBottom: '0px',
                 }}
               />
-                                      
               <div style={{ lineHeight: '29.8px' }}>
-                                            
                 <div
                   style={{
-                    transform: 'translateY(3px)',
+                    // transform: 'translateY(3px)',
                     fontSize: '17px',
                     fontWeight: '400',
                   }}
                 >
-                                                  
                   <div
                     style={{
-                      transform: 'translate(-102px, -1241px)',
+                      // transform: 'translate(-102px, -1241px)',
                       lineHeight: '50px',
                     }}
                   >
-                                                        Subtotal
-                                                    
+                    Subtotal
                   </div>
-                                                  
-                  <div style={{ transform: 'translate(723px, -1359px)' }}>
+                  <div 
+                    style={{ 
+                      // transform: 'translate(723px, -1359px)' 
+                    }}
+                  >
                     {(
                       parseFloat(quantity) *
                       (parseFloat(value) +
@@ -1056,54 +1010,49 @@ export default function NewCart(values) {
                       style: 'currency',
                       currency: 'USD',
                     })}
-                                                    
                   </div>
-                                              
                 </div>
-                                            
                 <div
                   style={{
-                    transform: 'translateY(3px)',
+                    // transform: 'translateY(3px)',
                     fontSize: '17px',
                     fontWeight: '400',
                   }}
                 >
-                                                  
                   <div
                     style={{
-                      transform: 'translate(-102.5px, -1448.7px)',
+                      // transform: 'translate(-102.5px, -1448.7px)',
                       lineHeight: '30px',
                     }}
                   >
-                                                        Shipping
-                                                    
+                    Shipping
+                    
                   </div>
-                                                  
-                  <div style={{ transform: 'translate(592px, -1538px)' }}>
-                                                        FREE
-                                                    
+                  
+                  <div 
+                    style={{ 
+                      // transform: 'translate(592px, -1538px)' 
+                    }}
+                  >
+                    FREE
                   </div>
-                                              
                 </div>
-                                            
                 <div
                   style={{
-                    transform: 'translate(54px, -1687px)',
+                    // transform: 'translate(54px, -1687px)',
                     fontSize: '17px',
                     fontWeight: '400',
                     lineHeight: '30px',
                   }}
                 >
-                                                  
                   <div>
-                                                        
                     <Popup
                       content="The sales tax listed on the checkout page is only an estimate. Your invoice will contain the final sales tax, including state and local taxes, as well as any applicable rebates or fees. In California and Rhode Island, sales tax is collected on the unbundled price of iPhone."
                       trigger={
                         <Icon
                           name="question circle"
                           style={{
-                            transform: 'translate(-186px, 29.09px)',
+                            // transform: 'translate(-186px, 29.09px)',
                             position: 'absolute',
                             cursor: 'pointer',
                             color: 'gray',
@@ -1118,7 +1067,6 @@ export default function NewCart(values) {
                         borderRadius: '10px',
                       }}
                     />
-                                                        
                     <div>
                       Estimated tax for:&nbsp;
                       <a
@@ -1128,30 +1076,28 @@ export default function NewCart(values) {
                         <Zip />
                       </a>
                     </div>
-                                                    
                   </div>
-                                                  
                   <div
                     style={{
-                      transform: 'translate(681px, -105px)',
+                      // transform: 'translate(681px, -105px)',
                       lineHeight: '60px',
                     }}
                   >
                     ${(parseFloat(quantity) * tax).toFixed(2)}
-                                                    
                   </div>
-                                              
                 </div>
-                                            
                 <div
                   style={{
-                    transform: 'translateY(1px)',
+                    // transform: 'translateY(1px)',
                     fontSize: '17px',
                     fontWeight: '400',
                   }}
                 >
-                                                  
-                  <div style={{ transform: 'translate(54px, -1895px)' }}>
+                  <div 
+                    style={{ 
+                      // transform: 'translate(54px, -1895px)' 
+                    }}
+                  >
                     <StateAbbr /> recycling fee{' '}
                     <a
                       className={styles.bluehovering}
@@ -1160,21 +1106,20 @@ export default function NewCart(values) {
                       Learn more
                     </a>
                   </div>
-                                                  
-                  <div style={{ transform: 'translate(587px, -1955px)' }}>
-                                                        $4.00
-                                                    
+                  <div
+                    style={{ 
+                      // transform: 'translate(587px, -1955px)' 
+                    }}
+                  >
+                    $4.00
                   </div>
-                                              
                 </div>
-                                            
-                <Divider
+                {/* <Divider
                   style={{
                     transform: 'translate(56px, -2044.5px)',
                     width: '731px',
                   }}
-                />
-                                            
+                /> */}
                 <div
                   style={{
                     fontSize: '24px',
@@ -1182,13 +1127,18 @@ export default function NewCart(values) {
                     lineHeight: '28px',
                   }}
                 >
-                                                  
-                  <div style={{ transform: 'translate(-132px, -2099px)' }}>
-                                                        Total
-                                                    
+                  <div 
+                    style={{ 
+                      // transform: 'translate(-132px, -2099px)' 
+                    }}
+                  >
+                    Total
                   </div>
-                                                  
-                  <div style={{ transform: 'translate(692px, -2183px)' }}>
+                  <div 
+                    style={{ 
+                      // transform: 'translate(692px, -2183px)' 
+                    }}
+                  >
                     {(
                       parseFloat(quantity) *
                       (parseFloat(value) +
@@ -1200,14 +1150,11 @@ export default function NewCart(values) {
                       style: 'currency',
                       currency: 'USD',
                     })}
-                                                    
                   </div>
-                                              
                 </div>
-                                            
                 <div
                   style={{
-                    transform: 'translate(586px, -2271px)',
+                    // transform: 'translate(586px, -2271px)',
                     position: 'absolute',
                   }}
                 >
@@ -1222,12 +1169,10 @@ export default function NewCart(values) {
                     Get Daily Cash with Apple Card
                   </a>
                 </div>
-                                        
               </div>
-                                      
               <div
                 style={{
-                  transform: 'translate(53px, -2173px)',
+                  // transform: 'translate(53px, -2173px)',
                   fontSize: '24px',
                   fontWeight: '600',
                   lineHeight: '28px',
@@ -1236,14 +1181,12 @@ export default function NewCart(values) {
               >
                 How would you like to check out?
               </div>
-                                      
               <div
                 style={{
-                  transform: 'translate(54px, -2175px)',
+                  // transform: 'translate(54px, -2175px)',
                   display: 'inline-block',
                 }}
               >
-                                            
                 <Item
                   style={{
                     width: '361px',
@@ -1255,7 +1198,6 @@ export default function NewCart(values) {
                     position: 'fixed',
                   }}
                 >
-                                                  
                   <center
                     style={{
                       fontSize: '24px',
@@ -1263,10 +1205,8 @@ export default function NewCart(values) {
                       lineHeight: '15.3px',
                     }}
                   >
-                                                        <div>Pay Monthly</div>
-                                                        
+                    <div>Pay Monthly</div>
                     <div>with Apple Card</div>
-                                                        
                     <div>
                       $
                       {(
@@ -1278,14 +1218,12 @@ export default function NewCart(values) {
                       ).toFixed(2)}
                       /mo. at 0% APR
                     </div>
-                                                    
                   </center>
-                                                  
                   <button
                     onClick={() => setPaymentModal(true)}
                     className={styles.bagButton}
                     style={{
-                      transform: 'translateY(-9px)',
+                      // transform: 'translateY(-9px)',
                       width: '300px',
                       background: 'rgb(0, 113, 227)',
                       color: 'white',
@@ -1297,35 +1235,25 @@ export default function NewCart(values) {
                       border: '0px solid transparent',
                     }}
                   >
-                                                        
                     <div onClick={() => checkedOut()}>
                       Check Out with Apple Card
                     </div>
-                                                        
                     <div>Monthly Installments</div>
-                                                    
                   </button>
-                                                  
                   <center
                     style={{
-                      transform: 'translateY(-26px)',
+                      // transform: 'translateY(-26px)',
                       lineHeight: '10px',
                     }}
                   >
-                                                        
                     <div>$0.00 due today, which includes</div>
-                                                        
                     <div>applicable full-price items, down</div>
-                                                        
                     <div>payments, shipping, and taxes.</div>
-                                                    
                   </center>
-                                              
                 </Item>
-                                            
                 <Item
                   style={{
-                    transform: 'translate(370px)',
+                    // transform: 'translate(370px)',
                     width: '361px',
                     minWidth: '200px',
                     height: '353px',
@@ -1341,10 +1269,8 @@ export default function NewCart(values) {
                     position: 'fixed',
                   }}
                 >
-                                                  
                   <div>
-                                                        <div>Pay in Full</div>
-                                                        
+                    <div>Pay in Full</div>
                     <div>
                       {(
                         parseFloat(quantity) *
@@ -1362,7 +1288,7 @@ export default function NewCart(values) {
                       onClick={() => setPaymentModal(true)}
                       className={styles.bagButton}
                       style={{
-                        transform: 'translateY(56px)',
+                        // transform: 'translateY(56px)',
                         width: '300px',
                         height: '55px',
                         background: 'rgb(0, 113, 227)',
@@ -1375,20 +1301,18 @@ export default function NewCart(values) {
                         border: '0px solid transparent',
                       }}
                     >
-                                                              
                       <div
                         onClick={() => checkedOut()}
-                        style={{ transform: 'translateY(-13.3px)' }}
+                        // style={{ transform: 'translateY(-13.3px)' }}
                       >
                         Check Out
                       </div>
-                                                          
                     </button>
                     <Modal
                       open={paymentModal}
                       dimmer="blurring"
                       style={{
-                        transform: 'translate(42px, -490px)',
+                        // transform: 'translate(42px, -490px)',
                         borderRadius: '20px',
                         width: '816px',
                         height: '1000px',
@@ -1401,7 +1325,7 @@ export default function NewCart(values) {
                           height: '36px',
                           width: '36px',
                           borderRadius: '50%',
-                          transform: 'translate(15px, 18px)',
+                          // transform: 'translate(15px, 18px)',
                           opacity: '0.8',
                           cursor: 'pointer',
                         }}
@@ -1412,7 +1336,7 @@ export default function NewCart(values) {
                             fontSize: '30px',
                             fontWeight: 'lighter',
                             color: 'gray',
-                            transform: 'translate(10px, -5px)',
+                            // transform: 'translate(10px, -5px)',
                           }}
                         >
                           x
@@ -1424,44 +1348,41 @@ export default function NewCart(values) {
                         <Payment total={total} gbName={gbName} />
                       </div>
                     </Modal>
-                                                    
                   </div>
-                                              
                 </Item>
-                                        
               </div>
-                                  
-            </Grid.Column>
-                            
-          </Grid> */}
-                      
+            </div>
+          </div>
         </div>
-        <div style={{ transform: 'translateY(-1872px)' }}>
-                          
+        {/* <div 
+          style={{ 
+            // transform: 'translateY(-1872px)' 
+          }}
+        >
           <Divider />
-                              
           <center
             style={{
-              transform: 'translateY(-11px)',
+              // transform: 'translateY(-11px)',
               fontSize: '17px',
               fontWeight: '400',
               lineHeight: '25px'
             }}
           >
-                                    Need some help?&nbsp;
+              Need some help?&nbsp;
             <a
               className={styles.bluehovering}
               style={{ color: 'rgb(0, 113, 227)', cursor: 'pointer' }}
             >
               Chat now
             </a>
-            &nbsp;or call 1-800-MY-APPLE.                     
+            &nbsp;or call 1-800-MY-APPLE.
           </center>
-                          
-          <Divider style={{ transform: 'translateY(-22px)' }} />
-                      
-        </div>
-                    
+          <Divider 
+            style={{ 
+              // transform: 'translateY(-22px)' 
+            }} 
+          />
+        </div> */}
       </Container>
       {/* <div
         style={{
@@ -1473,7 +1394,35 @@ export default function NewCart(values) {
         }}
       />{' '} */}
       {/*  cover up */}
-              
+      <div 
+          style={{ 
+            // transform: 'translateY(-1872px)' 
+          }}
+        >
+          <Divider />
+          <center
+            style={{
+              // transform: 'translateY(-11px)',
+              fontSize: '17px',
+              fontWeight: '400',
+              lineHeight: '25px'
+            }}
+          >
+              Need some help?&nbsp;
+            <a
+              className={styles.bluehovering}
+              style={{ color: 'rgb(0, 113, 227)', cursor: 'pointer' }}
+            >
+              Chat now
+            </a>
+            &nbsp;or call 1-800-MY-APPLE.
+          </center>
+          <Divider 
+            style={{ 
+              // transform: 'translateY(-22px)' 
+            }} 
+          />
+        </div>
     </>
   );
 }
