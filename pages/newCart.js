@@ -15,7 +15,7 @@ import Heading from '../components/heading';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function Cart(values) {
+export default function Cart() {
 // export default function Cart(values) {
 
   // const {
@@ -40,6 +40,7 @@ export default function Cart(values) {
   // } = values;
 
   const [noAppleCare, setNoAppleCare] = useState(false);
+  const [appleCare, setAppleCare] = useState(0);
   const [quantity, setQuantity] = useState('1');
   const [open, setOpen] = useState(false);
   const [paymentModal, setPaymentModal] = useState(false);
@@ -53,8 +54,8 @@ export default function Cart(values) {
     query: {
       value,
       cellValue,
-      appleCare,
-      tax,
+      // appleCare,
+      // tax,
       recycling,
       // bag,
       // setBag,
@@ -64,19 +65,19 @@ export default function Cart(values) {
       // setConnectivity,
       // setCellValue,
       // setEngraving,
-      setAppleCare,
+      // setAppleCare,
       colorName,
       gbName,
       connectivityName,
-      total
+      // total
     }
   } = router;
 
   const props = {
     value,
     cellValue,
-    appleCare,
-    tax,
+    // appleCare,
+    // tax,
     recycling,
     // bag,
     // setBag,
@@ -86,17 +87,30 @@ export default function Cart(values) {
     // setConnectivity,
     // setCellValue,
     // setEngraving,
-    setAppleCare,
+    // setAppleCare,
     colorName,
     gbName,
     connectivityName,
-    total
+    // total
   }
 
-  console.log(typeof Number(props.total));
+  const tax = ((parseFloat(props.value) + parseFloat(props.cellValue) + appleCare) * 0.08624374).toFixed(2);
+  console.log(tax);
+
+  let total = (
+    parseFloat(props.value) +
+    parseFloat(props.cellValue) +
+    parseFloat(tax) +
+    parseFloat(appleCare) +
+    parseFloat(props.recycling)
+  ).toFixed(2);
+
+  console.log(total);
+
+  // console.log(typeof Number(props.total));
   console.log(props.cellValue);
-  console.log(props.appleCare);
-  console.log(props.tax);
+  console.log(appleCare);
+  // console.log(props.tax);
   console.log(props.recycling);
   // console.log(props.bag);
   // console.log(props.setBag);
@@ -106,12 +120,12 @@ export default function Cart(values) {
   // console.log(props.setConnectivity);
   // console.log(props.setCellValue);
   // console.log(props.setEngraving);
-  console.log(props.setAppleCare);
+  // console.log(props.setAppleCare);
   console.log(props.colorName);
   console.log(props.gbName);
   console.log(props.gbName);
   console.log(props.connectivityName);
-  console.log(props.total);
+  // console.log(props.total);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut));
@@ -185,8 +199,8 @@ export default function Cart(values) {
     parseFloat(quantity) *
     (parseFloat(props.value) +
       parseFloat(props.cellValue) +
-      parseFloat(props.tax) +
-      parseFloat(props.appleCare) +
+      parseFloat(tax) +
+      parseFloat(appleCare) +
       parseFloat(props.recycling))
   ).toFixed(2);
 
@@ -556,9 +570,8 @@ export default function Cart(values) {
                 <>
                   <div
                     style={{
-                      transform: 'translateY(-20px)',
-                      width: '800px',
-                      paddingBottom: '342px',
+                      transform: 'translate(38px, -137px)',
+                      width: '800px'
                     }}
                   >
                     <Icon
@@ -594,9 +607,9 @@ export default function Cart(values) {
                         $79.00
                       </span>
                     </div>
-                    <div 
-                      style={{ 
-                        transform: 'translate(79px, -39px)' 
+                    <div
+                      style={{
+                        transform: 'translate(79px, -39px)'
                       }}
                     >
                       <span
@@ -618,9 +631,9 @@ export default function Cart(values) {
                         $6.58/mo.
                       </span>
                     </div>
-                    <div 
-                      style={{ 
-                        transform: 'translate(79px, -51px)' 
+                    <div
+                      style={{
+                        transform: 'translate(79px, -51px)'
                       }}
                     >
                       <span>
@@ -650,8 +663,9 @@ export default function Cart(values) {
                   </div>
                   <Divider
                     style={{
-                      transform: 'translate(56px, -658.5px)',
+                      transform: 'translate(94.5px, -189.5px)',
                       width: '731px',
+                      marginBottom: '-25px'
                     }}
                   />
                 </>
@@ -667,7 +681,7 @@ export default function Cart(values) {
                         name="apple"
                         color="red"
                         style={{
-                          transform: 'translate(53px, -323px) scale(1.1)',
+                          transform: 'translate(53px, -322px) scale(1.1)',
                         }}
                       />
                     </Grid.Column>
@@ -1128,7 +1142,7 @@ export default function Cart(values) {
                       parseFloat(quantity) *
                       (parseFloat(props.value) +
                         parseFloat(props.cellValue) +
-                        parseFloat(props.appleCare))
+                        parseFloat(appleCare))
                     ).toLocaleString('en', {
                       style: 'currency',
                       currency: 'USD',
@@ -1211,7 +1225,7 @@ export default function Cart(values) {
                       lineHeight: '60px',
                     }}
                   >
-                    ${(parseFloat(quantity) * props.tax).toFixed(2)}
+                    ${(parseFloat(quantity) * tax).toFixed(2)}
                   </div>
                 </div>
                 <div
@@ -1274,8 +1288,8 @@ export default function Cart(values) {
                       parseFloat(quantity) *
                       (parseFloat(props.value) +
                         parseFloat(props.cellValue) +
-                        parseFloat(props.tax) +
-                        parseFloat(props.appleCare) +
+                        parseFloat(tax) +
+                        parseFloat(appleCare) +
                         parseFloat(props.recycling))
                     ).toLocaleString('en', {
                       style: 'currency',
@@ -1454,8 +1468,8 @@ export default function Cart(values) {
                         parseFloat(quantity) *
                         (parseFloat(props.value) +
                           parseFloat(props.cellValue) +
-                          parseFloat(props.tax) +
-                          parseFloat(props.appleCare) +
+                          parseFloat(tax) +
+                          parseFloat(appleCare) +
                           parseFloat(props.recycling))
                       ).toLocaleString('en', {
                         style: 'currency',
@@ -1527,7 +1541,7 @@ export default function Cart(values) {
                       >
                         <Payment 
                           quantity={quantity} 
-                          total={props.total} 
+                          total={total} 
                           gbName={props.gbName} 
                         />
                       </div>

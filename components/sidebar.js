@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Divider, Icon, Modal, Grid, Button, Item } from 'semantic-ui-react';
 import styles from '../styles/ipad.module.css';
 import NamedColor from '../components/namedColor';
@@ -33,14 +33,14 @@ export default function Sidebar() {
   const [cellValue, setCellValue] = useState(0);
   const [appleCare, setAppleCare] = useState(0);
   const [noAppleCare, setNoAppleCare] = useState(false);
-//   const [bag, setBag] = useState(false);
   const [colorName, setColorName] = useState('');
   const [gbName, setGbName] = useState('');
   const [connectivityName, setConnectivityName] = useState('');
+  //   const [bag, setBag] = useState(false);
 
   const router = useRouter();
 
-  const tax = ((value + cellValue + appleCare) * 0.08624374).toFixed(2);
+//   const tax = ((value + cellValue + appleCare) * 0.08624374).toFixed(2);
   const recycling = 4;
 
   const paths =
@@ -120,13 +120,13 @@ export default function Sidebar() {
   // console.log("nextMonthPickup1", nextMonthPickup1);
   // console.log("unevenMonths", unevenMonths);
 
-  let total = (
-    parseFloat(value) +
-    parseFloat(cellValue) +
-    parseFloat(tax) +
-    parseFloat(appleCare) +
-    parseFloat(recycling)
-  ).toFixed(2);
+//   let total = (
+//     parseFloat(value) +
+//     parseFloat(cellValue) +
+//     parseFloat(tax) +
+//     parseFloat(appleCare) +
+//     parseFloat(recycling)
+//   ).toFixed(2);
 
   function sendData() {
       Router.push({
@@ -134,8 +134,8 @@ export default function Sidebar() {
           query: {
             value,
             cellValue,
-            appleCare,
-            tax,
+            // appleCare,
+            // tax,
             recycling,
             // bag,
             // setBag,
@@ -145,11 +145,11 @@ export default function Sidebar() {
             // setConnectivity,
             // setCellValue,
             // setEngraving,
-            setAppleCare,
+            // setAppleCare,
             colorName,
             gbName,
             connectivityName,
-            total
+            // total
           }
       })
   }
@@ -1450,9 +1450,9 @@ export default function Sidebar() {
                       <>
                         <div style={{ transform: 'translate(-26px)' }}>
                           <a
-                            onClick={() => {
-                              setAppleCare(0), setNoAppleCare(false);
-                            }}
+                            // onClick={() => {
+                            //   setAppleCare(0), setNoAppleCare(false);
+                            // }}
                             className={styles.bluehovering}
                             style={{
                               color: 'rgb(0, 102, 204)',
@@ -1466,9 +1466,9 @@ export default function Sidebar() {
                     ) : (
                       <>
                         <a
-                          onClick={() => {
-                            setAppleCare(79), setNoAppleCare(true);
-                          }}
+                        //   onClick={() => {
+                        //     setAppleCare(79), setNoAppleCare(true);
+                        //   }}
                           className={styles.bluehovering}
                           style={{
                             color: 'rgb(0, 102, 204)',
@@ -1571,8 +1571,7 @@ export default function Sidebar() {
                             height: '85px',
                             borderRadius: '15px',
                           }}
-                        >
-                                                                  
+                        >                          
                           <div
                             style={{
                               transform: 'translate(14.5px, -55.5px)',
@@ -1582,18 +1581,15 @@ export default function Sidebar() {
                               height: '35px',
                               borderRadius: '150px 150px 0 0',
                             }}
-                          />
-                                                                  
+                          />                                 
                           <Icon
                             name="apple"
                             style={{
                               transform: 'translate(36px, -2px) scale(3.2)',
                               color: 'black',
                             }}
-                          />
-                                                              
-                        </div>
-                                                            
+                          />                               
+                        </div>                          
                         <div
                           style={{
                             transform: 'translate(28px, -9px)',
@@ -1877,7 +1873,7 @@ export default function Sidebar() {
                 </Grid.Column>
               </Grid>
             </div>
-            {console.log(
+            {/* {console.log(
               'total:',
               (
                 parseFloat(value) +
@@ -1886,7 +1882,7 @@ export default function Sidebar() {
                 parseFloat(appleCare) +
                 parseFloat(recycling)
               ).toFixed(2)
-            )}
+            )} */}
           </div>
         </Item>
       {/* ) : (
