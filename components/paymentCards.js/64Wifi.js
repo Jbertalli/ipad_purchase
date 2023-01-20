@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Check from '../check';
 import styles from '../../styles/ipad.module.css';
 
-export default function SixWifi() {
+export default function SixWifi({ quantity }) {
   return (
     <>
       <div
@@ -83,7 +83,10 @@ export default function SixWifi() {
                 transform: 'translate(413.5px, -24.5px)',
               }}
             >
-              $654.66
+              {(654.66 * quantity).toLocaleString('en', {
+                style: 'currency',
+                currency: 'USD',
+              })}
             </div>
           </div>
           <div style={{ transform: 'translateY(-115px)' }}>

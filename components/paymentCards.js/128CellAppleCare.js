@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Check from '../check';
 import styles from '../../styles/ipad.module.css';
 
-export default function OneCellAppleCare() {
+export default function OneCellAppleCare({ quantity }) {
   return (
     <>
       <div
@@ -84,7 +84,10 @@ export default function OneCellAppleCare() {
                 transform: 'translate(395.8px, -24.5px)',
               }}
             >
-              $1,066.35
+              {(1066.35 * quantity).toLocaleString('en', {
+                style: 'currency',
+                currency: 'USD',
+              })}
             </div>
           </div>
           <div style={{ transform: 'translateY(-115px)' }}>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Check from '../check';
 import styles from '../../styles/ipad.module.css';
 
-export default function SixCell() {
+export default function SixCell({ quantity }) {
   return (
     <>
       <div
@@ -83,7 +83,10 @@ export default function SixCell() {
                 transform: 'translate(413.5px, -24.5px)',
               }}
             >
-              $817.60
+              {(817.60 * quantity).toLocaleString('en', {
+                style: 'currency',
+                currency: 'USD',
+              })}
             </div>
           </div>
           <div style={{ transform: 'translateY(-115px)' }}>

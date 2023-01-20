@@ -1121,7 +1121,7 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(762px, -114px)'
+                      transform: (quantity > 1) ? 'translate(746px, -114px)' : 'translate(762px, -114px)'
                     }}
                   >
                     {(
@@ -1207,7 +1207,7 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(720px, 1498px)',
+                      transform: (quantity > 1) ? 'translate(710px, 1498px)' : 'translate(720px, 1498px)',
                       lineHeight: '60px',
                     }}
                   >
@@ -1267,7 +1267,7 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(730px, -256px)'
+                      transform: (quantity > 1) ? 'translate(713px, -256px)' : 'translate(730px, -256px)'
                     }}
                   >
                     {(
@@ -1525,7 +1525,11 @@ export default function Cart(values) {
                           justifyContent: 'center'
                         }}
                       >
-                        <Payment total={props.total} gbName={props.gbName} />
+                        <Payment 
+                          quantity={quantity} 
+                          total={props.total} 
+                          gbName={props.gbName} 
+                        />
                       </div>
                     </Modal>
                   </div>
