@@ -56,14 +56,14 @@ export default function Cart(values) {
       appleCare,
       tax,
       recycling,
-      bag,
-      setBag,
-      setValue,
-      setColor,
-      setStorage,
-      setConnectivity,
-      setCellValue,
-      setEngraving,
+      // bag,
+      // setBag,
+      // setValue,
+      // setColor,
+      // setStorage,
+      // setConnectivity,
+      // setCellValue,
+      // setEngraving,
       setAppleCare,
       colorName,
       gbName,
@@ -78,14 +78,14 @@ export default function Cart(values) {
     appleCare,
     tax,
     recycling,
-    bag,
-    setBag,
-    setValue,
-    setColor,
-    setStorage,
-    setConnectivity,
-    setCellValue,
-    setEngraving,
+    // bag,
+    // setBag,
+    // setValue,
+    // setColor,
+    // setStorage,
+    // setConnectivity,
+    // setCellValue,
+    // setEngraving,
     setAppleCare,
     colorName,
     gbName,
@@ -93,19 +93,19 @@ export default function Cart(values) {
     total
   }
 
-  console.log(props.total);
+  console.log(typeof Number(props.total));
   console.log(props.cellValue);
   console.log(props.appleCare);
   console.log(props.tax);
   console.log(props.recycling);
-  console.log(props.bag);
-  console.log(props.setBag);
-  console.log(props.setValue);
-  console.log(props.setColor);
-  console.log(props.setStorage);
-  console.log(props.setConnectivity);
-  console.log(props.setCellValue);
-  console.log(props.setEngraving);
+  // console.log(props.bag);
+  // console.log(props.setBag);
+  // console.log(props.setValue);
+  // console.log(props.setColor);
+  // console.log(props.setStorage);
+  // console.log(props.setConnectivity);
+  // console.log(props.setCellValue);
+  // console.log(props.setEngraving);
   console.log(props.setAppleCare);
   console.log(props.colorName);
   console.log(props.gbName);
@@ -182,7 +182,7 @@ export default function Cart(values) {
   // console.log("unevenMonths", unevenMonths);
 
   let checkOut = (
-    parseFloat(props.quantity) *
+    parseFloat(quantity) *
     (parseFloat(props.value) +
       parseFloat(props.cellValue) +
       parseFloat(props.tax) +
@@ -197,6 +197,8 @@ export default function Cart(values) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <>     
@@ -357,7 +359,8 @@ export default function Cart(values) {
                 <div 
                   style={{ 
                     transform: 'translate(92px)',
-                    marginTop: '40px'
+                    marginTop: '40px',
+                    width: '300px'
                   }}
                 >
                   10.9-inch iPad Air {props.connectivityName} {props.gbName}
@@ -369,7 +372,7 @@ export default function Cart(values) {
                       <button
                         onClick={() => setOpen(true)}
                         style={{
-                          transform: 'translate(475px, -29px)',
+                          transform: 'translate(476px, -57px)',
                           background: 'transparent',
                           color: 'black',
                           border: 'transparent',
@@ -390,7 +393,7 @@ export default function Cart(values) {
                       <button
                         onClick={() => setOpen(false)}
                         style={{
-                          transform: 'translate(458px, -53px)',
+                          transform: 'translate(458px, -82px)',
                           position: 'absolute',
                           zIndex: '100',
                           background: 'white',
@@ -400,6 +403,16 @@ export default function Cart(values) {
                           width: '60px',
                         }}
                       >
+                        {/* {arr.map(function(element) {
+                          return (
+                          <ul
+                            style={{ transform: 'translate(-22.7px)' }}
+                            onClick={() => setQuantity(element += 1)}
+                          >
+                            {element += 1}
+                          </ul>
+                          )
+                        })} */}
                         <ul
                           style={{ transform: 'translate(-22.7px)' }}
                           onClick={() => setQuantity(1)}
@@ -472,7 +485,7 @@ export default function Cart(values) {
                   {/* $599.00 */}
                   <div
                     style={{
-                      transform: 'translate(164px)'
+                      transform: 'translate(162px, -28px)'
                     }}
                   >
                     ${parseFloat(props.value) + parseFloat(props.cellValue)}.00
@@ -489,14 +502,14 @@ export default function Cart(values) {
               >
                 <div
                   style={{
-                    transform: 'translate(92px, -141px)'
+                    transform: 'translate(92px, -169px)'
                   }}
                 >
                   Pay 0% APR for 12 months:
                 </div>
                 <div
                   style={{
-                    transform: 'translate(754px, -161px)'
+                    transform: 'translate(754px, -189.5px)'
                   }}
                 >
                   $
@@ -508,7 +521,7 @@ export default function Cart(values) {
               </Grid.Row>
               <div
                 style={{
-                  transform: 'translate(765px, -142px)',
+                  transform: 'translate(765px, -170px)',
                   color: 'rgb(0, 102, 204)',
                   fontSize: '17px',
                   fontWeight: '400',
@@ -517,14 +530,15 @@ export default function Cart(values) {
               >
                 <a
                   onClick={() => {
-                      setBag(false),
-                      setValue(0),
-                      setColor(false),
-                      setStorage(0),
-                      setConnectivity(false),
-                      setCellValue(0),
-                      setEngraving(false),
-                      setAppleCare(0)
+                      // setBag(false),
+                      // setValue(0),
+                      // setColor(false),
+                      // setStorage(0),
+                      // setConnectivity(false),
+                      // setCellValue(0),
+                      // setEngraving(false),
+                      // setAppleCare(0)
+                      router.push('/colorSelection/ipadhome');
                   }}
                   className={styles.bluehovering}
                 >
@@ -534,7 +548,8 @@ export default function Cart(values) {
               <Divider
                 style={{
                   transform: 'translate(94.5px, -147px)',
-                  width: '731px'
+                  width: '731px',
+                  marginTop: '-15px'
                 }}
               />
               {noAppleCare ? (
@@ -1106,11 +1121,11 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(782px, -114px)'
+                      transform: 'translate(762px, -114px)'
                     }}
                   >
                     {(
-                      parseFloat(props.quantity) *
+                      parseFloat(quantity) *
                       (parseFloat(props.value) +
                         parseFloat(props.cellValue) +
                         parseFloat(props.appleCare))
@@ -1129,7 +1144,7 @@ export default function Cart(values) {
                 >
                   <div
                     style={{
-                      transform: 'translate(94px, -115.5px)',
+                      transform: 'translate(94px, -116px)',
                       lineHeight: '30px',
                     }}
                   >
@@ -1137,7 +1152,7 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(786px, -144px)'
+                      transform: 'translate(786px, -145px)'
                     }}
                   >
                     FREE
@@ -1192,11 +1207,11 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(728px, 1498px)',
+                      transform: 'translate(720px, 1498px)',
                       lineHeight: '60px',
                     }}
                   >
-                    ${(parseFloat(props.quantity) * props.tax).toFixed(2)}
+                    ${(parseFloat(quantity) * props.tax).toFixed(2)}
                   </div>
                 </div>
                 <div
@@ -1252,11 +1267,11 @@ export default function Cart(values) {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(763.6px, -256px)'
+                      transform: 'translate(730px, -256px)'
                     }}
                   >
                     {(
-                      parseFloat(props.quantity) *
+                      parseFloat(quantity) *
                       (parseFloat(props.value) +
                         parseFloat(props.cellValue) +
                         parseFloat(props.tax) +
@@ -1436,7 +1451,7 @@ export default function Cart(values) {
                       }}
                     >
                       {(
-                        parseFloat(props.quantity) *
+                        parseFloat(quantity) *
                         (parseFloat(props.value) +
                           parseFloat(props.cellValue) +
                           parseFloat(props.tax) +

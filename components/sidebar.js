@@ -33,7 +33,7 @@ export default function Sidebar() {
   const [cellValue, setCellValue] = useState(0);
   const [appleCare, setAppleCare] = useState(0);
   const [noAppleCare, setNoAppleCare] = useState(false);
-  const [bag, setBag] = useState(false);
+//   const [bag, setBag] = useState(false);
   const [colorName, setColorName] = useState('');
   const [gbName, setGbName] = useState('');
   const [connectivityName, setConnectivityName] = useState('');
@@ -137,14 +137,14 @@ export default function Sidebar() {
             appleCare,
             tax,
             recycling,
-            bag,
-            setBag,
-            setValue,
-            setColor,
-            setStorage,
-            setConnectivity,
-            setCellValue,
-            setEngraving,
+            // bag,
+            // setBag,
+            // setValue,
+            // setColor,
+            // setStorage,
+            // setConnectivity,
+            // setCellValue,
+            // setEngraving,
             setAppleCare,
             colorName,
             gbName,
