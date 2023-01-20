@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Container, Divider, Segment, Button, Icon, Item, Grid, Popup, Modal } from 'semantic-ui-react';
+import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal } from 'semantic-ui-react';
 import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
 import { useRouter } from 'next/router';
@@ -16,82 +16,34 @@ import Heading from '../components/heading';
 const LOCAL_STORAGE_KEY = 'user_cart';
 
 export default function Cart() {
-// export default function Cart(values) {
-
-  // const {
-  //   value,
-  //   cellValue,
-  //   appleCare,
-  //   tax,
-  //   recycling,
-  //   setBag,
-  //   setValue,
-  //   setColor,
-  //   setStorage,
-  //   setConnectivity,
-  //   setCellValue,
-  //   setEngraving,
-  //   setAppleCare,
-  //   colorName,
-  //   gbName,
-  //   connectivityName,
-  //   total,
-  //   products,
-  // } = values;
-
   const [noAppleCare, setNoAppleCare] = useState(false);
   const [appleCare, setAppleCare] = useState(0);
   const [quantity, setQuantity] = useState('1');
   const [open, setOpen] = useState(false);
   const [paymentModal, setPaymentModal] = useState(false);
   const [checkingOut, setCheckingOut] = useState(false);
+  const router = useRouter();
 
   console.log(quantity);
-
-  const router = useRouter();
 
   const {
     query: {
       value,
       cellValue,
-      // appleCare,
-      // tax,
       recycling,
-      // bag,
-      // setBag,
-      // setValue,
-      // setColor,
-      // setStorage,
-      // setConnectivity,
-      // setCellValue,
-      // setEngraving,
-      // setAppleCare,
       colorName,
       gbName,
-      connectivityName,
-      // total
+      connectivityName
     }
   } = router;
 
   const props = {
     value,
     cellValue,
-    // appleCare,
-    // tax,
     recycling,
-    // bag,
-    // setBag,
-    // setValue,
-    // setColor,
-    // setStorage,
-    // setConnectivity,
-    // setCellValue,
-    // setEngraving,
-    // setAppleCare,
     colorName,
     gbName,
-    connectivityName,
-    // total
+    connectivityName
   }
 
   const tax = ((parseFloat(props.value) + parseFloat(props.cellValue) + appleCare) * 0.08624374).toFixed(2);
@@ -106,26 +58,13 @@ export default function Cart() {
   ).toFixed(2);
 
   console.log(total);
-
-  // console.log(typeof Number(props.total));
   console.log(props.cellValue);
   console.log(appleCare);
-  // console.log(props.tax);
   console.log(props.recycling);
-  // console.log(props.bag);
-  // console.log(props.setBag);
-  // console.log(props.setValue);
-  // console.log(props.setColor);
-  // console.log(props.setStorage);
-  // console.log(props.setConnectivity);
-  // console.log(props.setCellValue);
-  // console.log(props.setEngraving);
-  // console.log(props.setAppleCare);
   console.log(props.colorName);
   console.log(props.gbName);
   console.log(props.gbName);
   console.log(props.connectivityName);
-  // console.log(props.total);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut));
@@ -1588,16 +1527,6 @@ export default function Cart() {
           />
         </div>
       </Container>
-      {/* <div
-        style={{
-          transform: 'translate(-200px, -3680px)',
-          zIndex: '10',
-          background: 'white',
-          width: '550px',
-          height: '1730px',
-        }}
-      />{' '} */}
-      {/*  cover up */}
     </>
   );
 }

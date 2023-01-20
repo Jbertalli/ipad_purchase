@@ -6,9 +6,6 @@ import styles from '../styles/ipad.module.css';
 import NamedColor from '../components/namedColor';
 import Zip from '../components/zip';
 import City from '../components/city';
-// import Payment from '../components/payment';
-// import Cart from '../pages/cart';
-// import Back from '../components/ipadBack';
 
 export default function Sidebar() {
   const [storageModal, setStorageModal] = useState(false);
@@ -31,16 +28,13 @@ export default function Sidebar() {
   const [noengraving, setNoengraving] = useState('');
   const [value, setValue] = useState(0);
   const [cellValue, setCellValue] = useState(0);
-  const [appleCare, setAppleCare] = useState(0);
   const [noAppleCare, setNoAppleCare] = useState(false);
   const [colorName, setColorName] = useState('');
   const [gbName, setGbName] = useState('');
   const [connectivityName, setConnectivityName] = useState('');
-  //   const [bag, setBag] = useState(false);
-
+  // const [appleCare, setAppleCare] = useState(0);
   const router = useRouter();
 
-//   const tax = ((value + cellValue + appleCare) * 0.08624374).toFixed(2);
   const recycling = 4;
 
   const paths =
@@ -120,43 +114,22 @@ export default function Sidebar() {
   // console.log("nextMonthPickup1", nextMonthPickup1);
   // console.log("unevenMonths", unevenMonths);
 
-//   let total = (
-//     parseFloat(value) +
-//     parseFloat(cellValue) +
-//     parseFloat(tax) +
-//     parseFloat(appleCare) +
-//     parseFloat(recycling)
-//   ).toFixed(2);
-
   function sendData() {
       Router.push({
           pathname: '/newCart',
           query: {
             value,
             cellValue,
-            // appleCare,
-            // tax,
             recycling,
-            // bag,
-            // setBag,
-            // setValue,
-            // setColor,
-            // setStorage,
-            // setConnectivity,
-            // setCellValue,
-            // setEngraving,
-            // setAppleCare,
             colorName,
             gbName,
-            connectivityName,
-            // total
+            connectivityName
           }
       })
   }
 
   return (
     <>
-      {/* {!bag ? ( */}
         <Item
           style={{
             width: '408px',
@@ -485,7 +458,7 @@ export default function Sidebar() {
                       opacity: '0.8',
                     }}
                     onClick={() => {
-                      setStorage(false),
+                        setStorage(false),
                         setSixtyfour(''),
                         setOnetwentyeight('');
                     }}
@@ -689,7 +662,7 @@ export default function Sidebar() {
                           lineHeight: '16px',
                         }}
                         onClick={() => {
-                          setStorage(true),
+                            setStorage(true),
                             setSixtyfour('64GB'),
                             setGbName('64GB'),
                             setValue(599.0);
@@ -741,7 +714,7 @@ export default function Sidebar() {
                         lineHeight: '16px',
                       }}
                       onClick={() => {
-                        setStorage(true),
+                          setStorage(true),
                           setOnetwentyeight('128GB'),
                           setGbName('128GB'),
                           setValue(749.0);
@@ -884,7 +857,7 @@ export default function Sidebar() {
                           lineHeight: '16px',
                         }}
                         onClick={() => {
-                          setConnectivity(true),
+                            setConnectivity(true),
                             setWifi('Wi-Fi'),
                             setConnectivityName('Wi-Fi'),
                             setCellValue(0);
@@ -925,7 +898,7 @@ export default function Sidebar() {
                         lineHeight: '16px',
                       }}
                       onClick={() => {
-                        setConnectivity(true),
+                          setConnectivity(true),
                           setCellular('Wi-Fi + Cellular'),
                           setConnectivityName('Wi-Fi + Cellular'),
                           setCellValue(150);
@@ -1147,7 +1120,7 @@ export default function Sidebar() {
                       opacity: '0.8',
                     }}
                     onClick={() => {
-                      setEngraving(false),
+                        setEngraving(false),
                         setAddengraving(''),
                         setNoengraving('');
                     }}
@@ -1252,8 +1225,8 @@ export default function Sidebar() {
                       <div>favorite emoji.*</div>
                     </div>
                     {/* <div style={{ transform: 'scale(0.5)' }}>
-                                        <Back />
-                                    </div> */}
+                        <Back />
+                    </div> */}
                     <div
                       style={{
                         fontSize: '12px',
@@ -1786,7 +1759,6 @@ export default function Sidebar() {
                         >
                           <button
                             className={styles.bagButton}
-                            // onClick={() => setBag(true)}
                             onClick={() => sendData()}
                             style={{
                               transform: 'translate(0px, -91px)',
@@ -1811,7 +1783,6 @@ export default function Sidebar() {
                           style={{ display: 'flex', justifyContent: 'center' }}
                         >
                           <button
-                            // onClick={() => setBag(true)}
                             onClick={() => sendData()}
                             style={{
                               transform: 'translate(0px, -91px)',
@@ -1873,45 +1844,8 @@ export default function Sidebar() {
                 </Grid.Column>
               </Grid>
             </div>
-            {/* {console.log(
-              'total:',
-              (
-                parseFloat(value) +
-                parseFloat(cellValue) +
-                parseFloat(tax) +
-                parseFloat(appleCare) +
-                parseFloat(recycling)
-              ).toFixed(2)
-            )} */}
           </div>
         </Item>
-      {/* ) : (
-        <>
-          <div>
-            <Cart
-              value={value}
-              cellValue={cellValue}
-              appleCare={appleCare}
-              tax={tax}
-              recycling={recycling}
-              bag={bag}
-              setBag={setBag}
-              setValue={setValue}
-              setColor={setColor}
-              setStorage={setStorage}
-              setConnectivity={setConnectivity}
-              setCellValue={setCellValue}
-              setEngraving={setEngraving}
-              setAppleCare={setAppleCare}
-              colorName={colorName}
-              gbName={gbName}
-              connectivityName={connectivityName}
-              total={total}
-            />
-          </div> */}
-          {/* <Payment total={total} gbName={gbName} /> */}
-        {/* </>
-      )} */}
     </>
   );
 }
