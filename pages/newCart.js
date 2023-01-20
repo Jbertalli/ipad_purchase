@@ -1459,7 +1459,7 @@ export default function Cart() {
                           opacity: '0.8',
                           cursor: 'pointer',
                         }}
-                        onClick={() => setPaymentModal(false)}
+                        onClick={() => {setPaymentModal(false), setCheckingOut(false)}}
                       >
                         <h1
                           style={{
