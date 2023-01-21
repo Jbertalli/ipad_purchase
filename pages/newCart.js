@@ -156,7 +156,7 @@ export default function Cart() {
   let product = `10.9-inch iPad Air ${props.connectivityName} ${props.gbName}`;
 
   async function handleSubmitProduct(e) {
-    e.preventDefault();
+    // e.preventDefault();
     const url = `${baseUrl}/api/newCart`;
     const payload = {total, product};
     const response = await axios.post(url, payload);
@@ -186,6 +186,32 @@ export default function Cart() {
     const response = await axios.delete(url, payload);
     console.log(response.data);
   }
+
+  const [data, setData] = useState('');
+
+  async function getProduct() {
+    const url = `${baseUrl}/api/newCart`;
+    const payload = {total, product};
+    const response = await axios.get(url, payload);
+    console.log(response.data);
+    setData(response.data);
+  }
+
+  // console.log(data[0].total);
+
+  let arr1 = [];
+  let arr2 = [];
+
+  for (let i = 0; i < data.length; i++) {
+    arr1.push(data[i].total);
+  }
+
+  for (let j = 0; j < data.length; j++) {
+    arr2.push(data[j].product);
+  }
+
+  console.log(arr1);
+  console.log(arr2);
 
   return (
     <>     
@@ -217,8 +243,57 @@ export default function Cart() {
       >
           Delete
       </Button>
+      <Button
+        onClick={getProduct}
+      >
+        Get Data
+      </Button>
       </div>
-      
+      <Card
+        style={{
+          position: 'absolute',
+          height: '290px',
+          transform: 'translateY(100px)'
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        >
+          's Account
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            width: '1000px'
+          }}
+        >
+          <div>
+            {arr1.map(function(element) {
+              return (
+              <ul
+              >
+                {element}
+                <Divider />
+              </ul>
+              )
+            })}
+          </div>
+          <div>
+            {arr2.map(function(element) {
+              return (
+              <ul
+              >
+                {element}
+                <Divider />
+              </ul>
+              )
+            })}
+          </div>
+        </div>  
+      </Card>
       <Container
         style={{
           position: 'relative',

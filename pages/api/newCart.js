@@ -11,6 +11,9 @@ export default async(req, res) => {
         case 'DELETE':
             await handleDeleteRequest(req, res);
             break;
+        case 'GET':
+            await handleGetRequest(req, res);
+            break;
         default:
             res.status(405).send(`Method ${req.method} not allowed`);
             break;
@@ -55,5 +58,18 @@ async function handleDeleteRequest(req, res) {
     } catch(error) {
         console.error(error);
         return res.status(500).send('Error deleting Orders');
+    }
+}
+
+async function handleGetRequest(req, res) {
+    const { total } = req.body;
+    try {
+        const orders = await Order.find({ _id: { $ne: total } })
+        .sort({ createdAt: 'desc' });
+        // .sort({ total: 'asc' });
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error(error);
+        res.status(403).send("Please login again");
     }
 }
