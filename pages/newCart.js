@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal } from 'semantic-ui-react';
+import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button, Card } from 'semantic-ui-react';
 import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
 import { useRouter } from 'next/router';
@@ -24,7 +24,7 @@ export default function Cart() {
   const [checkingOut, setCheckingOut] = useState(false);
   const router = useRouter();
 
-  console.log(quantity);
+  // console.log(quantity);
 
   const {
     query: {
@@ -47,7 +47,7 @@ export default function Cart() {
   }
 
   const tax = ((parseFloat(props.value) + parseFloat(props.cellValue) + appleCare) * 0.08624374).toFixed(2);
-  console.log(tax);
+  // console.log(tax);
 
   let total = (
     parseFloat(props.value) +
@@ -57,14 +57,14 @@ export default function Cart() {
     parseFloat(props.recycling)
   ).toFixed(2);
 
-  console.log(total);
-  console.log(props.cellValue);
-  console.log(appleCare);
-  console.log(props.recycling);
-  console.log(props.colorName);
-  console.log(props.gbName);
-  console.log(props.gbName);
-  console.log(props.connectivityName);
+  // console.log(total);
+  // console.log(props.cellValue);
+  // console.log(appleCare);
+  // console.log(props.recycling);
+  // console.log(props.colorName);
+  // console.log(props.gbName);
+  // console.log(props.gbName);
+  // console.log(props.connectivityName);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut));
@@ -153,6 +153,40 @@ export default function Cart() {
 
   // let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+  let product = `10.9-inch iPad Air ${props.connectivityName} ${props.gbName}`;
+
+  async function handleSubmitProduct(e) {
+    e.preventDefault();
+    const url = `${baseUrl}/api/newCart`;
+    const payload = {total, product};
+    const response = await axios.post(url, payload);
+    console.log(response.data);
+    console.log(`%c ${total}, ${product}`);
+  }
+
+  // async function handleSubmitPrice(e) {
+  //   // e.preventDefault();
+  //   const url = `${baseUrl}/api/newCart`;
+  //   const payload = {total};
+  //   const response = await axios.post(url, payload);
+  //   console.log(response.data);
+  //   console.log(`%c ${total}`, 'color: green');
+  // }
+
+  async function deleteProduct(e) {
+    const url = `${baseUrl}/api/newCart`;
+    const payload = product;
+    const response = await axios.delete(url, payload);
+    console.log(response.data);
+  }
+
+  async function deletePrice(e) {
+    const url = `${baseUrl}/api/newCart`;
+    const payload = total;
+    const response = await axios.delete(url, payload);
+    console.log(response.data);
+  }
+
   return (
     <>     
       <Head>
@@ -166,6 +200,25 @@ export default function Cart() {
       >
         <Heading />
       </div>
+      <div
+        style={{
+          position: 'absolute'
+        }}
+      >
+      <Button
+        color='blue'
+        onClick={handleSubmitProduct}
+      >
+          Save
+      </Button>
+      <Button
+        color='red'
+        onClick={() => {deleteProduct(), deletePrice()}}
+      >
+          Delete
+      </Button>
+      </div>
+      
       <Container
         style={{
           position: 'relative',
@@ -1531,13 +1584,13 @@ export default function Cart() {
   );
 }
 
-Cart.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
-  if (!token) {
-    return { products: [] };
-  }
-  const url = `${baseUrl}/api/cart`;
-  const payload = { headers: { Authorization: token } };
-  const response = await axios.get(url, payload);
-  return { products: response.data };
-};
+// Cart.getInitialProps = async (ctx) => {
+//   const { token } = parseCookies(ctx);
+//   if (!token) {
+//     return { products: [] };
+//   }
+//   const url = `${baseUrl}/api/cart`;
+//   const payload = { headers: { Authorization: token } };
+//   const response = await axios.get(url, payload);
+//   return { products: response.data };
+// };

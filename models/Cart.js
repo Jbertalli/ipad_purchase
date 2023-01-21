@@ -14,8 +14,7 @@ const CartSchema = new mongoose.Schema({
                     default: 1
                 }, 
                 product: {
-                    type: String,
-                    ref: "Product"
+                    type: String
                 }, 
                 total: {
                     type: Number,

@@ -1475,13 +1475,13 @@ export default function Cart(values) {
   );
 }
 
-Cart.getInitialProps = async (ctx) => {
-  const { token } = parseCookies(ctx);
-  if (!token) {
-    return { products: [] };
-  }
-  const url = `${baseUrl}/api/cart`;
-  const payload = { headers: { Authorization: token } };
-  const response = await axios.get(url, payload);
-  return { products: response.data };
-};
+// Cart.getInitialProps = async (ctx) => {
+//   const { token } = parseCookies(ctx);
+//   if (!token) {
+//     return { products: [] };
+//   }
+//   const url = `${baseUrl}/api/cart`;
+//   const payload = { headers: { Authorization: token } };
+//   const response = await axios.get(url, payload);
+//   return { products: response.data };
+// };
