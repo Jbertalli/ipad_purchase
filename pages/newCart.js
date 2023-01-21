@@ -13,6 +13,7 @@ import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
 import { v4 as uuidv4 } from 'uuid';
+import History from '../components/history';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -222,6 +223,9 @@ export default function Cart({ user }) {
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
+      {/* <div>
+        <History user={user.name} arr1={arr1} arr2={arr2} id={id} />
+      </div> */}
       <div
         style={{
           marginTop: '-19px'
@@ -234,25 +238,25 @@ export default function Cart({ user }) {
           position: 'absolute'
         }}
       >
-      <Button
-        color='blue'
-        onClick={handleSubmitProduct}
-      >
-          Save
-      </Button>
-      <Button
-        color='red'
-        onClick={() => {deleteProduct(), deletePrice()}}
-      >
-          Delete
-      </Button>
-      <Button
-        onClick={() => getProduct()}
-      >
-        Get Data
-      </Button>
+        <Button
+          color='blue'
+          onClick={handleSubmitProduct}
+        >
+            Save
+        </Button>
+        <Button
+          color='red'
+          onClick={() => {deleteProduct(), deletePrice()}}
+        >
+            Delete
+        </Button>
+        <Button
+          onClick={() => getProduct()}
+        >
+          Get Data
+        </Button>
       </div>
-      <Card
+      {/* <Card
         style={{
           position: 'absolute',
           height: '290px',
@@ -294,7 +298,7 @@ export default function Cart({ user }) {
             })}
           </div>
         </div>  
-      </Card>
+      </Card> */}
       <Container
         style={{
           position: 'relative',
