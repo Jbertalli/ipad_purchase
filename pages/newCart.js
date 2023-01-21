@@ -12,10 +12,11 @@ import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
+import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function Cart() {
+export default function Cart({ user }) {
   const [noAppleCare, setNoAppleCare] = useState(false);
   const [appleCare, setAppleCare] = useState(0);
   const [quantity, setQuantity] = useState('1');
@@ -213,6 +214,8 @@ export default function Cart() {
   console.log(arr1);
   console.log(arr2);
 
+  let id = uuidv4();
+
   return (
     <>     
       <Head>
@@ -244,7 +247,7 @@ export default function Cart() {
           Delete
       </Button>
       <Button
-        onClick={getProduct}
+        onClick={() => getProduct()}
       >
         Get Data
       </Button>
@@ -262,7 +265,7 @@ export default function Cart() {
             justifyContent: 'center'
           }}
         >
-          's Account
+          {user.name}'s Account
         </div>
         <div
           style={{
@@ -273,8 +276,7 @@ export default function Cart() {
           <div>
             {arr1.map(function(element) {
               return (
-              <ul
-              >
+              <ul key={id}>
                 {element}
                 <Divider />
               </ul>
@@ -284,8 +286,7 @@ export default function Cart() {
           <div>
             {arr2.map(function(element) {
               return (
-              <ul
-              >
+              <ul key={id}>
                 {element}
                 <Divider />
               </ul>
