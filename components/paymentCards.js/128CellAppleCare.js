@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { checkout } from '../../checkout';
 import { Icon, Divider } from 'semantic-ui-react';
 import Image from 'next/image';
@@ -5,10 +6,34 @@ import Check from '../check';
 import styles from '../../styles/ipad.module.css';
 
 export default function OneCellAppleCare({ quantity }) {
+  const [desktop, setDesktop] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth > 440) {
+      setDesktop(true);
+    } else {
+      setDesktop(false);
+    }
+
+    const updateMedia = () => {
+      if (window.innerWidth > 440) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
+    };
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
+  }, []);
+
   return (
     <>
       <div
-        style={{ padding: '15px', borderRadius: '10px', fontFamily: 'SF Pro' }}
+        style={{ 
+          padding: '15px', 
+          borderRadius: '10px', 
+          fontFamily: 'SF Pro',
+        }}
       >
         <div style={{ transform: 'translate(45px)' }}>
           <Image src="/images/ipad 2.png" alt="ipad" width={700} height={460} />
@@ -18,15 +43,26 @@ export default function OneCellAppleCare({ quantity }) {
             transform: 'translateY(70px)',
             position: 'relative',
             zIndex: '10',
-            margin: '0px 90px 0px 90px',
+            margin: desktop ? '0px 90px 0px 90px' : '0px 20px 0px 20px'
           }}
         >
-          <div style={{ fontSize: '40px', paddingLeft: '56px' }}>
-            iPad Air Cellular 128<span style={{ fontSize: '25px' }}>GB</span>{' '}
+          <div
+            style={{ 
+              fontSize: desktop ? '40px' : '70px', 
+              paddingLeft: '56px',
+            }}
+          >
+            iPad Air Cellular 128<span style={{ fontSize: desktop ? '25px' : '35px' }}>GB</span>{' '}
             with AppleCare+
           </div>
           <Divider />
-          <p style={{ fontSize: '17px', padding: '0px 55px 0px 55px' }}>
+          <p
+            style={{ 
+              fontSize: desktop ? '17px' : '30px', 
+              lineHeight: desktop ? null : '37px',
+              padding: '0px 55px 0px 55px' 
+            }}
+          >
             The new iPad Air has an all-screen design, 10.9″ display, M1 chip,
             Center Stage, works with Apple Pencil and Magic Keyboard, and comes
             in five colors.
@@ -38,15 +74,22 @@ export default function OneCellAppleCare({ quantity }) {
             }}
           >
             <div
-              style={{ fontSize: '17px', fontWeight: '500', cursor: 'default' }}
+              style={{ 
+                fontSize: desktop ? '17px' : '30px', 
+                fontWeight: '500', cursor: 'default' 
+              }}
             >
-              <div style={{ transform: 'translate(17.5px, 1px)' }}>
+              <div
+                style={{ 
+                  transform: desktop ? 'translate(17.5px)' : 'translate(185px, 23px) scale(1.5)' 
+                }}
+              >
                 <Check />
               </div>
               <div
                 style={{
                   color: '#0070c9',
-                  transform: 'translate(34px, -27.8px)',
+                  transform: desktop ? 'translate(34px, -27.8px)' : 'translate(54px, -15px)'
                 }}
               >
                 In stock
@@ -63,13 +106,18 @@ export default function OneCellAppleCare({ quantity }) {
               </div>
             </div>
           </div>
-          <div style={{ transform: 'translateY(-50px)' }}>
+          <div 
+            style={{ 
+              transform: 'translateY(-50px)', 
+              padding: desktop ? null : '10px 0px 10px 0px' 
+            }}
+          >
             <Divider />
           </div>
           <div style={{ transform: 'translateY(-42px)' }}>
             <span
               style={{
-                fontSize: '24px',
+                fontSize: desktop ? '24px' : '42px',
                 fontWeight: '600',
                 padding: '0px 55px 58px 55px',
               }}
@@ -78,10 +126,10 @@ export default function OneCellAppleCare({ quantity }) {
             </span>
             <div
               style={{
-                fontSize: '24px',
+                fontSize: desktop ? '24px' : '42px',
                 fontWeight: '600',
                 padding: '0px 55px 58px 55px',
-                transform: 'translate(395.8px, -24.5px)',
+                transform: desktop ? 'translate(395.8px, -24.5px)' : 'translate(488px, -43px)'
               }}
             >
               {(1066.35 * quantity).toLocaleString('en', {
@@ -90,7 +138,11 @@ export default function OneCellAppleCare({ quantity }) {
               })}
             </div>
           </div>
-          <div style={{ transform: 'translateY(-115px)' }}>
+          <div
+            style={{ 
+              transform: desktop ? 'translateY(-115px)' : 'translateY(-120px)'
+            }}
+          >
             <Divider />
           </div>
           <center>
@@ -115,7 +167,7 @@ export default function OneCellAppleCare({ quantity }) {
                 fontFamily: 'Lato',
                 fontSize: '24px',
                 padding: '15px 100px 15px 100px',
-                transform: 'translateY(-105px)',
+                transform: desktop ? 'translateY(-105px)' : 'translateY(-85px) scale(1.3)'
               }}
             >
               <span>
@@ -141,7 +193,7 @@ export default function OneCellAppleCare({ quantity }) {
         style={{
           background: '#F5F5F7',
           width: '816px',
-          height: '440px',
+          height: desktop ? '440px' : '705px',
           transform: 'translate(0px, 524px)',
           borderRadius: '0px 0px 19.5px 19.5px',
           position: 'absolute',
