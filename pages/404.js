@@ -5,9 +5,6 @@ import { useEffect, useState } from 'react';
 
 const NotFound = () => {
   const [isDesktop, setDesktop] = useState(false);
-  const [fontSize, setFontSize] = useState('48px');
-  const [transY, setTransY] = useState('203px');
-  const [transform, setTransform] = useState('translate(-4px, -538px)');
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -19,27 +16,15 @@ const NotFound = () => {
   useEffect(() => {
     if (window.innerWidth > 1500) {
       setDesktop(true);
-      setFontSize('48px');
-      setTransY('203px');
-      setTransform('translate(-4px, -538px)');
     } else {
       setDesktop(false);
-      setFontSize('30px');
-      setTransY('270px');
-      setTransform('translate(-150px, -468px)');
     }
 
     const updateMedia = () => {
       if (window.innerWidth > 1500) {
         setDesktop(true);
-        setFontSize('48px');
-        setTransY('203px');
-        setTransform('translate(-4px, -538px)');
       } else {
         setDesktop(false);
-        setFontSize('30px');
-        setTransY('270px');
-        setTransform('translate(-150px, -468px)');
       }
     };
     window.addEventListener('resize', updateMedia);
@@ -56,12 +41,12 @@ const NotFound = () => {
         <div>
           <div
             style={{
-              fontSize: `${fontSize}`,
+              fontSize: isDesktop ? '48px' : '30px',
+              lineHeight: isDesktop ? '52px' : '30px',
               display: 'flex',
               justifyContent: 'center',
               fontFamily: 'Helvetica',
               fontWeight: '500',
-              lineHeight: '52px',
               marginTop: '92px',
             }}
           >
@@ -69,7 +54,7 @@ const NotFound = () => {
           </div>
           <div
             style={{
-              fontSize: `${fontSize}`,
+              fontSize: isDesktop ? '48px' : '30px',
               display: 'flex',
               justifyContent: 'center',
               fontFamily: 'Helvetica',
@@ -133,14 +118,14 @@ const NotFound = () => {
           background: '#f5f5f7',
           position: 'static',
           zIndex: '-1',
-          transform: `translateY(${transY})`,
+          transform: isDesktop ? 'translateY(203px)' : 'translateY(290px)',
         }}
       />
       <div
         style={{
           position: 'static',
           zIndex: '1',
-          transform: `${transform}`,
+          transform: isDesktop ? 'translate(-4px, -538px)' : 'translate(-150px, -468px)',
           cursor: 'pointer',
           fontSize: '12px',
           fontWeight: '400',
@@ -152,7 +137,7 @@ const NotFound = () => {
           marginLeft: '-145px',
         }}
       >
-        <div style={{ transform: 'translate(128px, -34px)' }}>
+        <div style={{ transform: 'translate(128px, -16px)' }}>
           <Icon
             name="apple"
             style={{ transform: 'scale(1.3) translateY(-1px)' }}
