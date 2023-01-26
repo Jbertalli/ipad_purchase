@@ -1,3 +1,4 @@
+// import User from '../../models/User';
 import Order from '../../models/Orders';
 import connectDb from '../../utils/connectDb';
 
@@ -73,3 +74,17 @@ async function handleGetRequest(req, res) {
         res.status(403).send("Please login again");
     }
 }
+
+        // const orders = await Order.find({ _id: { $ne: total } })
+        // .sort({ createdAt: 'desc' })
+        // .limit(10);
+        // // .sort({ total: 'asc' });
+        // res.status(200).json(orders);
+        // const id = '63cf70f9160b1055a36adf3c';
+        // User.findById(id, function (err, docs) {
+        //     if (err) {
+        //         console.log(err);
+        //     } else {
+        //         console.log(docs.email);
+        //     }
+        // })

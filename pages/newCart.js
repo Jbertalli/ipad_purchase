@@ -24,7 +24,26 @@ export default function Cart({ user }) {
   const [open, setOpen] = useState(false);
   const [paymentModal, setPaymentModal] = useState(false);
   const [checkingOut, setCheckingOut] = useState(false);
+  const [desktop, setDesktop] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (window.innerWidth > 440) {
+      setDesktop(true);
+    } else {
+      setDesktop(false);
+    }
+
+    const updateMedia = () => {
+      if (window.innerWidth > 440) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
+    };
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
+  }, []);
 
   // console.log(quantity);
 
@@ -163,7 +182,7 @@ export default function Cart({ user }) {
     const payload = {total, product};
     const response = await axios.post(url, payload);
     console.log(response.data);
-    console.log(`%c ${total}, ${product}`);
+    console.log(`%c ${total}, ${product}`, 'color: blue');
   }
 
   // async function handleSubmitPrice(e) {
@@ -223,15 +242,19 @@ export default function Cart({ user }) {
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
-      {/* <div>
+      <div>
         <History user={user.name} arr1={arr1} arr2={arr2} id={id} />
-      </div> */}
+      </div>
       <div
         style={{
           marginTop: '-19px'
         }}
       >
-        <Heading />
+        {desktop ? (
+        <>
+          <Heading />
+        </>
+        ): null}
       </div>
       <div
         style={{
@@ -303,112 +326,116 @@ export default function Cart({ user }) {
         style={{
           position: 'relative',
           zIndex: '100',
-          transform: 'translate(114px, -50px)',
+          transform: desktop ? 'translate(114px, -50px)' : 'translate(-330px, -150px) scale(0.2)',
+          height: desktop ? null : '800px'
         }}
       >
         <div
-            style={{
-                padding: '0px 13.5px 0px 13.5px',
-                marginTop: '40px'
-            }}
+          style={{
+            transform: desktop ? null : 'translate(1200px) scale(1.8)'
+          }}
         >
-          <div
-            style={{
-              transform: 'translate(-54px)',
-              fontSize: '40px',
-              fontWeight: '600',
-              lineHeight: '44px',
-              marginTop: '79px'
-            }}
-          >
-            Review your bag.
-          </div>
-          <div
-            style={{
-              fontSize: '17px',
-              fontWeight: '400',
-              lineHeight: '25px',
-              marginTop: '15px',
-              transform: 'translate(-52px)',
-            }}
-          >
-            Free delivery and free returns.
-          </div>
-          <Segment
-            style={{
-              background: '#53687210',
-              border: 'transparent',
-              borderRadius: '12px',
-              marginTop: '56px',
-              width: '974px',
-              display: 'flex',
-              justifyContent: 'center',
-              transform: 'translate(-49px)',
-            }}
-          >
+          {desktop ? (
+          <>
             <div
               style={{
-                fontSize: '14px',
+                transform: 'translate(-54px)',
+                fontSize: '40px',
+                fontWeight: '600',
+                lineHeight: '44px',
+                marginTop: '79px'
+              }}
+            >
+              Review your bag.
+            </div>
+            <div
+              style={{
+                fontSize: '17px',
                 fontWeight: '400',
-                padding: '20px 10px 0px 50px',
-                lineHeight: '20px',
-                width: '770px',
-                height: '53px',
-                transform: 'translate(140px)',
+                lineHeight: '25px',
+                marginTop: '15px',
+                transform: 'translate(-52px)',
+              }}
+            >
+              Free delivery and free returns.
+            </div>
+            <Segment
+              style={{
+                background: '#53687210',
+                border: 'transparent',
+                borderRadius: '12px',
+                marginTop: '56px',
+                width: '974px',
+                display: 'flex',
+                justifyContent: 'center',
+                transform: 'translate(-49px)',
               }}
             >
               <div
                 style={{
-                  transform: 'translate(-178px, -13px) scale(0.2)',
-                  position: 'absolute',
+                  fontSize: '14px',
+                  fontWeight: '400',
+                  padding: '20px 10px 0px 50px',
+                  lineHeight: '20px',
+                  width: '770px',
+                  height: '53px',
+                  transform: 'translate(140px)',
                 }}
               >
                 <div
                   style={{
-                    width: '100px',
-                    height: '100px',
-                    background: 'radial-gradient(farthest-corner at 0px 80px, violet 15%, orange 40%, lightgreen 70%, yellow 100%)',
+                    transform: 'translate(-178px, -13px) scale(0.2)',
                     position: 'absolute',
-                    borderRadius: '10px',
-                    zIndex: '0',
-                    opacity: '0.8',
                   }}
-                />
-                <Icon
-                  name="apple"
-                  size="huge"
-                  style={{
-                    position: 'absolute',
-                    zIndex: '1',
-                    color: 'white',
-                    transform: 'translate(16px, 22px)',
-                  }}
-                />
-              </div>
-              <div
-                style={{
-                  transform: 'translate(-152px, -13px)'
-                }}
-              >
-                <div>
-                  Pay $
-                  {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
-                    2
-                  )}
-                  /mo. at 0% APR for eligible items in your order when you
-                  choose Apple Card Monthly Installments at checkout. &nbsp;
-                  <a
-                    className={styles.bluehovering}
+                >
+                  <div
                     style={{
-                      color: 'rgb(0, 113, 227)', cursor: 'pointer'
+                      width: '100px',
+                      height: '100px',
+                      background: 'radial-gradient(farthest-corner at 0px 80px, violet 15%, orange 40%, lightgreen 70%, yellow 100%)',
+                      position: 'absolute',
+                      borderRadius: '10px',
+                      zIndex: '0',
+                      opacity: '0.8',
                     }}
-                  >
-                    Learn more
-                  </a>
+                  />
+                  <Icon
+                    name="apple"
+                    size="huge"
+                    style={{
+                      position: 'absolute',
+                      zIndex: '1',
+                      color: 'white',
+                      transform: 'translate(16px, 22px)',
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    transform: 'translate(-152px, -13px)'
+                  }}
+                >
+                  <div>
+                    Pay $
+                    {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
+                      2
+                    )}
+                    /mo. at 0% APR for eligible items in your order when you
+                    choose Apple Card Monthly Installments at checkout. &nbsp;
+                    <a
+                      className={styles.bluehovering}
+                      style={{
+                        color: 'rgb(0, 113, 227)', cursor: 'pointer'
+                      }}
+                    >
+                      Learn more
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Segment>
+            </Segment>
+          </>
+          ): null}
           <Grid
             style={{
               marginTop: '-84px',
@@ -416,19 +443,23 @@ export default function Cart({ user }) {
               position: 'static'
             }}
           >
-            <Grid.Column
-              style={{
-                width: '100px'
-              }}
-            >
-              <div
+            {desktop ? (
+            <>
+              <Grid.Column
                 style={{
-                  transform: 'scale(0.385) translate(-46px, -84px)'
+                  width: '100px'
                 }}
               >
-                <Front />
-              </div>
-            </Grid.Column>
+                <div
+                  style={{
+                    transform: 'scale(0.385) translate(-46px, -84px)'
+                  }}
+                >
+                  <Front />
+                </div>
+              </Grid.Column>
+            </>
+            ): null}
             <Grid.Column
               style={{
                 width: '300px'
@@ -1571,11 +1602,12 @@ export default function Cart({ user }) {
                         Check Out
                       </div>
                     </button>
-                    <Modal
+
+                    {/* <Modal
                       open={paymentModal}
                       dimmer="blurring"
                       style={{
-                        transform: 'translate(42px, -490px)',
+                        transform: desktop ? 'translate(42px, -490px)' : 'translate(-200px, -490px) scale(0.3)',
                         borderRadius: '20px',
                         width: '816px',
                         height: '1000px',
@@ -1617,49 +1649,100 @@ export default function Cart({ user }) {
                           gbName={props.gbName} 
                         />
                       </div>
-                    </Modal>
+                    </Modal> */}
                   </div>
                 </Item>
               </div>
             </Grid.Column>
           </Grid>
         </div>
-        <div
-          style={{
-            transform: 'translateY(212px)'
-          }}
-        >
-          <Divider 
+        {desktop ? (
+        <>
+          <div
             style={{
-              transform: 'translate(-110px)'
-            }}
-          />
-          <center
-            style={{
-              transform: 'translate(-106px, 9px)',
-              fontSize: '17px',
-              fontWeight: '400'
+              transform: 'translateY(212px)'
             }}
           >
-            Need some help?&nbsp;
-            <a
-              className={styles.bluehovering}
+            <Divider 
               style={{
-                color: 'rgb(0, 113, 227)',
-                cursor: 'pointer'
+                transform: 'translate(-110px)'
+              }}
+            />
+            <center
+              style={{
+                transform: 'translate(-106px, 9px)',
+                fontSize: '17px',
+                fontWeight: '400'
               }}
             >
-              Chat now
-            </a>
-            &nbsp;or call 1-800-MY-APPLE.
-          </center>
-          <Divider 
+              Need some help?&nbsp;
+              <a
+                className={styles.bluehovering}
+                style={{
+                  color: 'rgb(0, 113, 227)',
+                  cursor: 'pointer'
+                }}
+              >
+                Chat now
+              </a>
+              &nbsp;or call 1-800-MY-APPLE.
+            </center>
+            <Divider 
+              style={{
+                transform: 'translate(-110px, 18px)'
+              }}
+            />
+          </div>
+        </>
+        ): null}
+      </Container>
+      <Modal
+        open={paymentModal}
+        dimmer="blurring"
+        style={{
+          transform: desktop ? 'translate(42px, -490px)' : 'translate(-208px, -400px) scale(0.43)',
+          borderRadius: '20px',
+          width: '816px',
+          height: '1000px',
+          position: 'fixed',
+        }}
+      >
+        <div
+          style={{
+            background: 'lightgray',
+            height: desktop ? '36px' : '60px',
+            width: desktop ? '36px' : '60px',
+            borderRadius: '50%',
+            transform: 'translate(15px, 18px)',
+            opacity: '0.8',
+            cursor: 'pointer',
+          }}
+          onClick={() => {setPaymentModal(false), setCheckingOut(false)}}
+        >
+          <h1
             style={{
-              transform: 'translate(-110px, 18px)'
+              fontSize: desktop ? '30px' : '50px',
+              fontWeight: 'lighter',
+              color: 'gray',
+              transform: desktop ? 'translate(10px, -5px)' : 'translate(17px, -8px)',
             }}
+          >
+            x
+          </h1>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        >
+          <Payment 
+            quantity={quantity} 
+            total={total} 
+            gbName={props.gbName} 
           />
         </div>
-      </Container>
+      </Modal>
     </>
   );
 }

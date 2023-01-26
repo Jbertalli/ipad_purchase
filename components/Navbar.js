@@ -220,6 +220,7 @@ const Navbar = ({ user }) => {
                 background: '#000000',
                 opacity: '0.8',
                 fontFamily: 'SF Pro Text',
+                width: (router.pathname === '/newCart') ? '110vw' : null
               }}
             >
               <Container

@@ -9,6 +9,7 @@ function Zip() {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [responseData, setResponseData] = useState({});
+  
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLatitude(position.coords.latitude);

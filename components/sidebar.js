@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Router from 'next/router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Divider, Icon, Modal, Grid, Button, Item } from 'semantic-ui-react';
 import styles from '../styles/ipad.module.css';
 import NamedColor from '../components/namedColor';
@@ -32,8 +33,27 @@ export default function Sidebar() {
   const [colorName, setColorName] = useState('');
   const [gbName, setGbName] = useState('');
   const [connectivityName, setConnectivityName] = useState('');
-  // const [appleCare, setAppleCare] = useState(0);
+  const [desktop, setDesktop] = useState(false);
   const router = useRouter();
+  // const [appleCare, setAppleCare] = useState(0);
+
+  useEffect(() => {
+    if (window.innerWidth > 440) {
+      setDesktop(true);
+    } else {
+      setDesktop(false);
+    }
+
+    const updateMedia = () => {
+      if (window.innerWidth > 440) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
+    };
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
+  }, []);
 
   const recycling = 4;
 
@@ -139,8 +159,20 @@ export default function Sidebar() {
           }}
         >
           <div>
-            <div style={{ color: 'red', opacity: '0.7' }}>New</div>
-            <h1 style={{ margin: '0em 0em 1.25em 0em', fontSize: '40px' }}>
+            <div 
+                style={{ 
+                    color: 'red', 
+                    opacity: '0.7' 
+                }}
+            >
+                New
+            </div>
+            <h1 
+                style={{ 
+                    margin: '0em 0em 1.25em 0em', 
+                    fontSize: '40px' 
+                }}
+            >
               Buy iPad Air
             </h1>
             <div
@@ -513,9 +545,9 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
+                    width: desktop ? '816px' : '95%',
                     transform: 'translateY(-285px)',
                     borderRadius: '20px',
-                    width: '816px',
                     height: '570px',
                     position: 'fixed',
                   }}
@@ -543,17 +575,26 @@ export default function Sidebar() {
                       x
                     </h1>
                   </div>
-                  <div style={{ padding: '3em 6em 0em 6em' }}>
+                  <div 
+                    style={{ 
+                        padding: desktop ? '3em 6em 0em 6em' : '3em 1em 0em 1em' 
+                    }}
+                  >
                     <h1
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontSize: '40px',
+                        fontSize: desktop ? '40px' : '25px',
                       }}
                     >
                       Make room for everything.
                     </h1>
-                    <div style={{ fontSize: '17px', lineHeight: '25px' }}>
+                    <div 
+                        style={{ 
+                            fontSize: desktop ?  '17px' : '10px', 
+                            lineHeight: desktop ? '25px' : '12px'
+                        }}
+                    >
                       How much storage you need depends on how you use your
                       iPad. More room means you can store more apps, music,
                       movies, and books. It also lets you create and store
@@ -596,49 +637,78 @@ export default function Sidebar() {
                       subject to change based on software version, settings, and
                       iPad model.
                     </h5>
-                    <div
-                      style={{
-                        background: '#F5F5F7',
-                        width: '816px',
-                        height: '118.1px',
-                        transform: 'translate(-84px, 20px)',
-                        borderRadius: '0px 0px 19.5px 19.5px',
-                        lineHeight: '16px',
-                        paddingTop: '25px',
-                        fontSize: '12px',
-                      }}
-                    >
-                      <Icon
-                        name="chat"
-                        size="large"
-                        style={{
-                          color: 'gray',
-                          transform: 'translateX(408px) scale(1.3)',
-                        }}
-                      />
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          marginTop: '20px',
-                        }}
-                      >
-                        <b>Have questions about buying an iPad?</b>
-                      </div>
-                      <div
-                        style={{ display: 'flex', justifyContent: 'center' }}
-                      >
-                        <a
-                          className={styles.bluehovering}
-                          style={{
-                            color: 'rgb(0, 102, 204)',
-                            cursor: 'pointer',
-                          }}
+                    {desktop ? (
+                    <>
+                        <div
+                            style={{
+                                background: '#F5F5F7',
+                                width: '816px',
+                                height: '118.1px',
+                                transform: 'translate(-84px, 20px)',
+                                borderRadius: '0px 0px 19.5px 19.5px',
+                                lineHeight: '16px',
+                                paddingTop: '25px',
+                                fontSize: '12px',
+                            }}
+                            >
+                            <Icon
+                                name="chat"
+                                size="large"
+                                style={{
+                                    color: 'gray',
+                                    transform: 'translateX(408px) scale(1.3)',
+                                }}
+                            />
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    marginTop: '20px',
+                                }}
+                            >
+                                <b>Have questions about buying an iPad?</b>
+                            </div>
+                            <div
+                                style={{ display: 'flex', justifyContent: 'center' }}
+                            >
+                                <a
+                                className={styles.bluehovering}
+                                style={{
+                                    color: 'rgb(0, 102, 204)',
+                                    cursor: 'pointer',
+                                }}
+                                >
+                                Chat with an iPad Specialist
+                                </a>
+                            </div>
+                        </div>
+                    </>
+                    ):(
+                    <>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                marginTop: '50px',
+                            }}
                         >
-                          Chat with an iPad Specialist
-                        </a>
-                      </div>
-                    </div>
+                            <b>Have questions about buying an iPad?</b>
+                        </div>
+                        <div
+                            style={{ display: 'flex', justifyContent: 'center' }}
+                        >
+                            <a
+                            className={styles.bluehovering}
+                            style={{
+                                color: 'rgb(0, 102, 204)',
+                                cursor: 'pointer',
+                            }}
+                            >
+                            Chat with an iPad Specialist
+                            </a>
+                        </div>
+                    </>
+                    )}
                   </div>
                 </Modal>
                 <span
@@ -930,11 +1000,12 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    transform: 'translateY(-500px)',
+                    transform: desktop ? 'translateY(-500px)' : null,
+                    height: desktop ? '1017px' : '635px',
+                    width: desktop ? '816px' : '95%',
+                    marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
-                    width: '816px',
-                    height: '1017px',
-                    position: 'fixed',
+                    position: 'fixed'
                   }}
                 >
                   <div
@@ -960,35 +1031,68 @@ export default function Sidebar() {
                       x
                     </h1>
                   </div>
-                  <div style={{ padding: '36px 76px 60px 76px' }}>
-                    <div style={{ fontSize: '40px', fontWeight: '600' }}>
-                      <div
-                        style={{ display: 'flex', justifyContent: 'center' }}
-                      >
-                        A faster wireless connection
-                      </div>
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          marginBottom: '15px',
+                  <div 
+                    style={{ 
+                        padding: desktop ? '36px 76px 60px 76px' : '36px 26px 60px 26px' 
+                    }}
+                >
+                    <div 
+                        style={{ 
+                            fontSize: desktop ? '40px' : '25px', 
+                            fontWeight: '600' 
                         }}
-                      >
-                        with Wi-Fi 6.
-                      </div>
+                    >
+                      {desktop ? (
+                      <>
+                        <div
+                            style={{ 
+                                display: 'flex',
+                                justifyContent: 'center' 
+                            }}
+                        >
+                            A faster wireless connection
+                        </div>
+                        <div
+                            style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            marginBottom: '15px',
+                            }}
+                        >
+                            with Wi-Fi 6.
+                        </div>
+                      </>
+                      ):(
+                      <>
+                        <div
+                            style={{ 
+                                display: 'flex',
+                                justifyContent: 'center',
+                                marginBottom: '13px'
+                            }}
+                        >
+                            A faster wireless connection with Wi-Fi 6.
+                        </div>
+                      </>
+                      )}
                     </div>
                     <div
                       style={{
                         margin: '0em 0em 3em 0em',
-                        fontSize: '17px',
-                        lineHeight: '25px',
+                        fontSize: desktop ?  '17px' : '10px', 
+                        lineHeight: desktop ? '25px' : '12px'
                       }}
                     >
                       iPad Air supports Wi-Fi 6 technology for a fast connection
                       to Wi-Fi networks in your home, a coffee shop, the school
                       library, or an airport.
                     </div>
-                    <div style={{ fontSize: '40px', fontWeight: '600' }}>
+                    <div 
+                        style={{ 
+                            fontSize: desktop ? '40px' : '25px', 
+                            fontWeight: '600' 
+                        }}
+                    >
                       <div
                         style={{ display: 'flex', justifyContent: 'center' }}
                       >
@@ -1000,7 +1104,12 @@ export default function Sidebar() {
                         with cellular data.
                       </div>
                     </div>
-                    <ul style={{ fontSize: '17px', lineHeight: '25px' }}>
+                    <ul 
+                        style={{ 
+                            fontSize: desktop ?  '17px' : '10px', 
+                            lineHeight: desktop ? '25px' : '12px'
+                        }}
+                    >
                       <li style={{ margin: '0em 0em 1em 0em' }}>
                         If you’re someplace where there’s no Wi-Fi, an iPad Air
                         with Wi-Fi + Cellular lets you stay connected to fast
@@ -1032,7 +1141,7 @@ export default function Sidebar() {
                         existing plan.
                       </li>
                     </ul>
-                    <h5 style={{ color: 'gray', fontWeight: 'lighter' }}>
+                    <h5 style={{ color: 'gray', fontWeight: 'lighter', fontSize: desktop ? null : '8px' }}>
                       Not all carriers support Apple SIM and eSIM. See your
                       carrier for more details. Not available in China mainland.
                       The eSIM technology works with iPad Pro 11‑inch (1st
@@ -1045,44 +1154,48 @@ export default function Sidebar() {
                       and iPad mini 4.
                     </h5>
                   </div>
-                  <div
-                    style={{
-                      background: '#F5F5F7',
-                      width: '816px',
-                      height: '118.1px',
-                      transform: 'translate(0px, 13px)',
-                      borderRadius: '0px 0px 19.5px 19.5px',
-                      lineHeight: '16px',
-                      paddingTop: '25px',
-                      fontSize: '12px',
-                    }}
-                  >
-                    <Icon
-                      name="chat"
-                      size="large"
-                      style={{
-                        color: 'gray',
-                        transform: 'translateX(400px) scale(1.3)',
-                      }}
-                    />
+                  {desktop ? (
+                  <>
                     <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginTop: '20px',
-                      }}
+                        style={{
+                        background: '#F5F5F7',
+                        width: '816px',
+                        height: '118.1px',
+                        transform: 'translate(0px, 13px)',
+                        borderRadius: '0px 0px 19.5px 19.5px',
+                        lineHeight: '16px',
+                        paddingTop: '25px',
+                        fontSize: '12px',
+                        }}
                     >
-                      <b>Have questions about buying an iPad?</b>
+                        <Icon
+                        name="chat"
+                        size="large"
+                        style={{
+                            color: 'gray',
+                            transform: 'translateX(400px) scale(1.3)',
+                        }}
+                        />
+                        <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            marginTop: '20px',
+                        }}
+                        >
+                        <b>Have questions about buying an iPad?</b>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <a
+                            className={styles.bluehovering}
+                            style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                        >
+                            Chat with an iPad Specialist
+                        </a>
+                        </div>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                      <a
-                        className={styles.bluehovering}
-                        style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
-                      >
-                        Chat with an iPad Specialist
-                      </a>
-                    </div>
-                  </div>
+                  </>
+                  ): null}
                 </Modal>
               </>
             )}
@@ -1173,10 +1286,11 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    transform: 'translateY(-450px)',
+                    width: desktop ? '816px' : '95%',
+                    transform: desktop ? 'translateY(-450px)' : null,
+                    marginTop: desktop ? null : '-250px',
+                    height: desktop ? '887px' : '480px',
                     borderRadius: '20px',
-                    width: '816px',
-                    height: '887px',
                     position: 'fixed',
                   }}
                 >
@@ -1203,35 +1317,56 @@ export default function Sidebar() {
                       x
                     </h1>
                   </div>
-                  <div style={{ padding: '36px 76px 60px 76px' }}>
+                  <div 
+                    style={{ 
+                        padding: desktop ? '36px 76px 60px 76px' : '10px 26px 60px 26px' 
+                    }}
+                >
                     <h1
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontSize: '40px',
+                        fontSize: desktop ? '40px' : '25px', 
                       }}
                     >
                       Add a message that lasts.
                     </h1>
-                    <div style={{ fontSize: '17px', lineHeight: '25px' }}>
-                      <div>
-                        Choose from all-new engraving options. It’s the perfect
-                        way to personalize your iPad.
-                      </div>
-                      <div>
-                        Add a special message, name, or birthday. Even combine
-                        them with your
-                      </div>
-                      <div>favorite emoji.*</div>
+                    <div 
+                        style={{ 
+                            fontSize: desktop ?  '17px' : '10px', 
+                            lineHeight: desktop ? '25px' : '12px'
+                        }}
+                    >
+                      {desktop ? (
+                      <>
+                        <div>
+                            Choose from all-new engraving options. It’s the perfect
+                            way to personalize your iPad.
+                        </div>
+                        <div>
+                            Add a special message, name, or birthday. Even combine
+                            them with your
+                        </div>
+                        <div>favorite emoji.*</div>
+                      </>
+                      ):(
+                      <>
+                        <div>
+                            Choose from all-new engraving options. It’s the perfect
+                            way to personalize your iPad. Add a special message, name, or birthday. Even combine
+                            them with your favorite emoji.*
+                        </div>
+                      </>
+                      )}
                     </div>
-                    {/* <div style={{ transform: 'scale(0.5)' }}>
-                        <Back />
-                    </div> */}
+                    <div style={{ position: 'absolute', transform: 'translate(-15px, 20px)' }}>
+                        <Image src="/images/ipad 2.png" alt="ipad" width={700} height={460} />
+                    </div>
                     <div
                       style={{
+                        transform: desktop ? 'translateY(550px)' : 'translateY(270px)',
                         fontSize: '12px',
                         color: 'gray',
-                        transform: 'translateY(550px)',
                       }}
                     >
                       <div>

@@ -5,7 +5,7 @@ const { String, Number, ObjectId } = mongoose.Schema.Types;
 const OrderSchema = new mongoose.Schema({
     user: {
         type: ObjectId,
-        ref: 'User'
+        ref: "User"
     },
     total: {
         type: Number
@@ -17,4 +17,4 @@ const OrderSchema = new mongoose.Schema({
     timestamps: true
 });
 
-export default mongoose.models.Order || mongoose.model('Order', OrderSchema);
+export default mongoose.models.Order || mongoose.model("Order", OrderSchema);

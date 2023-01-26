@@ -42,8 +42,9 @@ export default function Front() {
   let time = `${hour}:${minute}`;
   let today = `${weekdayName}, ${monthName} ${day}`;
 
-  console.log(time);
-  console.log(today);
+  // console.log(time);
+  // console.log(today);
+  // console.log(today.length);
 
   return (
     <>
@@ -98,7 +99,7 @@ export default function Front() {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(8.5px, 4px)',
+                      transform:(today.length > 19) ? 'translate(-5px, 4px)' : 'translate(8px, 4px)',
                       fontSize: '13px',
                       fontWeight: '300',
                       color: 'white',
@@ -122,7 +123,7 @@ export default function Front() {
                   </div>
                   <div
                     style={{
-                      transform: 'translate(8px, 4px)',
+                      transform:(today.length > 19) ? 'translate(-4px, 4px)' : 'translate(8px, 4px)',
                       fontSize: '13px',
                       fontWeight: '300',
                       color: 'white',
