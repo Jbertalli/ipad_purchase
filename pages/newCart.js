@@ -14,10 +14,11 @@ import City from '../components/city';
 import Heading from '../components/heading';
 import { v4 as uuidv4 } from 'uuid';
 import History from '../components/history';
+import AccountOrders from '../components/AccountOrders';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
-export default function Cart({ user }) {
+export default function Cart({ user, orders, ctx }) {
   const [noAppleCare, setNoAppleCare] = useState(false);
   const [appleCare, setAppleCare] = useState(0);
   const [quantity, setQuantity] = useState('1');
@@ -179,10 +180,10 @@ export default function Cart({ user }) {
   async function handleSubmitProduct(e) {
     // e.preventDefault();
     const url = `${baseUrl}/api/newCart`;
-    const payload = {total, product};
+    const payload = {total, product, user};
     const response = await axios.post(url, payload);
     console.log(response.data);
-    console.log(`%c ${total}, ${product}`, 'color: blue');
+    console.log(`%c ${total}, ${product} ${user}`, 'color: blue');
   }
 
   // async function handleSubmitPrice(e) {
@@ -208,33 +209,43 @@ export default function Cart({ user }) {
     console.log(response.data);
   }
 
-  const [data, setData] = useState('');
+  // const [data, setData] = useState('');
 
-  async function getProduct() {
-    const url = `${baseUrl}/api/newCart`;
-    const payload = {total, product};
-    const response = await axios.get(url, payload);
-    console.log(response.data);
-    setData(response.data);
-  }
+  // async function getProduct() {
+  //   const url = `${baseUrl}/api/newCart`;
+  //   const payload = {total, product};
+  //   const response = await axios.get(url, payload);
+  //   console.log(response.data);
+  //   setData(response.data);
+  // }
 
   // console.log(data[0].total);
 
-  let arr1 = [];
-  let arr2 = [];
+  // let arr1 = [];
+  // let arr2 = [];
 
-  for (let i = 0; i < data.length; i++) {
-    arr1.push(data[i].total);
-  }
+  // for (let i = 0; i < data.length; i++) {
+  //   arr1.push(data[i].total);
+  // }
 
-  for (let j = 0; j < data.length; j++) {
-    arr2.push(data[j].product);
-  }
+  // for (let j = 0; j < data.length; j++) {
+  //   arr2.push(data[j].product);
+  // }
 
-  console.log(arr1);
-  console.log(arr2);
+  // console.log(arr1);
+  // console.log(arr2);
 
   let id = uuidv4();
+
+  // const [data, setData] = useState('');
+
+  async function getOrderHistory() {
+    const { token } = parseCookies(ctx);
+    const url = `${baseUrl}/api/orders`;
+    const payload = { headers: { Authorization: token } };
+    const response = await axios.get(url, payload);
+    console.log(response.data);
+  }
 
   return (
     <>     
@@ -242,9 +253,10 @@ export default function Cart({ user }) {
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
-      <div>
+      <AccountOrders orders={orders} />
+      {/* <div>
         <History user={user.name} arr1={arr1} arr2={arr2} id={id} />
-      </div>
+      </div> */}
       <div
         style={{
           marginTop: '-19px'
@@ -273,10 +285,15 @@ export default function Cart({ user }) {
         >
             Delete
         </Button>
-        <Button
+        {/* <Button
           onClick={() => getProduct()}
         >
           Get Data
+        </Button> */}
+        <Button
+          onClick={() => getOrderHistory()}
+        >
+          Get Order History
         </Button>
       </div>
       {/* <Card
@@ -1747,13 +1764,13 @@ export default function Cart({ user }) {
   );
 }
 
-// Cart.getInitialProps = async (ctx) => {
-//   const { token } = parseCookies(ctx);
-//   if (!token) {
-//     return { products: [] };
-//   }
-//   const url = `${baseUrl}/api/cart`;
-//   const payload = { headers: { Authorization: token } };
-//   const response = await axios.get(url, payload);
-//   return { products: response.data };
-// };
+Cart.getInitialProps = async ctx => {
+  const { token } = parseCookies(ctx);
+  if (!token) {
+    return { orders: [] };
+  }
+  const payload = { headers: { Authorization: token } };
+  const url = `${baseUrl}/api/orders`;
+  const response = await axios.get(url, payload);
+  return response.data;
+};

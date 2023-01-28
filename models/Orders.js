@@ -8,10 +8,12 @@ const OrderSchema = new mongoose.Schema({
         ref: "User"
     },
     total: {
-        type: Number
+        type: Number,
+        required: true
     },
     product: {
-        type: String
+        type: String,
+        required: true
     }
   }, {
     timestamps: true

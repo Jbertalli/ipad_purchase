@@ -1,6 +1,6 @@
-// import User from '../../models/User';
 import Order from '../../models/Orders';
 import connectDb from '../../utils/connectDb';
+// import jwt from 'jsonwebtoken';
 
 connectDb();
 
@@ -22,7 +22,7 @@ export default async(req, res) => {
 }
 
 async function handlePostRequest(req, res) {
-    const { total, product } = req.body;
+    const { total, product, user } = req.body;
     // if (!('authorization' in req.headers)) {
     //     return res.status(401).send('No authorization token');
     // }
@@ -31,7 +31,9 @@ async function handlePostRequest(req, res) {
         //     req.headers.authorization,
         //     process.env.JWT_SECRET
         // );
+        // await new Order({ user: newUser._id }).save();
         const finalTotal = await new Order({
+            user,
             total,
             product
         }).save();
@@ -63,28 +65,13 @@ async function handleDeleteRequest(req, res) {
 }
 
 async function handleGetRequest(req, res) {
-    const { total } = req.body;
+    const { total, product } = req.body;
     try {
-        const orders = await Order.find({ _id: { $ne: total } })
+        const orders = await Order.find({ _id: { $ne: total } }) //get order by userId
         .sort({ createdAt: 'desc' });
-        // .sort({ total: 'asc' });
         res.status(200).json(orders);
     } catch (error) {
         console.error(error);
         res.status(403).send("Please login again");
     }
 }
-
-        // const orders = await Order.find({ _id: { $ne: total } })
-        // .sort({ createdAt: 'desc' })
-        // .limit(10);
-        // // .sort({ total: 'asc' });
-        // res.status(200).json(orders);
-        // const id = '63cf70f9160b1055a36adf3c';
-        // User.findById(id, function (err, docs) {
-        //     if (err) {
-        //         console.log(err);
-        //     } else {
-        //         console.log(docs.email);
-        //     }
-        // })
