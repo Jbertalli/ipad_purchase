@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button, Card } from 'semantic-ui-react';
+import React, { useEffect, useState } from 'react';
 import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
 import { useRouter } from 'next/router';
@@ -12,9 +11,9 @@ import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
-import { v4 as uuidv4 } from 'uuid';
-import History from '../components/history';
 import AccountOrders from '../components/AccountOrders';
+import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button, Card } from 'semantic-ui-react';
+// import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -221,6 +220,20 @@ export default function Cart({ user, orders, ctx }) {
 
   // console.log(data[0].total);
 
+  // const [data, setData] = useState('')
+
+  async function getOrderHistory() {
+    const { token } = parseCookies(ctx);
+    const url = `${baseUrl}/api/orders`;
+    const payload = { headers: { Authorization: token } };
+    const response = await axios.get(url, payload);
+    console.log(response.data);
+    // setData(response.data);
+  }
+
+  console.log(orders);
+  // console.log(data);
+
   // let arr1 = [];
   // let arr2 = [];
 
@@ -235,17 +248,7 @@ export default function Cart({ user, orders, ctx }) {
   // console.log(arr1);
   // console.log(arr2);
 
-  let id = uuidv4();
-
-  // const [data, setData] = useState('');
-
-  async function getOrderHistory() {
-    const { token } = parseCookies(ctx);
-    const url = `${baseUrl}/api/orders`;
-    const payload = { headers: { Authorization: token } };
-    const response = await axios.get(url, payload);
-    console.log(response.data);
-  }
+  // let id = uuidv4();
 
   return (
     <>     
@@ -253,10 +256,7 @@ export default function Cart({ user, orders, ctx }) {
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
-      <AccountOrders orders={orders} />
-      {/* <div>
-        <History user={user.name} arr1={arr1} arr2={arr2} id={id} />
-      </div> */}
+      <AccountOrders orders={orders} user={user.name} />
       <div
         style={{
           marginTop: '-19px'
