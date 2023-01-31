@@ -51,7 +51,7 @@ export default function Account({ user, orders }) {
                   justifyContent: 'space-around',
                   fontSize: desktop ? '20px' : '12px',
                   lineHeight: desktop ? null : '12px',
-                  margin: desktop ? '0px 80px 0px 100px' : '0px'
+                  margin: desktop ? '0px 25px 0px 50px' : '0px 0px 0px 35px'
                 }}
               >
                 <div>

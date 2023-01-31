@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Front from '../components/ipadFront';
 import styles from '../styles/ipad.module.css';
 import { useRouter } from 'next/router';
-import Payment from '../components/payment';
 import { parseCookies } from 'nookies';
+import Payment from '../components/payment';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import Zip from '../components/zip';
@@ -12,8 +12,6 @@ import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
 import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button, Card } from 'semantic-ui-react';
-// import AccountOrders from '../components/AccountOrders';
-// import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -172,8 +170,6 @@ export default function Cart({ user, orders, ctx }) {
     window.scrollTo(0, 0);
   }, []);
 
-  // let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
   let product = `10.9-inch iPad Air ${props.connectivityName} ${props.gbName}`;
 
   async function handleSubmitProduct(e) {
@@ -220,7 +216,7 @@ export default function Cart({ user, orders, ctx }) {
 
   // console.log(data[0].total);
 
-  // const [data, setData] = useState('')
+  // const [data, setData] = useState('');
 
   async function getOrderHistory() {
     const { token } = parseCookies(ctx);
@@ -234,29 +230,12 @@ export default function Cart({ user, orders, ctx }) {
   console.log(orders);
   // console.log(data);
 
-  // let arr1 = [];
-  // let arr2 = [];
-
-  // for (let i = 0; i < data.length; i++) {
-  //   arr1.push(data[i].total);
-  // }
-
-  // for (let j = 0; j < data.length; j++) {
-  //   arr2.push(data[j].product);
-  // }
-
-  // console.log(arr1);
-  // console.log(arr2);
-
-  // let id = uuidv4();
-
   return (
     <>     
       <Head>
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
-      {/* <AccountOrders orders={orders} user={user.name} /> */}
       <div
         style={{
           marginTop: '-19px'
@@ -296,49 +275,6 @@ export default function Cart({ user, orders, ctx }) {
           Get Order History
         </Button>
       </div>
-      {/* <Card
-        style={{
-          position: 'absolute',
-          height: '290px',
-          transform: 'translateY(100px)'
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center'
-          }}
-        >
-          {user.name}'s Account
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            width: '1000px'
-          }}
-        >
-          <div>
-            {arr1.map(function(element) {
-              return (
-              <ul key={id}>
-                {element}
-                <Divider />
-              </ul>
-              )
-            })}
-          </div>
-          <div>
-            {arr2.map(function(element) {
-              return (
-              <ul key={id}>
-                {element}
-                <Divider />
-              </ul>
-              )
-            })}
-          </div>
-        </div>  
-      </Card> */}
       <Container
         style={{
           position: 'relative',
@@ -499,7 +435,7 @@ export default function Cart({ user, orders, ctx }) {
                 >
                   10.9-inch iPad Air {props.connectivityName} {props.gbName}
                 </div>{' '}
-                {/*- {colorName} */}
+                {/* {colorName} */}
                 <div style={{ paddingBottom: '66px' }}>
                   {!open ? (
                     <>
@@ -537,16 +473,6 @@ export default function Cart({ user, orders, ctx }) {
                           width: '60px',
                         }}
                       >
-                        {/* {arr.map(function(element) {
-                          return (
-                          <ul
-                            style={{ transform: 'translate(-22.7px)' }}
-                            onClick={() => setQuantity(element += 1)}
-                          >
-                            {element += 1}
-                          </ul>
-                          )
-                        })} */}
                         <ul
                           style={{ transform: 'translate(-22.7px)' }}
                           onClick={() => setQuantity(1)}
