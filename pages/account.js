@@ -6,7 +6,7 @@ import { parseCookies } from 'nookies';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
-import { Header, Accordion, Segment, Icon, List, Container, Divider, Button } from 'semantic-ui-react';
+import { Header, Accordion, Segment, Icon, List, Container, Divider, Button, Table } from 'semantic-ui-react';
 import { l } from 'keyboard-key';
 // import { useRouter } from 'next/router';
 
@@ -47,39 +47,86 @@ export default function Account({ user, orders }) {
       content: {
         content: (
           <>
-            <List.Header>
+            {desktop ? (
+            <>
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'space-around',
-                  fontSize: desktop ? '20px' : '12px',
-                  lineHeight: desktop ? null : '12px',
-                  margin: desktop ? '0px 25px 0px 50px' : '0px 0px 0px 35px'
+                  fontSize: '20px'
                 }}
               >
-                <div>
-                  ${order.total}
-                </div>
-                <div>
-                  {order.product}
-                </div>
-                {desktop ? (
-                <>
-                  <div>
-                    {(order.createdAt).slice(5, 10)}-{year}
-                  </div>
-                </>
-                ): null}
+                <Table
+                  fixed
+                  style={{
+                    background: 'transparent',
+                    border: '0px solid transparent',
+                    paddingLeft: '85px'
+                  }}
+                >
+                  <Table.Body>
+                    <Table.Row>
+                      <Table.Cell width={3}>
+                        ${order.total}
+                      </Table.Cell>
+                      <Table.Cell width={8}>
+                        {order.product}
+                      </Table.Cell>
+                      <Table.Cell width={4}>
+                        {(order.createdAt).slice(5, 10)}-{year}
+                      </Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                </Table>
               </div>
-            </List.Header>
-            <center
-              style={{
-                width: '90%',
-                transform: 'translate(5%)',
-              }}
-            >
-              <Divider />
-            </center>
+              <center
+                style={{
+                  width: '90%',
+                  transform: 'translate(5%)',
+                }}
+              >
+                <Divider />
+              </center>
+            </>
+            ):(
+            <>
+              <div
+                style={{
+                  fontSize: '20px',
+                  lineHeight: '24px',
+                }}
+              >
+                <Table 
+                  fixed
+                  style={{
+                    background: 'transparent',
+                    border: '0px solid transparent',
+                    paddingLeft: '15px',
+                  }}
+                >
+                  <Table.Body>
+                    <Table.Row>
+                      <Table.Cell
+                        style={{
+                          marginTop: '-5px'
+                        }}
+                      >
+                        ${order.total}
+                      </Table.Cell>
+                      <Table.Cell>
+                        {order.product}
+                      </Table.Cell>
+                      <Table.Cell
+                        style={{
+                          marginBottom: '-5px'
+                        }}
+                      >
+                        {(order.createdAt).slice(5, 10)}-{year}
+                      </Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                </Table>
+              </div>
+            </>
+            )}
           </>
         )
       }
@@ -114,7 +161,7 @@ export default function Account({ user, orders }) {
         }, function(error) {
         console.log('FAILED...', error);
     });
-}
+  }
 
   return (
     <>
@@ -126,6 +173,9 @@ export default function Account({ user, orders }) {
       <>
         <Button
           onClick={send}
+          style={{
+            position: 'absolute'
+          }}
         >
           Email
         </Button>
@@ -194,6 +244,7 @@ export default function Account({ user, orders }) {
             style={{
               width: '90%',
               transform: 'translate(5%)',
+              marginBottom: desktop ? null : '-20px'
             }}
           >
             <Divider />
@@ -228,21 +279,26 @@ export default function Account({ user, orders }) {
                     fontSize: desktop ? '30px' : '20px'
                   }}
                 >
-                  <div>
-                    Price
-                  </div>
-                  <div>
-                    Product
-                  </div>
                   {desktop ? (
                   <>
+                    <div>
+                      Price
+                    </div>
+                    <div>
+                      Product
+                    </div>
                     <div>
                       Date
                     </div>
                   </>
                   ): null}
                 </div>
-                <Divider />
+                {desktop ? (
+                <>
+                  <Divider />
+                </>
+                ): null}
+                
                 <Accordion
                   fluid
                   exclusive={false}

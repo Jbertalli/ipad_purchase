@@ -229,9 +229,8 @@ export default function Cart({ user, orders, ctx }) {
 
   console.log(orders);
   // console.log(data);
-
-  console.log(total);
-  console.log(product);
+  // console.log(total);
+  // console.log(product);
 
   function sendData() {
     router.push({
