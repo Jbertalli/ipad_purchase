@@ -1,11 +1,15 @@
 import Image from 'next/image';
-import { Header, Accordion, Label, Segment, Icon, List, Container, Divider } from 'semantic-ui-react';
+import { Header, Accordion, Label, Segment, Icon, List, Container, Divider, Table } from 'semantic-ui-react';
 
 export default function AccountOrders({ orders, user }) {
 
   console.log(orders);
   let capitalUser = user[0].toUpperCase() + user.substring(1);
   // console.log(capitalUser);
+
+  let date = new Date();
+  let year = date.getFullYear();
+  // console.log(year);
   
   function mapOrdersToPanels(orders) {
     return orders.map(order => ({
@@ -17,18 +21,19 @@ export default function AccountOrders({ orders, user }) {
               <div
                 style={{
                   display: 'flex',
-                  justifyContent: 'space-around',
+                  justifyContent: 'space-between',
+                  margin: '0px 80px 0px 100px',
                   fontSize: '20px'
                 }}
               >
                 <div>
-                  {order.total}
+                  ${order.total}
                 </div>
                 <div>
                   {order.product}
                 </div>
                 <div>
-                  {order.createdAt}
+                  {(order.createdAt).slice(5, 10)}-{year}
                 </div>
               </div>
             </List.Header>
