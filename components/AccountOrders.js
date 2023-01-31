@@ -1,7 +1,27 @@
 import Image from 'next/image';
-import { Header, Accordion, Label, Segment, Icon, List, Container, Divider, Table } from 'semantic-ui-react';
+import React, { useState, useEffect } from 'react';
+import { Header, Accordion, Segment, Icon, List, Container, Divider } from 'semantic-ui-react';
 
 export default function AccountOrders({ orders, user }) {
+  const [desktop, setDesktop] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth > 440) {
+      setDesktop(true);
+    } else {
+      setDesktop(false);
+    }
+
+    const updateMedia = () => {
+      if (window.innerWidth > 440) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
+    };
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
+  }, []);
 
   console.log(orders);
   let capitalUser = user[0].toUpperCase() + user.substring(1);
@@ -17,7 +37,7 @@ export default function AccountOrders({ orders, user }) {
       content: {
         content: (
           <>
-            <List.Header>
+            {/* <List.Header>
               <div
                 style={{
                   display: 'flex',
@@ -36,6 +56,76 @@ export default function AccountOrders({ orders, user }) {
                   {(order.createdAt).slice(5, 10)}-{year}
                 </div>
               </div>
+            </List.Header> */}
+            <List.Header>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: desktop ? 'space-between' : 'center',
+                  fontSize: desktop ? '20px' : '25px',
+                  lineHeight: desktop ? null : '30px',
+                  margin: '0px 80px 0px 100px'
+                }}
+              >
+                <div>
+                  ${order.total}
+                </div>
+                <div>
+                  {order.product}
+                </div>
+                <div>
+                  {(order.createdAt).slice(5, 10)}-{year}
+                </div>
+              </div>
+                {/* {desktop ? (
+                <>
+
+                </>
+                ):(
+                <>
+                
+                </>
+                )} */}
+                {/* <table>
+                  <tr>
+                    <div
+                      style={{
+                        marginBottom: '20px'
+                      }}
+                    >
+                      <b>
+                        Price
+                      </b>
+                      <div>
+                        ${order.total}
+                      </div>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div
+                      style={{
+                        marginBottom: '20px'
+                      }}
+                    >
+                      <b>
+                        Product
+                      </b>
+                      <div>
+                        ${order.product}
+                      </div>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div>
+                      <b>
+                        Date
+                      </b>
+                      <div>
+                        {(order.createdAt).slice(5, 10)}-{year}
+                      </div>
+                    </div>
+                  </tr>
+                </table> */}
             </List.Header>
             <center
               style={{
