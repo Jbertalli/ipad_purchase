@@ -4,6 +4,7 @@ import { Header, Accordion, Segment, Icon, List, Container, Divider } from 'sema
 
 export default function AccountOrders({ orders, user }) {
   const [desktop, setDesktop] = useState(false);
+  console.log(orders);
 
   useEffect(() => {
     if (window.innerWidth > 440) {
@@ -37,26 +38,6 @@ export default function AccountOrders({ orders, user }) {
       content: {
         content: (
           <>
-            {/* <List.Header>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  margin: '0px 80px 0px 100px',
-                  fontSize: '20px'
-                }}
-              >
-                <div>
-                  ${order.total}
-                </div>
-                <div>
-                  {order.product}
-                </div>
-                <div>
-                  {(order.createdAt).slice(5, 10)}-{year}
-                </div>
-              </div>
-            </List.Header> */}
             <List.Header>
               <div
                 style={{
@@ -77,55 +58,6 @@ export default function AccountOrders({ orders, user }) {
                   {(order.createdAt).slice(5, 10)}-{year}
                 </div>
               </div>
-                {/* {desktop ? (
-                <>
-
-                </>
-                ):(
-                <>
-                
-                </>
-                )} */}
-                {/* <table>
-                  <tr>
-                    <div
-                      style={{
-                        marginBottom: '20px'
-                      }}
-                    >
-                      <b>
-                        Price
-                      </b>
-                      <div>
-                        ${order.total}
-                      </div>
-                    </div>
-                  </tr>
-                  <tr>
-                    <div
-                      style={{
-                        marginBottom: '20px'
-                      }}
-                    >
-                      <b>
-                        Product
-                      </b>
-                      <div>
-                        ${order.product}
-                      </div>
-                    </div>
-                  </tr>
-                  <tr>
-                    <div>
-                      <b>
-                        Date
-                      </b>
-                      <div>
-                        {(order.createdAt).slice(5, 10)}-{year}
-                      </div>
-                    </div>
-                  </tr>
-                </table> */}
             </List.Header>
             <center
               style={{

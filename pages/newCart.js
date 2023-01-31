@@ -11,8 +11,8 @@ import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
-import AccountOrders from '../components/AccountOrders';
 import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button, Card } from 'semantic-ui-react';
+// import AccountOrders from '../components/AccountOrders';
 // import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
@@ -256,7 +256,7 @@ export default function Cart({ user, orders, ctx }) {
         <title>Bag - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
-      <AccountOrders orders={orders} user={user.name} />
+      {/* <AccountOrders orders={orders} user={user.name} /> */}
       <div
         style={{
           marginTop: '-19px'
