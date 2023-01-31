@@ -21,8 +21,7 @@ class MyApp extends App {
 
     //protected route
     if (!token) {
-      const isProtectedRoute =
-        ctx.pathname === '/account' || ctx.pathname === '/cart';
+      const isProtectedRoute = ctx.pathname === '/account';
       if (isProtectedRoute) {
         redirectUser(ctx, '/login');
       }

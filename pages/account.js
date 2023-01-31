@@ -1,10 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 import { Header, Accordion, Segment, Icon, List, Container, Divider, Button } from 'semantic-ui-react';
+import { l } from 'keyboard-key';
 // import { useRouter } from 'next/router';
 
 export default function Account({ user, orders }) {
@@ -83,31 +86,51 @@ export default function Account({ user, orders }) {
     }));
   }
 
+  const router = useRouter();
+
+  const {
+    query: {
+      total,
+      product
+    }
+  } = router;
+
+  const props = {
+    total,
+    product
+  }
+
+  let templateParams = {
+    user_email: `${user.email}`,
+    to_name: `${user.name}`,
+    total: `${total}`,
+    product: `${product}`
+  };
+
+  function send() {
+    emailjs.send('service_jj71xm9', 'template_c2gl4rh', templateParams, 'FlrSx29zmJDjwJhtt')
+        .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+        console.log('FAILED...', error);
+    });
+}
+
   return (
     <>
       <Head>
         <title>Order History</title>
         <meta name="description" content="orders, history" />
       </Head>
-      {/* <div
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          margin: '10px 10px'
-        }}
-      >
+      {orders.length > 0 ? (
+      <>
         <Button
-          onClick={() =>router.push('/')}
-          style={{
-            background: 'rgb(0, 113, 227)',
-            color: 'white',
-            fontWeight: '100',
-            position: 'absolute'
-          }}
+          onClick={send}
         >
-          Return Home
+          Email
         </Button>
-      </div> */}
+      </>
+      ): null}
       <div
         style={{
           marginTop: desktop ? '75px' : '30px'

@@ -177,7 +177,9 @@ const Navbar = ({ user }) => {
                       {user ? (
                         <>
                           <Dropdown.Item>
-                            <strong>{user.name}</strong>
+                            <Link href="/account" passHref>
+                              <strong>{user.name}</strong>
+                            </Link>
                           </Dropdown.Item>
                           <Dropdown.Item onClick={handleLogout}>
                             <strong>Logout</strong>

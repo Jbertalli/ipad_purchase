@@ -11,7 +11,7 @@ import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
-import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button, Card } from 'semantic-ui-react';
+import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button } from 'semantic-ui-react';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -230,6 +230,19 @@ export default function Cart({ user, orders, ctx }) {
   console.log(orders);
   // console.log(data);
 
+  console.log(total);
+  console.log(product);
+
+  function sendData() {
+    router.push({
+      pathname: '/account',
+      query: {
+        total,
+        product
+      }
+    })
+  }
+
   return (
     <>     
       <Head>
@@ -273,6 +286,12 @@ export default function Cart({ user, orders, ctx }) {
           onClick={() => getOrderHistory()}
         >
           Get Order History
+        </Button>
+        <Button
+          color='green'
+          onClick={sendData}
+        >
+          Send Data
         </Button>
       </div>
       <Container
