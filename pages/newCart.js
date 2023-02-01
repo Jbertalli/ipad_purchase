@@ -1540,6 +1540,7 @@ export default function Cart({ user, orders, ctx }) {
           width: '816px',
           height: '1000px',
           position: 'fixed',
+          top: desktop ? '640px' : '200px'
         }}
       >
         <div

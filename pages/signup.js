@@ -132,6 +132,7 @@ export default function Signup() {
                     width: '816px',
                     height: '470px',
                     position: 'fixed',
+                    top: '620px'
                   }}
                 >
                   <div
@@ -544,6 +545,7 @@ export default function Signup() {
                     width: '95%',
                     height: '470px',
                     position: 'fixed',
+                    top: '350px'
                   }}
                 >
                   <div

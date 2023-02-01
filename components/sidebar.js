@@ -538,6 +538,7 @@ export default function Sidebar() {
                     borderRadius: '20px',
                     height: '570px',
                     position: 'fixed',
+                    top: desktop ? '600px' : '340px'
                   }}
                 >
                   <div
@@ -993,7 +994,8 @@ export default function Sidebar() {
                     width: desktop ? '816px' : '95%',
                     marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
-                    position: 'fixed'
+                    position: 'fixed',
+                    top: desktop ? '600px' : '390px'
                   }}
                 >
                   <div
@@ -1280,6 +1282,7 @@ export default function Sidebar() {
                     height: desktop ? '887px' : '480px',
                     borderRadius: '20px',
                     position: 'fixed',
+                    top: desktop ? '600px' : '330px'
                   }}
                 >
                   <div
