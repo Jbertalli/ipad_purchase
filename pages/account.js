@@ -6,11 +6,10 @@ import { parseCookies } from 'nookies';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
-import { Header, Accordion, Segment, Icon, List, Container, Divider, Button, Table } from 'semantic-ui-react';
-import { l } from 'keyboard-key';
+import { Header, Accordion, Segment, Icon, Container, Divider, Button, Table } from 'semantic-ui-react';
 // import { useRouter } from 'next/router';
 
-export default function Account({ user, orders }) {
+export default function Account({ user, orders, ctx }) {
   const [desktop, setDesktop] = useState(false);
   // const router = useRouter();
   console.log(orders);
@@ -163,6 +162,23 @@ export default function Account({ user, orders }) {
     });
   }
 
+  async function deleteUser(){
+    const { token } = parseCookies(ctx);
+    const url = `${baseUrl}/api/account`;
+    const payload = { headers: { Authorization: token } };
+    const response = await axios.delete(url, payload);
+    console.log(response.data);
+    router.push('/login');
+  }
+
+  async function deleteLastOrder() {
+    const { token } = parseCookies(ctx);
+    const url = `${baseUrl}/api/orders`;
+    const payload = { headers: { Authorization: token } };
+    const response = await axios.delete(url, payload);
+    console.log(response.data);
+  }
+
   return (
     <>
       <Head>
@@ -173,6 +189,7 @@ export default function Account({ user, orders }) {
       <>
         <Button
           onClick={send}
+          color='blue'
           style={{
             position: 'absolute'
           }}
@@ -181,6 +198,29 @@ export default function Account({ user, orders }) {
         </Button>
       </>
       ): null}
+        <div
+          style={{
+            display: 'flex',
+            transform: 'translateY(40px)'
+          }}
+        >
+        <div>
+          <Button
+            color='red'
+            onClick={deleteUser}
+          >
+            Delete {capitalUser}'s Account
+          </Button>  
+        </div>
+        <div>
+          <Button
+            color='red'
+            onClick={deleteLastOrder}
+          >
+            Delete {capitalUser}'s Last Order
+          </Button>
+        </div>
+      </div>
       <div
         style={{
           marginTop: desktop ? '75px' : '30px'
