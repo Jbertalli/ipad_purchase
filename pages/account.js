@@ -5,13 +5,13 @@ import { useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { Header, Accordion, Segment, Icon, Container, Divider, Button, Table } from 'semantic-ui-react';
 
 export default function Account({ user, orders, ctx }) {
   const [desktop, setDesktop] = useState(false);
   console.log(orders);
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     if (window.innerWidth > 440) {
