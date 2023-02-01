@@ -7,11 +7,9 @@ import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 import { Header, Accordion, Segment, Icon, Container, Divider, Button, Table } from 'semantic-ui-react';
-// import { useRouter } from 'next/router';
 
 export default function Account({ user, orders, ctx }) {
   const [desktop, setDesktop] = useState(false);
-  // const router = useRouter();
   console.log(orders);
   console.log(user);
 
@@ -34,11 +32,9 @@ export default function Account({ user, orders, ctx }) {
   }, []);
 
   let capitalUser = user.name[0].toUpperCase() + user.name.substring(1);
-  // console.log(capitalUser);
 
   let date = new Date();
   let year = date.getFullYear();
-  // console.log(year);
 
   function mapOrdersToPanels(orders) {
     return orders.map(order => ({
@@ -185,42 +181,6 @@ export default function Account({ user, orders, ctx }) {
         <title>Order History</title>
         <meta name="description" content="orders, history" />
       </Head>
-      {orders.length > 0 ? (
-      <>
-        <Button
-          onClick={send}
-          color='blue'
-          style={{
-            position: 'absolute'
-          }}
-        >
-          Email
-        </Button>
-      </>
-      ): null}
-        <div
-          style={{
-            display: 'flex',
-            transform: 'translateY(40px)'
-          }}
-        >
-        <div>
-          <Button
-            color='red'
-            onClick={deleteUser}
-          >
-            Delete {capitalUser}'s Account
-          </Button>  
-        </div>
-        <div>
-          <Button
-            color='red'
-            onClick={deleteLastOrder}
-          >
-            Delete {capitalUser}'s Last Order
-          </Button>
-        </div>
-      </div>
       <div
         style={{
           marginTop: desktop ? '75px' : '30px'
@@ -279,6 +239,82 @@ export default function Account({ user, orders, ctx }) {
             }}
           >
             {capitalUser}'s Order History
+          </div>
+          <div
+            style={{
+              width: '90%',
+              transform: 'translate(5%)'
+            }}
+          >
+            <Divider />
+          </div>
+          <div
+            style={{
+              display: desktop ? 'flex' : null,
+              justifyContent: desktop ? 'space-around' : null,
+              margin: '0px 10px 0px 10px'
+            }}
+          >
+            <div
+              style={{
+                display: desktop ? null : 'flex',
+                justifyContent: desktop ?  null : 'center',
+                marginBottom: desktop ? null : '15px'
+              }}
+            >
+              <Button
+                onClick={send}
+                style={{
+                  border: '1px solid black',
+                  background: 'transparent',
+                  fontWeight: '100',
+                  color: 'black',
+                  fontSize: desktop ? null : '12px'
+                }}
+                disabled={orders.length > 0 ? false : true}
+              >
+                Email {capitalUser}'s' Order
+              </Button>
+            </div>
+            <div
+              style={{
+                display: desktop ? null : 'flex',
+                justifyContent: desktop ?  null : 'center',
+                marginBottom: desktop ? null : '15px'
+              }}
+            >
+              <Button
+                onClick={deleteLastOrder}
+                style={{
+                  border: '1px solid black',
+                  background: 'transparent',
+                  fontWeight: '100',
+                  color: 'black',
+                  fontSize: desktop ? null : '12px'
+                }}
+              >
+                Delete {capitalUser}'s Last Order
+              </Button>
+            </div>
+            <div
+              style={{
+                display: desktop ? null : 'flex',
+                justifyContent: desktop ?  null : 'center'
+              }}
+            >
+              <Button
+                onClick={deleteUser}
+                style={{
+                  border: '1px solid black',
+                  background: 'transparent',
+                  fontWeight: '100',
+                  color: 'black',
+                  fontSize: desktop ? null : '12px'
+                }}
+              >
+                Delete {capitalUser}'s Account
+              </Button>
+            </div>
           </div>
           <center
             style={{

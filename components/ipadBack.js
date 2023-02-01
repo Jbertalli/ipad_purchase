@@ -1,6 +1,6 @@
 import styles from '../styles/ipad.module.css';
 import Logo from '../components/apple_logo';
-import { Button } from 'semantic-ui-react';
+// import { Button } from 'semantic-ui-react';
 
 export default function Back() {
   return (
@@ -27,7 +27,6 @@ export default function Back() {
       /> */}
       <div className={styles.main}>
         {' '}
-        {/* style={{ transform: 'rotate(10deg)' }} */}
         <div className={styles.frame} />
         <div>
           <div>
@@ -133,11 +132,6 @@ export default function Back() {
         className={styles.dimension}
         style={{ transform: 'translate(102px, -514.7px)' }}
       />
-      {/* <Button 
-          content='Red Button'
-          color='red'
-          onClick={() => (console.log('hello'))} 
-      /> */}
     </>
   );
 }

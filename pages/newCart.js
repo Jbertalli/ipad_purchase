@@ -43,8 +43,6 @@ export default function Cart({ user, orders, ctx }) {
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
-  // console.log(quantity);
-
   const {
     query: {
       value,
@@ -66,7 +64,6 @@ export default function Cart({ user, orders, ctx }) {
   }
 
   const tax = ((parseFloat(props.value) + parseFloat(props.cellValue) + appleCare) * 0.08624374).toFixed(2);
-  // console.log(tax);
 
   let total = (
     parseFloat(props.value) +
@@ -75,15 +72,6 @@ export default function Cart({ user, orders, ctx }) {
     parseFloat(appleCare) +
     parseFloat(props.recycling)
   ).toFixed(2);
-
-  // console.log(total);
-  // console.log(props.cellValue);
-  // console.log(appleCare);
-  // console.log(props.recycling);
-  // console.log(props.colorName);
-  // console.log(props.gbName);
-  // console.log(props.gbName);
-  // console.log(props.connectivityName);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(checkOut));
@@ -144,15 +132,6 @@ export default function Cart({ user, orders, ctx }) {
   let nextMonthPickup1 = `${nextMonthName} ${nextMonthDay1} - ${nextMonthName} ${nextMonthDay2}`;
   let unevenMonths = `${monthName} ${day1} - ${nextMonthName} ${nextMonthDay2}`;
 
-  // console.log(day);
-  // console.log(pickup);
-  // console.log(nextMonthPickup);
-  // console.log("day1", day1);
-  // console.log("day2", day2);
-  // console.log("pickup1", pickup1);
-  // console.log("nextMonthPickup1", nextMonthPickup1);
-  // console.log("unevenMonths", unevenMonths);
-
   let checkOut = (
     parseFloat(quantity) *
     (parseFloat(props.value) +
@@ -181,15 +160,6 @@ export default function Cart({ user, orders, ctx }) {
     console.log(`%c ${total}, ${product} ${user}`, 'color: blue');
   }
 
-  // async function handleSubmitPrice(e) {
-  //   // e.preventDefault();
-  //   const url = `${baseUrl}/api/newCart`;
-  //   const payload = {total};
-  //   const response = await axios.post(url, payload);
-  //   console.log(response.data);
-  //   console.log(`%c ${total}`, 'color: green');
-  // }
-
   async function deleteProduct(e) {
     const url = `${baseUrl}/api/newCart`;
     const payload = product;
@@ -203,20 +173,6 @@ export default function Cart({ user, orders, ctx }) {
     const response = await axios.delete(url, payload);
     console.log(response.data);
   }
-
-  // const [data, setData] = useState('');
-
-  // async function getProduct() {
-  //   const url = `${baseUrl}/api/newCart`;
-  //   const payload = {total, product};
-  //   const response = await axios.get(url, payload);
-  //   console.log(response.data);
-  //   setData(response.data);
-  // }
-
-  // console.log(data[0].total);
-
-  // const [data, setData] = useState('');
 
   async function getOrderHistory() {
     const { token } = parseCookies(ctx);
@@ -258,40 +214,6 @@ export default function Cart({ user, orders, ctx }) {
           <Heading />
         </>
         ): null}
-      </div>
-      <div
-        style={{
-          position: 'absolute'
-        }}
-      >
-        <Button
-          color='blue'
-          onClick={handleSubmitProduct}
-        >
-            Save
-        </Button>
-        <Button
-          color='red'
-          onClick={() => {deleteProduct(), deletePrice()}}
-        >
-            Delete
-        </Button>
-        {/* <Button
-          onClick={() => getProduct()}
-        >
-          Get Data
-        </Button> */}
-        <Button
-          onClick={() => getOrderHistory()}
-        >
-          Get Order History
-        </Button>
-        <Button
-          color='green'
-          onClick={sendData}
-        >
-          Send Data
-        </Button>
       </div>
       <Container
         style={{
@@ -1461,7 +1383,7 @@ export default function Cart({ user, orders, ctx }) {
                     }}
                   >
                     <div
-                      onClick={() => {checkedOut(), setCheckingOut(true)}}
+                      onClick={() => {checkedOut(), setCheckingOut(true), handleSubmitProduct(), getOrderHistory(), sendData()}}
                       style={{
                         marginBottom: '10px'
                       }}
@@ -1558,59 +1480,11 @@ export default function Cart({ user, orders, ctx }) {
                       }}
                     >
                       <div
-                        onClick={() => {checkedOut(), setCheckingOut(true)}}
+                        onClick={() => {checkedOut(), setCheckingOut(true), handleSubmitProduct(), getOrderHistory(), sendData()}}
                       >
                         Check Out
                       </div>
                     </button>
-
-                    {/* <Modal
-                      open={paymentModal}
-                      dimmer="blurring"
-                      style={{
-                        transform: desktop ? 'translate(42px, -490px)' : 'translate(-200px, -490px) scale(0.3)',
-                        borderRadius: '20px',
-                        width: '816px',
-                        height: '1000px',
-                        position: 'fixed',
-                      }}
-                    >
-                      <div
-                        style={{
-                          background: 'lightgray',
-                          height: '36px',
-                          width: '36px',
-                          borderRadius: '50%',
-                          transform: 'translate(15px, 18px)',
-                          opacity: '0.8',
-                          cursor: 'pointer',
-                        }}
-                        onClick={() => {setPaymentModal(false), setCheckingOut(false)}}
-                      >
-                        <h1
-                          style={{
-                            fontSize: '30px',
-                            fontWeight: 'lighter',
-                            color: 'gray',
-                            transform: 'translate(10px, -5px)',
-                          }}
-                        >
-                          x
-                        </h1>
-                      </div>
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        <Payment 
-                          quantity={quantity} 
-                          total={total} 
-                          gbName={props.gbName} 
-                        />
-                      </div>
-                    </Modal> */}
                   </div>
                 </Item>
               </div>

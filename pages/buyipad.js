@@ -19,7 +19,6 @@ export default function Buy() {
         <title>iPad - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
-      {/* <div style={{ background: 'black', width: '100%', height: '829px', position: 'relative', zIndex: '-100' }} /> */}
       <div>
         <Link href="/ipadair">
           <div

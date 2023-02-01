@@ -1,6 +1,5 @@
 import Order from '../../models/Orders';
 import connectDb from '../../utils/connectDb';
-// import jwt from 'jsonwebtoken';
 
 connectDb();
 
@@ -23,15 +22,7 @@ export default async(req, res) => {
 
 async function handlePostRequest(req, res) {
     const { total, product, user } = req.body;
-    // if (!('authorization' in req.headers)) {
-    //     return res.status(401).send('No authorization token');
-    // }
     try {
-        // const { userId } = jwt.verify(
-        //     req.headers.authorization,
-        //     process.env.JWT_SECRET
-        // );
-        // await new Order({ user: newUser._id }).save();
         const finalTotal = await new Order({
             user,
             total,
@@ -47,16 +38,8 @@ async function handlePostRequest(req, res) {
 
 async function handleDeleteRequest(req, res) {
     const { total, product } = req.body;
-    // if (!('authorization' in req.headers)) {
-    //     return res.status(401).send('No authorization token');
-    // }
     try {
-        // const { userId } = jwt.verify(
-        //     req.headers.authorization,
-        //     process.env.JWT_SECRET
-        // );
         await Order.findOneAndDelete(total, product);
-        // await Order.findOneAndDelete({ product);
         res.status(203).send();
     } catch(error) {
         console.error(error);

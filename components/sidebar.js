@@ -66,10 +66,7 @@ export default function Sidebar() {
 
   useState(() => {
     setColor(true);
-    // setColorName('Space Gray');
   }, [paths]);
-
-  // console.log(router.pathname);
 
   let date = new Date();
   let day = date.getDate() + 5;
@@ -124,15 +121,6 @@ export default function Sidebar() {
   let pickup1 = `${monthName} ${day1} - ${monthName} ${day2}`;
   let nextMonthPickup1 = `${nextMonthName} ${nextMonthDay1} - ${nextMonthName} ${nextMonthDay2}`;
   let unevenMonths = `${monthName} ${day1} - ${nextMonthName} ${nextMonthDay2}`;
-
-  // console.log(day);
-  // console.log(pickup);
-  // console.log(nextMonthPickup);
-  // console.log("day1", day1);
-  // console.log("day2", day2);
-  // console.log("pickup1", pickup1);
-  // console.log("nextMonthPickup1", nextMonthPickup1);
-  // console.log("unevenMonths", unevenMonths);
 
   function sendData() {
       Router.push({
@@ -1558,9 +1546,6 @@ export default function Sidebar() {
                       <>
                         <div style={{ transform: 'translate(-26px)' }}>
                           <a
-                            // onClick={() => {
-                            //   setAppleCare(0), setNoAppleCare(false);
-                            // }}
                             className={styles.bluehovering}
                             style={{
                               color: 'rgb(0, 102, 204)',
@@ -1574,9 +1559,6 @@ export default function Sidebar() {
                     ) : (
                       <>
                         <a
-                        //   onClick={() => {
-                        //     setAppleCare(79), setNoAppleCare(true);
-                        //   }}
                           className={styles.bluehovering}
                           style={{
                             color: 'rgb(0, 102, 204)',

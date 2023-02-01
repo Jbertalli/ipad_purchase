@@ -169,7 +169,7 @@ const Navbar = ({ user }) => {
                 </Link>
                 <Menu.Item>
                   <Dropdown
-                    text="Authentication"
+                    text="Account"
                     simple
                     style={{ color: 'white' }}
                   >
@@ -405,6 +405,47 @@ const Navbar = ({ user }) => {
                       <Link href="/" passHref>
                         <div>Support</div>
                       </Link>
+                      <Divider
+                        style={{ background: '#f5f5f7', opacity: '0.3' }}
+                      />
+                      <Menu.Item>
+                        <Dropdown
+                          text="Account"
+                          simple
+                          style={{ color: 'white' }}
+                        >
+                          <Dropdown.Menu>
+                            {user ? (
+                              <>
+                                <Dropdown.Item>
+                                  <Link href="/account" passHref>
+                                    <strong>{user.name}</strong>
+                                  </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={handleLogout}>
+                                  <strong>Logout</strong>
+                                </Dropdown.Item>
+                              </>
+                            ) : (
+                              <>
+                                <Dropdown.Item
+                                  href="/signup"
+                                  active={isActive('/signup')}
+                                >
+                                  <strong>Signup</strong>
+                                </Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Item
+                                  href="/login"
+                                  active={isActive('/login')}
+                                >
+                                  <strong>Login</strong>
+                                </Dropdown.Item>
+                              </>
+                            )}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </Menu.Item>
                     </Container>
                   </div>
                 </Modal>

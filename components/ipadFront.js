@@ -42,18 +42,12 @@ export default function Front() {
   let time = `${hour}:${minute}`;
   let today = `${weekdayName}, ${monthName} ${day}`;
 
-  // console.log(time);
-  // console.log(today);
-  // console.log(today.length);
-
   return (
     <>
       <div style={{ transform: 'translate(0px, 0px)' }}>
         {' '}
-        {/* rotate3d(2, -1, -1, 0.75turn) */}
         <div className={styles.front}>
           {' '}
-          {/* style={{ width: '23.48vw' }} */}
           <div
             className={styles.screen}
             style={{ transform: 'translate(12px, 16.2px)' }}
@@ -78,12 +72,6 @@ export default function Front() {
               >
                 <Icon name="lock open" size="large" />
               </div>
-              {/* <time className={styles.time}>
-                    10:52
-                </time>
-                <div className={styles.date} style={{ transform: 'translate(9px)' }}>
-                    Saturday, June 4
-                </div> */}
               {hour < 10 ? (
                 <>
                   <div

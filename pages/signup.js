@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { Divider, Container, Button, Icon, Modal, Form, Message, Checkbox, Card, Icons } from 'semantic-ui-react';
+import { Divider, Container, Button, Icon, Modal, Form, Message, Checkbox } from 'semantic-ui-react';
 import styles from '../styles/ipad.module.css';
 import FocusLock from 'react-focus-lock';
 import catchErrors from '../utils/catchErrors';

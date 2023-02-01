@@ -8,8 +8,6 @@ import OneCell from '../components/paymentCards.js/128Cell';
 import OneCellAppleCare from '../components/paymentCards.js/128CellAppleCare';
 
 export default function Payment({ quantity, total, gbName }) {
-  console.log(total);
-  // console.log(gbName);
 
   let totaled;
 
@@ -43,9 +41,6 @@ export default function Payment({ quantity, total, gbName }) {
 
   return (
     <>
-      {/* <div>
-            { total }
-        </div> */}
       {totaled}
     </>
   );
