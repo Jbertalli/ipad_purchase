@@ -7,8 +7,8 @@ import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
 
-function home({ user }) {
-  console.log(user);
+function HomeIpad({ user }) {
+  // console.log(user);
 
   const [desktop, setDesktop] = useState(false);
 
@@ -91,4 +91,4 @@ function home({ user }) {
   );
 }
 
-export default home;
+export default HomeIpad;

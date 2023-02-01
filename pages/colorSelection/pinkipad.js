@@ -7,7 +7,7 @@ import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
 
-function pinkipad() {
+function PinkIpad() {
   const [desktop, setDesktop] = useState(false);
 
   useEffect(() => {
@@ -91,4 +91,4 @@ function pinkipad() {
   );
 }
 
-export default pinkipad;
+export default PinkIpad;

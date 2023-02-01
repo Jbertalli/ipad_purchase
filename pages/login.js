@@ -328,7 +328,7 @@ export default function Login() {
                 </div>
               </div>
               <div style={{ transform: 'translate(-10px, 133px)' }}>
-                Don't have an Apple ID?{' '}
+                {`Don't have an Apple ID?`}{' '}
                 <span style={{ color: '#0070c9', cursor: 'pointer' }}>
                   Create yours now.
                 </span>
@@ -720,7 +720,7 @@ export default function Login() {
                 </div>
               </div>
               <div style={{ transform: 'translate(-10px, 26px)' }}>
-                Don't have an Apple ID?{' '}
+                {`Don't have an Apple ID?`}{' '}
                 <span style={{ color: '#0070c9', cursor: 'pointer' }}>
                   Create yours now.
                 </span>

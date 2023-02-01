@@ -7,7 +7,7 @@ import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
 
-function grayipad() {
+function GrayIpad() {
   const [desktop, setDesktop] = useState(false);
 
   useEffect(() => {
@@ -91,4 +91,4 @@ function grayipad() {
   );
 }
 
-export default grayipad;
+export default GrayIpad;

@@ -238,7 +238,7 @@ export default function Account({ user, orders, ctx }) {
               paddingBottom: desktop ? '20px' : '5px',
             }}
           >
-            {capitalUser}'s Order History
+            {capitalUser}{`'s Order History`}
           </div>
           <div
             style={{
@@ -273,7 +273,7 @@ export default function Account({ user, orders, ctx }) {
                 }}
                 disabled={orders.length > 0 ? false : true}
               >
-                Email {capitalUser}'s' Order
+                Email {capitalUser}{`'s Order`}
               </Button>
             </div>
             <div
@@ -293,7 +293,7 @@ export default function Account({ user, orders, ctx }) {
                   fontSize: desktop ? null : '12px'
                 }}
               >
-                Delete {capitalUser}'s Last Order
+                Delete {capitalUser}{`'s Last Order`}
               </Button>
             </div>
             <div
@@ -312,7 +312,7 @@ export default function Account({ user, orders, ctx }) {
                   fontSize: desktop ? null : '12px'
                 }}
               >
-                Delete {capitalUser}'s Account
+                Delete {capitalUser}{`'s Account`}
               </Button>
             </div>
           </div>

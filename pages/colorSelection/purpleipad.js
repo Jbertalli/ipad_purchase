@@ -7,7 +7,7 @@ import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
 
-function purpleipad() {
+function PurpleIpad() {
   const [desktop, setDesktop] = useState(false);
 
   useEffect(() => {
@@ -91,4 +91,4 @@ function purpleipad() {
   );
 }
 
-export default purpleipad;
+export default PurpleIpad;
