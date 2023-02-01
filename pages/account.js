@@ -10,6 +10,9 @@ import { Header, Accordion, Segment, Icon, Container, Divider, Button, Table } f
 
 export default function Account({ user, orders, ctx }) {
   const [desktop, setDesktop] = useState(false);
+  const [emailColor, setEmailColor] = useState('1px');
+  const [deleteOrderColor, setDeleteOrderColor] = useState('1px');
+  const [deleteAccountColor, setDeleteAccountColor] = useState('1px');
   console.log(orders);
   // console.log(user);
 
@@ -264,8 +267,10 @@ export default function Account({ user, orders, ctx }) {
             >
               <Button
                 onClick={send}
+                onMouseOver={() => setEmailColor('2.5px')}
+                onMouseLeave={() => setEmailColor('1px')}
                 style={{
-                  border: '1px solid black',
+                  border: `${emailColor} solid black`,
                   background: 'transparent',
                   fontWeight: '100',
                   color: 'black',
@@ -285,8 +290,10 @@ export default function Account({ user, orders, ctx }) {
             >
               <Button
                 onClick={deleteLastOrder}
+                onMouseOver={() => setDeleteOrderColor('2.5px')}
+                onMouseLeave={() => setDeleteOrderColor('1px')}
                 style={{
-                  border: '1px solid black',
+                  border: `${deleteOrderColor} solid black`,
                   background: 'transparent',
                   fontWeight: '100',
                   color: 'black',
@@ -304,8 +311,10 @@ export default function Account({ user, orders, ctx }) {
             >
               <Button
                 onClick={deleteUser}
+                onMouseOver={() => setDeleteAccountColor('2.5px')}
+                onMouseLeave={() => setDeleteAccountColor('1px')}
                 style={{
-                  border: '1px solid black',
+                  border: `${deleteAccountColor} solid black`,
                   background: 'transparent',
                   fontWeight: '100',
                   color: 'black',

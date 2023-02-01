@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Head from 'next/head';
 import Buy from '../components/buyipad';
 import BuyMobile from '../components/buyipadMobile';
+
 export default function Home() {
   const [desktop, setDesktop] = useState(false);
 
@@ -44,8 +45,8 @@ export default function Home() {
 }
 
 //server-side rendering
-Home.getInitialProps = async () => {
-  const url = 'http://localhost:3010/api/hello';
-  const response = await axios.get(url);
-  return { examples: response.data };
-};
+// Home.getInitialProps = async () => {
+//   const url = 'http://localhost:3010/api/hello';
+//   const response = await axios.get(url);
+//   return { examples: response.data };
+// };
