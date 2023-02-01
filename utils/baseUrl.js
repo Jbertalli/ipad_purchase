@@ -1,6 +1,6 @@
 const baseUrl = 
     process.env.NODE_ENV === 'production'
-    ? "https://ipad_purchase.now.sh"
+    ? "https://ipad-purchase.vercel.app"
     : "http://localhost:3010";
 
 export default baseUrl;
