@@ -1429,7 +1429,9 @@ export default function Cart({ user, orders, ctx }) {
                           border: '0px solid transparent'
                         }}
                       >
-                        <div>
+                        <div
+                          onClick={() => setPaymentModal(true)}
+                        >
                           Check Out with Stripe
                         </div>
                       </button>
@@ -1475,6 +1477,54 @@ export default function Cart({ user, orders, ctx }) {
             />
           </div>
         </Container>
+        <Modal
+          open={paymentModal}
+          dimmer="blurring"
+          style={{
+            transform: desktop ? 'translate(42px, -490px)' : 'translate(-208px, -400px) scale(0.43)',
+            borderRadius: '20px',
+            width: '816px',
+            height: '1000px',
+            position: 'fixed',
+            top: desktop ? '640px' : '200px'
+          }}
+        >
+          <div
+            style={{
+              background: 'lightgray',
+              height: desktop ? '36px' : '60px',
+              width: desktop ? '36px' : '60px',
+              borderRadius: '50%',
+              transform: 'translate(15px, 18px)',
+              opacity: '0.8',
+              cursor: 'pointer',
+            }}
+            onClick={() => {setPaymentModal(false), setCheckingOut(false)}}
+          >
+            <h1
+              style={{
+                fontSize: desktop ? '30px' : '50px',
+                fontWeight: 'lighter',
+                color: 'gray',
+                transform: desktop ? 'translate(10px, -5px)' : 'translate(17px, -8px)',
+              }}
+            >
+              x
+            </h1>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <Payment 
+              quantity={quantity} 
+              total={total} 
+              gbName={props.gbName} 
+            />
+          </div>
+        </Modal>
       </>
       ):(
       <>
