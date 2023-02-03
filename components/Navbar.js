@@ -7,7 +7,7 @@ import styles from '../styles/ipad.module.css';
 import { handleLogout } from '../utils/auth';
 
 const Navbar = ({ user }) => {
-  const [isDesktop, setDesktop] = useState(false);
+  const [desktop, setDesktop] = useState(false);
   const [menuModal, setMenuModal] = useState(false);
 
   console.log(user);
@@ -38,7 +38,7 @@ const Navbar = ({ user }) => {
 
   return (
     <>
-      {isDesktop ? (
+      {desktop ? (
         <>
           <Sticky>
             <Menu
@@ -222,7 +222,7 @@ const Navbar = ({ user }) => {
                 background: '#000000',
                 opacity: '0.8',
                 fontFamily: 'SF Pro Text',
-                width: (router.pathname === '/newCart') ? '110vw' : null
+                width: '100vw'
               }}
             >
               <Container

@@ -4,14 +4,15 @@ const { Readable } = require( 'stream' );
 export default async (req, res) => {
     // An array with your links
     const links = [
-        { url: '/pages/buyipad', changefreq: 'daily', priority: 0.3  }, 
-        { url: '/pages/ipadair', changefreq: 'daily', priority: 0.3  },
-        { url: '/pages/colorSelection/ipadhome', changefreq: 'daily', priority: 0.3  },
-        { url: '/pages/colorSelection/grayipad', changefreq: 'daily', priority: 0.3  },
-        { url: '/pages/colorSelection/pinkipad', changefreq: 'daily', priority: 0.3  },
-        { url: '/pages/colorSelection/purpleipad', changefreq: 'daily', priority: 0.3  },
-        { url: '/pages/colorSelection/blueipad', changefreq: 'daily', priority: 0.3  },
-        { url: '/pages/colorSelection/starlightipad', changefreq: 'daily', priority: 0.3  }
+        { url: '/pages/buyipad', changefreq: 'daily', priority: 0.1  }, 
+        { url: '/pages/ipadair', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/colorSelection/ipadhome', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/colorSelection/grayipad', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/colorSelection/pinkipad', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/colorSelection/purpleipad', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/colorSelection/blueipad', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/colorSelection/starlightipad', changefreq: 'daily', priority: 0.1  },
+        { url: '/pages/account', changefreq: 'daily', priority: 0.1  }
     ];
 
     // Create a stream to write to
