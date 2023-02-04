@@ -66,6 +66,7 @@ function HomeIpad({ user }) {
               >
                 <Image
                   src="/images/NewAccordion.png"
+                  priority
                   alt="ipad"
                   width={320}
                   height={250}

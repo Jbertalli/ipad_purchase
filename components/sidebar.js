@@ -1351,7 +1351,13 @@ export default function Sidebar() {
                       )}
                     </div>
                     <div style={{ position: 'absolute', transform: 'translate(-15px, 20px)' }}>
-                        <Image src="/images/ipad 2.png" alt="ipad" width={700} height={460} />
+                        <Image 
+                          src="/images/ipad 2.png" 
+                          priority
+                          alt="ipad" 
+                          width={700} 
+                          height={460} 
+                        />
                     </div>
                     <div
                       style={{

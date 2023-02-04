@@ -286,6 +286,7 @@ export default function Air() {
               >
                 <Image
                   src="/images/ipad_vert.png"
+                  priority
                   alt="ipad"
                   width={320}
                   height={520}

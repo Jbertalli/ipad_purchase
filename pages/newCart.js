@@ -1536,7 +1536,13 @@ export default function Cart({ user, orders, ctx }) {
               marginBottom: '20px'
             }}
           >
-            <Image src="/images/ipad 2.png" alt="ipad" width={300} height={200} />
+            <Image 
+              src="/images/ipad 2.png" 
+              priority 
+              alt="ipad" 
+              width={300} 
+              height={200} 
+            />
           </div>
           <div
             style={{

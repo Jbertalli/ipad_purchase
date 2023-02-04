@@ -215,10 +215,10 @@ export default function Account({ user, orders, ctx }) {
         >
           <Image
             src="/images/ipad 2.png"
+            priority
             alt="ipad"
             width={desktop ? 700 : 290}
             height={desktop ? 460 : 190.5}
-            priority
           />
         </div>
         <Container
