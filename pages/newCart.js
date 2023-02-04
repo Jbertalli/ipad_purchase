@@ -12,7 +12,7 @@ import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
-import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal, Button } from 'semantic-ui-react';
+import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal } from 'semantic-ui-react';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
 
@@ -1547,10 +1547,16 @@ export default function Cart({ user, orders, ctx }) {
                 style={{
                   fontSize: '24px',
                   fontWeight: '600',
-                  marginBottom: '20px'
+                  marginBottom: '16px'
                 }}
             >             
-              <center>
+              <center
+                style={{
+                  marginRight: '20px',
+                  marginLeft: '20px',
+                  lineHeight: '28px'
+                }}
+              >
                 10.9-inch iPad Air {props.connectivityName} {props.gbName}
               </center>
             </div>
