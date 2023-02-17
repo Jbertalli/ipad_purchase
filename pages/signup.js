@@ -130,7 +130,7 @@ export default function Signup() {
                     transform: 'translateY(-285px)',
                     borderRadius: '20px',
                     width: '816px',
-                    height: '470px',
+                    height: error ? '550px' : '470px',
                     position: 'fixed',
                     top: '620px'
                   }}
@@ -260,7 +260,7 @@ export default function Signup() {
                       transform: 'translateY(46px)',
                       borderRadius: '0px 0px 19.5px 19.5px',
                       paddingTop: '25px',
-                      fontSize: '12px',
+                      fontSize: '12px'
                     }}
                   >
                     <center
@@ -269,7 +269,7 @@ export default function Signup() {
                         fontSize: '17px',
                         fontWeight: '400',
                         lineHeight: '21px',
-                        marginBottom: '33px',
+                        marginBottom: '33px'
                       }}
                     >
                       Already have an account?&nbsp;
@@ -543,7 +543,7 @@ export default function Signup() {
                     transform: 'translateY(-285px)',
                     borderRadius: '20px',
                     width: '95%',
-                    height: '470px',
+                    height: error ? '540px' : '470px',
                     position: 'fixed',
                     top: '350px'
                   }}
@@ -675,8 +675,8 @@ export default function Signup() {
                     style={{
                       background: '#F5F5F7',
                       width: '100%',
-                      height: '118px',
-                      transform: 'translateY(46px)',
+                      height: error ? '60px' : '118px',
+                      transform: error ? 'translateY(20px)' : 'translateY(46px)',
                       borderRadius: '0px 0px 19.5px 19.5px',
                       paddingTop: '25px',
                       fontSize: '12px',
@@ -684,11 +684,11 @@ export default function Signup() {
                   >
                     <center
                       style={{
-                        transform: 'translateY(25px)',
-                        fontSize: '17px',
+                        transform: error ? 'translateY(-2px)' : 'translateY(25px)',
+                        fontSize: error ? '14px' : '17px',
                         fontWeight: '400',
                         lineHeight: '21px',
-                        marginBottom: '33px',
+                        marginBottom: '33px'
                       }}
                     >
                       Already have an account?&nbsp;
