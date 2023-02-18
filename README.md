@@ -7,5 +7,5 @@
 * Node.js
 * MongoDB
 * Docker
-* Stripe
-* OpenWeather
+* Stripe API
+* OpenWeather API
