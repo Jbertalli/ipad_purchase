@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import Flower from '../components/ipad_flower';
 import { Grid } from 'semantic-ui-react';
 import { useEffect } from 'react';
 import styles from '../styles/ipad.module.css';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Buy() {
   useEffect(() => {
@@ -13,12 +16,38 @@ export default function Buy() {
     };
   }, []);
 
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
+
+  const router = useRouter();
+
   return (
     <>
       <Head>
         <title>iPad - Apple</title>
         <meta name="description" content="apple, ipad" />
       </Head>
+      {isTablet ? (
+      <>
+        <div
+          style={{
+            transform: 'translate(560px, 160px)',
+            position: 'absolute',
+            zIndex: '100',
+            color: 'white'
+          }}
+          onClick={() => router.push('/ipadair')}
+        >
+          <Image 
+            src="/images/ipad_flower.png"
+            alt="ipad"
+            width={430}
+            height={430}
+          />
+        </div>
+      </>
+      ): null}
       <div>
         <Link href="/ipadair">
           <div
@@ -28,7 +57,7 @@ export default function Buy() {
               height: '829px',
               position: 'relative',
               zIndex: '0',
-              cursor: 'pointer',
+              cursor: 'pointer'
             }}
           />
         </Link>
@@ -37,7 +66,7 @@ export default function Buy() {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          transform: 'translate(-757px)',
+          transform: isTablet ? 'translate(-610px, -40px)' : 'translate(-757px)'
         }}
       >
         <Grid.Column
@@ -46,7 +75,7 @@ export default function Buy() {
             display: 'flex',
             justifyContent: 'center',
             marginLeft: '13px',
-            position: 'fixed',
+            position: 'fixed'
           }}
         >
           <div
@@ -58,7 +87,7 @@ export default function Buy() {
               color: 'white',
               fontFamily: 'Helvetica',
               position: 'relative',
-              zIndex: '2',
+              zIndex: '2'
             }}
           >
             <center>
@@ -68,7 +97,7 @@ export default function Buy() {
                   fontSize: '12px',
                   fontWeight: '400',
                   lineHeight: '25px',
-                  marginBottom: '10px',
+                  marginBottom: '10px'
                 }}
               >
                 New
@@ -77,7 +106,7 @@ export default function Buy() {
                 style={{
                   fontSize: '56px',
                   fontWeight: '400',
-                  lineHeight: '44px',
+                  lineHeight: '44px'
                 }}
               >
                 iPad air
@@ -87,7 +116,7 @@ export default function Buy() {
                   fontSize: '24px',
                   fontWeight: '400',
                   lineHeight: '28px',
-                  marginTop: '7px',
+                  marginTop: '7px'
                 }}
               >
                 Light. Bright.
@@ -96,7 +125,7 @@ export default function Buy() {
                 style={{
                   fontSize: '24px',
                   fontWeight: '400',
-                  lineHeight: '28px',
+                  lineHeight: '28px'
                 }}
               >
                 Full of might.
@@ -107,7 +136,7 @@ export default function Buy() {
                   fontWeight: '200',
                   lineHeight: '25px',
                   marginTop: '20px',
-                  marginBottom: '5px',
+                  marginBottom: '5px'
                 }}
               >
                 From $599
@@ -125,7 +154,7 @@ export default function Buy() {
                     marginTop: '7px',
                     fontWeight: '200px',
                     fontSize: '17px',
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   <a>Buy</a>
@@ -138,7 +167,7 @@ export default function Buy() {
                   fontSize: '17px',
                   fontWeight: '500',
                   lineHeight: '25px',
-                  cursor: 'pointer',
+                  cursor: 'pointer'
                 }}
               >
                 Learn more {'>'}
@@ -149,7 +178,7 @@ export default function Buy() {
               style={{
                 transform: 'translate(88px, -260px) scale(0.5)',
                 position: 'relative',
-                zIndex: '0',
+                zIndex: '0'
               }}
             >
               <div className={styles.neon_wrapper2}>
@@ -157,7 +186,7 @@ export default function Buy() {
                   className={styles.txt2}
                   style={{
                     fontFamily: 'Brush Script MT, Brush Script Std, cursive',
-                    transform: 'translate(-10px, 0px)',
+                    transform: 'translate(-10px, 0px)'
                   }}
                 >
                   air
@@ -174,10 +203,14 @@ export default function Buy() {
             justifyContent: 'center',
             marginLeft: '400px',
             position: 'fixed',
-            cursor: 'pointer',
+            cursor: 'pointer'
           }}
         >
-          <Flower />
+          {!isTablet ? (
+          <>
+            <Flower />
+          </>
+          ): null}
         </Grid.Column>
       </Grid>
     </>
