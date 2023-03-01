@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
+import { useMediaQuery } from 'react-responsive';
 
 function HomeIpad({ user }) {
   // console.log(user);
@@ -30,6 +31,18 @@ function HomeIpad({ user }) {
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
+  const isDesktop = useMediaQuery(
+    { minWidth: 1190, maxWidth: 20000 }
+  );
+
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
+
+  const isMobile = useMediaQuery(
+      { maxWidth: 799 }
+  );
+
   return (
     <>
       <Head>
@@ -38,7 +51,16 @@ function HomeIpad({ user }) {
       </Head>
       {desktop ? (
         <>
-          <Heading />
+          {isDesktop ? (
+          <>
+            <Heading />
+          </>
+          ): null}
+          {isMobile ? (
+          <>
+            <Heading />
+          </>
+          ): null}
           <div
             style={{
               display: 'flex',

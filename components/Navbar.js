@@ -52,10 +52,14 @@ const Navbar = ({ user }) => {
                 background: '#000000',
                 opacity: '0.8',
                 fontFamily: 'SF Pro Text',
+                justifyContent: 'center'
               }}
             >
-              <Container
-                style={{ transform: 'translateX(40px)', opacity: '0.8' }}
+              <div
+                style={{
+                  opacity: '0.8', 
+                  display: 'flex'
+                }}
               >
                 <Link href="/" passHref>
                   <Menu.Item active={isActive('/')}>
@@ -205,7 +209,7 @@ const Navbar = ({ user }) => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </Menu.Item>
-              </Container>
+              </div>
             </Menu>
           </Sticky>
         </>

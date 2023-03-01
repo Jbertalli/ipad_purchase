@@ -12,6 +12,7 @@ import Zip from '../components/zip';
 import StateAbbr from '../components/state_abbr';
 import City from '../components/city';
 import Heading from '../components/heading';
+import { useMediaQuery } from 'react-responsive';
 import { Container, Divider, Segment, Icon, Item, Grid, Popup, Modal } from 'semantic-ui-react';
 
 const LOCAL_STORAGE_KEY = 'user_cart';
@@ -198,6 +199,18 @@ export default function Cart({ user, orders, ctx }) {
     })
   }
 
+  const isDesktop = useMediaQuery(
+    { minWidth: 1190, maxWidth: 20000 }
+  );
+
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
+
+  const isMobile = useMediaQuery(
+      { maxWidth: 799 }
+  );
+
   return (
     <>     
       <Head>
@@ -211,13 +224,27 @@ export default function Cart({ user, orders, ctx }) {
             marginTop: '-19px'
           }}
         >
-          <Heading />
+          {isDesktop ? (
+          <>
+            <Heading />
+          </>
+          ): null}
+          {isMobile ? (
+          <>
+            <Heading />
+          </>
+          ): null}
         </div>
+        <div
+          style={{
+            transform: isTablet ? 'scale(0.5) translate(200px)' : null
+          }}
+        >
         <Container
           style={{
-            position: 'relative',
+            position: isTablet ? 'absolute' : 'relative',
             zIndex: '100',
-            transform: 'translate(114px, -50px)',
+            transform: isTablet ? 'scale(1.5) translateY(250px)' : 'translate(114px, -50px)',
             height: desktop ? null : '800px'
           }}
         >
@@ -1477,6 +1504,7 @@ export default function Cart({ user, orders, ctx }) {
             />
           </div>
         </Container>
+        </div>
         <Modal
           open={paymentModal}
           dimmer="blurring"

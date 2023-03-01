@@ -8,6 +8,7 @@ import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import { handleLogin } from '../utils/auth';
 import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
 
 const INITIAL_USER = {
   email: '',
@@ -62,6 +63,10 @@ export default function Login() {
     }
   }
 
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
+
   return (
     <>
       <Head>
@@ -79,7 +84,7 @@ export default function Login() {
                 lineHeight: '44px',
                 paddingTop: '34px',
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'center'
               }}
             >
               Sign in to Apple Store
@@ -99,7 +104,7 @@ export default function Login() {
                     textAlign: 'left',
                     border: '.5px solid #49494950',
                     borderRadius: '6px',
-                    paddingLeft: '15px',
+                    paddingLeft: '15px'
                   }}
                 />
                 <Icon
@@ -107,7 +112,7 @@ export default function Login() {
                   size="big"
                   style={{
                     color: '#49494960',
-                    transform: 'translate(-14px, 168px)',
+                    transform: 'translate(-14px, 168px)'
                   }}
                 />
               </div>
@@ -133,7 +138,7 @@ export default function Login() {
                   borderRadius: '50%',
                   transform: 'translate(15px, 18px)',
                   opacity: '0.8',
-                  cursor: 'pointer',
+                  cursor: 'pointer'
                 }}
                 onClick={() => setSignInModal(false)}
               >
@@ -142,7 +147,7 @@ export default function Login() {
                     fontSize: '30px',
                     fontWeight: 'lighter',
                     color: 'gray',
-                    transform: 'translate(10px, -5px)',
+                    transform: 'translate(10px, -5px)'
                   }}
                 >
                   x
@@ -152,7 +157,7 @@ export default function Login() {
                 style={{
                   fontSize: '40px',
                   fontWeight: '600',
-                  lineHeight: '44px',
+                  lineHeight: '44px'
                 }}
               >
                 Sign In
@@ -167,7 +172,7 @@ export default function Login() {
                           transform: 'translate(-222px)',
                           fontSize: '17px',
                           fontWeight: '500',
-                          paddingBottom: '5px',
+                          paddingBottom: '5px'
                         }}
                       >
                         Email
@@ -187,7 +192,7 @@ export default function Login() {
                           transform: 'translate(-205.2px)',
                           fontSize: '17px',
                           fontWeight: '500',
-                          padding: '30px 0px 5px 0px',
+                          padding: '30px 0px 5px 0px'
                         }}
                       >
                         Password
@@ -214,7 +219,7 @@ export default function Login() {
                           border: '0px',
                           borderRadius: '10px',
                           width: '284px',
-                          height: '56px',
+                          height: '56px'
                         }}
                       >
                         Sign In
@@ -231,7 +236,7 @@ export default function Login() {
                   transform: 'translateY(46px)',
                   borderRadius: '0px 0px 19.5px 19.5px',
                   paddingTop: '25px',
-                  fontSize: '12px',
+                  fontSize: '12px'
                 }}
               >
                 <center
@@ -240,7 +245,7 @@ export default function Login() {
                     fontSize: '17px',
                     fontWeight: '400',
                     lineHeight: '21px',
-                    marginBottom: '33px',
+                    marginBottom: '33px'
                   }}
                 >
                   {`Don't have an account?`}&nbsp;
@@ -257,14 +262,14 @@ export default function Login() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              transform: 'translateY(219px)',
+              transform: 'translateY(219px)'
             }}
           >
             <div
               style={{
                 position: 'absolute',
                 transform: 'translate(-15px)',
-                opacity: '0.8',
+                opacity: '0.8'
               }}
             >
               <span>
@@ -273,7 +278,7 @@ export default function Login() {
                   style={{
                     transform: 'translate(15px, -23px)',
                     fontSize: '17px',
-                    fontWeight: '300',
+                    fontWeight: '300'
                   }}
                 >
                   &nbsp;&nbsp;Remember me
@@ -285,7 +290,7 @@ export default function Login() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              transform: 'translateY(258px)',
+              transform: 'translateY(258px)'
             }}
           >
             <div
@@ -294,7 +299,7 @@ export default function Login() {
                 background: 'black',
                 width: '10vw',
                 height: '1px',
-                opacity: '0.3',
+                opacity: '0.3'
               }}
             />
           </div>
@@ -302,7 +307,7 @@ export default function Login() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              transform: 'translateY(-150px)',
+              transform: 'translateY(-150px)'
             }}
           >
             <div
@@ -312,7 +317,7 @@ export default function Login() {
                 style={{
                   color: '#0070c9',
                   cursor: 'pointer',
-                  transform: 'translate(35px, 124px)',
+                  transform: 'translate(35px, 124px)'
                 }}
               >
                 Forgot Apple ID or password?
@@ -322,7 +327,7 @@ export default function Login() {
                     position: 'absolute',
                     color: '#0070c9',
                     cursor: 'pointer',
-                    opacity: '0.7',
+                    opacity: '0.7'
                   }}
                 >
                   <Icon name="arrow right" />
@@ -339,7 +344,7 @@ export default function Login() {
                     position: 'absolute',
                     color: '#0070c9',
                     cursor: 'pointer',
-                    opacity: '0.7',
+                    opacity: '0.7'
                   }}
                 >
                   <Icon name="arrow right" />
@@ -355,7 +360,7 @@ export default function Login() {
                 fontSize: '17px',
                 fontWeight: '400',
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'center'
               }}
             >
               Need some help?&nbsp;
@@ -365,89 +370,93 @@ export default function Login() {
               &nbsp;or call 1‑800‑MY‑APPLE.
             </div>
           </div>
-          <div
-            style={{
-              transform: 'translateY(417px)',
-              position: 'absolute',
-              height: '132px',
-              width: '100%',
-              background: '#f5f5f7',
-              zIndex: '-1',
-            }}
-          />
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div style={{ transform: 'translate(1010px, 432px)' }}>
-              <div
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '400',
-                  color: '#6e6e73',
-                  width: '3000px',
-                }}
-              >
-                The Apple Online Store uses industry-standard encryption to
-                protect the confidentiality of the information you submit. Learn
-                more about our Security Policy.
-              </div>
-              <Divider
-                style={{ transform: 'translateY(-0.6px)', width: '978px' }}
-              />
-              <div
-                style={{
-                  transform: 'translate(-751px, -0.6px)',
-                  fontSize: '12px',
-                  fontWeight: '400',
-                  color: '#6e6e73',
-                  display: 'flex',
-                  justifyContent: 'center',
-                }}
-              >
-                More ways to shop:&nbsp;
-                <a
-                  className={styles.bluehovering}
-                  style={{ color: '#0070c9', cursor: 'pointer' }}
-                >
-                  Find an Apple Store
-                </a>
-                &nbsp;or&nbsp;
-                <a
-                  className={styles.bluehovering}
-                  style={{ color: '#0070c9', cursor: 'pointer' }}
-                >
-                  other retailer
-                </a>
-                &nbsp;near you. Or call 1-800-MY-APPLE.
+          {!isTablet ? (
+          <>
+            <div
+              style={{
+                transform: 'translateY(417px)',
+                position: 'absolute',
+                height: '132px',
+                width: '100%',
+                background: '#f5f5f7',
+                zIndex: '-1'
+              }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div style={{ transform: 'translate(1010px, 432px)' }}>
                 <div
                   style={{
-                    cursor: 'pointer',
-                    width: '980px',
-                    transform: 'translate(-518px, 21px)',
+                    fontSize: '12px',
+                    fontWeight: '400',
+                    color: '#6e6e73',
+                    width: '3000px'
+                  }}
+                >
+                  The Apple Online Store uses industry-standard encryption to
+                  protect the confidentiality of the information you submit. Learn
+                  more about our Security Policy.
+                </div>
+                <Divider
+                  style={{ transform: 'translateY(-0.6px)', width: '978px' }}
+                />
+                <div
+                  style={{
+                    transform: 'translate(-751px, -0.6px)',
                     fontSize: '12px',
                     fontWeight: '400',
                     color: '#6e6e73',
                     display: 'flex',
-                    justifyContent: 'center',
+                    justifyContent: 'center'
                   }}
                 >
-                  <div>Copyright © 2022 Apple Inc. All rights reserved.</div>
-                  <div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy
-                    Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                  More ways to shop:&nbsp;
+                  <a
+                    className={styles.bluehovering}
+                    style={{ color: '#0070c9', cursor: 'pointer' }}
+                  >
+                    Find an Apple Store
+                  </a>
+                  &nbsp;or&nbsp;
+                  <a
+                    className={styles.bluehovering}
+                    style={{ color: '#0070c9', cursor: 'pointer' }}
+                  >
+                    other retailer
+                  </a>
+                  &nbsp;near you. Or call 1-800-MY-APPLE.
+                  <div
+                    style={{
+                      cursor: 'pointer',
+                      width: '980px',
+                      transform: 'translate(-518px, 21px)',
+                      fontSize: '12px',
+                      fontWeight: '400',
+                      color: '#6e6e73',
+                      display: 'flex',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <div>Copyright © 2022 Apple Inc. All rights reserved.</div>
+                    <div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy
+                      Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div>Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
+                    <div>
+                      Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div>Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
+                    <div>
+                      Site
+                      Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div>United States</div>
                   </div>
-                  <div>Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
-                  <div>
-                    Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                  </div>
-                  <div>Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
-                  <div>
-                    Site
-                    Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  </div>
-                  <div>United States</div>
                 </div>
               </div>
             </div>
-          </div>
+          </>
+          ):null }
         </>
       ) : (
         <>
@@ -455,7 +464,7 @@ export default function Login() {
             style={{
               position: 'relative',
               zIndex: '100',
-              transform: 'translateY(-113px)',
+              transform: 'translateY(-113px)'
             }}
           >
             <div
@@ -466,7 +475,7 @@ export default function Login() {
                 lineHeight: '44px',
                 paddingTop: '34px',
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'center'
               }}
             >
               Sign in to Apple Store
@@ -486,7 +495,7 @@ export default function Login() {
                     textAlign: 'left',
                     border: '.5px solid #49494950',
                     borderRadius: '6px',
-                    paddingLeft: '15px',
+                    paddingLeft: '15px'
                   }}
                 />
                 <Icon
@@ -494,7 +503,7 @@ export default function Login() {
                   size="big"
                   style={{
                     color: '#49494960',
-                    transform: 'translate(-14px, 168px)',
+                    transform: 'translate(-14px, 168px)'
                   }}
                 />
               </div>
@@ -520,7 +529,7 @@ export default function Login() {
                   borderRadius: '50%',
                   transform: 'translate(15px, 18px)',
                   opacity: '0.8',
-                  cursor: 'pointer',
+                  cursor: 'pointer'
                 }}
                 onClick={() => setSignInModal(false)}
               >
@@ -529,7 +538,7 @@ export default function Login() {
                     fontSize: '30px',
                     fontWeight: 'lighter',
                     color: 'gray',
-                    transform: 'translate(10px, -5px)',
+                    transform: 'translate(10px, -5px)'
                   }}
                 >
                   x
@@ -540,7 +549,7 @@ export default function Login() {
                   fontSize: '40px',
                   fontWeight: '600',
                   lineHeight: '44px',
-                  transform: 'translateY(-10px)',
+                  transform: 'translateY(-10px)'
                 }}
               >
                 Sign In
@@ -555,7 +564,7 @@ export default function Login() {
                           transform: 'translate(-22vw)',
                           fontSize: '17px',
                           fontWeight: '500',
-                          paddingBottom: '5px',
+                          paddingBottom: '5px'
                         }}
                       >
                         Email
@@ -575,7 +584,7 @@ export default function Login() {
                           transform: 'translate(-18vw)',
                           fontSize: '17px',
                           fontWeight: '500',
-                          padding: '30px 0px 5px 0px',
+                          padding: '30px 0px 5px 0px'
                         }}
                       >
                         Password
@@ -607,7 +616,7 @@ export default function Login() {
                           border: '0px',
                           borderRadius: '10px',
                           width: '200px',
-                          height: '50px',
+                          height: '50px'
                         }}
                       >
                         Sign In
@@ -624,7 +633,7 @@ export default function Login() {
                   transform: 'translateY(46px)',
                   borderRadius: '0px 0px 19.5px 19.5px',
                   paddingTop: '25px',
-                  fontSize: '12px',
+                  fontSize: '12px'
                 }}
               >
                 <center
@@ -633,7 +642,7 @@ export default function Login() {
                     fontSize: '17px',
                     fontWeight: '400',
                     lineHeight: '21px',
-                    marginBottom: '33px',
+                    marginBottom: '33px'
                   }}
                 >
                   {`Don't have an account?`}&nbsp;
@@ -650,14 +659,14 @@ export default function Login() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              transform: 'translateY(110px)',
+              transform: 'translateY(110px)'
             }}
           >
             <div
               style={{
                 position: 'absolute',
                 transform: 'translate(-15px)',
-                opacity: '0.8',
+                opacity: '0.8'
               }}
             >
               <span>
@@ -666,7 +675,7 @@ export default function Login() {
                   style={{
                     transform: 'translate(15px, -23px)',
                     fontSize: '17px',
-                    fontWeight: '300',
+                    fontWeight: '300'
                   }}
                 >
                   &nbsp;&nbsp;Remember me
@@ -678,7 +687,7 @@ export default function Login() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              transform: 'translateY(150px)',
+              transform: 'translateY(150px)'
             }}
           >
             <div
@@ -687,7 +696,7 @@ export default function Login() {
                 background: 'black',
                 width: '55vw',
                 height: '1px',
-                opacity: '0.3',
+                opacity: '0.3'
               }}
             />
           </div>
@@ -695,7 +704,7 @@ export default function Login() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              transform: 'translateY(-150px)',
+              transform: 'translateY(-150px)'
             }}
           >
             <div
@@ -705,7 +714,7 @@ export default function Login() {
                 style={{
                   color: '#0070c9',
                   cursor: 'pointer',
-                  transform: 'translate(35px, 17px)',
+                  transform: 'translate(35px, 17px)'
                 }}
               >
                 Forgot Apple ID or password?
@@ -715,7 +724,7 @@ export default function Login() {
                     position: 'absolute',
                     color: '#0070c9',
                     cursor: 'pointer',
-                    opacity: '0.7',
+                    opacity: '0.7'
                   }}
                 >
                   <Icon name="arrow right" />
@@ -732,7 +741,7 @@ export default function Login() {
                     position: 'absolute',
                     color: '#0070c9',
                     cursor: 'pointer',
-                    opacity: '0.7',
+                    opacity: '0.7'
                   }}
                 >
                   <Icon name="arrow right" />
