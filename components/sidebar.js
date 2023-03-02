@@ -493,7 +493,7 @@ export default function Sidebar() {
                   style={{
                     fontSize: '17px',
                     fontWeight: '500',
-                    margin: '1.5em 0em 1.5em 0em',
+                    margin: '1.5em 0em 1.5em 0em'
                   }}
                 >
                   Storage
@@ -505,7 +505,7 @@ export default function Sidebar() {
                     padding: '15px 0px 15px 20px',
                     margin: '10px 0px 17px 0px',
                     fontSize: '12px',
-                    lineHeight: '16px',
+                    lineHeight: '16px'
                   }}
                 >
                   <Grid>
@@ -549,7 +549,7 @@ export default function Sidebar() {
                       borderRadius: '50%',
                       transform: 'translate(15px, 18px)',
                       opacity: '0.8',
-                      cursor: 'pointer',
+                      cursor: 'pointer'
                     }}
                     onClick={() => setStorageModal(false)}
                   >
@@ -558,7 +558,7 @@ export default function Sidebar() {
                         fontSize: '30px',
                         fontWeight: 'lighter',
                         color: 'gray',
-                        transform: 'translate(10px, -5px)',
+                        transform: 'translate(10px, -5px)'
                       }}
                     >
                       x
@@ -566,14 +566,14 @@ export default function Sidebar() {
                   </div>
                   <div 
                     style={{ 
-                        padding: desktop ? '3em 6em 0em 6em' : '3em 1em 0em 1em' 
+                        padding: desktop ? '3em 6em 0em 6em' : '3em 1em 0em 1em'
                     }}
                   >
                     <h1
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontSize: desktop ? '40px' : '25px',
+                        fontSize: desktop ? '40px' : '25px'
                       }}
                     >
                       Make room for everything.
@@ -593,7 +593,7 @@ export default function Sidebar() {
                       style={{
                         margin: '1em 0em 0em 0em',
                         fontSize: '17px',
-                        lineHeight: '25px',
+                        lineHeight: '25px'
                       }}
                     >
                       Over time you may add more content to your iPad, so you’ll
@@ -603,7 +603,7 @@ export default function Sidebar() {
                       style={{
                         color: 'gray',
                         fontWeight: 'lighter',
-                        fontSize: '12px',
+                        fontSize: '12px'
                       }}
                     >
                       Storage is measured in gigabytes (GB) and terabytes (TB).
@@ -614,7 +614,7 @@ export default function Sidebar() {
                         fontWeight: 'lighter',
                         fontSize: '12px',
                         lineHeight: '16px',
-                        transform: 'translateY(-10px)',
+                        transform: 'translateY(-10px)'
                       }}
                     >
                       Note: Available space is less and varies due to many
@@ -637,7 +637,7 @@ export default function Sidebar() {
                                 borderRadius: '0px 0px 19.5px 19.5px',
                                 lineHeight: '16px',
                                 paddingTop: '25px',
-                                fontSize: '12px',
+                                fontSize: '12px'
                             }}
                             >
                             <Icon
@@ -645,14 +645,14 @@ export default function Sidebar() {
                                 size="large"
                                 style={{
                                     color: 'gray',
-                                    transform: 'translateX(408px) scale(1.3)',
+                                    transform: 'translateX(408px) scale(1.3)'
                                 }}
                             />
                             <div
                                 style={{
                                     display: 'flex',
                                     justifyContent: 'center',
-                                    marginTop: '20px',
+                                    marginTop: '20px'
                                 }}
                             >
                                 <b>Have questions about buying an iPad?</b>
@@ -664,7 +664,7 @@ export default function Sidebar() {
                                 className={styles.bluehovering}
                                 style={{
                                     color: 'rgb(0, 102, 204)',
-                                    cursor: 'pointer',
+                                    cursor: 'pointer'
                                 }}
                                 >
                                 Chat with an iPad Specialist
@@ -678,7 +678,7 @@ export default function Sidebar() {
                             style={{
                                 display: 'flex',
                                 justifyContent: 'center',
-                                marginTop: '50px',
+                                marginTop: '50px'
                             }}
                         >
                             <b>Have questions about buying an iPad?</b>
@@ -690,7 +690,7 @@ export default function Sidebar() {
                             className={styles.bluehovering}
                             style={{
                                 color: 'rgb(0, 102, 204)',
-                                cursor: 'pointer',
+                                cursor: 'pointer'
                             }}
                             >
                             Chat with an iPad Specialist
@@ -704,7 +704,7 @@ export default function Sidebar() {
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    marginTop: '1.5em',
+                    marginTop: '1.5em'
                   }}
                 >
                   <div className={styles.gbHover}>
@@ -718,7 +718,7 @@ export default function Sidebar() {
                           background: 'transparent',
                           margin: '0em .5em 0em 0em',
                           padding: '15px',
-                          lineHeight: '16px',
+                          lineHeight: '16px'
                         }}
                         onClick={() => {
                             setStorage(true),
@@ -731,7 +731,7 @@ export default function Sidebar() {
                           style={{
                             margin: '0em',
                             fontSize: '29px',
-                            color: 'black',
+                            color: 'black'
                           }}
                         >
                           64GB
@@ -740,7 +740,7 @@ export default function Sidebar() {
                           style={{
                             margin: '0em',
                             transform: 'translate(39px, -32.5px)',
-                            fontSize: '12px',
+                            fontSize: '12px'
                           }}
                         >
                           1
@@ -748,7 +748,7 @@ export default function Sidebar() {
                         <div
                           style={{
                             transform: 'translateY(-14px)',
-                            fontSize: '12px',
+                            fontSize: '12px'
                           }}
                         >
                           <div style={{ margin: '0em' }}>From $599</div>
@@ -770,7 +770,7 @@ export default function Sidebar() {
                         background: 'transparent',
                         margin: '0em 0em 0em .5em',
                         padding: '15px',
-                        lineHeight: '16px',
+                        lineHeight: '16px'
                       }}
                       onClick={() => {
                           setStorage(true),
@@ -783,7 +783,7 @@ export default function Sidebar() {
                         style={{
                           margin: '0em',
                           fontSize: '29px',
-                          color: 'black',
+                          color: 'black'
                         }}
                       >
                         128GB
@@ -792,7 +792,7 @@ export default function Sidebar() {
                         style={{
                           margin: '0em',
                           transform: 'translate(47px, -32.5px)',
-                          fontSize: '12px',
+                          fontSize: '12px'
                         }}
                       >
                         1
@@ -800,7 +800,7 @@ export default function Sidebar() {
                       <div
                         style={{
                           transform: 'translateY(-14px)',
-                          fontSize: '12px',
+                          fontSize: '12px'
                         }}
                       >
                         <div style={{ margin: '0em' }}>From $749</div>
@@ -821,7 +821,7 @@ export default function Sidebar() {
                 width: '408px',
                 height: '1px',
                 background: 'transparent',
-                transform: 'translateY(-67px)',
+                transform: 'translateY(-67px)'
               }}
             />
             {connectivity ? (
@@ -834,7 +834,7 @@ export default function Sidebar() {
                       fontSize: '24px',
                       fontWeight: '600',
                       paddingBottom: '5px',
-                      transform: 'translateY(8px)',
+                      transform: 'translateY(8px)'
                     }}
                   >
                     {`${wifi}`} {`${cellular}`}
@@ -844,7 +844,7 @@ export default function Sidebar() {
                       cursor: 'pointer',
                       color: '#0070c9',
                       transform: 'translate(-16px, 9px)',
-                      opacity: '0.8',
+                      opacity: '0.8'
                     }}
                     onClick={() => {
                       setConnectivity(false), setWifi(''), setCellular('');
@@ -860,7 +860,7 @@ export default function Sidebar() {
                   style={{
                     fontSize: '17px',
                     fontWeight: '500',
-                    margin: '1.5em 0em 1.5em 0em',
+                    margin: '1.5em 0em 1.5em 0em'
                   }}
                 >
                   Connectivity
@@ -873,7 +873,7 @@ export default function Sidebar() {
                       paddingLeft: '10px',
                       margin: '10px 0px 17px 0px',
                       fontSize: '12px',
-                      lineHeight: '16px',
+                      lineHeight: '16px'
                     }}
                   >
                     <Grid.Column width={14}>
@@ -888,7 +888,7 @@ export default function Sidebar() {
                         size="large"
                         style={{
                           cursor: 'pointer',
-                          transform: 'translate(-10px, 17px)',
+                          transform: 'translate(-10px, 17px)'
                         }}
                         onClick={() => setConnectivityModal(true)}
                       />
@@ -899,7 +899,7 @@ export default function Sidebar() {
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    marginTop: '1.5em',
+                    marginTop: '1.5em'
                   }}
                 >
                   <div className={styles.gbHover}>
@@ -913,7 +913,7 @@ export default function Sidebar() {
                           background: 'transparent',
                           margin: '0em .5em 0em 0em',
                           padding: '15px',
-                          lineHeight: '16px',
+                          lineHeight: '16px'
                         }}
                         onClick={() => {
                             setConnectivity(true),
@@ -926,7 +926,7 @@ export default function Sidebar() {
                           style={{
                             margin: '0em',
                             fontSize: '17px',
-                            color: 'black',
+                            color: 'black'
                           }}
                         >
                           Wi-Fi
@@ -934,7 +934,7 @@ export default function Sidebar() {
                         <div
                           style={{
                             transform: 'translateY(5px)',
-                            fontSize: '12px',
+                            fontSize: '12px'
                           }}
                         >
                           <div>From $599</div>
@@ -954,7 +954,7 @@ export default function Sidebar() {
                         background: 'transparent',
                         margin: '0em 0em 0em .5em',
                         padding: '15px',
-                        lineHeight: '16px',
+                        lineHeight: '16px'
                       }}
                       onClick={() => {
                           setConnectivity(true),
@@ -967,7 +967,7 @@ export default function Sidebar() {
                         style={{
                           margin: '0em',
                           fontSize: '17px',
-                          color: 'black',
+                          color: 'black'
                         }}
                       >
                         Wi-Fi + Cellular
@@ -975,7 +975,7 @@ export default function Sidebar() {
                       <div
                         style={{
                           transform: 'translateY(5px)',
-                          fontSize: '12px',
+                          fontSize: '12px'
                         }}
                       >
                         <div>From $749</div>
@@ -1006,7 +1006,7 @@ export default function Sidebar() {
                       borderRadius: '50%',
                       transform: 'translate(15px, 18px)',
                       opacity: '0.8',
-                      cursor: 'pointer',
+                      cursor: 'pointer'
                     }}
                     onClick={() => setConnectivityModal(false)}
                   >
@@ -1015,7 +1015,7 @@ export default function Sidebar() {
                         fontSize: '30px',
                         fontWeight: 'lighter',
                         color: 'gray',
-                        transform: 'translate(10px, -5px)',
+                        transform: 'translate(10px, -5px)'
                       }}
                     >
                       x
@@ -1046,7 +1046,7 @@ export default function Sidebar() {
                             style={{
                             display: 'flex',
                             justifyContent: 'center',
-                            marginBottom: '15px',
+                            marginBottom: '15px'
                             }}
                         >
                             with Wi-Fi 6.
@@ -1148,14 +1148,14 @@ export default function Sidebar() {
                   <>
                     <div
                         style={{
-                        background: '#F5F5F7',
-                        width: '816px',
-                        height: '118.1px',
-                        transform: 'translate(0px, 13px)',
-                        borderRadius: '0px 0px 19.5px 19.5px',
-                        lineHeight: '16px',
-                        paddingTop: '25px',
-                        fontSize: '12px',
+                          background: '#F5F5F7',
+                          width: '816px',
+                          height: '118.1px',
+                          transform: 'translate(0px, 13px)',
+                          borderRadius: '0px 0px 19.5px 19.5px',
+                          lineHeight: '16px',
+                          paddingTop: '25px',
+                          fontSize: '12px'
                         }}
                     >
                         <Icon
@@ -1163,14 +1163,14 @@ export default function Sidebar() {
                         size="large"
                         style={{
                             color: 'gray',
-                            transform: 'translateX(400px) scale(1.3)',
+                            transform: 'translateX(400px) scale(1.3)'
                         }}
                         />
                         <div
                         style={{
                             display: 'flex',
                             justifyContent: 'center',
-                            marginTop: '20px',
+                            marginTop: '20px'
                         }}
                         >
                         <b>Have questions about buying an iPad?</b>
@@ -1197,7 +1197,7 @@ export default function Sidebar() {
                 width: '408px',
                 height: '1px',
                 background: 'transparent',
-                transform: 'translateY(-67px)',
+                transform: 'translateY(-67px)'
               }}
             />
             {engraving ? (
@@ -1210,7 +1210,7 @@ export default function Sidebar() {
                       fontSize: '24px',
                       fontWeight: '600',
                       paddingBottom: '5px',
-                      transform: 'translateY(8px)',
+                      transform: 'translateY(8px)'
                     }}
                   >
                     {`${addengraving}`} {`${noengraving}`}
@@ -1220,7 +1220,7 @@ export default function Sidebar() {
                       cursor: 'pointer',
                       color: '#0070c9',
                       transform: 'translate(-16px, 9px)',
-                      opacity: '0.8',
+                      opacity: '0.8'
                     }}
                     onClick={() => {
                         setEngraving(false),
@@ -1238,7 +1238,7 @@ export default function Sidebar() {
                   style={{
                     fontSize: '17px',
                     fontWeight: '500',
-                    margin: '1.5em 0em 1.5em 0em',
+                    margin: '1.5em 0em 1.5em 0em'
                   }}
                 >
                   Personalize your device.
@@ -1250,7 +1250,7 @@ export default function Sidebar() {
                     paddingLeft: '10px',
                     margin: '10px 0px 17px 0px',
                     fontSize: '12px',
-                    lineHeight: '16px',
+                    lineHeight: '16px'
                   }}
                 >
                   <Grid.Column width={14}>
@@ -1265,7 +1265,7 @@ export default function Sidebar() {
                       size="large"
                       style={{
                         cursor: 'pointer',
-                        transform: 'translate(-10px, 17px)',
+                        transform: 'translate(-10px, 17px)'
                       }}
                       onClick={() => setEngravingModal(true)}
                     />
@@ -1293,7 +1293,7 @@ export default function Sidebar() {
                       borderRadius: '50%',
                       transform: 'translate(15px, 18px)',
                       opacity: '0.8',
-                      cursor: 'pointer',
+                      cursor: 'pointer'
                     }}
                     onClick={() => setEngravingModal(false)}
                   >
@@ -1302,7 +1302,7 @@ export default function Sidebar() {
                         fontSize: '30px',
                         fontWeight: 'lighter',
                         color: 'gray',
-                        transform: 'translate(10px, -5px)',
+                        transform: 'translate(10px, -5px)'
                       }}
                     >
                       x
@@ -1317,7 +1317,7 @@ export default function Sidebar() {
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontSize: desktop ? '40px' : '25px', 
+                        fontSize: desktop ? '40px' : '25px'
                       }}
                     >
                       Add a message that lasts.
@@ -1383,7 +1383,7 @@ export default function Sidebar() {
                       borderRadius: '0px 0px 19.5px 19.5px',
                       lineHeight: '16px',
                       paddingTop: '25px',
-                      fontSize: '12px',
+                      fontSize: '12px'
                     }}
                   >
                     <Icon
@@ -1391,14 +1391,14 @@ export default function Sidebar() {
                       size="large"
                       style={{
                         color: 'gray',
-                        transform: 'translateX(400px) scale(1.3)',
+                        transform: 'translateX(400px) scale(1.3)'
                       }}
                     />
                     <div
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        marginTop: '20px',
+                        marginTop: '20px'
                       }}
                     >
                       <b>Have questions about buying an iPad?</b>
@@ -1419,7 +1419,7 @@ export default function Sidebar() {
                     style={{
                       marginTop: '1.5em',
                       display: 'flex',
-                      justifyContent: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     <button
@@ -1428,7 +1428,7 @@ export default function Sidebar() {
                         border: '.5px solid gray',
                         width: '60em',
                         height: '83px',
-                        background: 'transparent',
+                        background: 'transparent'
                       }}
                       onClick={() => {
                         setEngraving(true), setAddengraving('Engraving');
@@ -1439,7 +1439,7 @@ export default function Sidebar() {
                           display: 'flex',
                           justifyContent: 'flex-start',
                           margin: '0em 0em 0em 1em',
-                          transform: 'translateY(10px)',
+                          transform: 'translateY(10px)'
                         }}
                       >
                         Add Engraving
@@ -1449,7 +1449,7 @@ export default function Sidebar() {
                           display: 'flex',
                           justifyContent: 'flex-end',
                           margin: '0em 1em 0em 0em',
-                          transform: 'translateY(-10px)',
+                          transform: 'translateY(-10px)'
                         }}
                       >
                         Free
@@ -1463,7 +1463,7 @@ export default function Sidebar() {
                     style={{
                       margin: '1em 0em 0em 0em',
                       display: 'flex',
-                      justifyContent: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     <button
@@ -1472,7 +1472,7 @@ export default function Sidebar() {
                         border: '.5px solid gray',
                         width: '60em',
                         height: '83px',
-                        background: 'transparent',
+                        background: 'transparent'
                       }}
                       onClick={() => {
                         setEngraving(true), setNoengraving('No Engraving');
@@ -1482,7 +1482,7 @@ export default function Sidebar() {
                         style={{
                           display: 'flex',
                           justifyContent: 'flex-start',
-                          margin: '0em 0em 0em 1em',
+                          margin: '0em 0em 0em 1em'
                         }}
                       >
                         No Engraving
@@ -1498,7 +1498,7 @@ export default function Sidebar() {
                 background: '#F5F5F790',
                 borderRadius: '5px',
                 padding: '30px',
-                marginBottom: '450px',
+                marginBottom: '450px'
               }}
             >
               <h1 style={{ fontWeight: '900', margin: '5px 0px 10px 0px' }}>
@@ -1558,7 +1558,7 @@ export default function Sidebar() {
                             className={styles.bluehovering}
                             style={{
                               color: 'rgb(0, 102, 204)',
-                              cursor: 'pointer',
+                              cursor: 'pointer'
                             }}
                           >
                             Remove
@@ -1571,7 +1571,7 @@ export default function Sidebar() {
                           className={styles.bluehovering}
                           style={{
                             color: 'rgb(0, 102, 204)',
-                            cursor: 'pointer',
+                            cursor: 'pointer'
                           }}
                         >
                           Add
@@ -1584,7 +1584,7 @@ export default function Sidebar() {
               <div
                 style={{
                   lineHeight: '20px',
-                  transform: 'translate(28.5px, -18px)',
+                  transform: 'translate(28.5px, -18px)'
                 }}
               >
                 <div>
@@ -1641,14 +1641,14 @@ export default function Sidebar() {
                     <Divider
                       style={{
                         transform: 'translateY(9px)',
-                        marginBottom: '23px',
+                        marginBottom: '23px'
                       }}
                     />
                     <div>
                       <h3
                         style={{
                           transform: 'translate(-1px, 7px)',
-                          marginBottom: '12px',
+                          marginBottom: '12px'
                         }}
                       >
                         10.9-inch iPad Air
@@ -1657,7 +1657,7 @@ export default function Sidebar() {
                         style={{
                           fontSize: '14px',
                           fontWeight: '400',
-                          lineHeight: '20px',
+                          lineHeight: '20px'
                         }}
                       >
                              
@@ -1668,7 +1668,7 @@ export default function Sidebar() {
                             border: '5px solid black',
                             width: '100px',
                             height: '85px',
-                            borderRadius: '15px',
+                            borderRadius: '15px'
                           }}
                         >                          
                           <div
@@ -1678,21 +1678,21 @@ export default function Sidebar() {
                               border: '5px solid black',
                               width: '60px',
                               height: '35px',
-                              borderRadius: '150px 150px 0 0',
+                              borderRadius: '150px 150px 0 0'
                             }}
                           />                                 
                           <Icon
                             name="apple"
                             style={{
                               transform: 'translate(36px, -2px) scale(3.2)',
-                              color: 'black',
+                              color: 'black'
                             }}
                           />                               
                         </div>                          
                         <div
                           style={{
                             transform: 'translate(28px, -9px)',
-                            width: '220px',
+                            width: '220px'
                           }}
                         >
                           Order today. Delivers to{' '}
@@ -1700,7 +1700,7 @@ export default function Sidebar() {
                             className={styles.bluehovering}
                             style={{
                               color: 'rgb(0, 102, 204)',
-                              cursor: 'pointer',
+                              cursor: 'pointer'
                             }}
                           >
                             <Zip />
@@ -1728,9 +1728,8 @@ export default function Sidebar() {
                       </div>
                       <div
                         style={{
-                          transform:
-                            'translate(-26px, -118px) scale(0.55, 0.5)',
-                          position: 'absolute',
+                          transform: 'translate(-26px, -118px) scale(0.55, 0.5)',
+                          position: 'absolute'
                         }}
                       >
                                                                 
@@ -1740,7 +1739,7 @@ export default function Sidebar() {
                             height: '18px',
                             background: 'black',
                             transform: 'translate(7px, 0px) rotate(60deg)',
-                            borderRadius: '10px',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1750,7 +1749,7 @@ export default function Sidebar() {
                             height: '18px',
                             background: 'black',
                             transform: 'translate(-7px, -38px) rotate(-60deg)',
-                            borderRadius: '10px',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1760,7 +1759,7 @@ export default function Sidebar() {
                             height: '18px',
                             background: 'black',
                             transform: 'translate(7px, -60px) rotate(60deg)',
-                            borderRadius: '10px',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1780,7 +1779,7 @@ export default function Sidebar() {
                             height: '18px',
                             background: 'black',
                             transform: 'translate(0px, -140px) rotate(0deg)',
-                            borderRadius: '10px',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1800,7 +1799,7 @@ export default function Sidebar() {
                             height: '18px',
                             background: 'black',
                             transform: 'translate(-14px, -224px) rotate(0deg)',
-                            borderRadius: '10px',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1809,9 +1808,8 @@ export default function Sidebar() {
                             width: '2px',
                             height: '18px',
                             background: 'black',
-                            transform:
-                              'translate(-7px, -274.8px) rotate(60deg)',
-                            borderRadius: '10px',
+                            transform: 'translate(-7px, -274.8px) rotate(60deg)',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1820,9 +1818,8 @@ export default function Sidebar() {
                             width: '2px',
                             height: '18px',
                             background: 'black',
-                            transform:
-                              'translate(7px, -312.7px) rotate(-59deg)',
-                            borderRadius: '10px',
+                            transform: 'translate(7px, -312.7px) rotate(-59deg)',
+                            borderRadius: '10px'
                           }}
                         />
                                                                 
@@ -1832,7 +1829,7 @@ export default function Sidebar() {
                             height: '17px',
                             background: 'black',
                             transform: 'translate(0px, -346px) rotate(-59deg)',
-                            borderRadius: '10px',
+                            borderRadius: '10px'
                           }}
                         />
                                                             
@@ -1843,14 +1840,14 @@ export default function Sidebar() {
                           transform: 'translate(30px, 51px)',
                           fontSize: '14px',
                           fontWeight: '400',
-                          lineHeight: '20px',
+                          lineHeight: '20px'
                         }}
                       >
                                                            
                         <div
                           style={{
                             transform: 'translate(-2px, -103px)',
-                            width: '200px',
+                            width: '200px'
                           }}
                         >
                           Order now. Pick up, in store:{' '}
@@ -1869,7 +1866,7 @@ export default function Sidebar() {
                             className={styles.bluehovering}
                             style={{
                               color: 'rgb(0, 102, 204)',
-                              cursor: 'pointer',
+                              cursor: 'pointer'
                             }}
                           >
                             Apple <City />
@@ -1895,7 +1892,7 @@ export default function Sidebar() {
                               borderRadius: '10px',
                               width: '80vw',
                               height: '36px',
-                              fontSize: '17px',
+                              fontSize: '17px'
                             }}
                           >
                             Add to Bag
@@ -1919,7 +1916,7 @@ export default function Sidebar() {
                               borderRadius: '10px',
                               width: '80vw',
                               height: '36px',
-                              fontSize: '17px',
+                              fontSize: '17px'
                             }}
                           >
                             Add to Bag
@@ -1941,7 +1938,7 @@ export default function Sidebar() {
                         borderRadius: '10px',
                         width: '80vw',
                         height: '36px',
-                        fontSize: '17px',
+                        fontSize: '17px'
                       }}
                     >
                       Continue
