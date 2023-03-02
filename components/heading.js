@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 export default function Heading() {
 
   const isTablet = useMediaQuery(
-    { minWidth: 800, maxWidth: 1189 }
+    { minWidth: 100, maxWidth: 1290 }
   );
   
   return (

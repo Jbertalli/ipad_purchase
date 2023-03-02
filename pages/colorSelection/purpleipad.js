@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
-import { useMediaQuery } from 'react-responsive';
 
 function PurpleIpad() {
   const [desktop, setDesktop] = useState(false);
