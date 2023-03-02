@@ -7,12 +7,26 @@ export default function Heading() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 200, maxHeight: 470 }
+  );
+
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   
   return (
     <>
-      <Sticky>
-        <div style={{ position: 'relative', top: '0px', zIndex: '5' }}>
+      <Sticky
+        style={{
+          width: isLandscapePhone ? '169%' : null
+        }}
+      >
+        <div 
+          style={{ 
+            position: 'relative', 
+            top: '0px',
+            zIndex: '5' 
+          }}
+        >
           <div
             style={{
               height: '50px',
