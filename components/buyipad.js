@@ -17,7 +17,7 @@ export default function Buy() {
   }, []);
 
   const isTablet = useMediaQuery(
-    { minWidth: 700, maxWidth: 1290 }
+    { minWidth: 100, maxWidth: 1290 }
   );
 
   const router = useRouter();
