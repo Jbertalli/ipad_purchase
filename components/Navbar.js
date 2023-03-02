@@ -103,24 +103,24 @@ const Navbar = ({ user }) => {
                     iPhone
                   </Menu.Item>
                 </Link>
-                <Link href="/" passHref>
-                  <Menu.Item
-                    style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
-                    active={isActive('/')}
-                  >
-                    Watch
-                  </Menu.Item>
-                </Link>
-                <Link href="/" passHref>
-                  <Menu.Item
-                    style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
-                    active={isActive('/')}
-                  >
-                    AirPods
-                  </Menu.Item>
-                </Link>
                 {!isPortrait ? (
                 <>
+                  <Link href="/" passHref>
+                    <Menu.Item
+                      style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
+                      active={isActive('/')}
+                    >
+                      Watch
+                    </Menu.Item>
+                  </Link>
+                  <Link href="/" passHref>
+                    <Menu.Item
+                      style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
+                      active={isActive('/')}
+                    >
+                      AirPods
+                    </Menu.Item>
+                  </Link>
                   <Link href="/" passHref>
                     <Menu.Item
                       style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}

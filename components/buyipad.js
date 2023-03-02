@@ -21,6 +21,7 @@ export default function Buy() {
   );
 
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isLandscape = useMediaQuery({ query: '(orientation: landscape)' });
 
   const router = useRouter();
 
@@ -34,19 +35,25 @@ export default function Buy() {
       <>
         <div
           style={{
-            transform: isPortrait ? 'translate(460px, 130px)' : 'translate(560px, 130px)',
+            transform: isPortrait ? 'translate(360px, 130px)' : 'translate(560px, 130px)',
             position: 'absolute',
             zIndex: '100',
             color: 'white'
           }}
           onClick={() => router.push('/ipadair')}
         >
-          <Image 
-            src="/images/ipad_flower.png"
-            alt="ipad"
-            width={430}
-            height={430}
-          />
+          <div
+            style={{
+              transform: isLandscape ? 'translate(-10px, -85px)' : null
+            }}
+          >
+            <Image 
+              src="/images/ipad_flower.png"
+              alt="ipad"
+              width={430}
+              height={430}
+            />
+          </div>
         </div>
       </>
       ): null}
@@ -55,7 +62,7 @@ export default function Buy() {
           <div
             style={{
               background: 'black',
-              width: '100%',
+              width: isLandscape ? '148.5%' : '100%',
               height: '829px',
               position: 'relative',
               zIndex: '0',
@@ -82,138 +89,144 @@ export default function Buy() {
         >
           <div
             style={{
-              background: 'black',
-              width: '200px',
-              height: '230px',
-              transform: 'translate(380px, -540px)',
-              color: 'white',
-              fontFamily: 'Helvetica',
-              position: 'relative',
-              zIndex: '2'
+              // transform: isLandscape &&  ? 'translate(160px, -85px)' : null
             }}
           >
-            <center>
-              <div
-                style={{
-                  color: '#FF6600',
-                  fontSize: '12px',
-                  fontWeight: '400',
-                  lineHeight: '25px',
-                  marginBottom: '10px'
-                }}
-              >
-                New
-              </div>
-              <div
-                style={{
-                  fontSize: '56px',
-                  fontWeight: '400',
-                  lineHeight: '44px'
-                }}
-              >
-                iPad {isTablet ? '...' : 'air'}
-              </div>
-              <div
-                style={{
-                  fontSize: '24px',
-                  fontWeight: '400',
-                  lineHeight: '28px',
-                  marginTop: '7px'
-                }}
-              >
-                Light. Bright.
-              </div>
-              <div
-                style={{
-                  fontSize: '24px',
-                  fontWeight: '400',
-                  lineHeight: '28px'
-                }}
-              >
-                Full of might.
-              </div>
-              <div
-                style={{
-                  fontSize: '17px',
-                  fontWeight: '200',
-                  lineHeight: '25px',
-                  marginTop: '20px',
-                  marginBottom: '5px'
-                }}
-              >
-                From $599
-              </div>
-              <Link href="/colorSelection/ipadhome">
-                <button
-                  className={styles.button}
+            <div
+              style={{
+                background: 'black',
+                width: '200px',
+                height: '230px',
+                transform: 'translate(380px, -540px)',
+                color: 'white',
+                fontFamily: 'Helvetica',
+                position: 'relative',
+                zIndex: '2'
+              }}
+            >
+              <center>
+                <div
                   style={{
-                    borderRadius: '50px',
-                    border: 'transparent',
-                    padding: '8px 16px 8px 16px',
-                    background: '#0066CC',
-                    color: 'white',
-                    marginBottom: '9px',
-                    marginTop: '7px',
-                    fontWeight: '200px',
+                    color: '#FF6600',
+                    fontSize: '12px',
+                    fontWeight: '400',
+                    lineHeight: '25px',
+                    marginBottom: '10px'
+                  }}
+                >
+                  New
+                </div>
+                <div
+                  style={{
+                    fontSize: '56px',
+                    fontWeight: '400',
+                    lineHeight: '44px'
+                  }}
+                >
+                  iPad {isTablet ? '...' : 'air'}
+                </div>
+                <div
+                  style={{
+                    fontSize: '24px',
+                    fontWeight: '400',
+                    lineHeight: '28px',
+                    marginTop: '7px'
+                  }}
+                >
+                  Light. Bright.
+                </div>
+                <div
+                  style={{
+                    fontSize: '24px',
+                    fontWeight: '400',
+                    lineHeight: '28px'
+                  }}
+                >
+                  Full of might.
+                </div>
+                <div
+                  style={{
                     fontSize: '17px',
+                    fontWeight: '200',
+                    lineHeight: '25px',
+                    marginTop: '20px',
+                    marginBottom: '5px'
+                  }}
+                >
+                  From $599
+                </div>
+                <Link href="/colorSelection/ipadhome">
+                  <button
+                    className={styles.button}
+                    style={{
+                      borderRadius: '50px',
+                      border: 'transparent',
+                      padding: '8px 16px 8px 16px',
+                      background: '#0066CC',
+                      color: 'white',
+                      marginBottom: '9px',
+                      marginTop: '7px',
+                      fontWeight: '200px',
+                      fontSize: '17px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <a>Buy</a>
+                  </button>
+                </Link>
+                <div
+                  className={styles.bluehovering}
+                  style={{
+                    color: '#0066CC',
+                    fontSize: '17px',
+                    fontWeight: '500',
+                    lineHeight: '25px',
                     cursor: 'pointer'
                   }}
                 >
-                  <a>Buy</a>
-                </button>
-              </Link>
+                  Learn more {'>'}
+                </div>
+              </center>
               <div
-                className={styles.bluehovering}
+                className={styles.wrapper2}
                 style={{
-                  color: '#0066CC',
-                  fontSize: '17px',
-                  fontWeight: '500',
-                  lineHeight: '25px',
-                  cursor: 'pointer'
+                  transform: 'translate(88px, -260px) scale(0.5)',
+                  position: 'relative',
+                  zIndex: '0'
                 }}
               >
-                Learn more {'>'}
-              </div>
-            </center>
-            <div
-              className={styles.wrapper2}
-              style={{
-                transform: 'translate(88px, -260px) scale(0.5)',
-                position: 'relative',
-                zIndex: '0'
-              }}
-            >
-              {isTablet ? (
-              <>
-                <div
-                  style={{
-                    transform: 'translate(-10px, 8px)'
-                  }}
-                >
-                  <Image 
-                    src="/images/air_text.png"
-                    alt="ipad"
-                    width={150}
-                    height={88}
-                  />
-                </div>
-              </>
-              ):(
-              <>
-                <div className={styles.neon_wrapper2}>
-                  <span
-                    className={styles.txt2}
+                {isTablet ? (
+                <>
+                  <div
                     style={{
-                      fontFamily: 'Brush Script MT, Brush Script Std, cursive',
-                      transform: 'translate(-10px, 0px)'
+                      transform: 'translate(-10px, 8px)'
                     }}
                   >
-                    air
-                  </span>
-                  <span className={styles.gradient2} />
-                </div>
-              </>
-              )}
+                    <Image 
+                      src="/images/air_text.png"
+                      alt="ipad"
+                      width={150}
+                      height={88}
+                    />
+                  </div>
+                </>
+                ):(
+                <>
+                  <div className={styles.neon_wrapper2}>
+                    <span
+                      className={styles.txt2}
+                      style={{
+                        fontFamily: 'Brush Script MT, Brush Script Std, cursive',
+                        transform: 'translate(-10px, 0px)'
+                      }}
+                    >
+                      air
+                    </span>
+                    <span className={styles.gradient2} />
+                  </div>
+                </>
+                )}
+              </div>
             </div>
           </div>
         </Grid.Column>
