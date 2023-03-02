@@ -53,7 +53,7 @@ export default function Blue() {
                   background: 'linear-gradient(to bottom, #ADD8E6, #74D7F7)',
                   position: 'relative',
                   zIndex: '0',
-                  transform: 'translate(-90px, -520px)',
+                  transform: 'translate(-90px, -520px)'
                 }}
               >
                 <div style={{ transform: 'translate(-301px, 419.7px)' }}>
