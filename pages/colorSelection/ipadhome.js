@@ -48,7 +48,7 @@ function HomeIpad({ user }) {
               display: 'flex',
               justifyContent: 'center',
               marginRight: '1498px',
-              transform: isTablet ? 'translate(-90px)' : null
+              transform: isTablet ? 'translate(-90px)' : 'translate(101px)'
             }}
           >
             <Home />

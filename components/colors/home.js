@@ -20,9 +20,15 @@ export default function Home() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+
   return (
     <>
-      <div>
+      <div
+        style={{
+          transform: isPortrait ? 'translate(-50px)' : null
+        }}
+      >
         <Grid
           style={{
             display: 'flex',
@@ -65,7 +71,11 @@ export default function Home() {
           </Grid.Column>
         </Grid>
       </div>
-      <div>
+      <div
+        style={{
+          transform: isPortrait ? 'translate(-50px)' : null
+        }}
+      >
         <Grid
           style={{
             display: 'flex',

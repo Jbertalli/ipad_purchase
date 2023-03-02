@@ -41,7 +41,7 @@ export default function Air() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <>
