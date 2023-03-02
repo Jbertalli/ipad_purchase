@@ -21,7 +21,7 @@ export default function Pink() {
     <>
       <div
         style={{
-          transform: isPortrait ? 'translateY(-210px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(90px, -210px) scale(0.8)' : null
         }}
       >
         <Grid
@@ -67,7 +67,7 @@ export default function Pink() {
       </div>
       <div
         style={{
-          transform: isPortrait ? 'translateY(-210px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(65px, -205px) scale(0.8)' : null
         }}
       >
         <Grid

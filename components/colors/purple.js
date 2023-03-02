@@ -21,7 +21,7 @@ export default function Purple() {
     <>
       <div
         style={{
-          transform: isPortrait ? 'translateY(-210px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(90px, -210px) scale(0.8)' : null
         }}
       >
         <Grid
@@ -67,7 +67,7 @@ export default function Purple() {
       </div>
       <div
         style={{
-          transform: isPortrait ? 'translateY(-210px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(65px, -205px) scale(0.8)' : null
         }}
       >
         <Grid
