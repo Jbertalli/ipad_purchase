@@ -109,7 +109,7 @@ export default function Buy() {
                   lineHeight: '44px'
                 }}
               >
-                iPad air
+                iPad {isTablet ? '...' : 'air'}
               </div>
               <div
                 style={{
@@ -181,18 +181,37 @@ export default function Buy() {
                 zIndex: '0'
               }}
             >
-              <div className={styles.neon_wrapper2}>
-                <span
-                  className={styles.txt2}
+              {isTablet ? (
+              <>
+                <div
                   style={{
-                    fontFamily: 'Brush Script MT, Brush Script Std, cursive',
-                    transform: 'translate(-10px, 0px)'
+                    transform: 'translate(-10px, 8px)'
                   }}
                 >
-                  air
-                </span>
-                <span className={styles.gradient2} />
-              </div>
+                  <Image 
+                    src="/images/air_text.png"
+                    alt="ipad"
+                    width={150}
+                    height={88}
+                  />
+                </div>
+              </>
+              ):(
+              <>
+                <div className={styles.neon_wrapper2}>
+                  <span
+                    className={styles.txt2}
+                    style={{
+                      fontFamily: 'Brush Script MT, Brush Script Std, cursive',
+                      transform: 'translate(-10px, 0px)'
+                    }}
+                  >
+                    air
+                  </span>
+                  <span className={styles.gradient2} />
+                </div>
+              </>
+              )}
             </div>
           </div>
         </Grid.Column>
