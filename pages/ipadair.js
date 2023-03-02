@@ -125,9 +125,9 @@ export default function Air() {
           <div
             onClick={() => router.push('/colorSelection/ipadhome')}
             style={{
-              width: '100vw',
+              width: isPortrait ? '82%' : '100vw',
               height: '100vh',
-              background: isPortrait ? 'red' : 'black',
+              background: 'black',
               position: 'fixed',
               zIndex: '0',
               cursor: 'pointer'
