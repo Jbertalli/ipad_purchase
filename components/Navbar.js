@@ -38,7 +38,7 @@ const Navbar = ({ user }) => {
   }
 
   const isLandscapePhone = useMediaQuery(
-    { minHeight: 350, maxHeight: 420 }
+    { minHeight: 200, maxHeight: 470 }
   );
 
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
