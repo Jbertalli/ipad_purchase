@@ -21,7 +21,7 @@ export default function Blue() {
     <>
       <div
         style={{
-          transform: isPortrait ? 'translate(80px, -210px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(120px, -210px) scale(0.8)' : null
         }}
       >
         <Grid
@@ -67,7 +67,7 @@ export default function Blue() {
       </div>
       <div
         style={{
-          transform: isPortrait ? 'translate(50px, -205px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(90px, -205px) scale(0.8)' : null
         }}
       >
         <Grid
