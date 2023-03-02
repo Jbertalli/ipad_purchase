@@ -5,6 +5,7 @@ import { Menu, Container, Icon, Sticky, Modal, Divider, Dropdown } from 'semanti
 import Logo from '../components/apple_logo2';
 import styles from '../styles/ipad.module.css';
 import { handleLogout } from '../utils/auth';
+import { useMediaQuery } from 'react-responsive';
 
 const Navbar = ({ user }) => {
   const [desktop, setDesktop] = useState(false);
@@ -35,6 +36,8 @@ const Navbar = ({ user }) => {
   function isActive(route) {
     return route === router.pathname;
   }
+
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <>
@@ -116,22 +119,26 @@ const Navbar = ({ user }) => {
                     AirPods
                   </Menu.Item>
                 </Link>
-                <Link href="/" passHref>
-                  <Menu.Item
-                    style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
-                    active={isActive('/')}
-                  >
-                    TV & Home
-                  </Menu.Item>
-                </Link>
-                <Link href="/" passHref>
-                  <Menu.Item
-                    style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
-                    active={isActive('/')}
-                  >
-                    Only on Apple
-                  </Menu.Item>
-                </Link>
+                {!isPortrait ? (
+                <>
+                  <Link href="/" passHref>
+                    <Menu.Item
+                      style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
+                      active={isActive('/')}
+                    >
+                      TV & Home
+                    </Menu.Item>
+                  </Link>
+                  <Link href="/" passHref>
+                    <Menu.Item
+                      style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
+                      active={isActive('/')}
+                    >
+                      Only on Apple
+                    </Menu.Item>
+                  </Link>
+                </>
+                ): null}
                 <Link href="/" passHref>
                   <Menu.Item
                     style={{ color: '#F5F5F7', margin: '0em .65em 0em .65em' }}
