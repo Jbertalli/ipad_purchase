@@ -198,6 +198,7 @@ export default function Cart({ user, orders, ctx }) {
       }
     })
   }
+  
   const isTablet = useMediaQuery(
     { minWidth: 100, maxWidth: 1290 }
   );

@@ -32,7 +32,7 @@ export default function Buy() {
       <>
         <div
           style={{
-            transform: 'translate(560px, 160px)',
+            transform: 'translate(560px, 130px)',
             position: 'absolute',
             zIndex: '100',
             color: 'white'
@@ -66,7 +66,7 @@ export default function Buy() {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          transform: isTablet ? 'translate(-610px, -40px)' : 'translate(-757px)'
+          transform: isTablet ? 'translate(-610px, -70px)' : 'translate(-757px)'
         }}
       >
         <Grid.Column

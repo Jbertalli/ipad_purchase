@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from 'semantic-ui-react';
 import Sidebar from '../../components/sidebar';
 import MobileHeading from '../../components/MobileHeading';
+import { useMediaQuery } from 'react-responsive';
 
 function PurpleIpad() {
   const [desktop, setDesktop] = useState(false);
@@ -28,6 +29,10 @@ function PurpleIpad() {
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
+  const isTablet = useMediaQuery(
+    { minWidth: 100, maxWidth: 1290 }
+  );
+
   return (
     <>
       <Head>
@@ -42,6 +47,7 @@ function PurpleIpad() {
               display: 'flex',
               justifyContent: 'center',
               marginRight: '1298px',
+              transform: isTablet ? 'translate(-70px)' : null
             }}
           >
             <Purple />
@@ -54,12 +60,12 @@ function PurpleIpad() {
             <div
               style={{
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'center'
               }}
             >
               <div
                 style={{
-                  position: 'relative',
+                  position: 'relative'
                 }}
               >
                 <Image
@@ -77,7 +83,7 @@ function PurpleIpad() {
                   style={{
                     position: 'absolute',
                     transform: 'translate(-75%, 0px) scale(0.8)',
-                    marginTop: '-225px',
+                    marginTop: '-225px'
                   }}
                 >
                   <Sidebar />
