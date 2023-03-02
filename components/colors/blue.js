@@ -5,6 +5,7 @@ import Sidebar from '../sidebar';
 import Footing from '../footing';
 import { Grid } from 'semantic-ui-react';
 import { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Blue() {
   useEffect(() => {
@@ -14,15 +15,21 @@ export default function Blue() {
     };
   }, []);
 
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+
   return (
     <>
-      <div>
+      <div
+        style={{
+          transform: isPortrait ? 'translateY(-210px) scale(0.8)' : null
+        }}
+      >
         <Grid
           style={{
             display: 'flex',
             justifyContent: 'center',
             transform: 'translate(107px)',
-            position: 'fixed',
+            position: 'fixed'
           }}
         >
           <Grid.Column
@@ -35,7 +42,7 @@ export default function Blue() {
                 style={{
                   position: 'relative',
                   zIndex: '1',
-                  transform: 'scaleX(0.98)',
+                  transform: 'scaleX(0.98)'
                 }}
               >
                 <Front />
@@ -58,7 +65,11 @@ export default function Blue() {
           </Grid.Column>
         </Grid>
       </div>
-      <div>
+      <div
+        style={{
+          transform: 'translate(-50px, -205px) scale(0.8)'
+        }}
+      >
         <Grid
           style={{
             display: 'flex',
