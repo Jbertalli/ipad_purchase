@@ -38,7 +38,7 @@ export default function Home() {
             <>
               <div
                 style={{
-                  transform: 'translate(-210px, 170px)',
+                  transform: 'translate(-210px, 94.5px)',
                   position: 'absolute'
                 }}
               >

@@ -9,7 +9,6 @@ import MobileHeading from '../../components/MobileHeading';
 
 function HomeIpad({ user }) {
   // console.log(user);
-
   const [desktop, setDesktop] = useState(false);
 
   useEffect(() => {
