@@ -42,7 +42,7 @@ export default function Air() {
   );
 
   const isLandscapePhone = useMediaQuery(
-    { minHeight: 350, maxHeight: 420 }
+    { minHeight: 200, maxHeight: 420 }
   );
 
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
