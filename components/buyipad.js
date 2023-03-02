@@ -20,6 +20,8 @@ export default function Buy() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+
   const router = useRouter();
 
   return (
@@ -32,7 +34,7 @@ export default function Buy() {
       <>
         <div
           style={{
-            transform: 'translate(560px, 130px)',
+            transform: isPortrait ? 'translate(500px, 130px)' : 'translate(560px, 130px)',
             position: 'absolute',
             zIndex: '100',
             color: 'white'
