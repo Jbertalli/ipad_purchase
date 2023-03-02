@@ -41,6 +41,11 @@ export default function Air() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isPortrait = useMediaQuery(
+    { minWidth: 100, maxWidth: 830 }
+  );
+
+
   return (
     <>
       <Head>
@@ -135,7 +140,7 @@ export default function Air() {
           <>
             <div
               style={{
-                transform: 'translate(79px, 130px)',
+                transform: isPortrait ? 'translate(0px, 130px)' : 'translate(79px, 130px)',
                 position: 'absolute'
               }}
               onClick={() => router.push('/colorSelection/ipadhome')}
