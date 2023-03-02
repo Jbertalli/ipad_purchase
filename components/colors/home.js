@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <div
         style={{
-          transform: isPortrait ? 'translate(-50px)' : null
+          transform: isPortrait ? 'translate(-60px)' : null
         }}
       >
         <Grid
@@ -73,7 +73,7 @@ export default function Home() {
       </div>
       <div
         style={{
-          transform: isPortrait ? 'translate(-50px)' : null
+          transform: isPortrait ? 'translate(-60px)' : null
         }}
       >
         <Grid
