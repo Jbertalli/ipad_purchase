@@ -1,6 +1,12 @@
 import { Divider, Sticky } from 'semantic-ui-react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Heading() {
+
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
+  
   return (
     <>
       <Sticky>
@@ -18,7 +24,7 @@ export default function Heading() {
                 fontWeight: '600',
                 display: 'flex',
                 justifyContent: 'center',
-                transform: 'translate(-455px, 12px)',
+                transform: 'translate(-455px, 12px)'
               }}
             >
               iPad Air
@@ -28,8 +34,8 @@ export default function Heading() {
                 fontSize: '17px',
                 fontWeight: '600',
                 display: 'flex',
-                justifyContent: 'center',
-                transform: 'translate(344px, -7px)',
+                justifyContent: isTablet ? 'flex-end' : 'center',
+                transform: isTablet ? 'translate(-100.5px, -7px)' : 'translate(344px, -7px)'
               }}
             >
               From $599 or $49.91/mo. for 12 mo.*

@@ -198,17 +198,8 @@ export default function Cart({ user, orders, ctx }) {
       }
     })
   }
-
-  const isDesktop = useMediaQuery(
-    { minWidth: 1190, maxWidth: 20000 }
-  );
-
   const isTablet = useMediaQuery(
     { minWidth: 800, maxWidth: 1189 }
-  );
-
-  const isMobile = useMediaQuery(
-      { maxWidth: 799 }
   );
 
   return (
@@ -221,19 +212,10 @@ export default function Cart({ user, orders, ctx }) {
       <>
         <div
           style={{
-            marginTop: '-19px'
+            transform: 'translateY(-20px)'
           }}
         >
-          {isDesktop ? (
-          <>
-            <Heading />
-          </>
-          ): null}
-          {isMobile ? (
-          <>
-            <Heading />
-          </>
-          ): null}
+          <Heading />
         </div>
         <div
           style={{

@@ -29,18 +29,6 @@ function PurpleIpad() {
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
-  const isDesktop = useMediaQuery(
-    { minWidth: 1190, maxWidth: 20000 }
-  );
-
-  const isTablet = useMediaQuery(
-    { minWidth: 800, maxWidth: 1189 }
-  );
-
-  const isMobile = useMediaQuery(
-      { maxWidth: 799 }
-  );
-
   return (
     <>
       <Head>
@@ -49,16 +37,7 @@ function PurpleIpad() {
       </Head>
       {desktop ? (
         <>
-          {isDesktop ? (
-          <>
-            <Heading />
-          </>
-          ): null}
-          {isMobile ? (
-          <>
-            <Heading />
-          </>
-          ): null}
+          <Heading />
           <div
             style={{
               display: 'flex',

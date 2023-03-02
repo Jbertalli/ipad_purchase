@@ -4,7 +4,9 @@ import Sidebar from '../sidebar';
 import Footing from '../footing';
 import { Grid } from 'semantic-ui-react';
 import Accordion from '../ipad_accordion';
+import Image from 'next/image';
 import { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
   useEffect(() => {
@@ -13,6 +15,10 @@ export default function Home() {
       document.body.style.overflowX = 'visible';
     };
   }, []);
+
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
 
   return (
     <>
@@ -28,7 +34,31 @@ export default function Home() {
           <Grid.Column
             style={{ width: '450px', transform: 'translateX(541px)' }}
           >
-            <Accordion />
+            {isTablet ? (
+            <>
+              <div
+                style={{
+                  transform: 'translate(-210px, 170px)',
+                  position: 'absolute'
+                }}
+              >
+                <Image
+                  src="/images/NewAccordion.png"
+                  priority
+                  alt="ipad"
+                  width={700}
+                  height={546}
+                />
+                <div style={{ transform: 'translate(-60px, -560px) scale(0.9)' }}>
+                  <Footing />
+                </div>
+              </div>
+            </>
+            ):(
+            <>
+              <Accordion />
+            </>
+            )}
             <div style={{ transform: 'translate(-304px, -5790px)' }}>
               <Footing />
             </div>
