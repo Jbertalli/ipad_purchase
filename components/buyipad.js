@@ -44,7 +44,7 @@ export default function Buy() {
         >
           <div
             style={{
-              transform: isLandscape ? 'translate(-10px, -85px)' : null
+              transform: isLandscape ? 'translate(-10px, 15px)' : null
             }}
           >
             <Image 
@@ -62,7 +62,7 @@ export default function Buy() {
           <div
             style={{
               background: 'black',
-              width: isLandscape ? '148.5%' : '100%',
+              width: '100%',
               height: '829px',
               position: 'relative',
               zIndex: '0',
