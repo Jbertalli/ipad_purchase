@@ -6,9 +6,11 @@ import styles from '../styles/ipad.module.css';
 import { Sticky } from 'semantic-ui-react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Air() {
   const [desktop, setDesktop] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (window.innerWidth > 440) {
@@ -28,14 +30,16 @@ export default function Air() {
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
-  const router = useRouter();
-
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = 'visible';
     };
   }, []);
+
+  const isTablet = useMediaQuery(
+    { minWidth: 800, maxWidth: 1189 }
+  );
 
   return (
     <>
@@ -51,7 +55,7 @@ export default function Air() {
                 style={{
                   height: '50px',
                   background: 'black',
-                  paddingTop: '3px',
+                  paddingTop: '3px'
                 }}
               >
                 <span
@@ -62,7 +66,7 @@ export default function Air() {
                     display: 'flex',
                     justifyContent: 'center',
                     transform: 'translate(-455px, 12px)',
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   iPad Air
@@ -74,14 +78,14 @@ export default function Air() {
                     fontWeight: '400',
                     display: 'flex',
                     justifyContent: 'center',
-                    transform: 'translate(343px, -7px)',
+                    transform: isTablet ? 'translateY(-7px)' : 'translate(343px, -7px)',
                     opacity: '0.92',
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   <span
                     className={styles.whitehovering}
-                    style={{ marginLeft: '10px', marginRight: '12.9px' }}
+                    style={{ marginLeft: isTablet ? '680px' : '10px', marginRight: '12.9px' }}
                   >
                     Overview
                   </span>
@@ -106,7 +110,7 @@ export default function Air() {
                         padding: '2px 11px 2px 11px',
                         border: '0px',
                         borderRadius: '50px',
-                        transform: 'translateY(-2px)',
+                        transform: 'translateY(-2px)'
                       }}
                     >
                       <a>Buy</a>
@@ -124,78 +128,98 @@ export default function Air() {
               background: 'black',
               position: 'fixed',
               zIndex: '0',
-              cursor: 'pointer',
+              cursor: 'pointer'
             }}
           />
-          <div
-            onClick={() => router.push('/colorSelection/ipadhome')}
-            style={{ transform: 'translate(0vh, 43.2vh)', cursor: 'pointer' }}
-          >
+          {isTablet ? (
+          <>
             <div
-              className={styles.wrapper}
               style={{
-                transform: 'scale(4)',
-                position: 'relative',
-                zIndex: '0',
+                transform: 'translate(79px, 130px)',
+                position: 'absolute'
               }}
+              onClick={() => router.push('/colorSelection/ipadhome')}
             >
-              <center>
-                <div className={styles.neon_wrapper}>
-                  <span
-                    className={styles.txt}
-                    style={{
-                      fontFamily: 'Brush Script MT, Brush Script Std, cursive',
-                    }}
-                  >
-                    air
-                  </span>
-                  <span className={styles.gradient} />
-                </div>
-              </center>
+              <Image
+                src="/images/ipad_horizontal.png"
+                alt="ipad"
+                width={1020}
+                height={350}
+              />
             </div>
+          </>
+          ):(
+          <>
             <div
-              style={{
-                transform: 'translate(50px, 0px) scaleX(2)',
-                display: 'flex',
-                justifyContent: 'center',
-              }}
+              onClick={() => router.push('/colorSelection/ipadhome')}
+              style={{ transform: 'translate(0vh, 43.2vh)', cursor: 'pointer' }}
             >
               <div
+                className={styles.wrapper}
                 style={{
+                  transform: 'scale(4)',
                   position: 'relative',
-                  zIndex: '2',
-                  transform: 'translate(219.5px, 2770px)',
+                  zIndex: '0'
+                }}
+              >
+                <center>
+                  <div className={styles.neon_wrapper}>
+                    <span
+                      className={styles.txt}
+                      style={{
+                        fontFamily: 'Brush Script MT, Brush Script Std, cursive'
+                      }}
+                    >
+                      air
+                    </span>
+                    <span className={styles.gradient} />
+                  </div>
+                </center>
+              </div>
+              <div
+                style={{
+                  transform: 'translate(50px, 0px) scaleX(2)',
+                  display: 'flex',
+                  justifyContent: 'center'
                 }}
               >
                 <div
-                  className={styles.frame}
                   style={{
-                    background: 'linear-gradient(to bottom, #a7adba, #343d46)',
                     position: 'relative',
-                    zIndex: '1',
-                    transform:
-                      'translate(-200px, -3070.4px) rotate(-90deg) perspective(1000px) rotateY(80deg) scale(0.7, 0.822)',
+                    zIndex: '2',
+                    transform: 'translate(219.5px, 2770px)'
                   }}
                 >
-                  <div style={{ transform: 'translate(-301px, 419.7px)' }}>
-                    <Back />
+                  <div
+                    className={styles.frame}
+                    style={{
+                      background: 'linear-gradient(to bottom, #a7adba, #343d46)',
+                      position: 'relative',
+                      zIndex: '1',
+                      transform: 'translate(-200px, -3070.4px) rotate(-90deg) perspective(1000px) rotateY(80deg) scale(0.7, 0.822)'
+                    }}
+                  >
+                    <div style={{ transform: 'translate(-301px, 419.7px)' }}>
+                      <Back />
+                    </div>
                   </div>
+                  <div
+                    style={{
+                      width: '490px',
+                      height: '20px',
+                      border: '1px solid #343d46)',
+                      transform: 'translate(-245px, -3304px)',
+                      position: 'relative',
+                      zIndex: '-1',
+                      borderRadius: '0px 0px 10px 10px',
+                      background: 'linear-gradient(to right, #a7adba, black)'
+                    }}
+                  />
                 </div>
-                <div
-                  style={{
-                    width: '490px',
-                    height: '20px',
-                    border: '1px solid #343d46)',
-                    transform: 'translate(-245px, -3304px)',
-                    position: 'relative',
-                    zIndex: '-1',
-                    borderRadius: '0px 0px 10px 10px',
-                    background: 'linear-gradient(to right, #a7adba, black)',
-                  }}
-                />
               </div>
             </div>
-          </div>
+          </>
+          )}
         </>
       ) : (
         <>
@@ -205,7 +229,7 @@ export default function Air() {
                 position: 'fixed',
                 top: '0px',
                 zIndex: '5',
-                width: '100vw',
+                width: '100vw'
               }}
             >
               <div
@@ -213,7 +237,7 @@ export default function Air() {
                   height: '50px',
                   background: 'black',
                   paddingTop: '3px',
-                  transform: 'translateY(48px)',
+                  transform: 'translateY(48px)'
                 }}
               >
                 <span
@@ -225,7 +249,7 @@ export default function Air() {
                     justifyContent: 'flex-start',
                     cursor: 'pointer',
                     transform: 'translateY(10px)',
-                    marginLeft: '10px',
+                    marginLeft: '10px'
                   }}
                 >
                   iPad Air
@@ -240,7 +264,7 @@ export default function Air() {
                     opacity: '0.92',
                     cursor: 'pointer',
                     transform: 'translateY(-8px)',
-                    marginRight: '10px',
+                    marginRight: '10px'
                   }}
                 >
                   <Link href="/colorSelection/ipadhome">
@@ -252,7 +276,7 @@ export default function Air() {
                         padding: '2px 11px 2px 11px',
                         border: '0px',
                         borderRadius: '50px',
-                        transform: 'translateY(-2px)',
+                        transform: 'translateY(-2px)'
                       }}
                     >
                       <a>Buy</a>
@@ -268,7 +292,7 @@ export default function Air() {
               height: '100vh',
               background: 'black',
               position: 'fixed',
-              zIndex: '-1',
+              zIndex: '-1'
             }}
           />
           <Link href="/colorSelection/ipadhome">
@@ -276,12 +300,12 @@ export default function Air() {
               style={{
                 display: 'flex',
                 justifyContent: 'center',
-                marginTop: '12vh',
+                marginTop: '12vh'
               }}
             >
               <div
                 style={{
-                  position: 'absolute',
+                  position: 'absolute'
                 }}
               >
                 <Image
