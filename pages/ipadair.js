@@ -42,7 +42,7 @@ export default function Air() {
   );
 
   const isPortrait = useMediaQuery(
-    { minWidth: 100, maxWidth: 830 }
+    { minWidth: 100, maxWidth: 930 }
   );
 
 
