@@ -37,13 +37,21 @@ const Navbar = ({ user }) => {
     return route === router.pathname;
   }
 
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 350, maxHeight: 420 }
+  );
+
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <>
       {desktop ? (
         <>
-          <Sticky>
+          <Sticky
+            style={{
+              width: isLandscapePhone ? '169%' : null
+            }}
+          >
             <Menu
               fluid
               style={{

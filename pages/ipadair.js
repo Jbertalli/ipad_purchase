@@ -41,6 +41,10 @@ export default function Air() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 350, maxHeight: 420 }
+  );
+
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
@@ -52,57 +56,23 @@ export default function Air() {
       {desktop ? (
         <>
           <Sticky>
-            <div style={{ position: 'relative', top: '0px', zIndex: '5' }}>
+            <div 
+              style={{ 
+                position: 'relative', 
+                top: '0px', 
+                zIndex: '5'
+              }}
+            >
               <div
                 style={{
                   height: '50px',
                   background: 'black',
-                  paddingTop: '3px'
+                  paddingTop: '3px',
+                  width: isLandscapePhone ? '169%' : null
                 }}
               >
-                <span
-                  style={{
-                    color: 'white',
-                    fontSize: '21px',
-                    fontWeight: '400',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    transform: 'translate(-455px, 12px)',
-                    cursor: 'pointer'
-                  }}
-                >
-                  iPad Air
-                </span>
-                <div
-                  style={{
-                    color: 'white',
-                    fontSize: '12px',
-                    fontWeight: '400',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    transform: isTablet ? 'translateY(-7px)' : 'translate(343px, -7px)',
-                    opacity: '0.92',
-                    cursor: 'pointer'
-                  }}
-                >
-                  <span
-                    className={styles.whitehovering}
-                    style={{ marginLeft: isTablet ? '680px' : '10px', marginRight: '12.9px' }}
-                  >
-                    Overview
-                  </span>
-                  <span
-                    className={styles.whitehovering}
-                    style={{ marginLeft: '10px', marginRight: '12.9px' }}
-                  >
-                    Why iPad
-                  </span>
-                  <span
-                    className={styles.whitehovering}
-                    style={{ marginLeft: '10px', marginRight: '25.8px' }}
-                  >
-                    Tech Specs
-                  </span>
+                {isLandscapePhone ? (
+                <>
                   <Link href="/colorSelection/ipadhome">
                     <button
                       className={styles.button}
@@ -111,43 +81,124 @@ export default function Air() {
                         background: 'rgb(0, 113, 227)',
                         padding: '2px 11px 2px 11px',
                         border: '0px',
+                        color: 'white',
                         borderRadius: '50px',
-                        transform: 'translateY(-2px)'
+                        transform: 'translate(20px, 10px)'
                       }}
                     >
                       <a>Buy</a>
                     </button>
                   </Link>
-                </div>
+                </>
+                ):(
+                <>
+                  <span
+                    style={{
+                      color: 'white',
+                      fontSize: '21px',
+                      fontWeight: '400',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      transform: isPortrait ? 'translate(-355px, 12px)' : 'translate(-455px, 12px)',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    iPad Air
+                  </span>
+                  <div
+                    style={{
+                      color: 'white',
+                      fontSize: '12px',
+                      fontWeight: '400',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      transform: isTablet ? 'translateY(-7px)' : 'translate(343px, -7px)',
+                      opacity: '0.92',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {!isPortrait ? (
+                    <>
+                      <span
+                        className={styles.whitehovering}
+                        style={{ marginLeft: isTablet ? '680px' : '10px', marginRight: '12.9px' }}
+                      >
+                        Overview
+                      </span>
+                      <span
+                        className={styles.whitehovering}
+                        style={{ marginLeft: '10px', marginRight: '12.9px' }}
+                      >
+                        Why iPad
+                      </span>
+                      <span
+                        className={styles.whitehovering}
+                        style={{ marginLeft: '10px', marginRight: '25.8px' }}
+                      >
+                        Tech Specs
+                      </span>
+                    </>
+                    ): null}
+                    <Link href="/colorSelection/ipadhome">
+                      <button
+                        className={styles.button}
+                        href="/colorSelection/ipadhome"
+                        style={{
+                          background: 'rgb(0, 113, 227)',
+                          padding: '2px 11px 2px 11px',
+                          border: '0px',
+                          borderRadius: '50px',
+                          transform: isPortrait ? 'translate(330px, -2px)' : 'translateY(-2px)'
+                        }}
+                      >
+                        <a>Buy</a>
+                      </button>
+                    </Link>
+                  </div>
+                </>
+                )}
               </div>
             </div>
           </Sticky>
           <div
-            onClick={() => router.push('/colorSelection/ipadhome')}
             style={{
-              width: isPortrait ? '100%' : '100vw',
-              height: '100vh',
-              background: 'black',
-              position: 'fixed',
-              zIndex: '0',
-              cursor: 'pointer'
+              transform: isLandscapePhone ? 'translate(0px) scale(1.69)' : null, 
+              position: isLandscapePhone ? 'absolute' : null
             }}
-          />
+          >
+            <div
+              onClick={() => router.push('/colorSelection/ipadhome')}
+              style={{
+                width: isPortrait ? '100%' : '100vw',
+                height: '100vh',
+                background: 'black',
+                position: 'fixed',
+                zIndex: '0',
+                cursor: 'pointer'
+              }}
+            />
+          </div>
           {isTablet ? (
           <>
             <div
               style={{
-                transform: isPortrait ? 'translate(0px, 130px)' : 'translate(79px, 130px)',
-                position: 'absolute'
+                transform: isLandscapePhone ? 'translate(200px)' : null
               }}
-              onClick={() => router.push('/colorSelection/ipadhome')}
             >
-              <Image
-                src="/images/ipad_horizontal.png"
-                alt="ipad"
-                width={1020}
-                height={350}
-              />
+              <div
+                style={{
+                  transform: isPortrait ? 'translate(0px, 130px)' : 'translate(79px, 130px)',
+                  position: 'absolute'
+                }}
+                onClick={() => router.push('/colorSelection/ipadhome')}
+              >
+                <Image
+                  src="/images/ipad_horizontal.png"
+                  alt="ipad"
+                  width={1020}
+                  height={350}
+                />
+              </div>
             </div>
           </>
           ):(

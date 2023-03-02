@@ -20,8 +20,11 @@ export default function Buy() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 350, maxHeight: 420 }
+  );
+
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
-  const isLandscape = useMediaQuery({ query: '(orientation: landscape)' });
 
   const router = useRouter();
 
@@ -44,7 +47,7 @@ export default function Buy() {
         >
           <div
             style={{
-              transform: isLandscape ? 'translate(-10px, 15px)' : null
+              transform: isLandscapePhone ? 'translate(90px, -65px)' : null
             }}
           >
             <Image 
@@ -62,7 +65,7 @@ export default function Buy() {
           <div
             style={{
               background: 'black',
-              width: '100%',
+              width: isLandscapePhone ? '169%' : '100%',
               height: '829px',
               position: 'relative',
               zIndex: '0',
@@ -89,7 +92,7 @@ export default function Buy() {
         >
           <div
             style={{
-              // transform: isLandscape &&  ? 'translate(160px, -85px)' : null
+              transform: isLandscapePhone ? 'translate(230px, -80px)' : null
             }}
           >
             <div
