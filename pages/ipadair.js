@@ -130,7 +130,7 @@ export default function Air() {
             style={{
               width: '100vw',
               height: '100vh',
-              background: 'black',
+              background: isPortrait ? 'red' : 'black',
               position: 'fixed',
               zIndex: '0',
               cursor: 'pointer'
