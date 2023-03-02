@@ -34,7 +34,7 @@ export default function Buy() {
       <>
         <div
           style={{
-            transform: isPortrait ? 'translate(360px, 130px)' : 'translate(560px, 130px)',
+            transform: isPortrait ? 'translate(460px, 130px)' : 'translate(560px, 130px)',
             position: 'absolute',
             zIndex: '100',
             color: 'white'
