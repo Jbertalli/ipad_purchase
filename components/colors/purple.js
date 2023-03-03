@@ -21,7 +21,8 @@ export default function Purple() {
     <>
       <div
         style={{
-          transform: isPortrait ? 'translate(90px, -210px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(-140px, -20.3px) scale(0.7)' : null,
+          position: isPortrait ? 'fixed' : null
         }}
       >
         <Grid
@@ -67,7 +68,7 @@ export default function Purple() {
       </div>
       <div
         style={{
-          transform: isPortrait ? 'translate(65px, -205px) scale(0.8)' : null
+          transform: isPortrait ? 'translate(-260px, -24px) scale(0.8)' : null
         }}
       >
         <Grid
@@ -75,9 +76,10 @@ export default function Purple() {
             display: 'flex',
             justifyContent: 'center',
             transform: 'translate(560px)',
+            position: isPortrait ? 'fixed' : null
           }}
         >
-          <Grid.Column style={{ transform: 'translate(-24px)' }}>
+          <Grid.Column>
             <Sidebar />
           </Grid.Column>
         </Grid>

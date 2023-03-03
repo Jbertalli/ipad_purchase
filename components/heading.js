@@ -24,7 +24,7 @@ export default function Heading() {
           style={{ 
             position: 'relative', 
             top: '0px',
-            zIndex: '5' 
+            zIndex: '5'
           }}
         >
           <div
@@ -40,16 +40,12 @@ export default function Heading() {
                 fontWeight: '600',
                 display: 'flex',
                 justifyContent: 'center',
-                transform: 'translate(-455px, 12px)'
+                transform: isPortrait ? 'translate(-300px, 12px)' : 'translate(-455px, 12px)'
               }}
             >
               iPad Air
             </span>
-            <div
-              style={{
-                transform: isPortrait ? 'translate(50px)' : null
-              }}
-            >
+            <div>
               <span
                 style={{
                   fontSize: '17px',

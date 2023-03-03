@@ -66,6 +66,7 @@ function HomeIpad({ user }) {
             >
               <div
                 style={{
+                  transform: 'translateY(8px)',
                   position: 'absolute'
                 }}
               >
@@ -83,7 +84,7 @@ function HomeIpad({ user }) {
                 <div
                   style={{
                     position: 'absolute',
-                    transform: 'translate(-75%, -50px) scale(0.8)'
+                    transform: 'translate(-75%, -30px) scale(0.8)'
                   }}
                 >
                   <Sidebar />

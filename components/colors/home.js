@@ -1,5 +1,3 @@
-import Back from '../../components/ipadBack2';
-import Front from '../ipadFront';
 import Sidebar from '../sidebar';
 import Footing from '../footing';
 import { Grid } from 'semantic-ui-react';
@@ -44,7 +42,7 @@ export default function Home() {
             <>
               <div
                 style={{
-                  transform: 'translate(-210px, 94.5px)',
+                  transform: isPortrait ? 'translate(-280px, -10px) scale(0.8)' : 'translate(-210px, 94.5px)',
                   position: 'absolute'
                 }}
               >
@@ -73,7 +71,7 @@ export default function Home() {
       </div>
       <div
         style={{
-          transform: isPortrait ? 'translate(-60px)' : null
+          transform: isPortrait ? 'translate(-80px, -291.4px) scale(0.8)' : null
         }}
       >
         <Grid
@@ -83,7 +81,7 @@ export default function Home() {
             transform: 'translate(560px)',
           }}
         >
-          <Grid.Column style={{ transform: 'translate(-24px)' }}>
+          <Grid.Column>
             <Sidebar />
           </Grid.Column>
         </Grid>
