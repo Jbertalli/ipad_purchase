@@ -273,7 +273,7 @@ const Navbar = ({ user }) => {
                   </div>
                 </Menu.Item>
                 <Modal
-                  // className={styles.dropdown}
+                  className={styles.dropdown}
                   open={menuModal}
                   dimmer="blurring"
                   size="small"
