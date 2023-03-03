@@ -71,6 +71,8 @@ export default function Login() {
     { minHeight: 200, maxHeight: 470 }
   );
 
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+
   return (
     <>
       <Head>
@@ -136,12 +138,18 @@ export default function Login() {
                 dimmer="blurring"
                 size="small"
                 style={{
-                  transform: 'translateY(-285px)',
+                  // transform: 'translateY(-285px)',
                   borderRadius: '20px',
                   width: '816px',
                   height: '470px',
                   position: 'fixed',
-                  top: '600px'
+                  top: '600px',
+                  transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                      'translate(0px, -50px) scale(0.8)') : 
+                      'translate(-117px, -450px) scale(0.8)') : 
+                      (isLandscapePhone ? 'translate(125px, -520px) scale(0.95)' : 
+                      'translate(-60px, -450px) scale(0.85)')) : 
+                      'translateY(-300px)'
                 }}
               >
                 <div

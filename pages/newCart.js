@@ -1512,12 +1512,17 @@ export default function Cart({ user, orders, ctx }) {
           open={paymentModal}
           dimmer="blurring"
           style={{
-            transform: desktop ? 'translate(42px, -490px)' : 'translate(-208px, -400px) scale(0.43)',
             borderRadius: '20px',
             width: '816px',
             height: '1000px',
             position: 'fixed',
-            top: desktop ? '640px' : '200px'
+            top: desktop ? '640px' : '200px', 
+            transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+              'translate(0px, -50px) scale(0.8)') : 
+              'translate(-40px, -500px) scale(0.78)') : 
+              (isLandscapePhone ? 'translate(180px, -695px) scale(0.5)' : 
+              'translate(10px, -650px) scale(0.65)')) : 
+              'translate(30px, -500px)'
           }}
         >
           <div

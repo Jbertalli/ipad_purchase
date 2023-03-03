@@ -7,6 +7,7 @@ import styles from '../styles/ipad.module.css';
 import NamedColor from '../components/namedColor';
 import Zip from '../components/zip';
 import City from '../components/city';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Sidebar() {
   const [storageModal, setStorageModal] = useState(false);
@@ -135,6 +136,16 @@ export default function Sidebar() {
           }
       })
   }
+
+  const isTablet = useMediaQuery(
+    { minWidth: 100, maxWidth: 1290 }
+  );
+
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 200, maxHeight: 470 }
+  );
+
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <>
@@ -534,11 +545,16 @@ export default function Sidebar() {
                   size="small"
                   style={{
                     width: desktop ? '816px' : '95%',
-                    transform: 'translateY(-285px)',
                     borderRadius: '20px',
                     height: '570px',
-                    position: 'fixed',
-                    top: desktop ? '600px' : '340px'
+                    position: 'absolute',
+                    top: desktop ? '600px' : '340px',
+                    transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                      'translate(0px, -300px) scale(0.8)') : 
+                      'translate(-110px, -300px) scale(0.8)') : 
+                      (isLandscapePhone ? 'translate(105px, -510px) scale(0.8)' : 
+                      'translate(-60px, -485px) scale(0.8)')) : 
+                      'translateY(-285px)'
                   }}
                 >
                   <div
@@ -690,7 +706,8 @@ export default function Sidebar() {
                             className={styles.bluehovering}
                             style={{
                                 color: 'rgb(0, 102, 204)',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                lineHeight: !desktop ? '20px' : null
                             }}
                             >
                             Chat with an iPad Specialist
@@ -989,13 +1006,18 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    transform: desktop ? 'translateY(-500px)' : null,
                     height: desktop ? '1017px' : '635px',
                     width: desktop ? '816px' : '95%',
                     marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
                     position: 'fixed',
-                    top: desktop ? '600px' : '390px'
+                    top: desktop ? '600px' : '390px',
+                    transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                      'translate(0px, -50px) scale(0.8)') : 
+                      'translate(-110px, -490px) scale(0.8)') : 
+                      (isLandscapePhone ? 'translate(105px, -670px) scale(0.5)' : 
+                      'translate(-60px, -600px) scale(0.6)')) : 
+                      'translateY(-485px) scale(0.8)'
                   }}
                 >
                   <div
@@ -1277,12 +1299,17 @@ export default function Sidebar() {
                   size="small"
                   style={{
                     width: desktop ? '816px' : '95%',
-                    transform: desktop ? 'translateY(-450px)' : null,
                     marginTop: desktop ? null : '-250px',
                     height: desktop ? '887px' : '480px',
                     borderRadius: '20px',
                     position: 'fixed',
-                    top: desktop ? '600px' : '330px'
+                    top: desktop ? '600px' : '330px',
+                    transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                      'translate(0px, -50px) scale(0.8)') : 
+                      'translate(-110px, -490px) scale(0.8)') : 
+                      (isLandscapePhone ? 'translate(125px, -650px) scale(0.5)' : 
+                      'translate(-60px, -600px) scale(0.6)')) : 
+                      'translateY(-485px) scale(0.8)'
                   }}
                 >
                   <div
@@ -1374,44 +1401,48 @@ export default function Sidebar() {
                       <div>value.</div>
                     </div>
                   </div>
-                  <div
-                    style={{
-                      background: '#F5F5F7',
-                      width: '816px',
-                      height: '118.1px',
-                      transform: 'translate(0px, 542px)',
-                      borderRadius: '0px 0px 19.5px 19.5px',
-                      lineHeight: '16px',
-                      paddingTop: '25px',
-                      fontSize: '12px'
-                    }}
-                  >
-                    <Icon
-                      name="chat"
-                      size="large"
-                      style={{
-                        color: 'gray',
-                        transform: 'translateX(400px) scale(1.3)'
-                      }}
-                    />
+                  {desktop ? (
+                  <>
                     <div
                       style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginTop: '20px'
+                        background: '#F5F5F7',
+                        width: '816px',
+                        height: '118.1px',
+                        transform: 'translate(0px, 542px)',
+                        borderRadius: '0px 0px 19.5px 19.5px',
+                        lineHeight: '16px',
+                        paddingTop: '25px',
+                        fontSize: '12px'
                       }}
                     >
-                      <b>Have questions about buying an iPad?</b>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                      <a
-                        className={styles.bluehovering}
-                        style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                      <Icon
+                        name="chat"
+                        size="large"
+                        style={{
+                          color: 'gray',
+                          transform: 'translateX(400px) scale(1.3)'
+                        }}
+                      />
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          marginTop: '20px'
+                        }}
                       >
-                        Chat with an iPad Specialist
-                      </a>
+                        <b>Have questions about buying an iPad?</b>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <a
+                          className={styles.bluehovering}
+                          style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
+                        >
+                          Chat with an iPad Specialist
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                  </>
+                  ): null}
                 </Modal>
                 <a className={styles.pageJump} href="#engraves">
                   <div
