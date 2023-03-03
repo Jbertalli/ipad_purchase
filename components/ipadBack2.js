@@ -93,7 +93,7 @@ export default function Back() {
         <div style={{ transform: 'translateY(350.1px)' }}>
           <div
             style={{
-              transform: (isPortrait || isTablet || isLandscapePhone) ? 'translateY(3px)' : null
+              transform: (isPortrait || isTablet || isLandscapePhone) ? 'translateY(2px)' : null
             }}
           >
             <div className={styles.power_button} /> 
