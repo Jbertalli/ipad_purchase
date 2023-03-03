@@ -51,6 +51,7 @@ export default function BuyMobile() {
               <Image
                 src="/images/ipad_flower.png"
                 alt="ipad"
+                priority
                 width={300}
                 height={300}
               />

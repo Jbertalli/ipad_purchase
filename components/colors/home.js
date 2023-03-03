@@ -78,7 +78,7 @@ export default function Home() {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            transform: 'translate(560px)',
+            transform: 'translate(560px)'
           }}
         >
           <Grid.Column>

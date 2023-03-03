@@ -69,6 +69,10 @@ export default function Signup() {
     { minWidth: 100, maxWidth: 1290 }
   );
 
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 200, maxHeight: 470 }
+  );
+
   return (
     <>
       <Head>
@@ -85,382 +89,365 @@ export default function Signup() {
         <>
           {desktop ? (
             <>
-              <Container style={{ position: 'relative', zIndex: '100' }}>
-                <div
-                  style={{
-                    transform: 'translate(10px, 130px)',
-                    fontSize: '34px',
-                    fontWeight: '600',
-                    lineHeight: '44px',
-                    paddingTop: '34px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                  }}
-                >
-                  Sign up for Apple Store
-                </div>
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <input
-                      onClick={() => setSignUpModal(true)}
-                      type="search"
-                      placeholder="Apple ID"
-                      style={{
-                        transform: 'translate(30px, 159px)',
-                        width: '328px',
-                        fontSize: '17px',
-                        height: '44px',
-                        lineHeight: '22px',
-                        textAlign: 'left',
-                        border: '.5px solid #49494950',
-                        borderRadius: '6px',
-                        paddingLeft: '15px',
-                      }}
-                    />
-                    <Icon
-                      name="arrow alternate circle right outline"
-                      size="big"
-                      style={{
-                        color: '#49494960',
-                        transform: 'translate(-14px, 168px)',
-                      }}
-                    />
-                  </div>
-                </div>
-                <Modal
-                  open={signUpModal}
-                  dimmer="blurring"
-                  size="small"
-                  style={{
-                    transform: 'translateY(-285px)',
-                    borderRadius: '20px',
-                    width: '816px',
-                    height: error ? '550px' : '470px',
-                    position: 'fixed',
-                    top: '620px'
+              <div
+                style={{
+                  transform: isLandscapePhone ? 'translate(250px, -70px)' : null
+                }}
+              >
+                <Container 
+                  style={{ 
+                    position: 'relative', 
+                    zIndex: '100'
                   }}
                 >
                   <div
                     style={{
-                      background: 'lightgray',
-                      height: '36px',
-                      width: '36px',
-                      borderRadius: '50%',
-                      transform: 'translate(15px, 18px)',
-                      opacity: '0.8',
-                      cursor: 'pointer',
-                    }}
-                    onClick={() => setSignUpModal(false)}
-                  >
-                    <h1
-                      style={{
-                        fontSize: '30px',
-                        fontWeight: 'lighter',
-                        color: 'gray',
-                        transform: 'translate(10px, -5px)',
-                      }}
-                    >
-                      x
-                    </h1>
-                  </div>
-                  <center
-                    style={{
-                      fontSize: '40px',
+                      transform: 'translate(10px, 130px)',
+                      fontSize: '34px',
                       fontWeight: '600',
                       lineHeight: '44px',
+                      paddingTop: '34px',
+                      display: 'flex',
+                      justifyContent: 'center',
                     }}
                   >
-                    Sign Up
-                  </center>
-                  <div>
-                    <FocusLock>
-                      <Form error={Boolean(error)} onSubmit={handleSubmit}>
-                        <Message error header="Error" content={error} />
-                        <center>
-                          <div
-                            style={{
-                              transform: 'translate(-220.1px)',
-                              fontSize: '17px',
-                              fontWeight: '500',
-                              paddingBottom: '5px',
-                            }}
-                          >
-                            Name
-                          </div>
-                          <Form.Input
-                            placeholder="Name"
-                            style={{ width: '60%' }}
-                            name="name"
-                            value={user.name}
-                            onChange={handleChange}
-                          />
-                        </center>
-                        <center>
-                          <div
-                            style={{
-                              transform: 'translate(-222px)',
-                              fontSize: '17px',
-                              fontWeight: '500',
-                              padding: '30px 0px 5px 0px',
-                            }}
-                          >
-                            Email
-                          </div>
-                          <Form.Input
-                            placeholder="Email"
-                            type="email"
-                            style={{ width: '60%' }}
-                            name="email"
-                            value={user.email}
-                            onChange={handleChange}
-                          />
-                        </center>
-                        <center>
-                          <div
-                            style={{
-                              transform: 'translate(-205.2px)',
-                              fontSize: '17px',
-                              fontWeight: '500',
-                              padding: '30px 0px 5px 0px',
-                            }}
-                          >
-                            Password
-                          </div>
-                          <Form.Input
-                            placeholder="Password"
-                            type="password"
-                            style={{ width: '60%' }}
-                            name="password"
-                            value={user.password}
-                            onChange={handleChange}
-                          />
-                        </center>
-                        <div style={{ paddingTop: '30px' }}>
-                          <Button
-                            disabled={disabled}
-                            type="submit"
-                            style={{
-                              transform: 'translate(163px, 0px)',
-                              fontSize: '17px',
-                              fontWeight: '400',
-                              color: 'white',
-                              background: '#0066CC',
-                              border: '0px',
-                              borderRadius: '10px',
-                              width: '284px',
-                              height: '56px'
-                            }}
-                          >
-                            Sign Up
-                          </Button>
-                        </div>
-                      </Form>
-                    </FocusLock>
+                    Sign up for Apple Store
                   </div>
-                  <div
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                      <input
+                        onClick={() => setSignUpModal(true)}
+                        type="search"
+                        placeholder="Apple ID"
+                        style={{
+                          transform: 'translate(30px, 159px)',
+                          width: '328px',
+                          fontSize: '17px',
+                          height: '44px',
+                          lineHeight: '22px',
+                          textAlign: 'left',
+                          border: '.5px solid #49494950',
+                          borderRadius: '6px',
+                          paddingLeft: '15px',
+                        }}
+                      />
+                      <Icon
+                        name="arrow alternate circle right outline"
+                        size="big"
+                        style={{
+                          color: '#49494960',
+                          transform: 'translate(-14px, 168px)',
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <Modal
+                    open={signUpModal}
+                    dimmer="blurring"
+                    size="small"
                     style={{
-                      background: '#F5F5F7',
+                      transform: 'translateY(-285px)',
+                      borderRadius: '20px',
                       width: '816px',
-                      height: '118px',
-                      transform: 'translateY(46px)',
-                      borderRadius: '0px 0px 19.5px 19.5px',
-                      paddingTop: '25px',
-                      fontSize: '12px'
+                      height: error ? '550px' : '470px',
+                      position: 'fixed',
+                      top: '620px'
                     }}
                   >
+                    <div
+                      style={{
+                        background: 'lightgray',
+                        height: '36px',
+                        width: '36px',
+                        borderRadius: '50%',
+                        transform: 'translate(15px, 18px)',
+                        opacity: '0.8',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => setSignUpModal(false)}
+                    >
+                      <h1
+                        style={{
+                          fontSize: '30px',
+                          fontWeight: 'lighter',
+                          color: 'gray',
+                          transform: 'translate(10px, -5px)',
+                        }}
+                      >
+                        x
+                      </h1>
+                    </div>
                     <center
                       style={{
-                        transform: 'translateY(25px)',
-                        fontSize: '17px',
-                        fontWeight: '400',
-                        lineHeight: '21px',
-                        marginBottom: '33px'
+                        fontSize: '40px',
+                        fontWeight: '600',
+                        lineHeight: '44px',
                       }}
                     >
-                      Already have an account?&nbsp;
-                      <span style={{ color: '#0070c9', cursor: 'pointer' }}>
-                        <a className={styles.bluehovering}>
-                          <Link href="/login">Sign in</Link>
-                        </a>
-                      </span>
+                      Sign Up
                     </center>
-                  </div>
-                </Modal>
-              </Container>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  transform: 'translateY(219px)',
-                }}
-              >
-                <div
-                  style={{
-                    position: 'absolute',
-                    transform: 'translate(-15px)',
-                    opacity: '0.8'
-                  }}
-                >
-                  <span>
-                    <Checkbox />
+                    <div>
+                      <FocusLock>
+                        <Form error={Boolean(error)} onSubmit={handleSubmit}>
+                          <Message error header="Error" content={error} />
+                          <center>
+                            <div
+                              style={{
+                                transform: 'translate(-220.1px)',
+                                fontSize: '17px',
+                                fontWeight: '500',
+                                paddingBottom: '5px',
+                              }}
+                            >
+                              Name
+                            </div>
+                            <Form.Input
+                              placeholder="Name"
+                              style={{ width: '60%' }}
+                              name="name"
+                              value={user.name}
+                              onChange={handleChange}
+                            />
+                          </center>
+                          <center>
+                            <div
+                              style={{
+                                transform: 'translate(-222px)',
+                                fontSize: '17px',
+                                fontWeight: '500',
+                                padding: '30px 0px 5px 0px',
+                              }}
+                            >
+                              Email
+                            </div>
+                            <Form.Input
+                              placeholder="Email"
+                              type="email"
+                              style={{ width: '60%' }}
+                              name="email"
+                              value={user.email}
+                              onChange={handleChange}
+                            />
+                          </center>
+                          <center>
+                            <div
+                              style={{
+                                transform: 'translate(-205.2px)',
+                                fontSize: '17px',
+                                fontWeight: '500',
+                                padding: '30px 0px 5px 0px',
+                              }}
+                            >
+                              Password
+                            </div>
+                            <Form.Input
+                              placeholder="Password"
+                              type="password"
+                              style={{ width: '60%' }}
+                              name="password"
+                              value={user.password}
+                              onChange={handleChange}
+                            />
+                          </center>
+                          <div style={{ paddingTop: '30px' }}>
+                            <Button
+                              disabled={disabled}
+                              type="submit"
+                              style={{
+                                transform: 'translate(163px, 0px)',
+                                fontSize: '17px',
+                                fontWeight: '400',
+                                color: 'white',
+                                background: '#0066CC',
+                                border: '0px',
+                                borderRadius: '10px',
+                                width: '284px',
+                                height: '56px'
+                              }}
+                            >
+                              Sign Up
+                            </Button>
+                          </div>
+                        </Form>
+                      </FocusLock>
+                    </div>
                     <div
                       style={{
-                        transform: 'translate(15px, -23px)',
-                        fontSize: '17px',
-                        fontWeight: '300'
+                        background: '#F5F5F7',
+                        width: '816px',
+                        height: '118px',
+                        transform: 'translateY(46px)',
+                        borderRadius: '0px 0px 19.5px 19.5px',
+                        paddingTop: '25px',
+                        fontSize: '12px'
                       }}
                     >
-                      &nbsp;&nbsp;Remember me
+                      <center
+                        style={{
+                          transform: 'translateY(25px)',
+                          fontSize: '17px',
+                          fontWeight: '400',
+                          lineHeight: '21px',
+                          marginBottom: '33px'
+                        }}
+                      >
+                        Already have an account?&nbsp;
+                        <span style={{ color: '#0070c9', cursor: 'pointer' }}>
+                          <a className={styles.bluehovering}>
+                            <Link href="/login">Sign in</Link>
+                          </a>
+                        </span>
+                      </center>
                     </div>
-                  </span>
-                </div>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  transform: 'translateY(258px)'
-                }}
-              >
+                  </Modal>
+                </Container>
                 <div
                   style={{
-                    color: 'black',
-                    background: 'black',
-                    width: '10vw',
-                    height: '1px',
-                    opacity: '0.3'
-                  }}
-                />
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  transform: 'translateY(-150px)'
-                }}
-              >
-                <div
-                  style={{
-                    transform: 'translateY(300px)',
-                    position: 'absolute'
+                    display: 'flex',
+                    justifyContent: 'center',
+                    transform: 'translateY(219px)',
                   }}
                 >
                   <div
                     style={{
-                      color: '#0070c9',
-                      cursor: 'pointer',
-                      transform: 'translate(35px, 124px)'
+                      position: 'absolute',
+                      transform: 'translate(-15px)',
+                      opacity: '0.8'
                     }}
                   >
-                    Forgot Apple ID or password?
-                    <div
-                      style={{
-                        transform: 'rotate(-45deg) scale(1.1, 0.8) translate(137px, 150px)',
-                        position: 'absolute',
-                        color: '#0070c9',
-                        cursor: 'pointer',
-                        opacity: '0.7'
-                      }}
-                    >
-                      <Icon name="arrow right" />
-                    </div>
-                  </div>
-                  <div style={{ transform: 'translate(-10px, 133px)' }}>
-                    {`Don't have an Apple ID?`}{' '}
-                    <span style={{ color: '#0070c9', cursor: 'pointer' }}>
-                      Create yours now.
-                    </span>
-                    <div
-                      style={{
-                        transform: 'rotate(-45deg) scale(1.1, 0.8) translate(190px, 225px)',
-                        position: 'absolute',
-                        color: '#0070c9',
-                        cursor: 'pointer',
-                        opacity: '0.7'
-                      }}
-                    >
-                      <Icon name="arrow right" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style={{ transform: 'translateY(385px)' }}>
-                <Divider />
-                <div
-                  style={{
-                    transform: 'translate(-288px, 8px)',
-                    fontSize: '17px',
-                    fontWeight: '400',
-                    display: 'flex',
-                    justifyContent: 'center'
-                  }}
-                >
-                  Need some help?&nbsp;
-                  <span style={{ cursor: 'pointer', color: '#0070c9' }}>
-                    <a className={styles.bluehovering}>Chat now</a>
-                  </span>
-                  &nbsp;or call 1‑800‑MY‑APPLE.
-                </div>
-              </div>
-              {!isTablet ? (
-              <>
-                <div
-                  style={{
-                    transform: 'translateY(417px)',
-                    position: 'absolute',
-                    height: '132px',
-                    width: '100%',
-                    background: '#f5f5f7',
-                    zIndex: '-1'
-                  }}
-                />
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ transform: 'translate(1010px, 432px)' }}>
-                    <div
-                      style={{
-                        fontSize: '12px',
-                        fontWeight: '400',
-                        color: '#6e6e73',
-                        width: '3000px'
-                      }}
-                    >
-                      The Apple Online Store uses industry-standard encryption to
-                      protect the confidentiality of the information you submit.
-                      Learn more about our Security Policy.
-                    </div>
-                    <Divider
-                      style={{ transform: 'translateY(-0.6px)', width: '978px' }}
-                    />
-                    <div
-                      style={{
-                        transform: 'translate(-751px, -0.6px)',
-                        fontSize: '12px',
-                        fontWeight: '400',
-                        color: '#6e6e73',
-                        display: 'flex',
-                        justifyContent: 'center'
-                      }}
-                    >
-                      More ways to shop:&nbsp;
-                      <a
-                        className={styles.bluehovering}
-                        style={{ color: '#0070c9', cursor: 'pointer' }}
-                      >
-                        Find an Apple Store
-                      </a>
-                      &nbsp;or&nbsp;
-                      <a
-                        className={styles.bluehovering}
-                        style={{ color: '#0070c9', cursor: 'pointer' }}
-                      >
-                        other retailer
-                      </a>
-                      &nbsp;near you. Or call 1-800-MY-APPLE.
+                    <span>
+                      <Checkbox />
                       <div
                         style={{
+                          transform: 'translate(15px, -23px)',
+                          fontSize: '17px',
+                          fontWeight: '300'
+                        }}
+                      >
+                        &nbsp;&nbsp;Remember me
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    transform: 'translateY(258px)'
+                  }}
+                >
+                  <div
+                    style={{
+                      color: 'black',
+                      background: 'black',
+                      width: '10vw',
+                      height: '1px',
+                      opacity: '0.3'
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    transform: 'translateY(-150px)'
+                  }}
+                >
+                  <div
+                    style={{
+                      transform: 'translateY(300px)',
+                      position: 'absolute'
+                    }}
+                  >
+                    <div
+                      style={{
+                        color: '#0070c9',
+                        cursor: 'pointer',
+                        transform: 'translate(35px, 124px)'
+                      }}
+                    >
+                      Forgot Apple ID or password?
+                      <div
+                        style={{
+                          transform: 'rotate(-45deg) scale(1.1, 0.8) translate(137px, 150px)',
+                          position: 'absolute',
+                          color: '#0070c9',
                           cursor: 'pointer',
-                          width: '980px',
-                          transform: 'translate(-518px, 21px)',
+                          opacity: '0.7'
+                        }}
+                      >
+                        <Icon name="arrow right" />
+                      </div>
+                    </div>
+                    <div style={{ transform: 'translate(-10px, 133px)' }}>
+                      {`Don't have an Apple ID?`}{' '}
+                      <span style={{ color: '#0070c9', cursor: 'pointer' }}>
+                        Create yours now.
+                      </span>
+                      <div
+                        style={{
+                          transform: 'rotate(-45deg) scale(1.1, 0.8) translate(190px, 225px)',
+                          position: 'absolute',
+                          color: '#0070c9',
+                          cursor: 'pointer',
+                          opacity: '0.7'
+                        }}
+                      >
+                        <Icon name="arrow right" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ transform: 'translateY(385px)' }}>
+                  <Divider />
+                  <div
+                    style={{
+                      transform: isTablet ? null : 'translate(-288px, 8px)',
+                      fontSize: '17px',
+                      fontWeight: '400',
+                      display: 'flex',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    Need some help?&nbsp;
+                    <span style={{ cursor: 'pointer', color: '#0070c9' }}>
+                      <a className={styles.bluehovering}>Chat now</a>
+                    </span>
+                    &nbsp;or call 1‑800‑MY‑APPLE.
+                  </div>
+                </div>
+                {!isTablet ? (
+                <>
+                  <div
+                    style={{
+                      transform: 'translateY(417px)',
+                      position: 'absolute',
+                      height: '132px',
+                      width: '100%',
+                      background: '#f5f5f7',
+                      zIndex: '-1'
+                    }}
+                  />
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ transform: 'translate(1010px, 432px)' }}>
+                      <div
+                        style={{
+                          fontSize: '12px',
+                          fontWeight: '400',
+                          color: '#6e6e73',
+                          width: '3000px'
+                        }}
+                      >
+                        The Apple Online Store uses industry-standard encryption to
+                        protect the confidentiality of the information you submit.
+                        Learn more about our Security Policy.
+                      </div>
+                      <Divider
+                        style={{ transform: 'translateY(-0.6px)', width: '978px' }}
+                      />
+                      <div
+                        style={{
+                          transform: 'translate(-751px, -0.6px)',
                           fontSize: '12px',
                           fontWeight: '400',
                           color: '#6e6e73',
@@ -468,31 +455,59 @@ export default function Signup() {
                           justifyContent: 'center'
                         }}
                       >
-                        <div>
-                          Copyright © 2022 Apple Inc. All rights reserved.
+                        More ways to shop:&nbsp;
+                        <a
+                          className={styles.bluehovering}
+                          style={{ color: '#0070c9', cursor: 'pointer' }}
+                        >
+                          Find an Apple Store
+                        </a>
+                        &nbsp;or&nbsp;
+                        <a
+                          className={styles.bluehovering}
+                          style={{ color: '#0070c9', cursor: 'pointer' }}
+                        >
+                          other retailer
+                        </a>
+                        &nbsp;near you. Or call 1-800-MY-APPLE.
+                        <div
+                          style={{
+                            cursor: 'pointer',
+                            width: '980px',
+                            transform: 'translate(-518px, 21px)',
+                            fontSize: '12px',
+                            fontWeight: '400',
+                            color: '#6e6e73',
+                            display: 'flex',
+                            justifyContent: 'center'
+                          }}
+                        >
+                          <div>
+                            Copyright © 2023 Apple Inc. All rights reserved.
+                          </div>
+                          <div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy
+                            Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div>
+                            Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div>
+                            Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div>Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
+                          <div>
+                            Site
+                            Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div>United States</div>
                         </div>
-                        <div>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy
-                          Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                          Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                          Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
-                        <div>
-                          Site
-                          Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>United States</div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </>
-              ): null}
+                </>
+                ): null}
+              </div>
             </>
           ) : (
             <>

@@ -53,6 +53,7 @@ export default function Buy() {
             <Image 
               src="/images/ipad_flower.png"
               alt="ipad"
+              priority
               width={430}
               height={430}
             />
@@ -208,6 +209,7 @@ export default function Buy() {
                     <Image 
                       src="/images/air_text.png"
                       alt="ipad"
+                      priority
                       width={150}
                       height={88}
                     />

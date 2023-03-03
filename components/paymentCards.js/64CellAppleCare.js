@@ -38,6 +38,7 @@ export default function SixCellAppleCare({ quantity }) {
         <div style={{ transform: 'translate(45px)' }}>
           <Image 
             src="/images/ipad 2.png" 
+            priority
             alt="ipad" 
             width={700} 
             height={460} 

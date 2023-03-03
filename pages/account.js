@@ -6,6 +6,7 @@ import { parseCookies } from 'nookies';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
 import emailjs from '@emailjs/browser';
+import { useMediaQuery } from 'react-responsive';
 import { Header, Accordion, Segment, Icon, Container, Divider, Button, Table } from 'semantic-ui-react';
 
 export default function Account({ user, orders, ctx }) {
@@ -178,6 +179,10 @@ export default function Account({ user, orders, ctx }) {
     console.log(response.data);
   }
 
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 200, maxHeight: 470 }
+  );
+
   return (
     <>
       <Head>
@@ -186,22 +191,23 @@ export default function Account({ user, orders, ctx }) {
       </Head>
       <div
         style={{
-          marginTop: desktop ? '75px' : '30px'
+          marginTop: desktop ? '75px' : '30px',
+          transform: isLandscapePhone ? 'translate(260px)' : null
         }}
       >
         <div
           style={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <div
             style={{
               width: desktop ? '816px' : '84.81vw',
               height: desktop ? '620px' : '410px',
-              border: '0.5px solid black',
+              border: isLandscapePhone ? null : '0.5px solid black',
               position: 'absolute',
-              borderRadius: '20px',
+              borderRadius: '20px'
             }}
           />
         </div>
@@ -210,22 +216,27 @@ export default function Account({ user, orders, ctx }) {
             display: 'flex',
             justifyContent: 'center',
             marginBottom: '20px',
-            marginTop: '20px',
+            marginTop: '20px'
           }}
         >
-          <Image
-            src="/images/ipad 2.png"
-            priority
-            alt="ipad"
-            width={desktop ? 700 : 290}
-            height={desktop ? 460 : 190.5}
-          />
+          {!isLandscapePhone ? (
+          <>
+            <Image
+              src="/images/ipad 2.png"
+              priority
+              alt="ipad"
+              width={desktop ? 700 : 290}
+              height={desktop ? 460 : 190.5}
+            />
+          </>
+          ): null}
         </div>
         <Container
           style={{
             position: 'relative',
             width: '816px',
-            borderRadius: '0px 0px 20px 20px',
+            borderRadius: isLandscapePhone ? '20px' : '0px 0px 20px 20px',
+            transform: isLandscapePhone ? 'translateY(-30px)' : null,
             fontFamily: 'SF Pro',
             fontSize: desktop ? '40px' : '28px',
             paddingTop: '20px',
@@ -238,7 +249,7 @@ export default function Account({ user, orders, ctx }) {
               display: 'flex',
               justifyContent: 'center',
               paddingTop: desktop ? '20px' : '5px',
-              paddingBottom: desktop ? '20px' : '5px',
+              paddingBottom: desktop ? '20px' : '5px'
             }}
           >
             {capitalUser}{`'s Order History`}

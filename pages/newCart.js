@@ -198,10 +198,16 @@ export default function Cart({ user, orders, ctx }) {
       }
     })
   }
-  
+
   const isTablet = useMediaQuery(
     { minWidth: 100, maxWidth: 1290 }
   );
+
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 200, maxHeight: 470 }
+  );
+
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <>     
@@ -223,1270 +229,1284 @@ export default function Cart({ user, orders, ctx }) {
             transform: isTablet ? 'scale(0.5) translate(200px)' : null
           }}
         >
-        <Container
-          style={{
-            position: isTablet ? 'absolute' : 'relative',
-            zIndex: '100',
-            transform: isTablet ? 'scale(1.5) translateY(250px)' : 'translate(114px, -50px)',
-            height: desktop ? null : '800px'
-          }}
-        >
-          <div>
+          <Container
+            style={{
+              position: isTablet ? 'absolute' : 'relative',
+              transform: isTablet ? 'scale(1.5) translateY(230px)' : 'translate(114px, -50px)',
+              height: desktop ? null : '800px',
+              zIndex: '100'
+            }}
+          >
             <div
               style={{
-                transform: 'translate(-54px)',
-                fontSize: '40px',
-                fontWeight: '600',
-                lineHeight: '44px',
-                marginTop: '79px'
-              }}
-            >
-              Review your bag.
-            </div>
-            <div
-              style={{
-                fontSize: '17px',
-                fontWeight: '400',
-                lineHeight: '25px',
-                marginTop: '15px',
-                transform: 'translate(-52px)',
-              }}
-            >
-              Free delivery and free returns.
-            </div>
-            <Segment
-              style={{
-                background: '#53687210',
-                border: 'transparent',
-                borderRadius: '12px',
-                marginTop: '56px',
-                width: '974px',
-                display: 'flex',
-                justifyContent: 'center',
-                transform: 'translate(-49px)',
+                transform: isLandscapePhone ? 'translate(90px)' : null
               }}
             >
               <div
                 style={{
-                  fontSize: '14px',
-                  fontWeight: '400',
-                  padding: '20px 10px 0px 50px',
-                  lineHeight: '20px',
-                  width: '770px',
-                  height: '53px',
-                  transform: 'translate(140px)',
+                  transform: isPortrait ? 'translate(-180px, -170px) scale(0.8)' : null
                 }}
               >
                 <div
                   style={{
-                    transform: 'translate(-178px, -13px) scale(0.2)',
-                    position: 'absolute',
+                    transform: 'translate(-54px)',
+                    fontSize: '40px',
+                    fontWeight: '600',
+                    lineHeight: '44px',
+                    marginTop: '79px'
+                  }}
+                >
+                  Review your bag.
+                </div>
+                <div
+                  style={{
+                    fontSize: '17px',
+                    fontWeight: '400',
+                    lineHeight: '25px',
+                    marginTop: '15px',
+                    transform: 'translate(-52px)',
+                  }}
+                >
+                  Free delivery and free returns.
+                </div>
+                <Segment
+                  style={{
+                    background: '#53687210',
+                    border: 'transparent',
+                    borderRadius: '12px',
+                    marginTop: '56px',
+                    width: '974px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    transform: 'translate(-49px)',
                   }}
                 >
                   <div
                     style={{
-                      width: '100px',
-                      height: '100px',
-                      background: 'radial-gradient(farthest-corner at 0px 80px, violet 15%, orange 40%, lightgreen 70%, yellow 100%)',
-                      position: 'absolute',
-                      borderRadius: '10px',
-                      zIndex: '0',
-                      opacity: '0.8',
+                      fontSize: '14px',
+                      fontWeight: '400',
+                      padding: '20px 10px 0px 50px',
+                      lineHeight: '20px',
+                      width: '770px',
+                      height: '53px',
+                      transform: 'translate(140px)',
                     }}
-                  />
-                  <Icon
-                    name="apple"
-                    size="huge"
-                    style={{
-                      position: 'absolute',
-                      zIndex: '1',
-                      color: 'white',
-                      transform: 'translate(16px, 22px)',
-                    }}
-                  />
-                </div>
-                <div
-                  style={{
-                    transform: 'translate(-152px, -13px)'
-                  }}
-                >
-                  <div>
-                    Pay $
-                    {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
-                      2
-                    )}
-                    /mo. at 0% APR for eligible items in your order when you
-                    choose Apple Card Monthly Installments at checkout. &nbsp;
-                    <a
-                      className={styles.bluehovering}
+                  >
+                    <div
                       style={{
-                        color: 'rgb(0, 113, 227)', cursor: 'pointer'
+                        transform: 'translate(-178px, -13px) scale(0.2)',
+                        position: 'absolute',
                       }}
                     >
-                      Learn more
-                    </a>
+                      <div
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          background: 'radial-gradient(farthest-corner at 0px 80px, violet 15%, orange 40%, lightgreen 70%, yellow 100%)',
+                          position: 'absolute',
+                          borderRadius: '10px',
+                          zIndex: '0',
+                          opacity: '0.8',
+                        }}
+                      />
+                      <Icon
+                        name="apple"
+                        size="huge"
+                        style={{
+                          position: 'absolute',
+                          zIndex: '1',
+                          color: 'white',
+                          transform: 'translate(16px, 22px)',
+                        }}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        transform: 'translate(-152px, -13px)'
+                      }}
+                    >
+                      <div>
+                        Pay $
+                        {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
+                          2
+                        )}
+                        /mo. at 0% APR for eligible items in your order when you
+                        choose Apple Card Monthly Installments at checkout. &nbsp;
+                        <a
+                          className={styles.bluehovering}
+                          style={{
+                            color: 'rgb(0, 113, 227)', cursor: 'pointer'
+                          }}
+                        >
+                          Learn more
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Segment>
-            <Grid
-              style={{
-                marginTop: '-84px',
-                width: '974px',
-                position: 'static'
-              }}
-            >
-              <Grid.Column
-                style={{
-                  width: '100px'
-                }}
-              >
-                <div
+                </Segment>
+                <Grid
                   style={{
-                    transform: 'scale(0.385) translate(-46px, -84px)'
+                    marginTop: '-84px',
+                    width: '974px',
+                    position: 'static'
                   }}
                 >
-                  <Front />
-                </div>
-              </Grid.Column>
-              <Grid.Column
-                style={{
-                  width: '300px'
-                }}
-              >
-                <Container
-                  style={{
-                    fontSize: '24px',
-                    fontWeight: '600',
-                    lineHeight: '28px',
-                    marginTop: '58px',
-                  }}
-                >             
-                  <div 
-                    style={{ 
-                      transform: 'translate(92px)',
-                      marginTop: '40px',
+                  <Grid.Column
+                    style={{
+                      width: '100px'
+                    }}
+                  >
+                    <div
+                      style={{
+                        transform: 'scale(0.385) translate(-46px, -84px)'
+                      }}
+                    >
+                      <Front />
+                    </div>
+                  </Grid.Column>
+                  <Grid.Column
+                    style={{
                       width: '300px'
                     }}
                   >
-                    10.9-inch iPad Air {props.connectivityName} {props.gbName}
-                  </div>{' '}
-                  {/* {colorName} */}
-                  <div style={{ paddingBottom: '66px' }}>
-                    {!open ? (
-                      <>
-                        <button
-                          onClick={() => setOpen(true)}
-                          style={{
-                            transform: 'translate(476px, -57px)',
-                            background: 'transparent',
-                            color: 'black',
-                            border: 'transparent',
-                            position: 'absolute',
-                          }}
-                        >
-                          {quantity}
-                          <Icon 
-                            name="angle down" 
-                            style={{ 
-                                color: '#0048e3' 
-                              }} 
-                            />
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <button
-                          onClick={() => setOpen(false)}
-                          style={{
-                            transform: 'translate(458px, -82px)',
-                            position: 'absolute',
-                            zIndex: '100',
-                            background: 'white',
-                            border: '1px solid #0048e3',
-                            fontSize: '24px',
-                            fontWeight: '600',
-                            width: '60px',
-                          }}
-                        >
-                          <ul
-                            style={{ transform: 'translate(-22.7px)' }}
-                            onClick={() => setQuantity(1)}
-                          >
-                            1
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(2)}
-                          >
-                            2
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(3)}
-                          >
-                            3
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(4)}
-                          >
-                            4
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(5)}
-                          >
-                            5
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(6)}
-                          >
-                            6
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(7)}
-                          >
-                            7
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(8)}
-                          >
-                            8
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-23.5px)' }}
-                            onClick={() => setQuantity(9)}
-                          >
-                            9
-                          </ul>
-                          <ul
-                            style={{ transform: 'translate(-29.8px)' }}
-                            onClick={() => setQuantity(10)}
-                          >
-                            10
-                          </ul>
-                        </button>
-                      </>
-                    )}
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translate(567px, -94px)'
-                    }}
-                  >
-                    {/* $599.00 */}
-                    <div
+                    <Container
                       style={{
-                        transform: 'translate(162px, -28px)'
+                        fontSize: '24px',
+                        fontWeight: '600',
+                        lineHeight: '28px',
+                        marginTop: '58px',
                       }}
-                    >
-                      ${parseFloat(props.value) + parseFloat(props.cellValue)}.00
-                    </div>
-                  </div>
-                </Container> 
-                <Grid.Row
-                  style={{
-                    fontSize: '14px',
-                    fontWeight: '400',
-                    lineHeight: '20px',
-                    marginTop: '70px'
-                  }}
-                >
-                  <div
-                    style={{
-                      transform: 'translate(92px, -169px)'
-                    }}
-                  >
-                    Pay 0% APR for 12 months:
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translate(754px, -189.5px)'
-                    }}
-                  >
-                    $
-                    {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
-                      2
-                    )}
-                    /mo.
-                  </div>
-                </Grid.Row>
-                <div
-                  style={{
-                    transform: 'translate(765px, -170px)',
-                    color: 'rgb(0, 102, 204)',
-                    fontSize: '17px',
-                    fontWeight: '400',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <a
-                    onClick={() => {
-                        // setBag(false),
-                        // setValue(0),
-                        // setColor(false),
-                        // setStorage(0),
-                        // setConnectivity(false),
-                        // setCellValue(0),
-                        // setEngraving(false),
-                        // setAppleCare(0)
-                        router.push('/colorSelection/ipadhome');
-                    }}
-                    className={styles.bluehovering}
-                  >
-                    Remove
-                  </a>
-                </div>     
-                <Divider
-                  style={{
-                    transform: 'translate(94.5px, -147px)',
-                    width: '731px',
-                    marginTop: '-15px'
-                  }}
-                />
-                {noAppleCare ? (
-                  <>
-                    <div
-                      style={{
-                        transform: 'translate(38px, -137px)',
-                        width: '800px'
-                      }}
-                    >
-                      <Icon
-                        name="apple"
-                        color="red"
-                        style={{
-                          transform: 'translate(53px, -3px) scale(1.1)'
+                    >             
+                      <div 
+                        style={{ 
+                          transform: 'translate(92px)',
+                          marginTop: '40px',
+                          width: '300px'
                         }}
-                      />
-                      <div
-                        style={{
-                          transform: 'translate(79px, -24px)'
-                          }}
-                        >
-                        <span
-                          style={{
-                            fontSize: '17px',
-                            fontWeight: '600',
-                            lineHeight: '25px',
-                          }}
-                        >
-                          AppleCare+ for iPad Air (5th generation)
-                        </span>
-                        <span
-                          style={{
-                            transform: 'translate(-91px, -23px)',
-                            display: 'flex',
-                            justifyContent: 'flex-end',
-                            fontSize: '17px',
-                            fontWeight: '600',
-                          }}
-                        >
-                          $79.00
-                        </span>
+                      >
+                        10.9-inch iPad Air {props.connectivityName} {props.gbName}
+                      </div>{' '}
+                      {/* {colorName} */}
+                      <div style={{ paddingBottom: '66px' }}>
+                        {!open ? (
+                          <>
+                            <button
+                              onClick={() => setOpen(true)}
+                              style={{
+                                transform: 'translate(476px, -57px)',
+                                background: 'transparent',
+                                color: 'black',
+                                border: 'transparent',
+                                position: 'absolute',
+                              }}
+                            >
+                              {quantity}
+                              <Icon 
+                                name="angle down" 
+                                style={{ 
+                                    color: '#0048e3' 
+                                  }} 
+                                />
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button
+                              onClick={() => setOpen(false)}
+                              style={{
+                                transform: 'translate(458px, -82px)',
+                                position: 'absolute',
+                                zIndex: '100',
+                                background: 'white',
+                                border: '1px solid #0048e3',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                width: '60px',
+                              }}
+                            >
+                              <ul
+                                style={{ transform: 'translate(-22.7px)' }}
+                                onClick={() => setQuantity(1)}
+                              >
+                                1
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(2)}
+                              >
+                                2
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(3)}
+                              >
+                                3
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(4)}
+                              >
+                                4
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(5)}
+                              >
+                                5
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(6)}
+                              >
+                                6
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(7)}
+                              >
+                                7
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(8)}
+                              >
+                                8
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-23.5px)' }}
+                                onClick={() => setQuantity(9)}
+                              >
+                                9
+                              </ul>
+                              <ul
+                                style={{ transform: 'translate(-29.8px)' }}
+                                onClick={() => setQuantity(10)}
+                              >
+                                10
+                              </ul>
+                            </button>
+                          </>
+                        )}
                       </div>
                       <div
                         style={{
-                          transform: 'translate(79px, -39px)'
+                          transform: 'translate(567px, -94px)'
                         }}
                       >
-                        <span
+                        {/* $599.00 */}
+                        <div
+                          style={{
+                            transform: 'translate(162px, -28px)'
+                          }}
+                        >
+                          ${parseFloat(props.value) + parseFloat(props.cellValue)}.00
+                        </div>
+                      </div>
+                    </Container> 
+                    <Grid.Row
+                      style={{
+                        fontSize: '14px',
+                        fontWeight: '400',
+                        lineHeight: '20px',
+                        marginTop: '70px'
+                      }}
+                    >
+                      <div
+                        style={{
+                          transform: 'translate(92px, -169px)'
+                        }}
+                      >
+                        Pay 0% APR for 12 months:
+                      </div>
+                      <div
+                        style={{
+                          transform: 'translate(754px, -189.5px)'
+                        }}
+                      >
+                        $
+                        {((parseFloat(props.value) + parseFloat(props.cellValue)) / 12).toFixed(
+                          2
+                        )}
+                        /mo.
+                      </div>
+                    </Grid.Row>
+                    <div
+                      style={{
+                        transform: 'translate(765px, -170px)',
+                        color: 'rgb(0, 102, 204)',
+                        fontSize: '17px',
+                        fontWeight: '400',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <a
+                        onClick={() => {
+                            // setBag(false),
+                            // setValue(0),
+                            // setColor(false),
+                            // setStorage(0),
+                            // setConnectivity(false),
+                            // setCellValue(0),
+                            // setEngraving(false),
+                            // setAppleCare(0)
+                            router.push('/colorSelection/ipadhome');
+                        }}
+                        className={styles.bluehovering}
+                      >
+                        Remove
+                      </a>
+                    </div>     
+                    <Divider
+                      style={{
+                        transform: 'translate(94.5px, -147px)',
+                        width: '731px',
+                        marginTop: '-15px'
+                      }}
+                    />
+                    {noAppleCare ? (
+                      <>
+                        <div
+                          style={{
+                            transform: 'translate(38px, -137px)',
+                            width: '800px'
+                          }}
+                        >
+                          <Icon
+                            name="apple"
+                            color="red"
+                            style={{
+                              transform: 'translate(53px, -3px) scale(1.1)'
+                            }}
+                          />
+                          <div
+                            style={{
+                              transform: 'translate(79px, -24px)'
+                              }}
+                            >
+                            <span
+                              style={{
+                                fontSize: '17px',
+                                fontWeight: '600',
+                                lineHeight: '25px',
+                              }}
+                            >
+                              AppleCare+ for iPad Air (5th generation)
+                            </span>
+                            <span
+                              style={{
+                                transform: 'translate(-91px, -23px)',
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                                fontSize: '17px',
+                                fontWeight: '600',
+                              }}
+                            >
+                              $79.00
+                            </span>
+                          </div>
+                          <div
+                            style={{
+                              transform: 'translate(79px, -39px)'
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontSize: '14px',
+                                fontWeight: '400',
+                                lineHeight: '20px',
+                              }}
+                            >
+                              Pay 0% APR for 12 months:
+                            </span>
+                            <span
+                              style={{
+                                transform: 'translate(-91px, -20px)',
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                              }}
+                            >
+                              $6.58/mo.
+                            </span>
+                          </div>
+                          <div
+                            style={{
+                              transform: 'translate(79px, -51px)'
+                            }}
+                          >
+                            <span>
+                              Automatically registered with your Apple hardware.
+                            </span>
+                            <span
+                              style={{
+                                transform: 'translate(-91px, -20px)',
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                              }}
+                            >
+                              <a
+                                onClick={() => {
+                                  setAppleCare(0), setNoAppleCare(false);
+                                }}
+                                className={styles.bluehovering}
+                                style={{
+                                  color: 'rgb(0, 102, 204)',
+                                  cursor: 'pointer',
+                                }}
+                              >
+                                Remove
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                        <Divider
+                          style={{
+                            transform: 'translate(94.5px, -189.5px)',
+                            width: '731px',
+                            marginBottom: '-25px'
+                          }}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <Grid.Row>
+                          <Grid.Column
+                            style={{
+                              transform: 'translate(40px, 182px)'
+                            }}
+                          >
+                            <Icon
+                              name="apple"
+                              color="red"
+                              style={{
+                                transform: 'translate(53px, -322px) scale(1.1)',
+                              }}
+                            />
+                          </Grid.Column>
+                          <Grid.Column
+                            style={{
+                              width: '701px'
+                            }}
+                          >
+                            <Grid.Row>
+                              <div
+                                style={{
+                                  transform: 'translate(118px, -161px)',
+                                  fontSize: '17px',
+                                  fontWeight: '600',
+                                  lineHeight: '25px',
+                                }}
+                              >
+                                Add AppleCare+ for iPad Air (5th generation) for $79.00
+                              </div>
+                              <div
+                                style={{
+                                  transform: 'translate(796px, -186px)',
+                                  position: 'absolute',
+                                  color: 'rgb(0, 102, 204)',
+                                  cursor: 'pointer',
+                                  fontWeight: '400',
+                                  fontSize: '17px',
+                                  lineHeight: '25px',
+                                }}
+                              >
+                                <a
+                                  onClick={() => {
+                                    setAppleCare(79), setNoAppleCare(true);
+                                  }}
+                                  className={styles.bluehovering}
+                                  style={{
+                                    color: 'rgb(0, 102, 204)',
+                                    cursor: 'pointer',
+                                  }}
+                                >
+                                  Add
+                                </a>
+                              </div>
+                            </Grid.Row>
+                            <Grid.Row>
+                              <div
+                                style={{
+                                  transform: 'translate(118px, -159px)',
+                                  fontSize: '14px',
+                                  fontWeight: '400',
+                                  lineHeight: '20px',
+                                }}
+                              >
+                                Protect your iPad, Apple Pencil, and Apple-branded
+                                keyboard from accidental drops and spills with
+                                AppleCare+.
+                              </div>
+                            </Grid.Row>
+                            <Grid.Row>
+                              <div
+                                style={{
+                                  transform: 'translate(118px, -159px)'
+                                }}
+                              >
+                                <a
+                                  className={styles.bluehovering}
+                                  style={{
+                                    color: 'rgb(0, 102, 204)',
+                                    cursor: 'pointer',
+                                  }}
+                                >
+                                  Learn more {'>'}
+                                </a>
+                              </div>
+                            </Grid.Row>
+                          </Grid.Column>
+                        </Grid.Row>
+                        <Divider
+                          style={{
+                            transform: 'translate(80.5px, -148.5px)',
+                            width: '731px'
+                          }}
+                        />
+                      </>
+                    )}
+                    <div
+                      style={{
+                        fontSize: '17px',
+                        fontWeight: '600',
+                        lineHeight: '25px'
+                      }}
+                    >
+                      <div>
+                        <div
+                          style={{
+                            transform: 'translate(-25.5px, -475px) scale(0.55)',
+                            position: 'fixed',
+                          }}
+                        >
+                          <div
+                            style={{
+                              transform: 'translate(205px, 600px)',
+                              border: '2px solid black',
+                              width: '30px',
+                              height: '30px',
+                              borderRadius: '50%',
+                            }}
+                          >
+                            <div
+                              style={{
+                                transform: 'translate(2.9px, 9px)',
+                                width: '20px',
+                                height: '1px',
+                                border: '1px solid black',
+                                borderRadius: '50px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                transform: 'translate(5.5px, 15px)',
+                                width: '14.5px',
+                                height: '1px',
+                                border: '1px solid black',
+                                borderRadius: '50px',
+                              }}
+                            />
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            transform: 'translate(117px, -141.5px)'
+                          }}
+                        >
+                          Add free engraving
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          transform: 'translate(796px, -167.9px)',
+                          color: 'rgb(0, 102, 204)',
+                          cursor: 'pointer',
+                          fontWeight: '400',
+                        }}
+                      >
+                        <a
+                          className={styles.bluehovering}
+                          style={{
+                            color: 'rgb(0, 102, 204)',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          Add
+                        </a>
+                      </div>
+                    </div>
+                    <Divider
+                      style={{
+                        transform: 'translate(95px, -161.1px)',
+                        width: '731px'
+                      }}
+                    />
+                    <div
+                      style={{
+                        fontSize: '17px',
+                        fontWeight: '600',
+                        lineHeight: '25px',
+                      }}
+                    >
+                      <div>
+                        <Icon
+                          name="gift"
+                          style={{
+                            transform: 'translate(92px, -157px) scale(1.1)',
+                            position: 'absolute',
+                          }}
+                        />
+                        <div
+                          style={{
+                            transform: 'translate(118px, -155px)',
+                            position: 'absolute',
+                          }}
+                        >
+                          Add a gift message
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          transform: 'translate(796px, -155px)',
+                          color: 'rgb(0, 102, 204)',
+                          cursor: 'pointer',
+                          fontWeight: '400',
+                        }}
+                      >
+                        <a
+                          className={styles.bluehovering}
+                          style={{
+                            color: 'rgb(0, 102, 204)',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          Add
+                        </a>
+                      </div>
+                    </div>
+                    <Divider
+                      style={{
+                        transform: 'translate(94.5px, -147.7px)',
+                        width: '731px'
+                      }}
+                    />
+                    <Grid>
+                      <div>
+                        <div
                           style={{
                             fontSize: '14px',
                             fontWeight: '400',
                             lineHeight: '20px',
                           }}
                         >
-                          Pay 0% APR for 12 months:
-                        </span>
-                        <span
+                          <div
+                            style={{
+                              transform: 'translate(52px, -158.5px) scale(0.16)',
+                              position: 'absolute',
+                              border: '5px solid black',
+                              width: '100px',
+                              height: '85px',
+                              borderRadius: '15px',
+                            }}
+                          >
+                            <div
+                              style={{
+                                transform: 'translate(13.5px, -35px)',
+                                position: 'absolute',
+                                border: '5px solid black',
+                                width: '60px',
+                                height: '35px',
+                                borderRadius: '150px 150px 0 0',
+                              }}
+                            />
+                            <Icon
+                              name="apple"
+                              style={{
+                                transform: 'translate(37px, 21px) scale(3.2)',
+                                color: 'black',
+                              }}
+                            />
+                          </div>
+                          <div
+                            style={{
+                              transform: 'translate(447px, -127px)',
+                              width: '220px',
+                            }}
+                          >
+                            Order today. Delivers to{' '}
+                            <a
+                              className={styles.bluehovering}
+                              style={{
+                                color: 'rgb(0, 102, 204)',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              <Zip />
+                            </a>
+                            <b
+                              style={{
+                                fontWeight: '600'
+                              }}
+                            >
+                              &nbsp;
+                              {/* Jul 13 - Jul 20 - Free */}
+                              <span>
+                                {day1 < 25 ? (
+                                  <>{pickup1}</>
+                                ) : (
+                                  <>
+                                    {day1 > 24 && day1 < 32 ? (
+                                      <>{unevenMonths}</>
+                                    ) : (
+                                      <>{nextMonthPickup1}</>
+                                    )}
+                                  </>
+                                )}
+                              </span>
+                              <span>&nbsp;- Free</span>
+                            </b>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
                           style={{
-                            transform: 'translate(-91px, -20px)',
-                            display: 'flex',
-                            justifyContent: 'flex-end',
+                            fontSize: '14px',
+                            fontWeight: '400',
+                            lineHeight: '20px',
+                            transform: 'translate(72px, 1161px)'
                           }}
                         >
-                          $6.58/mo.
-                        </span>
+                          <div
+                            style={{
+                              transform: 'translate(358.9px, -1300px) scale(0.55, 0.5)',
+                              position: 'absolute',
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(7px, -140px) rotate(60deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(-7px, -140.1px) rotate(-60deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(7px, -158px) rotate(60deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(-7px, -194.7px) rotate(-60deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(0px, -200px) rotate(0deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(14px, -225px) rotate(0deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(-14px, -243.5px) rotate(0deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(-7px, -274.8px) rotate(60deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '18px',
+                                background: 'black',
+                                transform: 'translate(7px, -293px) rotate(-59deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                            <div
+                              style={{
+                                width: '2px',
+                                height: '17px',
+                                background: 'black',
+                                transform: 'translate(0px, -306.5px) rotate(-59deg)',
+                                borderRadius: '10px',
+                              }}
+                            />
+                          </div>
+                          <div
+                            style={{
+                              transform: 'translate(45px, -1328px)',
+                              width: '200px',
+                            }}
+                          >
+                            Order now. Pick up, in store:{' '}
+                            <b 
+                              style={{
+                                fontWeight: '600'
+                              }}
+                            >
+                              {/* Thu, Jul 21 */}
+                              <span>
+                                {day < 31 ? <>{pickup}</> : <>{nextMonthPickup}</>}
+                              </span>
+                            </b>{' '}
+                            at{' '}
+                            <a
+                              className={styles.bluehovering}
+                              style={{
+                                color: 'rgb(0, 102, 204)',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              Apple <City />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Divider
+                      style={{
+                        transform: 'translate(-148px, -86px)',
+                        width: '974px'
+                      }}
+                    />
+                    <div
+                      style={{
+                        lineHeight: '29.8px'
+                      }}
+                    >
+                      <div
+                        style={{
+                          transform: 'translateY(3px)',
+                          fontSize: '17px',
+                          fontWeight: '400',
+                        }}
+                      >
+                        <div
+                          style={{
+                            transform: 'translate(94px, -76px)',
+                            lineHeight: '50px',
+                          }}
+                        >
+                          Subtotal
+                        </div>
+                        <div
+                          style={{
+                            transform: (quantity > 1) ? 'translate(746px, -114px)' : 'translate(762px, -114px)'
+                          }}
+                        >
+                          {(
+                            parseFloat(quantity) *
+                            (parseFloat(props.value) +
+                              parseFloat(props.cellValue) +
+                              parseFloat(appleCare))
+                          ).toLocaleString('en', {
+                            style: 'currency',
+                            currency: 'USD',
+                          })}
+                        </div>
                       </div>
                       <div
                         style={{
-                          transform: 'translate(79px, -51px)'
+                          transform: 'translateY(3px)',
+                          fontSize: '17px',
+                          fontWeight: '400',
                         }}
                       >
-                        <span>
-                          Automatically registered with your Apple hardware.
-                        </span>
-                        <span
+                        <div
                           style={{
-                            transform: 'translate(-91px, -20px)',
-                            display: 'flex',
-                            justifyContent: 'flex-end',
+                            transform: 'translate(94px, -116px)',
+                            lineHeight: '30px',
                           }}
                         >
-                          <a
-                            onClick={() => {
-                              setAppleCare(0), setNoAppleCare(false);
+                          Shipping
+                        </div>
+                        <div
+                          style={{
+                            transform: 'translate(786px, -145px)'
+                          }}
+                        >
+                          FREE
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          transform: 'translate(54px, -1687px)',
+                          fontSize: '17px',
+                          fontWeight: '400',
+                          lineHeight: '30px',
+                        }}
+                      >
+                        <div>
+                          <Popup
+                            content="The sales tax listed on the checkout page is only an estimate. Your invoice will contain the final sales tax, including state and local taxes, as well as any applicable rebates or fees. In California and Rhode Island, sales tax is collected on the unbundled price of iPhone."
+                            trigger={
+                              <Icon
+                                name="question circle"
+                                style={{
+                                  transform: 'translate(8.5px, 1542px)',
+                                  position: 'absolute',
+                                  cursor: 'pointer',
+                                  color: 'gray',
+                                }}
+                              />
+                            }
+                            style={{
+                              background: '#e8e8ed',
+                              fontSize: '14px',
+                              fontWeight: '400',
+                              lineHeight: '18px',
+                              borderRadius: '10px',
                             }}
+                          />
+                          <div
+                            style={{
+                              transform: 'translate(40.2px, 1543px)'
+                            }}
+                          >
+                            Estimated tax for:&nbsp;
+                            <a
+                              className={styles.bluehovering}
+                              style={{
+                                color: 'rgb(0, 102, 204)',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              <Zip />
+                            </a>
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            transform: (quantity > 1) ? 'translate(710px, 1498px)' : 'translate(720px, 1498px)',
+                            lineHeight: '60px',
+                          }}
+                        >
+                          ${(parseFloat(quantity) * tax).toFixed(2)}
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          transform: 'translateY(1px)',
+                          fontSize: '17px',
+                          fontWeight: '400',
+                        }}
+                      >
+                        <div
+                          style={{
+                            transform: 'translate(94.5px, -201.8px)'
+                          }}
+                        >
+                          <StateAbbr /> recycling fee{' '}
+                          <a
                             className={styles.bluehovering}
                             style={{
                               color: 'rgb(0, 102, 204)',
-                              cursor: 'pointer',
+                              cursor: 'pointer'
                             }}
                           >
-                            Remove
+                            Learn more
                           </a>
-                        </span>
-                      </div>
-                    </div>
-                    <Divider
-                      style={{
-                        transform: 'translate(94.5px, -189.5px)',
-                        width: '731px',
-                        marginBottom: '-25px'
-                      }}
-                    />
-                  </>
-                ) : (
-                  <>
-                    <Grid.Row>
-                      <Grid.Column
-                        style={{
-                          transform: 'translate(40px, 182px)'
-                        }}
-                      >
-                        <Icon
-                          name="apple"
-                          color="red"
-                          style={{
-                            transform: 'translate(53px, -322px) scale(1.1)',
-                          }}
-                        />
-                      </Grid.Column>
-                      <Grid.Column
-                        style={{
-                          width: '701px'
-                        }}
-                      >
-                        <Grid.Row>
-                          <div
-                            style={{
-                              transform: 'translate(118px, -161px)',
-                              fontSize: '17px',
-                              fontWeight: '600',
-                              lineHeight: '25px',
-                            }}
-                          >
-                            Add AppleCare+ for iPad Air (5th generation) for $79.00
-                          </div>
-                          <div
-                            style={{
-                              transform: 'translate(796px, -186px)',
-                              position: 'absolute',
-                              color: 'rgb(0, 102, 204)',
-                              cursor: 'pointer',
-                              fontWeight: '400',
-                              fontSize: '17px',
-                              lineHeight: '25px',
-                            }}
-                          >
-                            <a
-                              onClick={() => {
-                                setAppleCare(79), setNoAppleCare(true);
-                              }}
-                              className={styles.bluehovering}
-                              style={{
-                                color: 'rgb(0, 102, 204)',
-                                cursor: 'pointer',
-                              }}
-                            >
-                              Add
-                            </a>
-                          </div>
-                        </Grid.Row>
-                        <Grid.Row>
-                          <div
-                            style={{
-                              transform: 'translate(118px, -159px)',
-                              fontSize: '14px',
-                              fontWeight: '400',
-                              lineHeight: '20px',
-                            }}
-                          >
-                            Protect your iPad, Apple Pencil, and Apple-branded
-                            keyboard from accidental drops and spills with
-                            AppleCare+.
-                          </div>
-                        </Grid.Row>
-                        <Grid.Row>
-                          <div
-                            style={{
-                              transform: 'translate(118px, -159px)'
-                            }}
-                          >
-                            <a
-                              className={styles.bluehovering}
-                              style={{
-                                color: 'rgb(0, 102, 204)',
-                                cursor: 'pointer',
-                              }}
-                            >
-                              Learn more {'>'}
-                            </a>
-                          </div>
-                        </Grid.Row>
-                      </Grid.Column>
-                    </Grid.Row>
-                    <Divider
-                      style={{
-                        transform: 'translate(80.5px, -148.5px)',
-                        width: '731px'
-                      }}
-                    />
-                  </>
-                )}
-                <div
-                  style={{
-                    fontSize: '17px',
-                    fontWeight: '600',
-                    lineHeight: '25px'
-                  }}
-                >
-                  <div>
-                    <div
-                      style={{
-                        transform: 'translate(-25.5px, -475px) scale(0.55)',
-                        position: 'fixed',
-                      }}
-                    >
-                      <div
-                        style={{
-                          transform: 'translate(205px, 600px)',
-                          border: '2px solid black',
-                          width: '30px',
-                          height: '30px',
-                          borderRadius: '50%',
-                        }}
-                      >
+                        </div>
                         <div
                           style={{
-                            transform: 'translate(2.9px, 9px)',
-                            width: '20px',
-                            height: '1px',
-                            border: '1px solid black',
-                            borderRadius: '50px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            transform: 'translate(5.5px, 15px)',
-                            width: '14.5px',
-                            height: '1px',
-                            border: '1px solid black',
-                            borderRadius: '50px',
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        transform: 'translate(117px, -141.5px)'
-                      }}
-                    >
-                      Add free engraving
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translate(796px, -167.9px)',
-                      color: 'rgb(0, 102, 204)',
-                      cursor: 'pointer',
-                      fontWeight: '400',
-                    }}
-                  >
-                    <a
-                      className={styles.bluehovering}
-                      style={{
-                        color: 'rgb(0, 102, 204)',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      Add
-                    </a>
-                  </div>
-                </div>
-                <Divider
-                  style={{
-                    transform: 'translate(95px, -161.1px)',
-                    width: '731px'
-                  }}
-                />
-                <div
-                  style={{
-                    fontSize: '17px',
-                    fontWeight: '600',
-                    lineHeight: '25px',
-                  }}
-                >
-                  <div>
-                    <Icon
-                      name="gift"
-                      style={{
-                        transform: 'translate(92px, -157px) scale(1.1)',
-                        position: 'absolute',
-                      }}
-                    />
-                    <div
-                      style={{
-                        transform: 'translate(118px, -155px)',
-                        position: 'absolute',
-                      }}
-                    >
-                      Add a gift message
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translate(796px, -155px)',
-                      color: 'rgb(0, 102, 204)',
-                      cursor: 'pointer',
-                      fontWeight: '400',
-                    }}
-                  >
-                    <a
-                      className={styles.bluehovering}
-                      style={{
-                        color: 'rgb(0, 102, 204)',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      Add
-                    </a>
-                  </div>
-                </div>
-                <Divider
-                  style={{
-                    transform: 'translate(94.5px, -147.7px)',
-                    width: '731px'
-                  }}
-                />
-                <Grid>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: '14px',
-                        fontWeight: '400',
-                        lineHeight: '20px',
-                      }}
-                    >
-                      <div
-                        style={{
-                          transform: 'translate(52px, -158.5px) scale(0.16)',
-                          position: 'absolute',
-                          border: '5px solid black',
-                          width: '100px',
-                          height: '85px',
-                          borderRadius: '15px',
-                        }}
-                      >
-                        <div
-                          style={{
-                            transform: 'translate(13.5px, -35px)',
-                            position: 'absolute',
-                            border: '5px solid black',
-                            width: '60px',
-                            height: '35px',
-                            borderRadius: '150px 150px 0 0',
-                          }}
-                        />
-                        <Icon
-                          name="apple"
-                          style={{
-                            transform: 'translate(37px, 21px) scale(3.2)',
-                            color: 'black',
-                          }}
-                        />
-                      </div>
-                      <div
-                        style={{
-                          transform: 'translate(447px, -127px)',
-                          width: '220px',
-                        }}
-                      >
-                        Order today. Delivers to{' '}
-                        <a
-                          className={styles.bluehovering}
-                          style={{
-                            color: 'rgb(0, 102, 204)',
-                            cursor: 'pointer'
+                            transform: 'translate(781px, -231px)'
                           }}
                         >
-                          <Zip />
-                        </a>
-                        <b
-                          style={{
-                            fontWeight: '600'
-                          }}
-                        >
-                          &nbsp;
-                          {/* Jul 13 - Jul 20 - Free */}
-                          <span>
-                            {day1 < 25 ? (
-                              <>{pickup1}</>
-                            ) : (
-                              <>
-                                {day1 > 24 && day1 < 32 ? (
-                                  <>{unevenMonths}</>
-                                ) : (
-                                  <>{nextMonthPickup1}</>
-                                )}
-                              </>
-                            )}
-                          </span>
-                          <span>&nbsp;- Free</span>
-                        </b>
+                          $4.00
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: '14px',
-                        fontWeight: '400',
-                        lineHeight: '20px',
-                        transform: 'translate(72px, 1161px)'
-                      }}
-                    >
-                      <div
+                      <Divider
                         style={{
-                          transform: 'translate(358.9px, -1300px) scale(0.55, 0.5)',
-                          position: 'absolute',
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(7px, -140px) rotate(60deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(-7px, -140.1px) rotate(-60deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(7px, -158px) rotate(60deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(-7px, -194.7px) rotate(-60deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(0px, -200px) rotate(0deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(14px, -225px) rotate(0deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(-14px, -243.5px) rotate(0deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(-7px, -274.8px) rotate(60deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '18px',
-                            background: 'black',
-                            transform: 'translate(7px, -293px) rotate(-59deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                        <div
-                          style={{
-                            width: '2px',
-                            height: '17px',
-                            background: 'black',
-                            transform: 'translate(0px, -306.5px) rotate(-59deg)',
-                            borderRadius: '10px',
-                          }}
-                        />
-                      </div>
-                      <div
-                        style={{
-                          transform: 'translate(45px, -1328px)',
-                          width: '200px',
-                        }}
-                      >
-                        Order now. Pick up, in store:{' '}
-                        <b 
-                          style={{
-                            fontWeight: '600'
-                          }}
-                        >
-                          {/* Thu, Jul 21 */}
-                          <span>
-                            {day < 31 ? <>{pickup}</> : <>{nextMonthPickup}</>}
-                          </span>
-                        </b>{' '}
-                        at{' '}
-                        <a
-                          className={styles.bluehovering}
-                          style={{
-                            color: 'rgb(0, 102, 204)',
-                            cursor: 'pointer'
-                          }}
-                        >
-                          Apple <City />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </Grid>
-                <Divider
-                  style={{
-                    transform: 'translate(-148px, -86px)',
-                    width: '974px'
-                  }}
-                />
-                <div
-                  style={{
-                    lineHeight: '29.8px'
-                  }}
-                >
-                  <div
-                    style={{
-                      transform: 'translateY(3px)',
-                      fontSize: '17px',
-                      fontWeight: '400',
-                    }}
-                  >
-                    <div
-                      style={{
-                        transform: 'translate(94px, -76px)',
-                        lineHeight: '50px',
-                      }}
-                    >
-                      Subtotal
-                    </div>
-                    <div
-                      style={{
-                        transform: (quantity > 1) ? 'translate(746px, -114px)' : 'translate(762px, -114px)'
-                      }}
-                    >
-                      {(
-                        parseFloat(quantity) *
-                        (parseFloat(props.value) +
-                          parseFloat(props.cellValue) +
-                          parseFloat(appleCare))
-                      ).toLocaleString('en', {
-                        style: 'currency',
-                        currency: 'USD',
-                      })}
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translateY(3px)',
-                      fontSize: '17px',
-                      fontWeight: '400',
-                    }}
-                  >
-                    <div
-                      style={{
-                        transform: 'translate(94px, -116px)',
-                        lineHeight: '30px',
-                      }}
-                    >
-                      Shipping
-                    </div>
-                    <div
-                      style={{
-                        transform: 'translate(786px, -145px)'
-                      }}
-                    >
-                      FREE
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translate(54px, -1687px)',
-                      fontSize: '17px',
-                      fontWeight: '400',
-                      lineHeight: '30px',
-                    }}
-                  >
-                    <div>
-                      <Popup
-                        content="The sales tax listed on the checkout page is only an estimate. Your invoice will contain the final sales tax, including state and local taxes, as well as any applicable rebates or fees. In California and Rhode Island, sales tax is collected on the unbundled price of iPhone."
-                        trigger={
-                          <Icon
-                            name="question circle"
-                            style={{
-                              transform: 'translate(8.5px, 1542px)',
-                              position: 'absolute',
-                              cursor: 'pointer',
-                              color: 'gray',
-                            }}
-                          />
-                        }
-                        style={{
-                          background: '#e8e8ed',
-                          fontSize: '14px',
-                          fontWeight: '400',
-                          lineHeight: '18px',
-                          borderRadius: '10px',
+                          transform: 'translate(94px, -231px)',
+                          width: '731px'
                         }}
                       />
                       <div
                         style={{
-                          transform: 'translate(40.2px, 1543px)'
+                          fontSize: '24px',
+                          fontWeight: '600',
+                          lineHeight: '28px',
                         }}
                       >
-                        Estimated tax for:&nbsp;
+                        <div
+                          style={{
+                            transform: 'translate(94px, -228px)'
+                          }}
+                        >
+                          Total
+                        </div>
+                        <div
+                          style={{
+                            transform: (quantity > 1) ? 'translate(713px, -256px)' : 'translate(730px, -256px)'
+                          }}
+                        >
+                          {(
+                            parseFloat(quantity) *
+                            (parseFloat(props.value) +
+                              parseFloat(props.cellValue) +
+                              parseFloat(tax) +
+                              parseFloat(appleCare) +
+                              parseFloat(props.recycling))
+                          ).toLocaleString('en', {
+                            style: 'currency',
+                            currency: 'USD',
+                          })}
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          transform: 'translate(624px, -287px)',
+                          position: 'absolute',
+                        }}
+                      >
                         <a
                           className={styles.bluehovering}
                           style={{
                             color: 'rgb(0, 102, 204)',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            lineHeight: '86px',
                           }}
                         >
-                          <Zip />
+                          Get Daily Cash with Apple Card
                         </a>
                       </div>
                     </div>
                     <div
                       style={{
-                        transform: (quantity > 1) ? 'translate(710px, 1498px)' : 'translate(720px, 1498px)',
-                        lineHeight: '60px',
+                        transform: 'translate(93.5px, -169px)',
+                        fontSize: '24px',
+                        fontWeight: '600',
+                        lineHeight: '28px',
+                        width: '731px',
                       }}
                     >
-                      ${(parseFloat(quantity) * tax).toFixed(2)}
+                      How would you like to check out?
                     </div>
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translateY(1px)',
-                      fontSize: '17px',
-                      fontWeight: '400',
-                    }}
-                  >
                     <div
                       style={{
-                        transform: 'translate(94.5px, -201.8px)'
+                        transform: 'translate(96px, -146px)',
+                        display: 'inline-block',
                       }}
                     >
-                      <StateAbbr /> recycling fee{' '}
-                      <a
-                        className={styles.bluehovering}
+                      <Item
                         style={{
-                          color: 'rgb(0, 102, 204)',
-                          cursor: 'pointer'
+                          width: '361px',
+                          minWidth: '200px',
+                          height: '353px',
+                          background: '#53687210',
+                          borderRadius: '12px',
+                          padding: '9px 32px 0px 32px',
+                          position: 'fixed',
                         }}
                       >
-                        Learn more
-                      </a>
+                        <center
+                          style={{
+                            fontSize: '24px',
+                            fontWeight: '500',
+                            lineHeight: '15.3px',
+                            marginTop: '36px'
+                          }}
+                        >
+                          <div
+                            style={{
+                              marginTop: '31px'
+                            }}
+                          >
+                            {user ? (
+                            <>
+                              View {user.name}{`'s`}
+                            </>
+                            ):(
+                            <>
+                              View
+                            </>
+                            )}
+                          </div>
+                          <div
+                            style={{
+                              marginTop: '15.3px'
+                            }}
+                          >
+                            Order History
+                          </div>
+                        </center>
+                        <button
+                          className={styles.bagButton}
+                          style={{
+                            transform: 'translateY(56px)',
+                            width: '300px',
+                            height: '55px',
+                            background: 'rgb(0, 113, 227)',
+                            color: 'white',
+                            borderRadius: '12px',
+                            fontSize: '17px',
+                            fontWeight: '400',
+                            padding: '18px 31px 18px 31px',
+                            marginLeft: '8px',
+                            border: '0px solid transparent'
+                          }}
+                        >
+                          <div
+                            onClick={() => {handleSubmitProduct(), getOrderHistory(), sendData()}}
+                          >
+                            View Order History
+                          </div>
+                        </button>
+                      </Item>
+                      <Item
+                        style={{
+                          transform: 'translate(370px)',
+                          width: '361px',
+                          minWidth: '200px',
+                          height: '353px',
+                          background: '#53687210',
+                          borderRadius: '12px',
+                          padding: '14px 32px 0px 28px',
+                          fontSize: '24px',
+                          fontWeight: '500',
+                          lineHeight: '15.3px',
+                          textAlign: 'center',
+                          marginRight: '35.5px',
+                          marginLeft: '7px',
+                          position: 'fixed',
+                        }}
+                      >
+                        <div>
+                          <div
+                            style={{
+                              marginTop: '31px'
+                            }}
+                          >
+                            Pay in Full
+                          </div>
+                          <div
+                            style={{
+                              marginTop: '15.3px'
+                            }}
+                          >
+                            {(
+                              parseFloat(quantity) *
+                              (parseFloat(props.value) +
+                                parseFloat(props.cellValue) +
+                                parseFloat(tax) +
+                                parseFloat(appleCare) +
+                                parseFloat(props.recycling))
+                            ).toLocaleString('en', {
+                              style: 'currency',
+                              currency: 'USD',
+                            })}
+                          </div>
+                          <button
+                            onClick={() => setPaymentModal(true)}
+                            className={styles.bagButton}
+                            style={{
+                              transform: 'translateY(56px)',
+                              width: '300px',
+                              height: '55px',
+                              background: 'rgb(0, 113, 227)',
+                              color: 'white',
+                              borderRadius: '12px',
+                              fontSize: '17px',
+                              fontWeight: '400',
+                              padding: '18px 31px 16px 31px',
+                              marginLeft: '8px',
+                              border: '0px solid transparent'
+                            }}
+                          >
+                            <div
+                              onClick={() => setPaymentModal(true)}
+                            >
+                              Check Out with Stripe
+                            </div>
+                          </button>
+                        </div>
+                      </Item>
                     </div>
-                    <div
-                      style={{
-                        transform: 'translate(781px, -231px)'
-                      }}
-                    >
-                      $4.00
-                    </div>
-                  </div>
-                  <Divider
+                  </Grid.Column>
+                </Grid>
+              </div>
+              {isPortrait ? (
+              <>
+                <div
+                  style={{
+                    transform: 'translateY(-125px)'
+                  }}
+                >
+                  <Divider 
                     style={{
-                      transform: 'translate(94px, -231px)',
-                      width: '731px'
+                      transform: 'translate(-110px)'
                     }}
                   />
-                  <div
+                  <center
                     style={{
-                      fontSize: '24px',
-                      fontWeight: '600',
-                      lineHeight: '28px',
+                      transform: 'translate(-106px, 9px)',
+                      fontSize: '17px',
+                      fontWeight: '400'
                     }}
                   >
-                    <div
-                      style={{
-                        transform: 'translate(94px, -228px)'
-                      }}
-                    >
-                      Total
-                    </div>
-                    <div
-                      style={{
-                        transform: (quantity > 1) ? 'translate(713px, -256px)' : 'translate(730px, -256px)'
-                      }}
-                    >
-                      {(
-                        parseFloat(quantity) *
-                        (parseFloat(props.value) +
-                          parseFloat(props.cellValue) +
-                          parseFloat(tax) +
-                          parseFloat(appleCare) +
-                          parseFloat(props.recycling))
-                      ).toLocaleString('en', {
-                        style: 'currency',
-                        currency: 'USD',
-                      })}
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      transform: 'translate(624px, -287px)',
-                      position: 'absolute',
-                    }}
-                  >
+                    Need some help?&nbsp;
                     <a
                       className={styles.bluehovering}
                       style={{
-                        color: 'rgb(0, 102, 204)',
-                        cursor: 'pointer',
-                        lineHeight: '86px',
+                        color: 'rgb(0, 113, 227)',
+                        cursor: 'pointer'
                       }}
                     >
-                      Get Daily Cash with Apple Card
+                      Chat now
                     </a>
-                  </div>
-                </div>
-                <div
-                  style={{
-                    transform: 'translate(93.5px, -169px)',
-                    fontSize: '24px',
-                    fontWeight: '600',
-                    lineHeight: '28px',
-                    width: '731px',
-                  }}
-                >
-                  How would you like to check out?
-                </div>
-                <div
-                  style={{
-                    transform: 'translate(96px, -146px)',
-                    display: 'inline-block',
-                  }}
-                >
-                  <Item
+                    &nbsp;or call 1-800-MY-APPLE.
+                  </center>
+                  <Divider 
                     style={{
-                      width: '361px',
-                      minWidth: '200px',
-                      height: '353px',
-                      background: '#53687210',
-                      borderRadius: '12px',
-                      padding: '9px 32px 0px 32px',
-                      position: 'fixed',
+                      transform: 'translate(-110px, 18px)'
                     }}
-                  >
-                    <center
-                      style={{
-                        fontSize: '24px',
-                        fontWeight: '500',
-                        lineHeight: '15.3px',
-                        marginTop: '36px'
-                      }}
-                    >
-                      <div
-                        style={{
-                          marginTop: '31px'
-                        }}
-                      >
-                        {user ? (
-                        <>
-                          View {user.name}{`'s`}
-                        </>
-                        ):(
-                        <>
-                          View
-                        </>
-                        )}
-                      </div>
-                      <div
-                        style={{
-                          marginTop: '15.3px'
-                        }}
-                      >
-                        Order History
-                      </div>
-                    </center>
-                    <button
-                      className={styles.bagButton}
-                      style={{
-                        transform: 'translateY(56px)',
-                        width: '300px',
-                        height: '55px',
-                        background: 'rgb(0, 113, 227)',
-                        color: 'white',
-                        borderRadius: '12px',
-                        fontSize: '17px',
-                        fontWeight: '400',
-                        padding: '18px 31px 18px 31px',
-                        marginLeft: '8px',
-                        border: '0px solid transparent'
-                      }}
-                    >
-                      <div
-                        onClick={() => {handleSubmitProduct(), getOrderHistory(), sendData()}}
-                      >
-                        View Order History
-                      </div>
-                    </button>
-                  </Item>
-                  <Item
-                    style={{
-                      transform: 'translate(370px)',
-                      width: '361px',
-                      minWidth: '200px',
-                      height: '353px',
-                      background: '#53687210',
-                      borderRadius: '12px',
-                      padding: '14px 32px 0px 28px',
-                      fontSize: '24px',
-                      fontWeight: '500',
-                      lineHeight: '15.3px',
-                      textAlign: 'center',
-                      marginRight: '35.5px',
-                      marginLeft: '7px',
-                      position: 'fixed',
-                    }}
-                  >
-                    <div>
-                      <div
-                        style={{
-                          marginTop: '31px'
-                        }}
-                      >
-                        Pay in Full
-                      </div>
-                      <div
-                        style={{
-                          marginTop: '15.3px'
-                        }}
-                      >
-                        {(
-                          parseFloat(quantity) *
-                          (parseFloat(props.value) +
-                            parseFloat(props.cellValue) +
-                            parseFloat(tax) +
-                            parseFloat(appleCare) +
-                            parseFloat(props.recycling))
-                        ).toLocaleString('en', {
-                          style: 'currency',
-                          currency: 'USD',
-                        })}
-                      </div>
-                      <button
-                        onClick={() => setPaymentModal(true)}
-                        className={styles.bagButton}
-                        style={{
-                          transform: 'translateY(56px)',
-                          width: '300px',
-                          height: '55px',
-                          background: 'rgb(0, 113, 227)',
-                          color: 'white',
-                          borderRadius: '12px',
-                          fontSize: '17px',
-                          fontWeight: '400',
-                          padding: '18px 31px 16px 31px',
-                          marginLeft: '8px',
-                          border: '0px solid transparent'
-                        }}
-                      >
-                        <div
-                          onClick={() => setPaymentModal(true)}
-                        >
-                          Check Out with Stripe
-                        </div>
-                      </button>
-                    </div>
-                  </Item>
+                  />
                 </div>
-              </Grid.Column>
-            </Grid>
-          </div>
-          <div
-            style={{
-              transform: 'translateY(212px)'
-            }}
-          >
-            <Divider 
-              style={{
-                transform: 'translate(-110px)'
-              }}
-            />
-            <center
-              style={{
-                transform: 'translate(-106px, 9px)',
-                fontSize: '17px',
-                fontWeight: '400'
-              }}
-            >
-              Need some help?&nbsp;
-              <a
-                className={styles.bluehovering}
-                style={{
-                  color: 'rgb(0, 113, 227)',
-                  cursor: 'pointer'
-                }}
-              >
-                Chat now
-              </a>
-              &nbsp;or call 1-800-MY-APPLE.
-            </center>
-            <Divider 
-              style={{
-                transform: 'translate(-110px, 18px)'
-              }}
-            />
-          </div>
-        </Container>
+              </>
+              ): null}
+            </div>
+          </Container>
         </div>
         <Modal
           open={paymentModal}

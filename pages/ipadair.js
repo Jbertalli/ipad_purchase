@@ -195,6 +195,7 @@ export default function Air() {
                 <Image
                   src="/images/ipad_horizontal.png"
                   alt="ipad"
+                  priority
                   width={1020}
                   height={350}
                 />
@@ -363,8 +364,8 @@ export default function Air() {
               >
                 <Image
                   src="/images/ipad_vert.png"
-                  priority
                   alt="ipad"
+                  priority
                   width={320}
                   height={520}
                 />
