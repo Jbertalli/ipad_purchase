@@ -127,7 +127,7 @@ export default function Back() {
         <div
           className={styles.box}
           style={{ 
-            transform: 'translate(5px, -389.8px)', 
+            transform: 'translate(5px, -379.8px)', 
             height: (isPortrait || isTablet || isLandscapePhone) ? '30px' : '20px'
           }}
         />
