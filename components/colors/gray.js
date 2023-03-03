@@ -22,7 +22,7 @@ export default function Gray() {
       <div
         style={{
           transform: isPortrait ? 'translate(-140px, -20.3px) scale(0.7)' : null,
-          position: isPortrait ? 'fixed' : null
+          position: isPortrait ? 'relative' : null
         }}
       >
         <Grid
@@ -30,7 +30,7 @@ export default function Gray() {
             display: 'flex',
             justifyContent: 'center',
             transform: 'translate(107px)',
-            position: 'fixed',
+            position: 'fixed'
           }}
         >
           <Grid.Column
@@ -54,7 +54,7 @@ export default function Gray() {
                   background: 'linear-gradient(to bottom, #a7adba, #343d46)',
                   position: 'relative',
                   zIndex: '0',
-                  transform: 'translate(-90px, -520px)',
+                  transform: 'translate(-90px, -520px)'
                 }}
               >
                 <div style={{ transform: 'translate(-301px, 419.7px)' }}>
