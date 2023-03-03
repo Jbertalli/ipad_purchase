@@ -168,7 +168,7 @@ const Navbar = ({ user }) => {
                     style={{
                       color: '#F5F5F7',
                       margin: '0em .65em 0em .65em',
-                      transform: 'scale(1.2)',
+                      transform: 'scale(1.2)'
                     }}
                     active={isActive('/')}
                   >
@@ -258,7 +258,7 @@ const Navbar = ({ user }) => {
                   <div
                     style={{
                       transform: 'scaleX(1.8) translate(0.3px, -11px)',
-                      color: '#F5F5F7',
+                      color: '#F5F5F7'
                     }}
                   >
                     _
@@ -266,7 +266,7 @@ const Navbar = ({ user }) => {
                   <div
                     style={{
                       transform: 'scaleX(1.8) translate(-4.7px, -4px)',
-                      color: '#F5F5F7',
+                      color: '#F5F5F7'
                     }}
                   >
                     _
@@ -284,7 +284,7 @@ const Navbar = ({ user }) => {
                     background: 'black',
                     width: '100%',
                     height: '100%',
-                    transform: 'translateY(-14px)',
+                    transform: 'translateY(-14px)'
                   }}
                 >
                   <div
@@ -298,7 +298,7 @@ const Navbar = ({ user }) => {
                         color: '#f5f5f7',
                         transform: 'translate(18px, 10px) scaleX(1.3)',
                         position: 'absolute',
-                        opacity: '0.6',
+                        opacity: '0.6'
                       }}
                     >
                       x
@@ -307,14 +307,14 @@ const Navbar = ({ user }) => {
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        transform: 'translateY(-140px)',
+                        transform: 'translateY(-140px)'
                       }}
                     >
                       <Logo
                         style={{
                           color: 'red',
                           background: 'red',
-                          position: 'absolute',
+                          position: 'absolute'
                         }}
                       />
                     </div>
@@ -326,6 +326,7 @@ const Navbar = ({ user }) => {
                         justifyContent: 'center',
                         position: 'relative',
                         marginBottom: '51px',
+                        transform: 'translateY(-20px)'
                       }}
                     >
                       <div
@@ -336,7 +337,7 @@ const Navbar = ({ user }) => {
                           width: '69.5vw',
                           position: 'absolute',
                           borderRadius: '6px',
-                          opacity: '0.2',
+                          opacity: '0.2'
                         }}
                       />
                       <div
@@ -346,7 +347,7 @@ const Navbar = ({ user }) => {
                           position: 'fixed',
                           transform: 'translate(0%, 50%)',
                           opacity: '0.8',
-                          left: '16.5%',
+                          left: '16.5%'
                         }}
                       >
                         <Icon name="search" />
@@ -473,7 +474,7 @@ const Navbar = ({ user }) => {
                     <div
                       style={{
                         cursor: 'pointer',
-                        transform: 'scale(1.1) translateY(-3px)',
+                        transform: 'scale(1.1) translateY(-3px)'
                       }}
                     >
                       <Logo />
@@ -484,7 +485,7 @@ const Navbar = ({ user }) => {
                   <Menu.Item
                     style={{
                       color: '#F5F5F7',
-                      transform: 'scale(1.1) translateY(-1.5px)',
+                      transform: 'scale(1.1) translateY(-1.5px)'
                     }}
                   >
                     <Icon name="suitcase" />
