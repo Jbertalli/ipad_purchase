@@ -84,7 +84,7 @@
    height: 10px;
    border-radius: 35% 0% 50% 50%;
    background: #343d46;
-   position: relative;
+   position: static;
    z-index: 4;
 }
 
@@ -351,7 +351,7 @@
    background: linear-gradient(to bottom, black, #46505a, #a7adba);
    border-radius: 25% 25% 0% 0%;
    transform: translate(30.5px, -615.5px);
-   position: relative;
+   position: static;
    z-index: 5;
 }
 

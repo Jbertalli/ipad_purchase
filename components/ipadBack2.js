@@ -78,7 +78,7 @@ export default function Back() {
             </div>
           </div>
         </div>
-        <div style={{ transform: 'translateY(350.1px)', position: 'static' }}>
+        <div style={{ transform: 'translateY(350.1px)' }}>
           <div>
             <div className={styles.power_button} />
           </div>
@@ -96,7 +96,7 @@ export default function Back() {
         />
         <div style={{ transform: 'translateY(411px)' }}>
           <div
-            className={styles.band1}
+            className={styles.band1} 
             style={{ transform: 'translate(5.35px, -762px)' }}
           />
           <div
