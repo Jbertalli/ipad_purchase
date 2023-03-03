@@ -126,7 +126,7 @@ export default function Back() {
         />
         <div
           className={styles.box}
-          style={{ transform: 'translate(5px, -389.8px)', height: '50px' }}
+          style={{ transform: 'translate(5px, -389.8px)', height: '30px' }}
         />
         {/* <Icon
               name="apple"
