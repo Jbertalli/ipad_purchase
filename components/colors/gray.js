@@ -22,7 +22,7 @@ export default function Gray() {
       <div
         style={{
           transform: isPortrait ? 'translate(-140px, -20.3px) scale(0.7)' : null,
-          position: isPortrait ? 'relative' : null
+          position: isPortrait ? 'fixed' : null
         }}
       >
         <Grid

@@ -1,7 +1,19 @@
 import styles from '../styles/ipad.module.css';
 import Logo from '../components/apple_logo';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Back() {
+
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+
+  const isTablet = useMediaQuery(
+    { minWidth: 100, maxWidth: 1290 }
+  );
+
+  const isLandscapePhone = useMediaQuery(
+    { minHeight: 200, maxHeight: 470 }
+  );
+
   return (
     <>
       <div className={styles.main}>
@@ -79,8 +91,12 @@ export default function Back() {
           </div>
         </div>
         <div style={{ transform: 'translateY(350.1px)' }}>
-          <div>
-            <div className={styles.power_button} />
+          <div
+            style={{
+              transform: (isPortrait || isTablet || isLandscapePhone) ? 'translateY(3px)' : null
+            }}
+          >
+            <div className={styles.power_button} /> 
           </div>
           <div>
             <div
@@ -96,7 +112,7 @@ export default function Back() {
         />
         <div style={{ transform: 'translateY(411px)' }}>
           <div
-            className={styles.band1} 
+            className={styles.band1}
             style={{ transform: 'translate(5.35px, -762px)' }}
           />
           <div
