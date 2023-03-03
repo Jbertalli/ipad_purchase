@@ -111,6 +111,8 @@ export default function Back() {
           style={{ transform: 'translate(26px, -303.45px)' }}
         />
        <div style={{ transform: 'translateY(411px)' }}>
+         {!(isPortrait || isTablet || isLandscapePhone) ? (
+         <>
           <div
             className={styles.band1}
             style={{ transform: 'translate(5.35px, -762px)' }}
@@ -119,6 +121,8 @@ export default function Back() {
             className={styles.band2}
             style={{ transform: 'translate(390.7px, -772px)' }}
           />
+         </>
+         ): null}
         </div>
         <div
           className={styles.mic}
@@ -127,8 +131,7 @@ export default function Back() {
         <div
           className={styles.box}
           style={{ 
-            transform: (isPortrait || isTablet || isLandscapePhone) ? 'translate(5px, -389.8px)' : 'translate(5px, -389.8px)', 
-            height: (isPortrait || isTablet || isLandscapePhone) ? null : null
+            transform: (isPortrait || isTablet || isLandscapePhone) ? 'translate(5px, -369.8px)' : 'translate(5px, -389.8px)'
           }}
         />
         {/* <Icon
