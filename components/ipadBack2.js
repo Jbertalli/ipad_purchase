@@ -126,7 +126,7 @@ export default function Back() {
         </div>
         <div
           className={styles.mic}
-          style={{ transform: (isPortrait || isTablet || isLandscapePhone) ? 'translate(52px, -315px' : 'translate(52px, -335px' }}
+          style={{ transform: (isPortrait || isTablet || isLandscapePhone) ? 'translate(52px, -312px)' : 'translate(52px, -335px)' }}
         />
         <div
           className={styles.box}
