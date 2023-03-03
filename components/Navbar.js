@@ -239,30 +239,24 @@ const Navbar = ({ user }) => {
                 fontSize: '17px',
                 fontWeight: '400',
                 background: '#000000',
-                opacity: '0.8',
                 fontFamily: 'SF Pro Text',
                 width: '100vw'
               }}
             >
-              <Container
+              <div
                 style={{
-                  opacity: '0.8',
                   display: 'flex',
                   justifyContent: 'space-between',
+                  width: '100%'
                 }}
               >
                 {menuModal ? (
                 <>
-                  <Modal
-                    className={styles.dropdown}
-                    open={menuModal}
-                    dimmer="blurring"
-                    size="small"
+                  <div
+                    // className={styles.dropdown}
                     style={{
-                      background: 'black',
                       width: '100%',
-                      height: '100%',
-                      transform: 'translateY(-14px)',
+                      height: '100vh',
                       position: 'absolute'
                     }}
                   >
@@ -274,6 +268,7 @@ const Navbar = ({ user }) => {
                         style={{
                           fontSize: '23px',
                           fontWeight: '100',
+                          fontFamily: 'sans-serif',
                           color: '#f5f5f7',
                           transform: 'translate(18px, 10px) scaleX(1.3)',
                           position: 'absolute',
@@ -298,13 +293,19 @@ const Navbar = ({ user }) => {
                         />
                       </div>
                     </div>
-                    <div style={{ transform: 'translateY(-274px)' }}>
+                    <div 
+                      style={{ 
+                        transform: 'translateY(-274px)', 
+                        background: 'black' 
+                      }}
+                    >
                       <div
                         style={{
                           display: 'flex',
                           justifyContent: 'center',
                           position: 'relative',
                           marginBottom: '51px',
+                          transform: 'translateY(7px)'
                         }}
                       >
                         <div
@@ -315,7 +316,7 @@ const Navbar = ({ user }) => {
                             width: '69.5vw',
                             position: 'absolute',
                             borderRadius: '6px',
-                            opacity: '0.2',
+                            opacity: '0.2'
                           }}
                         />
                         <div
@@ -323,9 +324,9 @@ const Navbar = ({ user }) => {
                             color: '#86868b',
                             fontSize: '17px',
                             position: 'fixed',
-                            transform: 'translate(0%, 50%)',
+                            transform: 'translate(0%, 40%)',
                             opacity: '0.8',
-                            left: '16.5%',
+                            left: '16.5%'
                           }}
                         >
                           <Icon name="search" />
@@ -335,15 +336,16 @@ const Navbar = ({ user }) => {
                       <Divider
                         style={{ background: '#f5f5f7', opacity: '0.3' }}
                       />
-                      <Container
+                      <div
                         style={{
                           color: '#f5f5f7',
                           fontWeight: '100',
                           lineHeight: '14.6px',
                           fontSize: '17px',
-                          width: '584px',
+                          width: '100%',
                           cursor: 'pointer',
-                          padding: '0px 23px 0px 23px'
+                          padding: '0px 23px 0px 23px',
+                          background: 'black'
                         }}
                       >
                         <Link href="/" passHref>
@@ -410,7 +412,10 @@ const Navbar = ({ user }) => {
                           <Dropdown
                             text="Account"
                             simple
-                            style={{ color: 'white' }}
+                            style={{ 
+                              color: 'white', 
+                              transform: 'translate(-19.5px, -16.3px)'
+                            }}
                           >
                             <Dropdown.Menu>
                               {user ? (
@@ -444,9 +449,9 @@ const Navbar = ({ user }) => {
                             </Dropdown.Menu>
                           </Dropdown>
                         </Menu.Item>
-                      </Container>
+                      </div>
                     </div>
-                  </Modal>
+                  </div>
                 </>
                 ):(
                 <>
@@ -471,31 +476,31 @@ const Navbar = ({ user }) => {
                       _
                     </div>
                   </Menu.Item>
-                </>
-                )}
-                <Link href="/" passHref>
-                  <Menu.Item>
-                    <div
+                  <Link href="/" passHref>
+                    <Menu.Item>
+                      <div
+                        style={{
+                          cursor: 'pointer',
+                          transform: 'scale(1.1) translateY(-3px)'
+                        }}
+                      >
+                        <Logo />
+                      </div>
+                    </Menu.Item>
+                  </Link>
+                  <Link href="/" passHref>
+                    <Menu.Item
                       style={{
-                        cursor: 'pointer',
-                        transform: 'scale(1.1) translateY(-3px)'
+                        color: '#F5F5F7',
+                        transform: 'scale(1.1) translateY(-1.5px)'
                       }}
                     >
-                      <Logo />
-                    </div>
-                  </Menu.Item>
-                </Link>
-                <Link href="/" passHref>
-                  <Menu.Item
-                    style={{
-                      color: '#F5F5F7',
-                      transform: 'scale(1.1) translateY(-1.5px)'
-                    }}
-                  >
-                    <Icon name="suitcase" />
-                  </Menu.Item>
-                </Link>
-              </Container>
+                      <Icon name="suitcase" />
+                    </Menu.Item>
+                  </Link>
+                </>
+                )}
+              </div>
             </Menu>
           </Sticky>
         </>
