@@ -326,7 +326,7 @@ const Navbar = ({ user }) => {
                         justifyContent: 'center',
                         position: 'relative',
                         marginBottom: '51px',
-                        transform: 'translateY(-20px)'
+                        transform: 'translateY(-50px)'
                       }}
                     >
                       <div
