@@ -324,8 +324,7 @@ const Navbar = ({ user }) => {
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        position: 'static',
-                        marginBottom: '80px'
+                        position: 'static'
                       }}
                     >
                       <div
@@ -354,7 +353,11 @@ const Navbar = ({ user }) => {
                       </div>
                     </div>
                     <Divider
-                      style={{ background: '#f5f5f7', opacity: '0.3' }}
+                      style={{ 
+                        background: '#f5f5f7', 
+                        opacity: '0.3', 
+                        marginTop: '60px' 
+                      }}
                     />
                     <Container
                       style={{
