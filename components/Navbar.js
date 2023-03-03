@@ -324,9 +324,7 @@ const Navbar = ({ user }) => {
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        position: 'relative',
-                        marginBottom: '51px',
-                        transform: 'translateY(-50px)'
+                        position: 'static'
                       }}
                     >
                       <div
