@@ -28,7 +28,7 @@ export default function Back() {
               className={styles.box1}
               style={{
                 transform: 'translate(.5px, -.5px)',
-                position: 'static',
+                position: 'static'
               }}
             />
             <div className={styles.box2} />
@@ -40,7 +40,7 @@ export default function Back() {
                 height: '52px',
                 borderRadius: '10px',
                 zIndex: '3',
-                transform: 'translate(16.5px, -50.5px)',
+                transform: 'translate(16.5px, -50.5px)'
               }}
             />
           </div>
@@ -80,7 +80,7 @@ export default function Back() {
               <div
                 style={{
                   transform: 'translate(16px, 10px) rotate(90deg)',
-                  position: 'fixed',
+                  position: 'fixed'
                 }}
               >
                 <div className={styles.dots} />
@@ -93,7 +93,7 @@ export default function Back() {
         <div style={{ transform: 'translateY(350.1px)' }}>
           <div
             style={{
-              transform: (isPortrait || isTablet || isLandscapePhone) ? 'translateY(2px)' : null
+              transform: (isPortrait || isTablet || isLandscapePhone) ? 'translateY(2.3px)' : null
             }}
           >
             <div className={styles.power_button} /> 
@@ -126,7 +126,7 @@ export default function Back() {
         />
         <div
           className={styles.box}
-          style={{ transform: 'translate(5px, -389.8px)' }}
+          style={{ transform: 'translate(5px, -389.8px)', height: '30px' }}
         />
         {/* <Icon
               name="apple"
