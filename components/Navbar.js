@@ -324,7 +324,8 @@ const Navbar = ({ user }) => {
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        position: 'static'
+                        position: 'static',
+                        marginBottom: '80px'
                       }}
                     >
                       <div
