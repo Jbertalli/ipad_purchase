@@ -278,13 +278,11 @@ const Navbar = ({ user }) => {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    // width: '816px',
-                    // height: '570px',
-                    // position: 'fixed',
                     background: 'black',
                     width: '100%',
                     height: '100%',
                     transform: 'translateY(-14px)',
+                    position: 'absolute'
                   }}
                 >
                   <div
