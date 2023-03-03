@@ -168,7 +168,7 @@ const Navbar = ({ user }) => {
                     style={{
                       color: '#F5F5F7',
                       margin: '0em .65em 0em .65em',
-                      transform: 'scale(1.2)',
+                      transform: 'scale(1.2)'
                     }}
                     active={isActive('/')}
                   >
@@ -251,227 +251,234 @@ const Navbar = ({ user }) => {
                   justifyContent: 'space-between',
                 }}
               >
-                <Menu.Item
-                  style={{ color: '#F5F5F7' }}
-                  onClick={() => setMenuModal(true)}
-                >
-                  <div
+                {menuModal ? (
+                <>
+                  <Modal
+                    className={styles.dropdown}
+                    open={menuModal}
+                    dimmer="blurring"
+                    size="small"
                     style={{
-                      transform: 'scaleX(1.8) translate(0.3px, -11px)',
-                      color: '#F5F5F7',
+                      background: 'black',
+                      width: '100%',
+                      height: '100%',
+                      transform: 'translateY(-14px)',
+                      position: 'absolute'
                     }}
                   >
-                    _
-                  </div>
-                  <div
-                    style={{
-                      transform: 'scaleX(1.8) translate(-4.7px, -4px)',
-                      color: '#F5F5F7',
-                    }}
-                  >
-                    _
-                  </div>
-                </Menu.Item>
-                <Modal
-                  className={styles.dropdown}
-                  open={menuModal}
-                  dimmer="blurring"
-                  size="small"
-                  style={{
-                    background: 'black',
-                    width: '100%',
-                    height: '100%',
-                    transform: 'translateY(-14px)',
-                    position: 'absolute'
-                  }}
-                >
-                  <div
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setMenuModal(false)}
-                  >
                     <div
-                      style={{
-                        fontSize: '23px',
-                        fontWeight: '100',
-                        color: '#f5f5f7',
-                        transform: 'translate(18px, 10px) scaleX(1.3)',
-                        position: 'absolute',
-                        opacity: '0.6',
-                      }}
-                    >
-                      x
-                    </div>
-                    <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        transform: 'translateY(-140px)',
-                      }}
-                    >
-                      <Logo
-                        style={{
-                          color: 'red',
-                          background: 'red',
-                          position: 'absolute',
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div style={{ transform: 'translateY(-274px)' }}>
-                    <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        position: 'relative',
-                        marginBottom: '51px',
-                      }}
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => setMenuModal(false)}
                     >
                       <div
                         style={{
-                          background: 'gray',
-                          fontWeight: '400',
-                          height: '36px',
-                          width: '69.5vw',
+                          fontSize: '23px',
+                          fontWeight: '100',
+                          color: '#f5f5f7',
+                          transform: 'translate(18px, 10px) scaleX(1.3)',
                           position: 'absolute',
-                          borderRadius: '6px',
-                          opacity: '0.2',
-                        }}
-                      />
-                      <div
-                        style={{
-                          color: '#86868b',
-                          fontSize: '17px',
-                          position: 'fixed',
-                          transform: 'translate(0%, 50%)',
-                          opacity: '0.8',
-                          left: '16.5%',
+                          opacity: '0.6'
                         }}
                       >
-                        <Icon name="search" />
-                        Search apple.com
+                        x
+                      </div>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          transform: 'translateY(-140px)'
+                        }}
+                      >
+                        <Logo
+                          style={{
+                            color: 'red',
+                            background: 'red',
+                            position: 'absolute'
+                          }}
+                        />
                       </div>
                     </div>
-                    <Divider
-                      style={{ background: '#f5f5f7', opacity: '0.3' }}
-                    />
-                    <Container
+                    <div style={{ transform: 'translateY(-274px)' }}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          position: 'relative',
+                          marginBottom: '51px',
+                        }}
+                      >
+                        <div
+                          style={{
+                            background: 'gray',
+                            fontWeight: '400',
+                            height: '36px',
+                            width: '69.5vw',
+                            position: 'absolute',
+                            borderRadius: '6px',
+                            opacity: '0.2',
+                          }}
+                        />
+                        <div
+                          style={{
+                            color: '#86868b',
+                            fontSize: '17px',
+                            position: 'fixed',
+                            transform: 'translate(0%, 50%)',
+                            opacity: '0.8',
+                            left: '16.5%',
+                          }}
+                        >
+                          <Icon name="search" />
+                          Search apple.com
+                        </div>
+                      </div>
+                      <Divider
+                        style={{ background: '#f5f5f7', opacity: '0.3' }}
+                      />
+                      <Container
+                        style={{
+                          color: '#f5f5f7',
+                          fontWeight: '100',
+                          lineHeight: '14.6px',
+                          fontSize: '17px',
+                          width: '584px',
+                          cursor: 'pointer',
+                          padding: '0px 23px 0px 23px'
+                        }}
+                      >
+                        <Link href="/" passHref>
+                          <div>Store</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>Mac</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>iPad</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>iPhone</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>Watch</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>AirPods</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>TV & Home</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>Only on Apple</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>Accessories</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Link href="/" passHref>
+                          <div>Support</div>
+                        </Link>
+                        <Divider
+                          style={{ background: '#f5f5f7', opacity: '0.3' }}
+                        />
+                        <Menu.Item>
+                          <Dropdown
+                            text="Account"
+                            simple
+                            style={{ color: 'white' }}
+                          >
+                            <Dropdown.Menu>
+                              {user ? (
+                                <>
+                                  <Dropdown.Item>
+                                    <Link href="/account" passHref>
+                                      <strong>{user.name}</strong>
+                                    </Link>
+                                  </Dropdown.Item>
+                                  <Dropdown.Item onClick={handleLogout}>
+                                    <strong>Logout</strong>
+                                  </Dropdown.Item>
+                                </>
+                              ) : (
+                                <>
+                                  <Dropdown.Item
+                                    href="/signup"
+                                    active={isActive('/signup')}
+                                  >
+                                    <strong>Signup</strong>
+                                  </Dropdown.Item>
+                                  <Dropdown.Divider />
+                                  <Dropdown.Item
+                                    href="/login"
+                                    active={isActive('/login')}
+                                  >
+                                    <strong>Login</strong>
+                                  </Dropdown.Item>
+                                </>
+                              )}
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </Menu.Item>
+                      </Container>
+                    </div>
+                  </Modal>
+                </>
+                ):(
+                <>
+                  <Menu.Item
+                    style={{ color: '#F5F5F7' }}
+                    onClick={() => setMenuModal(true)}
+                  >
+                    <div
                       style={{
-                        color: '#f5f5f7',
-                        fontWeight: '100',
-                        lineHeight: '14.6px',
-                        fontSize: '17px',
-                        width: '584px',
-                        cursor: 'pointer',
-                        padding: '0px 23px 0px 23px',
+                        transform: 'scaleX(1.8) translate(0.3px, -11px)',
+                        color: '#F5F5F7',
                       }}
                     >
-                      <Link href="/" passHref>
-                        <div>Store</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>Mac</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>iPad</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>iPhone</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>Watch</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>AirPods</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>TV & Home</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>Only on Apple</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>Accessories</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Link href="/" passHref>
-                        <div>Support</div>
-                      </Link>
-                      <Divider
-                        style={{ background: '#f5f5f7', opacity: '0.3' }}
-                      />
-                      <Menu.Item>
-                        <Dropdown
-                          text="Account"
-                          simple
-                          style={{ color: 'white' }}
-                        >
-                          <Dropdown.Menu>
-                            {user ? (
-                              <>
-                                <Dropdown.Item>
-                                  <Link href="/account" passHref>
-                                    <strong>{user.name}</strong>
-                                  </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={handleLogout}>
-                                  <strong>Logout</strong>
-                                </Dropdown.Item>
-                              </>
-                            ) : (
-                              <>
-                                <Dropdown.Item
-                                  href="/signup"
-                                  active={isActive('/signup')}
-                                >
-                                  <strong>Signup</strong>
-                                </Dropdown.Item>
-                                <Dropdown.Divider />
-                                <Dropdown.Item
-                                  href="/login"
-                                  active={isActive('/login')}
-                                >
-                                  <strong>Login</strong>
-                                </Dropdown.Item>
-                              </>
-                            )}
-                          </Dropdown.Menu>
-                        </Dropdown>
-                      </Menu.Item>
-                    </Container>
-                  </div>
-                </Modal>
+                      _
+                    </div>
+                    <div
+                      style={{
+                        transform: 'scaleX(1.8) translate(-4.7px, -4px)',
+                        color: '#F5F5F7',
+                      }}
+                    >
+                      _
+                    </div>
+                  </Menu.Item>
+                </>
+                )}
                 <Link href="/" passHref>
                   <Menu.Item>
                     <div
                       style={{
                         cursor: 'pointer',
-                        transform: 'scale(1.1) translateY(-3px)',
+                        transform: 'scale(1.1) translateY(-3px)'
                       }}
                     >
                       <Logo />
@@ -482,7 +489,7 @@ const Navbar = ({ user }) => {
                   <Menu.Item
                     style={{
                       color: '#F5F5F7',
-                      transform: 'scale(1.1) translateY(-1.5px)',
+                      transform: 'scale(1.1) translateY(-1.5px)'
                     }}
                   >
                     <Icon name="suitcase" />
