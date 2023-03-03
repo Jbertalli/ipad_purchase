@@ -319,44 +319,45 @@ const Navbar = ({ user }) => {
                       />
                     </div>
                   </div>
-                  <div style={{ transform: 'translateY(-274px)' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      position: 'static',
+                      transform: 'translateY(-270px)'
+                    }}
+                  >
                     <div
                       style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        position: 'static'
+                        background: 'gray',
+                        fontWeight: '400',
+                        height: '36px',
+                        width: '69.5vw',
+                        position: 'absolute',
+                        borderRadius: '6px',
+                        opacity: '0.2'
+                      }}
+                    />
+                    <div
+                      style={{
+                        color: '#86868b',
+                        fontSize: '17px',
+                        position: 'fixed',
+                        transform: 'translate(0%, 50%)',
+                        opacity: '0.8',
+                        left: '16.5%'
                       }}
                     >
-                      <div
-                        style={{
-                          background: 'gray',
-                          fontWeight: '400',
-                          height: '36px',
-                          width: '69.5vw',
-                          position: 'absolute',
-                          borderRadius: '6px',
-                          opacity: '0.2'
-                        }}
-                      />
-                      <div
-                        style={{
-                          color: '#86868b',
-                          fontSize: '17px',
-                          position: 'fixed',
-                          transform: 'translate(0%, 50%)',
-                          opacity: '0.8',
-                          left: '16.5%'
-                        }}
-                      >
-                        <Icon name="search" />
-                        Search apple.com
-                      </div>
+                      <Icon name="search" />
+                      Search apple.com
                     </div>
+                  </div>
+                  <div style={{ transform: 'translateY(-274px)' }}>
                     <Divider
                       style={{ 
                         background: '#f5f5f7', 
-                        opacity: '0.3', 
-                        marginTop: '60px' 
+                        opacity: '0.3',
+                        marginTop: '60px'
                       }}
                     />
                     <Container
