@@ -222,7 +222,7 @@ export default function Account({ user, orders, ctx }) {
             display: 'flex',
             justifyContent: 'center',
             marginBottom: desktop ? '30px' : null,
-            marginTop: desktop ? '30px' : null,
+            marginTop: desktop ? '20px' : null,
             zIndex: '-1'
           }}
         >
@@ -235,7 +235,7 @@ export default function Account({ user, orders, ctx }) {
               width={700}
               height={460}
               style={{
-                transform: !desktop ? 'scale(0.8)' : 'translateY(5px)'
+                transform: !desktop ? 'scale(0.8)' : 'translateY(10px)'
               }}
             />
           </>
