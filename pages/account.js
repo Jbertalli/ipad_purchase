@@ -231,8 +231,11 @@ export default function Account({ user, orders, ctx }) {
               src="/images/ipad 2.png"
               priority
               alt="ipad"
-              width={(desktop || isTablet || isPortrait) ? 700 : 290}
-              height={(desktop || isTablet || isPortrait) ? 460 : 190.5}
+              width={700}
+              height={460}
+              style={{
+                transform: !desktop ? 'scale(0.8)' : null
+              }}
             />
           </>
           ): null}
