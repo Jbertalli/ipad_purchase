@@ -609,7 +609,7 @@ export default function Sidebar() {
                       style={{
                         margin: '1em 0em 0em 0em',
                         fontSize: '17px',
-                        lineHeight: '25px'
+                        lineHeight: desktop ? '25px' : '15px'
                       }}
                     >
                       Over time you may add more content to your iPad, so you’ll
