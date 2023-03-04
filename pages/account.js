@@ -222,7 +222,7 @@ export default function Account({ user, orders, ctx }) {
             display: 'flex',
             justifyContent: 'center',
             marginBottom: desktop ? '30px' : null,
-            marginTop: desktop ? '30px' : null,
+            marginTop: desktop ? '40px' : null,
             zIndex: '-1'
           }}
         >
