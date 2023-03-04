@@ -212,6 +212,7 @@ export default function Account({ user, orders, ctx }) {
               height: desktop ? '620px' : '410px',
               border: isLandscapePhone ? null : '0.5px solid black',
               position: 'absolute',
+              zIndex: '10',
               borderRadius: '20px'
             }}
           />
