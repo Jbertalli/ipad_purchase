@@ -235,8 +235,7 @@ export default function Account({ user, orders, ctx }) {
               width={700}
               height={460}
               style={{
-                transform: !desktop ? 'scale(0.8)' : null,
-                marginTop: (isTablet || isPortrait) ? '20px' : null
+                transform: !desktop ? 'scale(0.8)' : 'translateY(5px)'
               }}
             />
           </>
