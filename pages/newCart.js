@@ -181,13 +181,9 @@ export default function Cart({ user, orders, ctx }) {
     const payload = { headers: { Authorization: token } };
     const response = await axios.get(url, payload);
     console.log(response.data);
-    // setData(response.data);
   }
 
   console.log(orders);
-  // console.log(data);
-  // console.log(total);
-  // console.log(product);
 
   function sendData() {
     router.push({
@@ -386,7 +382,6 @@ export default function Cart({ user, orders, ctx }) {
                       >
                         10.9-inch iPad Air {props.connectivityName} {props.gbName}
                       </div>{' '}
-                      {/* {colorName} */}
                       <div style={{ paddingBottom: '66px' }}>
                         {!open ? (
                           <>
@@ -493,7 +488,6 @@ export default function Cart({ user, orders, ctx }) {
                           transform: 'translate(567px, -94px)'
                         }}
                       >
-                        {/* $599.00 */}
                         <div
                           style={{
                             transform: 'translate(162px, -28px)'
@@ -541,14 +535,6 @@ export default function Cart({ user, orders, ctx }) {
                     >
                       <a
                         onClick={() => {
-                            // setBag(false),
-                            // setValue(0),
-                            // setColor(false),
-                            // setStorage(0),
-                            // setConnectivity(false),
-                            // setCellValue(0),
-                            // setEngraving(false),
-                            // setAppleCare(0)
                             router.push('/colorSelection/ipadhome');
                         }}
                         className={styles.bluehovering}
@@ -948,7 +934,6 @@ export default function Cart({ user, orders, ctx }) {
                               }}
                             >
                               &nbsp;
-                              {/* Jul 13 - Jul 20 - Free */}
                               <span>
                                 {day1 < 25 ? (
                                   <>{pickup1}</>
@@ -1085,7 +1070,6 @@ export default function Cart({ user, orders, ctx }) {
                                 fontWeight: '600'
                               }}
                             >
-                              {/* Thu, Jul 21 */}
                               <span>
                                 {day < 31 ? <>{pickup}</> : <>{nextMonthPickup}</>}
                               </span>

@@ -8,7 +8,6 @@ import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
 import Router from 'next/router';
 
-// function MyApp({ Component, pageProps }) {
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     const { token } = parseCookies(ctx);
@@ -19,7 +18,7 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    //protected route
+    // protected route
     if (!token) {
       const isProtectedRoute = ctx.pathname === '/account';
       if (isProtectedRoute) {
@@ -34,7 +33,7 @@ class MyApp extends App {
         pageProps.user = user;
       } catch (error) {
         console.error('Error fetching current user', error);
-        //Throw out invalid tokens
+        // Throw out invalid tokens
         destroyCookie(ctx, 'token');
         redirectUser(ctx, '/login');
       }
@@ -53,7 +52,7 @@ class MyApp extends App {
     }
   };
 
-  //server-side rendering
+  // server-side rendering
   render() {
     const { Component, pageProps } = this.props;
 

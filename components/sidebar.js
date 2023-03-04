@@ -36,7 +36,6 @@ export default function Sidebar() {
   const [connectivityName, setConnectivityName] = useState('');
   const [desktop, setDesktop] = useState(false);
   const router = useRouter();
-  // const [appleCare, setAppleCare] = useState(0);
 
   useEffect(() => {
     if (window.innerWidth > 440) {
@@ -184,7 +183,6 @@ export default function Sidebar() {
                 transform: 'translateY(-50px)',
               }}
             />{' '}
-            {/* jump to this part of page */}
             <div>
               {color && router.pathname !== '/colorSelection/ipadhome' ? (
                 <>
@@ -201,7 +199,6 @@ export default function Sidebar() {
                       }}
                     >
                       <div>
-                        {/* {`${gray}`} {`${pink}`} {`${purple}`} {`${blue}`} {`${starlight}`} */}
                         <NamedColor />
                       </div>
                     </div>
@@ -465,7 +462,6 @@ export default function Sidebar() {
                 transform: 'translateY(-67px)',
               }}
             />{' '}
-            {/* jump to this part of page */}
             {storage ? (
               <>
                 <div
@@ -1533,7 +1529,6 @@ export default function Sidebar() {
               }}
             >
               <h1 style={{ fontWeight: '900', margin: '5px 0px 10px 0px' }}>
-                {/* $599.00 */}
                 {color && storage && connectivity ? (
                   <>${(parseFloat(value) + parseFloat(cellValue)).toFixed(2)}</>
                 ) : (
@@ -1542,7 +1537,6 @@ export default function Sidebar() {
               </h1>
               <div>or</div>
               <h1 style={{ fontWeight: '900', marginTop: '10px' }}>
-                {/* $49.91/mo. for 12 mo.* */}
                 {color && storage && connectivity ? (
                   <>
                     $
@@ -1738,7 +1732,6 @@ export default function Sidebar() {
                           </a>
                           <b style={{ fontWeight: '600' }}>
                             &nbsp;
-                            {/* Jul 13 - Jul 20 */}
                             <span>
                               {day1 < 25 ? (
                                 <>{pickup1}</>
@@ -1883,7 +1876,6 @@ export default function Sidebar() {
                         >
                           Order now. Pick up, in store:{' '}
                           <b style={{ fontWeight: '600' }}>
-                            {/* Thu, Jul 21 */}
                             <span>
                               {day < 31 ? (
                                 <>{pickup}</>

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const { String, ObjectId } = mongoose.Schema.Types;
+const { String } = mongoose.Schema.Types;
 
 const UserSchema = new mongoose.Schema({
     name: {
@@ -17,10 +17,6 @@ const UserSchema = new mongoose.Schema({
         required: true,
         select: false
     },
-    // order: {
-    //     type: ObjectId,
-    //     ref: "Order"
-    // }
   }, {
     timestamps: true
   }

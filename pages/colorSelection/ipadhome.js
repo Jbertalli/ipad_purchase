@@ -9,7 +9,6 @@ import MobileHeading from '../../components/MobileHeading';
 import { useMediaQuery } from 'react-responsive';
 
 function HomeIpad({ user }) {
-  // console.log(user);
   const [desktop, setDesktop] = useState(false);
 
   useEffect(() => {

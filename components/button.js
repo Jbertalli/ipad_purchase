@@ -13,14 +13,6 @@ export default function ColorButton() {
 
   const router = useRouter();
 
-  // console.log(router.pathname);
-  // router.pathname === '/colorSelection/ipadhome'
-  // router.pathname === '/colorSelection/grayipad'
-  // router.pathname === '/colorSelection/pinkipad'
-  // router.pathname === '/colorSelection/purpleipad'
-  // router.pathname === '/colorSelection/blueipad'
-  // router.pathname === '/colorSelection/starlightipad'
-
   function changing() {
     if (router.pathname === '/colorSelection/grayipad') {
       {
@@ -51,10 +43,9 @@ export default function ColorButton() {
                   fontSize: '24px',
                   fontWeight: '600',
                   paddingBottom: '5px',
-                  transform: 'translateY(8px)',
+                  transform: 'translateY(8px)'
                 }}
               >
-                {/* {`${gray}`} {`${pink}`} {`${purple}`} {`${blue}`} {`${starlight}`} */}
                 {changing()}
               </div>
               <div
@@ -62,7 +53,7 @@ export default function ColorButton() {
                   cursor: 'pointer',
                   color: '#0070c9',
                   transform: 'translate(-16px, 9px)',
-                  opacity: '0.8',
+                  opacity: '0.8'
                 }}
                 onClick={() => setColor(true)}
               >
@@ -76,7 +67,7 @@ export default function ColorButton() {
               style={{
                 fontSize: '17px',
                 marginBottom: '15px',
-                fontWeight: '500',
+                fontWeight: '500'
               }}
             >
               Finish
@@ -94,7 +85,7 @@ export default function ColorButton() {
                       borderRadius: '8px',
                       border: '.5px solid gray',
                       fontWeight: 'normal',
-                      marginBottom: '15px',
+                      marginBottom: '15px'
                     }}
                     onMouseUp={() => {
                       router.push('/colorSelection/grayipad'),
@@ -112,7 +103,7 @@ export default function ColorButton() {
                           width: '30px',
                           borderRadius: '50%',
                           background: 'linear-gradient(to bottom, #343d46, gray)',
-                          transform: 'translate(48px, -3px)',
+                          transform: 'translate(48px, -3px)'
                         }}
                       />
                       <div style={{ transform: 'translate(-14px, -8px)' }}>
@@ -132,7 +123,7 @@ export default function ColorButton() {
                       borderRadius: '8px',
                       border: '.5px solid gray',
                       fontWeight: 'normal',
-                      marginBottom: '15px',
+                      marginBottom: '15px'
                     }}
                     onClick={() => {
                       router.push('/colorSelection/purpleipad'),
@@ -150,7 +141,7 @@ export default function ColorButton() {
                           width: '30px',
                           borderRadius: '50%',
                           background: 'linear-gradient(to bottom, #7867C7, #B8AFE6)',
-                          transform: 'translate(48px, -3px)',
+                          transform: 'translate(48px, -3px)'
                         }}
                       />
                       <div style={{ transform: 'translate(-14px, -8px)' }}>
@@ -170,7 +161,7 @@ export default function ColorButton() {
                       borderRadius: '8px',
                       border: '.5px solid gray',
                       fontWeight: 'normal',
-                      margin: '0px 0px 0px 0px',
+                      margin: '0px 0px 0px 0px'
                     }}
                     onClick={() => {
                       router.push('/colorSelection/starlightipad'),
@@ -188,7 +179,7 @@ export default function ColorButton() {
                           width: '30px',
                           borderRadius: '50%',
                           background: 'linear-gradient(to bottom, #E3C5AC, #F9F3EE)',
-                          transform: 'translate(48px, -3px)',
+                          transform: 'translate(48px, -3px)'
                         }}
                       />
                       <div style={{ transform: 'translate(-13px, -8px)' }}>
@@ -211,7 +202,7 @@ export default function ColorButton() {
                       border: '.5px solid gray',
                       fontWeight: 'normal',
                       marginBottom: '15px',
-                      marginLeft: '-7px',
+                      marginLeft: '-7px'
                     }}
                     onClick={() => {
                       router.push('/colorSelection/pinkipad'),
@@ -229,7 +220,7 @@ export default function ColorButton() {
                           width: '30px',
                           borderRadius: '50%',
                           background: 'linear-gradient(to bottom, #fAB19B, #FAE0D8)',
-                          transform: 'translate(48px, -3px)',
+                          transform: 'translate(48px, -3px)'
                         }}
                       />
                       <div style={{ transform: 'translate(-13px, -8px)' }}>
@@ -249,7 +240,7 @@ export default function ColorButton() {
                       borderRadius: '8px',
                       border: '.5px solid gray',
                       fontWeight: 'normal',
-                      marginLeft: '-7px',
+                      marginLeft: '-7px'
                     }}
                     onClick={() => {
                       router.push('/colorSelection/blueipad'),
@@ -267,7 +258,7 @@ export default function ColorButton() {
                           width: '30px',
                           borderRadius: '50%',
                           background: 'linear-gradient(to bottom, #74D7F7, #ADD8E6)',
-                          transform: 'translate(48px, -3px)',
+                          transform: 'translate(48px, -3px)'
                         }}
                       />
                       <div style={{ transform: 'translate(-14px, -8px)' }}>

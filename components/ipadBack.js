@@ -1,30 +1,9 @@
 import styles from '../styles/ipad.module.css';
 import Logo from '../components/apple_logo';
-// import { Button } from 'semantic-ui-react';
 
 export default function Back() {
   return (
     <>
-      {/*<Button 
-          content="Space Gray"
-          onClick={setGray}
-      />
-          <Button 
-          content="Pink"
-          onClick={setPink}
-      />
-      <Button 
-          content="Purple"
-          onClick={setPurple}
-      />
-      <Button 
-          content="Blue"
-          onClick={setBlue}
-      />
-      <Button 
-          content="Starlight"
-          onClick={setStarlight}
-      /> */}
       <div className={styles.main}>
         {' '}
         <div className={styles.frame} />
@@ -120,12 +99,6 @@ export default function Back() {
           className={styles.box}
           style={{ transform: 'translate(5px, -389.8px)' }}
         />
-        {/* <Icon
-            name="apple"
-            size="huge"
-            color="red"
-            style={{ transform: 'translate(169px, -200px) scale(1.2)' }}
-        /> */}
         <Logo />
       </div>
       <div

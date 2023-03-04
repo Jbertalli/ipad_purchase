@@ -10,10 +10,9 @@ export async function checkout({lineItems}) {
         }
         return stripePromise
     }
-    //load stripe
+    
     const stripe = await getStripe();
 
-    //function to redirect to checkout
     await stripe.redirectToCheckout({
         mode: "payment",
         lineItems,

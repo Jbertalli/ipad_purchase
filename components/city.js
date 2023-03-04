@@ -16,7 +16,6 @@ function City() {
       setLongitude(position.coords.longitude);
     });
 
-    //fetch data with axios
     let finalAPIEndPoint = `${API_endpoint}lat=${latitude}&lon=${longitude}&exclude=hourly,daily&appid=${API_key}`;
     axios.get(finalAPIEndPoint).then((response) => {
       setResponseData(response.data);
@@ -24,8 +23,6 @@ function City() {
   }, [latitude, longitude]);
 
   let zipCode = reverse.lookup(latitude, longitude, 'us');
-  // console.log(zipCode);
-  // console.log(zipCode.zipcode);
 
   return <span>{zipCode.city}</span>;
 }

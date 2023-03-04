@@ -50,7 +50,8 @@ async function handleDeleteRequest(req, res) {
 async function handleGetRequest(req, res) {
     const { total, product } = req.body;
     try {
-        const orders = await Order.find({ _id: { $ne: total } }) //get order by userId
+        // get order by userId
+        const orders = await Order.find({ _id: { $ne: total } })
         .sort({ createdAt: 'desc' });
         res.status(200).json(orders);
     } catch (error) {

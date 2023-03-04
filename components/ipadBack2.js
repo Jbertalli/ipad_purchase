@@ -134,12 +134,6 @@ export default function Back() {
             transform: (isPortrait || isTablet || isLandscapePhone) ? 'translate(5px, -369.8px)' : 'translate(5px, -389.8px)'
           }}
         />
-        {/* <Icon
-              name="apple"
-              size="huge"
-              color="red"
-              style={{ transform: 'translate(169px, -200px) scale(1.2)' }}
-          /> */}
         <Logo />
       </div>
       <div

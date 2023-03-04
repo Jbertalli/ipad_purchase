@@ -2,9 +2,9 @@ const { SitemapStream, streamToPromise } = require( 'sitemap' );
 const { Readable } = require( 'stream' );
 
 export default async (req, res) => {
-    // An array with your links
+    // Array containing links
     const links = [
-        { url: '/pages/buyipad', changefreq: 'daily', priority: 0.1  }, 
+        { url: '/pages/newCart', changefreq: 'daily', priority: 0.1  }, 
         { url: '/pages/ipadair', changefreq: 'daily', priority: 0.1  },
         { url: '/pages/colorSelection/ipadhome', changefreq: 'daily', priority: 0.1  },
         { url: '/pages/colorSelection/grayipad', changefreq: 'daily', priority: 0.1  },

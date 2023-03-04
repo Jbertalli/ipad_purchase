@@ -15,7 +15,6 @@ export default function Account({ user, orders, ctx }) {
   const [deleteOrderColor, setDeleteOrderColor] = useState('1px');
   const [deleteAccountColor, setDeleteAccountColor] = useState('1px');
   console.log(orders);
-  // console.log(user);
 
   useEffect(() => {
     if (window.innerWidth > 440) {

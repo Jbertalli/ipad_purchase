@@ -8,7 +8,6 @@
    background: linear-gradient(to bottom, #a7adba, #343d46);
    border: 1px solid #343d46;
    border-radius: 4%;
-   /* box-shadow: 2px 2px 10px black; */
    position: relative;
    z-index: 0;
 }
@@ -431,10 +430,6 @@
    z-index: 5;
 }
 
-
-
-
-
 .button1 {
    width: 100px;
    height: 100px;
@@ -489,7 +484,6 @@
    height: 100px;
    width: 150px;
    padding: 30px 30px 0px 5px;
-   /* -webkit-box-reflect: below 0px; */
 }
 
 .txt::before {
@@ -522,7 +516,6 @@
    height: 100px;
    padding-top: 30px;
    padding-left: 1px;
-   /* -webkit-box-reflect: below 0px; */
 }
 
 .txt2::before {
@@ -545,44 +538,6 @@
    mix-blend-mode: multiply;
    transform: translate(-10px, 0px);
 }
-
-/* <div style={{ transform: 'translate(0px, 800px)'}}>
-   <div className={styles.container} />
-   <h1 className={styles.transition} />
-</div> */
-
-/* .transition:before {
-   content: 'Gift Cards';
-   font-size: 100px;
-   color: #125CA1;
-   animation-name: transition;
-   animation-duration: 16s;
-   animation-iteration-count: infinite;
-   animation-timing-function: ease;
-}
-
-.container {
-   position: absolute;
-}
-
-@keyframes transition {
-   0% { content: 'Gift Cards'; opacity: 0.5; font-size: 80px; }
-   5% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
-   19% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
-   20% { content: 'Stocks'; opacity: 0; font-size: 80px; }
-   25% { content: 'Stocks'; opacity: 1; font-size: 62px; }
-   39% { content: 'Stocks'; opacity: 1; font-size: 62px; }
-   40% { content: 'Gift Cards'; opacity: 0; font-size: 80px; }
-   45% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
-   59% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
-   60% { content: 'Stocks'; opacity: 0; font-size: 80px; }
-   65% { content: 'Stocks'; opacity: 1; font-size: 62px; }
-   79% { content: 'Stocks'; opacity: 1; font-size: 62px; }
-   80% { content: 'Gift Cards'; opacity: 0; font-size: 80px; }
-   85% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
-   99% { content: 'Gift Cards'; opacity: 1; font-size: 62px; }
-   100% { content: 'Stocks'; opacity: 0; font-size: 80px; }
-} */
 
 .dropdown {
    animation-name: dropdown;
@@ -649,17 +604,12 @@
    color: black;
 }
 
-/* button alerts */
 .button {
    animation: ripple 1500ms infinite;
 }
 
 @keyframes ripple {
    0% {
-       /* box-shadow: 0 0 0 0px #0066CC30, 0 0 0 0px #fff
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff; */
    }
 
    50% {
@@ -680,10 +630,6 @@
 
 @keyframes ripple1 {
    0% {
-       /* box-shadow: 0 0 0 0px #0066CC30, 0 0 0 0px #fff
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff; */
    }
 
    50% {
@@ -699,10 +645,6 @@
 
 @keyframes ripple2 {
    0% {
-       /* box-shadow: 0 0 0 0px #0066CC30, 0 0 0 0px #fff
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff,
-       0 0 0 0px #0066CC30, 0 0 0 0px #fff; */
    }
 
    50% {

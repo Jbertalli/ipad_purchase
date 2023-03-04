@@ -9,13 +9,13 @@ function StateAbbr() {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [responseData, setResponseData] = useState({});
+  
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
     });
 
-    //fetch data with axios
     let finalAPIEndPoint = `${API_endpoint}lat=${latitude}&lon=${longitude}&exclude=hourly,daily&appid=${API_key}`;
     axios.get(finalAPIEndPoint).then((response) => {
       setResponseData(response.data);
@@ -23,8 +23,6 @@ function StateAbbr() {
   }, [latitude, longitude]);
 
   let zipCode = reverse.lookup(latitude, longitude, 'us');
-  // console.log(zipCode);
-  // console.log(zipCode.zipcode);
 
   return <span>{zipCode.state_abbr}</span>;
 }
