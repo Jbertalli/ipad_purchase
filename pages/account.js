@@ -214,8 +214,8 @@ export default function Account({ user, orders, ctx }) {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: '20px',
-            marginTop: '20px'
+            marginBottom: '30px',
+            marginTop: '30px'
           }}
         >
           {!isLandscapePhone ? (
