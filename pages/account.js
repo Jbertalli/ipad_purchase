@@ -178,9 +178,15 @@ export default function Account({ user, orders, ctx }) {
     console.log(response.data);
   }
 
+  const isTablet = useMediaQuery(
+    { minWidth: 100, maxWidth: 1290 }
+  );
+
   const isLandscapePhone = useMediaQuery(
     { minHeight: 200, maxHeight: 470 }
   );
+
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <>
@@ -215,7 +221,8 @@ export default function Account({ user, orders, ctx }) {
             display: 'flex',
             justifyContent: 'center',
             marginBottom: '30px',
-            marginTop: '30px'
+            marginTop: '30px',
+            zIndex: '-1'
           }}
         >
           {!isLandscapePhone ? (
@@ -224,8 +231,8 @@ export default function Account({ user, orders, ctx }) {
               src="/images/ipad 2.png"
               priority
               alt="ipad"
-              width={desktop ? 700 : 290}
-              height={desktop ? 460 : 190.5}
+              width={(desktop || isTablet || isPortrait) ? 700 : 290}
+              height={(desktop || isTablet || isPortrait) ? 460 : 190.5}
             />
           </>
           ): null}
