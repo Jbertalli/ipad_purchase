@@ -146,7 +146,7 @@ export default function Login() {
                   transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-117px, -450px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(125px, -20px) scale(0.95)' : 
+                      (isLandscapePhone ? 'translate(65px, 0px) scale(0.95)' : 
                       'translate(-60px, -450px) scale(0.85)')) : 
                       'translateY(-300px)'
                 }}

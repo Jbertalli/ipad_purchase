@@ -156,7 +156,7 @@ export default function Signup() {
                       transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-117px, -450px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(125px, -560px) scale(0.9)' : 
+                      (isLandscapePhone ? 'translate(65px, 0px) scale(0.9)' : 
                       'translate(-60px, -500px) scale(0.85)')) : 
                       'translateY(-300px)'
                     }}
@@ -571,9 +571,9 @@ export default function Signup() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    transform: 'translateY(-285px)',
+                    transform: 'translate(18px, -285px)',
                     borderRadius: '20px',
-                    width: '95%',
+                    width: '85%',
                     height: error ? '540px' : '470px',
                     position: 'fixed',
                     top: '350px'
