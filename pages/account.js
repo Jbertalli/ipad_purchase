@@ -221,8 +221,8 @@ export default function Account({ user, orders, ctx }) {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: '30px',
-            marginTop: '30px',
+            marginBottom: desktop ? '30px' : null,
+            marginTop: desktop ? '30px' : null,
             zIndex: '-1'
           }}
         >
