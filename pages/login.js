@@ -146,7 +146,7 @@ export default function Login() {
                   transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-117px, -450px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(125px, -520px) scale(0.95)' : 
+                      (isLandscapePhone ? 'translate(125px, -20px) scale(0.95)' : 
                       'translate(-60px, -450px) scale(0.85)')) : 
                       'translateY(-300px)'
                 }}
@@ -535,9 +535,9 @@ export default function Login() {
               dimmer="blurring"
               size="small"
               style={{
-                transform: 'translateY(-235px)',
+                transform: 'translate(18px, -235px)',
                 borderRadius: '20px',
-                width: '95%',
+                width: '85%',
                 height: '380px',
                 position: 'fixed',
                 top: '350px'
