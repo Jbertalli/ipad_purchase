@@ -138,7 +138,6 @@ export default function Login() {
                 dimmer="blurring"
                 size="small"
                 style={{
-                  // transform: 'translateY(-285px)',
                   borderRadius: '20px',
                   width: '816px',
                   height: '470px',
@@ -539,7 +538,7 @@ export default function Login() {
                 transform: 'translateY(-235px)',
                 borderRadius: '20px',
                 width: '95%',
-                height: '470px',
+                height: '380px',
                 position: 'fixed',
                 top: '350px'
               }}
