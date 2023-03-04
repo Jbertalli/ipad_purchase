@@ -212,7 +212,7 @@ export default function Account({ user, orders, ctx }) {
               height: desktop ? '620px' : '410px',
               border: isLandscapePhone ? null : '0.5px solid black',
               position: 'absolute',
-              zIndex: '10',
+              zIndex: '1',
               borderRadius: '20px'
             }}
           />
@@ -251,7 +251,8 @@ export default function Account({ user, orders, ctx }) {
             fontSize: desktop ? '40px' : '28px',
             paddingTop: '20px',
             paddingBottom: '20px',
-            background: '#F5F5F7'
+            background: '#F5F5F7',
+            zIndex: '10'
           }}
         >
           <div
