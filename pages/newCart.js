@@ -195,6 +195,10 @@ export default function Cart({ user, orders, ctx }) {
     })
   }
 
+  const isLaptop = useMediaQuery(
+    { minWidth: 1290, maxWidth: 1450 }
+  );
+
   const isTablet = useMediaQuery(
     { minWidth: 100, maxWidth: 1290 }
   );
@@ -1501,12 +1505,13 @@ export default function Cart({ user, orders, ctx }) {
             height: '580px',
             position: 'fixed',
             top: desktop ? '640px' : '200px', 
-            transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+            transform: isLaptop ? 'translateY(-580px) scale(0.8)' :
+              (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
               'translate(0px, -50px) scale(0.8)') : 
               'translate(-40px, -500px) scale(0.78)') : 
               (isLandscapePhone ? 'translate(180px, -695px) scale(0.5)' : 
               'translate(10px, -650px) scale(0.65)')) : 
-              'translate(30px, -500px)'
+              'translate(30px, -500px)')
           }}
         >
           <div
