@@ -137,7 +137,7 @@ export default function Sidebar() {
   }
 
   const isLaptop = useMediaQuery(
-    { minWidth: 1290, maxWidth: 1390 }
+    { minWidth: 1290, maxWidth: 1450 }
   );
 
   console.log(isLaptop);
