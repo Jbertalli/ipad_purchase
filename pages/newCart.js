@@ -420,7 +420,7 @@ export default function Cart({ user, orders, ctx }) {
                               }}
                             >
                               <ul
-                                style={{ transform: 'translate(-33px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-35px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(1)}
                               >
                                 1
