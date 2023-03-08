@@ -54,7 +54,7 @@ const NotFound = () => {
       >
         <div
           style={{
-            transform: isLandscapePhone ? 'translate(250px, -60px)' : null
+            transform: isLandscapePhone ? 'translate(250px, -100px)' : null
           }}
         >
           <div
