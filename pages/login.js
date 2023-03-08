@@ -147,7 +147,7 @@ export default function Login() {
                   height: '470px',
                   position: 'fixed',
                   top: '600px',
-                  transform: isLaptop ? '' : 
+                  transform: isLaptop ? 'translateY(-500px) scale(0.8)' : 
                     (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                     'translate(0px, -50px) scale(0.8)') : 
                     'translate(-117px, -450px) scale(0.8)') : 
