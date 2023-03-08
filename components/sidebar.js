@@ -1002,11 +1002,11 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    height: desktop ? '900px' : '635px',
+                    height: desktop ? '80%' : '635px',
                     width: desktop ? '816px' : '95%',
                     marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
-                    position: 'absolute',
+                    position: 'fixed',
                     top: desktop ? '600px' : '390px',
                     transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
@@ -1043,11 +1043,11 @@ export default function Sidebar() {
                     style={{ 
                         padding: desktop ? '36px 76px 60px 76px' : '36px 26px 60px 26px' 
                     }}
-                >
+                  >
                     <div 
                         style={{ 
                             fontSize: desktop ? '40px' : '25px', 
-                            fontWeight: '600' 
+                            fontWeight: '600'
                         }}
                     >
                       {desktop ? (
@@ -1305,7 +1305,7 @@ export default function Sidebar() {
                       'translate(-110px, -490px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(125px, -650px) scale(0.5)' : 
                       'translate(-60px, -600px) scale(0.6)')) : 
-                      'translateY(-40vh) scale(0.8)'
+                      'translateY(-400px) scale(0.7)'
                   }}
                 >
                   <div
