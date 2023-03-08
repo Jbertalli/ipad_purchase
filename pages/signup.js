@@ -157,7 +157,7 @@ export default function Signup() {
                       height: error ? '550px' : '470px',
                       position: 'fixed',
                       top: '620px',
-                      transform: isLaptop ? 'translateY(-400px) scale(0.8)' : 
+                      transform: isLaptop ? 'translateY(-500px) scale(0.8)' : 
                         (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                         'translate(0px, -50px) scale(0.8)') : 
                         'translate(-117px, -450px) scale(0.8)') : 
