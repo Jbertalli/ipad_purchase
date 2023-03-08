@@ -550,7 +550,7 @@ export default function Sidebar() {
                     height: '570px',
                     position: 'absolute',
                     top: desktop ? '600px' : '340px',
-                    transform: isLaptop ? 'translateY(-350px) scale(0.8)' : 
+                    transform: isLaptop ? 'translateY(-400px) scale(0.8)' : 
                     (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -300px) scale(0.8)') : 
                       'translate(-110px, -300px) scale(0.8)') : 
