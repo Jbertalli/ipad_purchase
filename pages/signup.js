@@ -65,6 +65,10 @@ export default function Signup() {
     }
   }
 
+  const isLaptop = useMediaQuery(
+    { minWidth: 1290, maxWidth: 1450 }
+  );
+
   const isTablet = useMediaQuery(
     { minWidth: 100, maxWidth: 1290 }
   );
@@ -153,12 +157,13 @@ export default function Signup() {
                       height: error ? '550px' : '470px',
                       position: 'fixed',
                       top: '620px',
-                      transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
-                      'translate(0px, -50px) scale(0.8)') : 
-                      'translate(-117px, -450px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(65px, 0px) scale(0.9)' : 
-                      'translate(-60px, -500px) scale(0.85)')) : 
-                      'translateY(-300px)'
+                      transform: isLaptop ? 'translateY(-400px) scale(0.8)' : 
+                        (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                        'translate(0px, -50px) scale(0.8)') : 
+                        'translate(-117px, -450px) scale(0.8)') : 
+                        (isLandscapePhone ? 'translate(65px, 0px) scale(0.9)' : 
+                        'translate(-60px, -500px) scale(0.85)')) : 
+                        'translateY(-300px)')
                     }}
                   >
                     <div
