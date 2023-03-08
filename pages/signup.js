@@ -576,7 +576,7 @@ export default function Signup() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    transform: 'translate(18px, -285px) scale(0.8)',
+                    transform: 'translate(18px, -300px) scale(0.75)',
                     borderRadius: '20px',
                     width: '85%',
                     height: error ? '540px' : '470px',
