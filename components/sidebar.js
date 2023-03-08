@@ -1002,7 +1002,7 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    height: desktop ? '80%' : '635px',
+                    height: desktop ? '900px' : '635px',
                     width: desktop ? '816px' : '95%',
                     marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
@@ -1013,7 +1013,7 @@ export default function Sidebar() {
                       'translate(-110px, -490px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(105px, -670px) scale(0.5)' : 
                       'translate(-60px, -600px) scale(0.6)')) : 
-                      'translateY(-550px) scale(0.8)'
+                      'translateY(-550px) scale(0.7)'
                   }}
                 >
                   <div
