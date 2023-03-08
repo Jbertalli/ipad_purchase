@@ -1006,7 +1006,7 @@ export default function Sidebar() {
                     width: desktop ? '816px' : '95%',
                     marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
-                    position: 'fixed',
+                    position: 'absolute',
                     top: desktop ? '600px' : '390px',
                     transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
