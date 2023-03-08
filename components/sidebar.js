@@ -145,7 +145,7 @@ export default function Sidebar() {
   );
 
   const isLaptop = useMediaQuery(
-    { minHeight: 750, maxHeight: 900 }
+    { minWidth: 1390, maxHeight: 1500 }
   );
 
   console.log(isLaptop);
