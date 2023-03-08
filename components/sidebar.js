@@ -550,7 +550,7 @@ export default function Sidebar() {
                     height: '570px',
                     position: 'absolute',
                     top: desktop ? '600px' : '340px',
-                    transform: isLaptop ? 'translateY(-400px) scale(0.8)' : 
+                    transform: isLaptop ? 'translateY(-440px) scale(0.8)' : 
                     (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -300px) scale(0.8)') : 
                       'translate(-110px, -300px) scale(0.8)') : 
@@ -1015,12 +1015,13 @@ export default function Sidebar() {
                     borderRadius: '20px',
                     position: 'fixed',
                     top: desktop ? '600px' : '390px',
-                    transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                    transform: isLaptop ? 'translateY(-500px) scale(0.8)' : 
+                    (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-110px, -490px) scale(0.8)') : 
                       (isLandscapePhone ? null : 
                       'translate(-60px, -600px) scale(0.6)')) : 
-                      'translateY(-485px) scale(0.8)'
+                      'translateY(-485px) scale(0.8)')
                   }}
                 >
                   <div
