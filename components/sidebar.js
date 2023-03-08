@@ -140,8 +140,6 @@ export default function Sidebar() {
     { minWidth: 1290, maxWidth: 1450 }
   );
 
-  console.log(isLaptop);
-
   const isTablet = useMediaQuery(
     { minWidth: 100, maxWidth: 1290 }
   );
@@ -552,12 +550,13 @@ export default function Sidebar() {
                     height: '570px',
                     position: 'absolute',
                     top: desktop ? '600px' : '340px',
-                    transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
+                    transform: isLaptop ? 'translateY(-350px) scale(0.8)' : 
+                    (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -300px) scale(0.8)') : 
                       'translate(-110px, -300px) scale(0.8)') : 
                       (isLandscapePhone ? null : 
                       'translate(-60px, -485px) scale(0.8)')) : 
-                      'translateY(-285px)'
+                      'translateY(-285px)')
                   }}
                 >
                   <div
