@@ -474,7 +474,7 @@ export default function Cart({ user, orders, ctx }) {
                                 9
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-43.3px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-43.3px)' : 'translate(-29.3px)' }}
                                 onClick={() => setQuantity(10)}
                               >
                                 10
