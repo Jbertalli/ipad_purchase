@@ -182,7 +182,7 @@ export default function Air() {
           <>
             <div
               style={{
-                transform: isLandscapePhone ? 'translate(200px, -20px)' : null
+                transform: isLandscapePhone ? 'translate(200px, -100px)' : null
               }}
             >
               <div
