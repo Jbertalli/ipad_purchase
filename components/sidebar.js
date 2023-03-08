@@ -144,6 +144,12 @@ export default function Sidebar() {
     { minHeight: 200, maxHeight: 470 }
   );
 
+  const isLaptop = useMediaQuery(
+    { minHeight: 750, maxHeight: 900 }
+  );
+
+  console.log(isLaptop);
+
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
