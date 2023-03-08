@@ -1002,7 +1002,7 @@ export default function Sidebar() {
                   dimmer="blurring"
                   size="small"
                   style={{
-                    height: desktop ? '1017px' : '635px',
+                    height: desktop ? '900px' : '635px',
                     width: desktop ? '816px' : '95%',
                     marginTop: desktop ? null : '-300px',
                     borderRadius: '20px',
@@ -1162,7 +1162,7 @@ export default function Sidebar() {
                       and iPad mini 4.
                     </h5>
                   </div>
-                  {desktop ? (
+                  {/* {desktop ? (
                   <>
                     <div
                         style={{
@@ -1203,7 +1203,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                   </>
-                  ): null}
+                  ): null} */}
                 </Modal>
               </>
             )}
