@@ -1506,7 +1506,7 @@ export default function Cart({ user, orders, ctx }) {
               'translate(-40px, -500px) scale(0.78)') : 
               (isLandscapePhone ? 'translate(180px, -695px) scale(0.5)' : 
               'translate(10px, -650px) scale(0.65)')) : 
-              'translate(30px, -500px) scale(0.8)'
+              'translate(30px, -300px) scale(0.8)'
           }}
         >
           <div
