@@ -1170,48 +1170,6 @@ export default function Sidebar() {
                       and iPad mini 4.
                     </h5>
                   </div>
-                  {/* {desktop ? (
-                  <>
-                    <div
-                        style={{
-                          background: '#F5F5F7',
-                          width: '816px',
-                          height: '118.1px',
-                          transform: 'translate(0px, 13px)',
-                          borderRadius: '0px 0px 19.5px 19.5px',
-                          lineHeight: '16px',
-                          paddingTop: '25px',
-                          fontSize: '12px'
-                        }}
-                    >
-                        <Icon
-                        name="chat"
-                        size="large"
-                        style={{
-                            color: 'gray',
-                            transform: 'translateX(400px) scale(1.3)'
-                        }}
-                        />
-                        <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            marginTop: '20px'
-                        }}
-                        >
-                        <b>Have questions about buying an iPad?</b>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <a
-                            className={styles.bluehovering}
-                            style={{ color: 'rgb(0, 102, 204)', cursor: 'pointer' }}
-                        >
-                            Chat with an iPad Specialist
-                        </a>
-                        </div>
-                    </div>
-                  </>
-                  ): null} */}
                 </Modal>
               </>
             )}
@@ -1309,7 +1267,7 @@ export default function Sidebar() {
                     borderRadius: '20px',
                     position: 'fixed',
                     top: desktop ? '600px' : '330px',
-                    transform: isLaptop ? 'translateY(-550px) scale(0.8)' : 
+                    transform: isLaptop ? 'translateY(-650px) scale(0.7)' : 
                       (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-110px, -490px) scale(0.8)') : 
