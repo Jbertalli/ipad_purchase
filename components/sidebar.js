@@ -550,7 +550,7 @@ export default function Sidebar() {
                       'translate(-110px, -300px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(105px, -510px) scale(0.8)' : 
                       'translate(-60px, -485px) scale(0.8)')) : 
-                      'translateY(-30vh)'
+                      'translateY(-450px)'
                   }}
                 >
                   <div
