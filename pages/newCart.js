@@ -420,61 +420,61 @@ export default function Cart({ user, orders, ctx }) {
                               }}
                             >
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(1)}
                               >
                                 1
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(2)}
                               >
                                 2
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(3)}
                               >
                                 3
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(4)}
                               >
                                 4
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(5)}
                               >
                                 5
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(6)}
                               >
                                 6
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(7)}
                               >
                                 7
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(8)}
                               >
                                 8
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-37px)' : 'translate(-23.5px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-40px)' : 'translate(-23.5px)' }}
                                 onClick={() => setQuantity(9)}
                               >
                                 9
                               </ul>
                               <ul
-                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-43.3px)' : 'translate(-29.3px)' }}
+                                style={{ transform: (isTablet || isLandscapePhone || isPortrait) ? 'translate(-46.3px)' : 'translate(-29.3px)' }}
                                 onClick={() => setQuantity(10)}
                               >
                                 10
