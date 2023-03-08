@@ -420,7 +420,7 @@ export default function Cart({ user, orders, ctx }) {
                               }}
                             >
                               <ul
-                                style={{ transform: 'translate(-22.7px)' }}
+                                style={{ transform: 'translate(-33px)' }}
                                 onClick={() => setQuantity(1)}
                               >
                                 1
