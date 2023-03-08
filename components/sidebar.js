@@ -530,6 +530,7 @@ export default function Sidebar() {
                           cursor: 'pointer',
                           transform: 'translate(-15px, 17px)',
                         }}
+                        disabled={isLandscapePhone}
                         onClick={() => setStorageModal(true)}
                       />
                     </Grid.Column>
@@ -548,7 +549,7 @@ export default function Sidebar() {
                     transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -300px) scale(0.8)') : 
                       'translate(-110px, -300px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(105px, -510px) scale(0.8)' : 
+                      (isLandscapePhone ? null : 
                       'translate(-60px, -485px) scale(0.8)')) : 
                       'translateY(-285px)'
                   }}
@@ -903,6 +904,7 @@ export default function Sidebar() {
                           cursor: 'pointer',
                           transform: 'translate(-10px, 17px)'
                         }}
+                        disabled={isLandscapePhone}
                         onClick={() => setConnectivityModal(true)}
                       />
                     </Grid.Column>
@@ -1011,7 +1013,7 @@ export default function Sidebar() {
                     transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-110px, -490px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(105px, -670px) scale(0.5)' : 
+                      (isLandscapePhone ? null : 
                       'translate(-60px, -600px) scale(0.6)')) : 
                       'translateY(-485px) scale(0.8)'
                   }}
@@ -1285,6 +1287,7 @@ export default function Sidebar() {
                         cursor: 'pointer',
                         transform: 'translate(-10px, 17px)'
                       }}
+                      disabled={isLandscapePhone}
                       onClick={() => setEngravingModal(true)}
                     />
                   </Grid.Column>
@@ -1303,7 +1306,7 @@ export default function Sidebar() {
                     transform: isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
                       'translate(0px, -50px) scale(0.8)') : 
                       'translate(-110px, -490px) scale(0.8)') : 
-                      (isLandscapePhone ? 'translate(125px, -650px) scale(0.5)' : 
+                      (isLandscapePhone ? null : 
                       'translate(-60px, -600px) scale(0.6)')) : 
                       'translateY(-485px) scale(0.8)'
                   }}
