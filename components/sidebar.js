@@ -550,7 +550,7 @@ export default function Sidebar() {
                       'translate(-110px, -300px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(105px, -510px) scale(0.8)' : 
                       'translate(-60px, -485px) scale(0.8)')) : 
-                      'translateY(-450px)'
+                      'translateY(-285px)'
                   }}
                 >
                   <div
@@ -1013,7 +1013,7 @@ export default function Sidebar() {
                       'translate(-110px, -490px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(105px, -670px) scale(0.5)' : 
                       'translate(-60px, -600px) scale(0.6)')) : 
-                      'translateY(-550px) scale(0.7)'
+                      'translateY(-485px) scale(0.8)'
                   }}
                 >
                   <div
@@ -1305,7 +1305,7 @@ export default function Sidebar() {
                       'translate(-110px, -490px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(125px, -650px) scale(0.5)' : 
                       'translate(-60px, -600px) scale(0.6)')) : 
-                      'translateY(-600px) scale(0.7)'
+                      'translateY(-485px) scale(0.8)'
                   }}
                 >
                   <div
