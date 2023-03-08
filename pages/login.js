@@ -540,7 +540,7 @@ export default function Login() {
               dimmer="blurring"
               size="small"
               style={{
-                transform: 'translate(18px, -235px) scale(0.9)',
+                transform: 'translate(18px, -235px) scale(0.8)',
                 borderRadius: '20px',
                 width: '85%',
                 height: '370px',
