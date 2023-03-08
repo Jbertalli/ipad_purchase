@@ -1505,7 +1505,7 @@ export default function Cart({ user, orders, ctx }) {
             height: '580px',
             position: 'fixed',
             top: desktop ? '640px' : '200px', 
-            transform: isLaptop ? 'translateY(-580px) scale(0.8)' :
+            transform: isLaptop ? 'translateY(-580px) scale(0.6)' :
               (isTablet ? (isPortrait ? (!desktop ? (isLandscapePhone ? '' : 
               'translate(0px, -50px) scale(0.8)') : 
               'translate(-40px, -500px) scale(0.78)') : 
