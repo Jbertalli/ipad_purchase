@@ -1013,7 +1013,7 @@ export default function Sidebar() {
                       'translate(-110px, -490px) scale(0.8)') : 
                       (isLandscapePhone ? 'translate(105px, -670px) scale(0.5)' : 
                       'translate(-60px, -600px) scale(0.6)')) : 
-                      'translateY(-500px) scale(0.8)'
+                      'translateY(-550px) scale(0.8)'
                   }}
                 >
                   <div
