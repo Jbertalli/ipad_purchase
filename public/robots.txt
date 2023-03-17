@@ -26,4 +26,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://localhost:3010/api/my-sitemap
+Sitemap: https://www.cssclone.com/api/my-sitemap
